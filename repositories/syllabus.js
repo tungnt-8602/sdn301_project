@@ -1,4 +1,4 @@
-import Syllabus from "../models/Syllabus"
+import Syllabus from "../models/Syllabus.js"
 
 
 const create = async () =>{
@@ -6,7 +6,8 @@ const create = async () =>{
 }
 
 const getAll = async () =>{
-    
+    const syllabuses = await Syllabus.find();
+    return syllabuses
 }
 
 const getById = async () =>{
