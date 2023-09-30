@@ -1,8 +1,8 @@
 import mongoose, {ObjectId, Schema} from "mongoose"
 
 const Syllabus = mongoose.model('Syllabus' , new Schema({
-    "id": {type: ObjectId},
-    "name":{
+    id: {type: ObjectId},
+    name:{
         type: String,
         require: true,
         validate: {
@@ -10,7 +10,7 @@ const Syllabus = mongoose.model('Syllabus' , new Schema({
             message: 'Length of syllabus name > 10'
         }
     },
-    "code":{
+    code:{
         type: String,
         require: true,
         validate: {
@@ -18,23 +18,23 @@ const Syllabus = mongoose.model('Syllabus' , new Schema({
             message: 'Length of syllabus code > 3'
         }
     },
-    "time_allocation":{
+    time_allocation:{
         type: String,
         require: true
     },
-    "prerequisites":{
+    prerequisites:{
         type: String,
         require: false
     },
-    "student_tasks":{
+    student_tasks:{
         type: String,
         require: true
     },
-    "tools":{
+    tools:{
         type: String,
         require: true
     },
-    "scoring_scale":{
+    scoring_scale:{
         type: Number,
         require: true,
         validate: {
@@ -42,19 +42,19 @@ const Syllabus = mongoose.model('Syllabus' , new Schema({
             message: 'Scale in range of 0 to 10'
         }
     },
-    "is_approved":{
+    is_approved:{
         type: Boolean,
         require: true
     },
-    "decision_id":{
+    decision_id:{
         type: Number,
         require: true
     },
-    "note":{
+    note:{
         type: String,
         require: false
     },
-    "min_avg_mark_to_pass":{
+    min_avg_mark_to_pass:{
         type: Number,
         require: true,
         validate: {
@@ -62,28 +62,28 @@ const Syllabus = mongoose.model('Syllabus' , new Schema({
             message: 'Min average mark to pass in range of 0 to 10'
         }
     },
-    "approved_date":{
+    approved_date:{
         type: String,
         require: true
     },
-    "lo":{
-        type: Array,
+    LO:{
+        type: [Object],
         require: true
     },
-    "material":{
-        type: Array,
+    Material:{
+        type: [Object],
         require: true
     },
-    "session":{
-        type: Array,
+    Session:{
+        type: [Object],
         require: true
     },
-    "assessment":{
-        type: Array,
+    Assessment:{
+        type: [Object],
         require: true
     },
-    "question":{
-        type: Array,
+    Question:{
+        type: [Object],
         require: true
     }
 }))
