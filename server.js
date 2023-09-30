@@ -7,7 +7,7 @@ dotenv.config()
 const app = express()
 app.use(express.json()) // Config cho express lam viec voi du lieu theo dinh dang json
 
-// Routes:
+// Routes
 app.use('/users', userRouter)
 
 const port = process.env.PORT || 8080
