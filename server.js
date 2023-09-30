@@ -1,6 +1,6 @@
 import express from "express"
 import * as dotenv from 'dotenv'
-import { userRouter, syllabusRouter } from './routes/index.js'
+import { userRouter, curriculumRouter } from './routes/index.js'
 import connectDB from "./database/database.js"
 
 dotenv.config()
@@ -9,7 +9,7 @@ app.use(express.json()) // Config cho express lam viec voi du lieu theo dinh dan
 
 // Routes:
 app.use('/users', userRouter)
-app.use('/syllabus', syllabusRouter) 
+app.use('/curriculums', curriculumRouter)
 
 const port = process.env.PORT || 8080
 

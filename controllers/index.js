@@ -1,6 +1,6 @@
 import userController from './user.js'
-import syllabusController from './syllabus.js'
+import curriculumController from './curriculum.js'
 
 export {
-    userController, syllabusController
+    userController, curriculumController
 }

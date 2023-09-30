@@ -1,6 +1,6 @@
 import userRepository from './user.js'
-import syllbusRepository from './syllabus.js'
+import curriculumRepository from './curriculum.js'
 
 export {
-    userRepository, syllbusRepository
+    userRepository, curriculumRepository
 }
