@@ -8,7 +8,7 @@ const app = express()
 app.use(express.json()) // Config cho express lam viec voi du lieu theo dinh dang json
 
 // Routes:
-app.use('/users', userRouter)
+app.use('/user', userRouter)
 app.use('/syllabus', syllabusRouter) 
 
 const port = process.env.PORT || 8080
