@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "651949eb73c3d424ede4a692"
+  },
+  "username": "admin",
+  "email": "admin@gmail.com",
+  "password": "$2b$10$gwWiaPe4UkrwbCT/O2GMGuq3fpS8U7i2wtANx5YThYUaDV1BXzouW",
+  "role": "ADMIN",
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6519568b5efeb6f52aeed705"
+  },
+  "username": "tuan",
+  "email": "tuan1@gmail.com",
+  "password": "$2b$10$/4O8s.kR3V5as7Clc8dnD.QGkc9QQyuOjd81sH1UZy7pMqZRPy4om",
+  "role": "STUDENT",
+  "status": true,
+  "__v": 0
+}]
