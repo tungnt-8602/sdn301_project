@@ -1,5 +1,5 @@
 import { validationResult } from "express-validator"
-import { syllbusRepository } from "../repositories" 
+import { syllbusRepository } from "../repositories/index.js"
 
 const createSyllabus = async (req, res) => {
     

@@ -9,6 +9,10 @@ const createNewAccount = async (req, res) => {
     
 }
 
+const getAllAccount = async (req, res) => {
+
+}
+
 const ableAndDisable = async (req, res, status) => {
 
 }
@@ -16,5 +20,6 @@ const ableAndDisable = async (req, res, status) => {
 export default {
     login,
     createNewAccount,
+    getAllAccount,
     ableAndDisable
 }

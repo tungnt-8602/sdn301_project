@@ -1,4 +1,5 @@
-import Syllabus from "../models/Syllabus"
+import Syllabus from "../models/Syllabus.js";
+
 
 
 const create = async () =>{
