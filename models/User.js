@@ -4,12 +4,12 @@ import isEmail from "validator/lib/isEmail.js"
 const User = mongoose.model("User", new Schema({
     "id": {type: ObjectId},
     // Model validation
-    "name":{
+    "username":{
         type: String,
         require: true,
         validate: {
             validator: (value) => value.length > 3,
-            message: 'Length of name > 3'
+            message: 'Length of username must be at least 4 characters'
         }
     },
     "email":{
@@ -17,7 +17,7 @@ const User = mongoose.model("User", new Schema({
         require: true,
         validate: {
             validator: (value) => isEmail,
-            message: 'Incorrect format'
+            message: 'Incorrect email format'
         }
     },
     "password":{
@@ -25,16 +25,18 @@ const User = mongoose.model("User", new Schema({
         require: true,
         validate: {
             validator: (value) => value.length >= 8,
-            message: 'Length of name > 3'
+            message: 'Length of password must be at least 8 characters'
         }
     },
-    "phoneNumber":{
+    "role":{
         type: String,
-        require: true
+        require: true,
+        message: 'Role must be provided'
     },
-    "address":{
-        type: String,
-        require: false
+    "status":{
+        type: Boolean,
+        require: true,
+        message: 'Status must be provided'
     }
 }))
 
