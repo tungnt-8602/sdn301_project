@@ -41,12 +41,45 @@ const createNewAccount = async ({
     }
 }
 
-const getAllAccount = async () =>{
-    
+const getAllAccount = async (page) => {
+    const perPage = 5;
+
+    try {
+        const totalCount = await User.countDocuments({ role: { $ne: "ADMIN" } });
+        const totalPages = Math.ceil(totalCount / perPage);
+
+        const pageNumber = parseInt(page);
+
+        const skip = (pageNumber - 1) * perPage;
+
+        const accounts = await User.find({ role: { $ne: "ADMIN" } })
+            .skip(skip)
+            .limit(perPage)
+            .exec();
+
+        return accounts;
+    } catch (error) {
+        throw new Error('Cannot get account list: ' + err.message);
+    }
 }
 
-const ableAndDisable = async () =>{
-    
+
+
+const ableAndDisable = async (userId) => {
+    try {
+
+        const user = await User.findById(userId).exec();
+        if (!user) {
+            throw new Error('User not found');
+        }
+
+        user.status = !user.status;
+        await user.save();
+
+        return user;
+    } catch (error) {
+        throw error;
+    }
 }
 
 export default {

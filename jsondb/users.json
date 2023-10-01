@@ -19,4 +19,59 @@
   "role": "STUDENT",
   "status": true,
   "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65195d08295c1e6030183c62"
+  },
+  "username": "abcsd",
+  "email": "tuan2@gmail.com",
+  "password": "$2b$10$vKpby/Q28HsmAivdBvdF5.tiJ5i8kY9pWDgakAeXf.zI8WnNUUIeO",
+  "role": "STUDENT",
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65195d13295c1e6030183c66"
+  },
+  "username": "sdasdasdsa",
+  "email": "tuan3@gmail.com",
+  "password": "$2b$10$i76/ICin/DChl5KNZF/LLO7byrwuveB6SZwpWLOYqHpoFRscd6uAu",
+  "role": "STUDENT",
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "651968c6a0d075ff5fb4849a"
+  },
+  "username": "22222",
+  "email": "tuan4@gmail.com",
+  "password": "$2b$10$HzIpeOu6lB4DTA1cR/16vOToCJgLaBF2RB7dl0Hs7hoH68q.R5h0G",
+  "role": "STUDENT",
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "651968cba0d075ff5fb4849e"
+  },
+  "username": "22222",
+  "email": "tuan5@gmail.com",
+  "password": "$2b$10$2JbaqAwKyOkrqr.iVSukeu28pJkaxuQR7Xl0rPhdpY32pjAfwFyb2",
+  "role": "STUDENT",
+  "status": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "651968cfa0d075ff5fb484a2"
+  },
+  "username": "22222",
+  "email": "tuan6@gmail.com",
+  "password": "$2b$10$5rcrWuhv2LTlIQf76.d/8.w4TN4Is6yNcwmkyyDWCJdzCi2rGHHqa",
+  "role": "STUDENT",
+  "status": true,
+  "__v": 0
 }]
