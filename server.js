@@ -2,10 +2,13 @@ import express from "express"
 import * as dotenv from 'dotenv'
 import { userRouter, syllabusRouter } from './routes/index.js'
 import connectDB from "./database/database.js"
+import passport from 'passport';
+
 
 dotenv.config()
 const app = express()
 app.use(express.json()) // Config cho express lam viec voi du lieu theo dinh dang json
+app.use(passport.initialize());
 
 // Routes:
 app.use('/user', userRouter)
