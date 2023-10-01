@@ -16,15 +16,29 @@ const getAll = async (limit,page) =>{
     return syllabuses
 }
 
-
-const update = async (id,updateData) =>{
-    const result = await Syllabus.updateOne({_id:id },{name:updateData.name, code:updateData.code})
-    if(result.modifiedCount > 0){
-        return await Syllabus.findById(id)
-    } else {
-        return 'lỗi edit'
+const update = async (id, updateData) => {
+  const result = await Syllabus.updateOne({ _id: id },
+    {
+      name: updateData.name,
+      code: updateData.code,
+      time_allocation: updateData.time_allocation,
+      prerequisites: updateData.prerequisites,
+      student_tasks: updateData.student_tasks,
+      tools: updateData.tools,
+      scoring_scale: updateData.scoring_scale,
+      is_approved: updateData.is_approved,
+      decision_id: updateData.decision_id,
+      note: updateData.note,
+      min_avg_mark_to_pass: updateData.min_avg_mark_to_pass,
     }
+  )
+  if (result.matchedCount > 0) {
+    return await Syllabus.findById(id)
+  } else {
+    return 'lỗi edit'
+  }
 }
+
 const getById = async (id) => {
   const syllabus = await Syllabus.findById(id).exec();
   return syllabus;

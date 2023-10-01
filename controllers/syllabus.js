@@ -46,26 +46,19 @@ const getAllSyllabus = async (req, res) => {
 }
 
 const updateSyllabus = async (req, res) => {
+  try {
     const updateData = req.body;
     const id = req.params.id;
     const checkSyllabus = await syllbusRepository.getById(id)
-    if(!checkSyllabus){
-        res.status(401).json('Syllabus Not Found')
+    if (!checkSyllabus) {
+      res.status(401).json('Syllabus Not Found')
     }
-    const result = await syllbusRepository.update(id,updateData);
+    const result = await syllbusRepository.update(id, updateData);
     res.status(200).json(result)
-}
-  try {
-    const syllabuses = await syllbusRepository.getAll();
-    res.status(200).json({
-      message: "Get syllabuses successfully.",
-      data: syllabuses,
-    });
   } catch (error) {
-    res.status(500).json({
-      message: error.toString(),
-    });
+    res.json(error);
   }
+};
 
 const getSyllabusById = async (req, res) => {
   try {
