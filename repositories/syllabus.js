@@ -6,11 +6,25 @@ const create = async (syllabus) => {
   return result;
 };
 
-const getAll = async () => {
-  const syllabuses = await Syllabus.find();
-  return syllabuses;
-};
+const countSyllabus = async () => {
+    return await Syllabus.countDocuments()
+}
 
+const getAll = async (limit,page) =>{
+    const skip = (page - 1) * limit;
+    const syllabuses = await Syllabus.find().skip(skip).limit(limit);
+    return syllabuses
+}
+
+
+const update = async (id,updateData) =>{
+    const result = await Syllabus.updateOne({_id:id },{name:updateData.name, code:updateData.code})
+    if(result.modifiedCount > 0){
+        return await Syllabus.findById(id)
+    } else {
+        return 'lỗi edit'
+    }
+}
 const getById = async (id) => {
   const syllabus = await Syllabus.findById(id).exec();
   return syllabus;
@@ -47,8 +61,6 @@ const totalSearchByKey = async (key, page, size) => {
   });
   return syllabus;
 };
-
-const update = async () => {};
 
 const remove = async (id) => {
   const result = await Syllabus.findByIdAndDelete(id).exec();

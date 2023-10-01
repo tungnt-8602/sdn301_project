@@ -26,6 +26,35 @@ const createSyllabus = async (req, res) => {
 };
 
 const getAllSyllabus = async (req, res) => {
+    try {
+        const limit = req.params.limit || 2;
+        const page = req.params.page || 1;
+        const syllabuses = await syllbusRepository.getAll(limit,page);
+        const totalSyllabus = await syllbusRepository.countSyllabus()
+        const totalPages = Math.ceil(totalSyllabus / limit);
+        res.status(200).json({
+            message: 'Get syllabuses successfully.',
+            totalPages,
+            data: syllabuses
+        })
+    }
+    catch (error) {
+        res.status(500).json({
+            message: error.toString()
+        })
+    }
+}
+
+const updateSyllabus = async (req, res) => {
+    const updateData = req.body;
+    const id = req.params.id;
+    const checkSyllabus = await syllbusRepository.getById(id)
+    if(!checkSyllabus){
+        res.status(401).json('Syllabus Not Found')
+    }
+    const result = await syllbusRepository.update(id,updateData);
+    res.status(200).json(result)
+}
   try {
     const syllabuses = await syllbusRepository.getAll();
     res.status(200).json({
@@ -37,7 +66,6 @@ const getAllSyllabus = async (req, res) => {
       message: error.toString(),
     });
   }
-};
 
 const getSyllabusById = async (req, res) => {
   try {
@@ -77,7 +105,6 @@ const searchSyllabus = async (req, res) => {
   }
 };
 
-const updateSyllabus = async (req, res) => {};
 
 const deleteSyllabus = async (req, res) => {
   try {
