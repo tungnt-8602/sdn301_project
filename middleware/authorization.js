@@ -1,4 +1,4 @@
-import roleConstants from "../common/roleConstants"; 
+import roleConstants from '../common/roleConstants.js'
 
 const isAdmin = (req, res, next) => {
   if (req.user && req.user.role === roleConstants.ADMIN) {
