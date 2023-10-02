@@ -1,6 +1,9 @@
 import userRouter from "./user.js";
-import syllabusRouter from "./syllabus.js";
+import curriculumRouter from './curriculum.js';
+import syllabusRouter from './syllabus.js';
 
 export {
-  userRouter, syllabusRouter
+  userRouter, 
+  curriculumRouter,
+  syllabusRouter
 }
