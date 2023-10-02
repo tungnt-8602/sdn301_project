@@ -29,8 +29,8 @@ const getAllSyllabus = async (req, res) => {
     try {
         const limit = req.params.limit || 2;
         const page = req.params.page || 1;
-        const syllabuses = await syllbusRepository.getAll(limit,page);
-        const totalSyllabus = await syllbusRepository.countSyllabus()
+        const syllabuses = await syllabusRepository.getAll(limit,page);
+        const totalSyllabus = await syllabusRepository.countSyllabus()
         const totalPages = Math.ceil(totalSyllabus / limit);
         res.status(200).json({
             message: 'Get syllabuses successfully.',
@@ -49,11 +49,11 @@ const updateSyllabus = async (req, res) => {
   try {
     const updateData = req.body;
     const id = req.params.id;
-    const checkSyllabus = await syllbusRepository.getById(id)
+    const checkSyllabus = await syllabusRepository.getById(id)
     if (!checkSyllabus) {
       res.status(401).json('Syllabus Not Found')
     }
-    const result = await syllbusRepository.update(id, updateData);
+    const result = await syllabusRepository.update(id, updateData);
     res.status(200).json(result)
   } catch (error) {
     res.json(error);
