@@ -1,0 +1,92 @@
+[{
+  "_id": {
+    "$oid": "65180b99637c98dcef23b671"
+  },
+  "curriculum_code": "SDN 11111111",
+  "name": "Sample SDN 1",
+  "english_name": "English Name 1",
+  "description": "Sample description for Curriculum 1",
+  "decision": "998/QĐ-ĐHFPT dated 09/22/2023",
+  "status": true,
+  "subject_id": [],
+  "combo_id": [],
+  "po": [
+    {
+      "po_name": "PO Name 1",
+      "po_description": "PO Description 1",
+      "_id": {
+        "$oid": "65180b99637c98dcef23b672"
+      }
+    },
+    {
+      "po_name": "PO Name 2",
+      "po_description": "PO Description 2",
+      "_id": {
+        "$oid": "65180b99637c98dcef23b673"
+      }
+    }
+  ],
+  "plo": [
+    {
+      "plo_name": "PLO Name 1",
+      "plo_description": "PLO Detail 1",
+      "_id": {
+        "$oid": "65180b99637c98dcef23b674"
+      }
+    },
+    {
+      "plo_name": "PLO Name 2",
+      "plo_description": "PLO Detail 2",
+      "_id": {
+        "$oid": "65180b99637c98dcef23b675"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65180b9c637c98dcef23b677"
+  },
+  "curriculum_code": "SDN 2222222",
+  "name": "Sample SDN 1",
+  "english_name": "English Name 1",
+  "description": "Sample description for Curriculum 1",
+  "decision": [],
+  "status": true,
+  "subject_id": [],
+  "combo_id": [],
+  "po": [
+    {
+      "po_name": "PO Name 1",
+      "po_description": "PO Description 1",
+      "_id": {
+        "$oid": "65180b9c637c98dcef23b678"
+      }
+    },
+    {
+      "po_name": "PO Name 2",
+      "po_description": "PO Description 2",
+      "_id": {
+        "$oid": "65180b9c637c98dcef23b679"
+      }
+    }
+  ],
+  "plo": [
+    {
+      "plo_name": "PLO Name 1",
+      "plo_description": "PLO Detail 1",
+      "_id": {
+        "$oid": "65180b9c637c98dcef23b67a"
+      }
+    },
+    {
+      "plo_name": "PLO Name 2",
+      "plo_description": "PLO Detail 2",
+      "_id": {
+        "$oid": "65180b9c637c98dcef23b67b"
+      }
+    }
+  ],
+  "__v": 0
+}]

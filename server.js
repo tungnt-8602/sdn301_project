@@ -1,6 +1,6 @@
 import express from "express"
 import * as dotenv from 'dotenv'
-import { userRouter, syllabusRouter } from './routes/index.js'
+import { userRouter, curriculumRouter, syllabusRouter } from './routes/index.js'
 import connectDB from "./database/database.js"
 // import passport from 'passport';
 import cors from 'cors';
@@ -15,6 +15,7 @@ app.use(cors());
 // Routes:
 app.use('/user', userRouter)
 app.use('/syllabus', syllabusRouter) 
+app.use('/curriculums', curriculumRouter)
 
 const port = process.env.PORT || 8080
 
