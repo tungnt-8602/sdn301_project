@@ -33,7 +33,7 @@ const getCurriculumById = async (req, res) => {
 const addCurriculum = async (req, res) => {
     try {
         const curriculumExisted = await curriculumRepository.getCurriculumByCode(req.body.curriculum_code);
-        if(curriculumExisted) res.status(400).json({
+        if (curriculumExisted) res.status(400).json({
             message: "Curriculum's email is already existed."
         })
         const curriculum = await curriculumRepository.addCurriculum(req.body);
@@ -56,7 +56,7 @@ const deleteCurriculumById = async (req, res) => {
             message: 'Delete successfully',
             data: curriculum
         })
-    } catch(error) {
+    } catch (error) {
         res.status(500).json({
             message: error.toString()
         })
@@ -87,10 +87,113 @@ const searchCurriculums = async (req, res) => {
     }
 };
 
-export default  {
+const addPo = async (req, res) => {
+    try {
+        const { po_name, po_description, po_status } = req.body;
+        const curriculum = await curriculumRepository.getById(req.params.id);
+
+        if (!curriculum) {
+            return res.status(404).json({ message: "Curriculum not found." });
+        }
+
+        const createdPo = await curriculumRepository.addPo(curriculum, {
+            name: po_name,
+            description: po_description,
+            status: po_status,
+        });
+
+        res.status(201).json({
+            message: 'Add po successfully.',
+            data: createdPo
+        });
+    } catch (error) {
+        res.status(500).json({
+            message: error.toString()
+        });
+    }
+};
+
+const getAllPo = async (req, res) => {
+    try {
+        const curriculum = await curriculumRepository.getById(req.params.id);
+
+        if (!curriculum) {
+            return res.status(404).json({ message: "Curriculum not found." });
+        }
+
+        const list = await curriculumRepository.getAllPo(curriculum);
+        res.status(200).json({
+            message: 'Get all po successfully.',
+            data: list
+        })
+    } catch (error) {
+        res.status(500).json({
+            message: error.toString()
+        });
+    }
+};
+
+const getPoById = async (req, res) => {
+    try {
+        const curriculum = await curriculumRepository.getById(req.params.id);
+
+        if (!curriculum) {
+            return res.status(404).json({ message: "Curriculum not found." });
+        }
+
+        const poId = req.params.poId;
+
+        const Po = await curriculumRepository.getPoById(curriculum, poId);
+
+
+        res.status(200).json({
+            message: 'Get po by ID successfully.',
+            data: Po
+        });
+    } catch (error) {
+        res.status(500).json({
+            message: error.toString()
+        });
+    }
+};
+
+const updatePo = async (req, res) => {
+    try {
+        const curriculum = await curriculumRepository.getById(req.params.id);
+
+        if (!curriculum) {
+            return res.status(404).json({ message: "Curriculum not found." });
+        }
+
+        const poId = req.params.poId;
+        const updatedPoData = {
+            po_name: req.body.po_name,
+            po_description: req.body.po_description,
+            po_status: req.body.po_status
+        };
+
+        const updatedPo = await curriculumRepository.updatePo(curriculum, poId, updatedPoData);
+
+        res.status(200).json({
+            message: 'Update po by ID successfully.',
+            data: updatedPo
+        });
+    } catch (error) {
+        res.status(500).json({
+            message: error.toString()
+        });
+    }
+};
+
+
+export default {
     getCurriculums,
     getCurriculumById,
     addCurriculum,
     deleteCurriculumById,
-    searchCurriculums
+    searchCurriculums,
+    addPo,
+    getAllPo,
+    getPoById,
+    updatePo,
 }

@@ -1,5 +1,28 @@
 import mongoose, { Schema, ObjectId } from "mongoose";
 
+const PoSchema = new Schema({
+    id: { type: ObjectId },
+    po_name: {
+        type: String,
+        required: true,
+        validate: {
+            validator: (value) => value.length <= 10,
+            message: 'Po cannot be longer than 10 characters.'
+        }
+    },
+    po_description: {
+        type: String,
+        required: true,
+        validate: {
+            validator: (value) => value.length <= 30,
+            message: 'Po description cannot be longer than 30 characters.'
+        }
+    },
+    po_status: {
+        type: Boolean
+    }
+});
+
 const Curriculum = mongoose.model("Curriculum",
     new Schema({
         id: { type: ObjectId },
@@ -39,12 +62,12 @@ const Curriculum = mongoose.model("Curriculum",
             type: [String] // This is an array
         },
         po: {
-            type: [Object] // This is an array
+            type: [PoSchema] // This is an array
         },
         plo: {
             type: [Object] // This is an array
         },
-        
+
     })
 )
 
