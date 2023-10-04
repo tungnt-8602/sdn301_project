@@ -1,9 +1,8 @@
-import { validationResult } from "express-validator";
-import { syllbusRepository } from "../repositories/index.js";
+import { syllabusRepository } from "../repositories/index.js";
 
 const createSyllabus = async (req, res) => {
   try {
-    const syllabusExist = await syllbusRepository.getByNameAndCode(
+    const syllabusExist = await syllabusRepository.getByNameAndCode(
       req.body.name,
       req.body.code
     );
@@ -12,9 +11,9 @@ const createSyllabus = async (req, res) => {
         message: "Syllabus already exist.",
       });
     } else {
-      const newSyllabus = await syllbusRepository.create(req.body);
+      const newSyllabus = await syllabusRepository.create(req.body);
       res.status(201).json({
-        message: "Create new yllabus successfully.",
+        message: "Create new syllabus successfully.",
         data: newSyllabus,
       });
     }
@@ -51,11 +50,11 @@ const updateSyllabus = async (req, res) => {
   try {
     const updateData = req.body;
     const id = req.params.id;
-    const checkSyllabus = await syllbusRepository.getById(id)
+    const checkSyllabus = await syllabusRepository.getById(id)
     if (!checkSyllabus) {
       res.status(401).json('Syllabus Not Found')
     }
-    const result = await syllbusRepository.update(id, updateData);
+    const result = await syllabusRepository.update(id, updateData);
     res.status(200).json(result)
   } catch (error) {
     res.json(error);
@@ -64,7 +63,7 @@ const updateSyllabus = async (req, res) => {
 
 const getSyllabusById = async (req, res) => {
   try {
-    const syllabus = await syllbusRepository.getById(req.params.id);
+    const syllabus = await syllabusRepository.getById(req.params.id);
     res.status(200).json({
       message: "Get detail syllabus successfully.",
       data: syllabus,
@@ -103,13 +102,13 @@ const searchSyllabus = async (req, res) => {
 
 const deleteSyllabus = async (req, res) => {
   try {
-    const syllabusExist = await syllbusRepository.getById(req.body.id);
+    const syllabusExist = await syllabusRepository.getById(req.body.id);
     if (!syllabusExist) {
       res.status(400).json({
         message: "Syllabus unavailable.",
       });
     } else {
-      const syllabus = await syllbusRepository.remove(req.params.id);
+      const syllabus = await syllabusRepository.remove(req.params.id);
       res.status(201).json({
         massage: "Delete successfully",
         data: syllabus,

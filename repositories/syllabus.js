@@ -94,4 +94,5 @@ export default {
   remove,
   searchByKey,
   totalSearchByKey,
+  countSyllabus
 };
