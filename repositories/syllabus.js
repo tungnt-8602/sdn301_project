@@ -10,10 +10,23 @@ const countSyllabus = async () => {
     return await Syllabus.countDocuments()
 }
 
-const getAll = async (limit,page) =>{
-    const skip = (page - 1) * limit;
-    const syllabuses = await Syllabus.find().skip(skip).limit(limit);
-    return syllabuses
+
+const getAll = async (size, page, searchString) => {
+  const skip = (page - 1) * size;
+  const syllabuses = await Syllabus.find(
+    {
+      $or: [{ name: { $regex: searchString } }, { code: { $regex: searchString } }],
+    }
+  ).skip(skip).limit(size);
+
+  const count = await Syllabus.find(
+    {
+      $or: [{ name: { $regex: searchString } }, { code: { $regex: searchString } }],
+    }
+  ).countDocuments;
+  return {syllabuses,count}
+  
+
 }
 
 const update = async (id, updateData) => {

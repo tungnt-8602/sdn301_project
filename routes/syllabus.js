@@ -3,9 +3,9 @@ import { body, validationResult } from "express-validator";
 import { syllabusController } from "../controllers/index.js";
 
 const syllabusRouter = express.Router();
-syllabusRouter.get("/search", async (req, res) => {
-  syllabusController.searchSyllabus(req, res);
-});
+// syllabusRouter.get("/", async (req, res) => {
+//   syllabusController.searchSyllabus(req, res);
+// });
 syllabusRouter.get('/', async (req, res) => {
     syllabusController.getAllSyllabus(req, res)
 }),
