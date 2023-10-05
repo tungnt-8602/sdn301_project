@@ -53,6 +53,128 @@ const totalCurriculums = async (searchString, page, size) => {
   return students;
 };
 
+const addPo = async (id, poData) => {
+  try {
+    const curriculum = await Curriculum.findById(id);
+
+    if (!curriculum) {
+      throw new Error("Curriculum not found");
+    }
+
+    const newPo = {
+      po_name: poData.name,
+      po_description: poData.description,
+      po_status: poData.status,
+    };
+
+    curriculum.po.push(newPo);
+    await curriculum.save();
+
+    return newPo;
+  } catch (error) {
+    console.error("Error adding Po:", error);
+    throw error;
+  }
+};
+
+const getAllPo = async (id) => {
+  try {
+    const curriculum = await Curriculum.findById(id);
+
+    if (!curriculum) {
+      throw new Error("Curriculum not found");
+    }
+
+    const allPo = curriculum.po;
+    return allPo;
+  } catch (error) {
+    console.error("Error fetching all Po:", error);
+    throw error;
+  }
+};
+
+const getPoById = async (curriculumId, poId) => {
+  try {
+    const curriculum = await Curriculum.findById(curriculumId);
+
+    if (!curriculum) {
+      throw new Error("Curriculum not found");
+    }
+
+    const po = curriculum.po.find((item) => String(item._id) === poId);
+    console.log(poId);
+    if (!po) {
+      throw new Error("Po not found");
+    }
+
+    return po;
+  } catch (error) {
+    console.error("Error fetching Po by ID:", error);
+    throw error;
+  }
+};
+
+
+
+
+
+// const updatePo = async (curriculumId, poId, updatedPoData) => {
+//   try {
+//     const curriculum = await Curriculum.findById(curriculumId);
+
+//     if (!curriculum) {
+//       throw new Error("Curriculum not found");
+//     }
+
+//     const po = curriculum.po.find((item) => String(item._id) === poId);
+
+//     if (!po) {
+//       throw new Error("Po not found");
+//     }
+
+//     po.po_name = updatedPoData.po_name;
+//     po.po_description = updatedPoData.po_description;
+//     po.po_status = updatedPoData.po_status;
+
+//     await curriculum.save();
+
+//     return po;
+//   } catch (error) {
+//     console.error("Error updating Po:", error);
+//     throw error;
+//   }
+// };
+
+
+const updatePo = async (curriculum, poId, updatedPoData) => {
+  try {
+    const poToUpdate = curriculum.po.find((item) => String(item._id) === poId);
+
+    if (!poToUpdate) {
+      throw new Error("Po not found");
+    }
+
+    // Kiểm tra giá trị của po_status (nếu được cập nhật)
+    if (updatedPoData.po_status !== undefined) {
+      if (typeof updatedPoData.po_status !== 'boolean') {
+        throw new Error("Invalid po_status value. It must be a boolean.");
+      }
+      poToUpdate.po_status = updatedPoData.po_status;
+    }
+
+    poToUpdate.po_name = updatedPoData.po_name;
+    poToUpdate.po_description = updatedPoData.po_description;
+
+    await curriculum.save();
+
+    return poToUpdate;
+  } catch (error) {
+    console.error("Error updating Po:", error);
+    throw error;
+  }
+};
+
+
 export default {
   getCurriculums,
   getById,
@@ -61,4 +183,8 @@ export default {
   deleteCurriculumById,
   searchCurriculums,
   totalCurriculums,
+  addPo,
+  getAllPo,
+  getPoById,
+  updatePo
 };
