@@ -19,7 +19,8 @@ const PoSchema = new Schema({
         }
     },
     po_status: {
-        type: Boolean
+        type: Boolean,
+        default: false,
     }
 });
 
