@@ -24,18 +24,45 @@ const createSyllabus = async (req, res) => {
   }
 };
 
+// const searchSyllabus = async (req, res) => {
+//   try {
+//     const key = req.query.searchString || "";
+//     const page = parseInt(req.query.page) || 1;
+//     const size = parseInt(req.query.size) || 5;
+//     const syllabus = await syllbusRepository.searchByKey(key, page, size);
+//     const totalSearch = await syllbusRepository.totalSearchByKey(key);
+//     const total = Mau.ceil(totalSearch/size)
+    
+//     res.status(200).json({
+//       message: "Search syllabus successfully.",
+//       searchString: key,
+//       page: page,
+//       size: size,
+//       total: total,
+//       data: syllabus,
+//     });
+//   } catch (error) {
+//     res.status(500).json({
+//       message: error.toString(),
+//     });
+//   }
+// };
+
 const getAllSyllabus = async (req, res) => {
   try {
     const size = req.query.size || 5;
     const page = req.query.page || 1;
-    const syllabuses = await syllbusRepository.getAll(size, page);
-    const totalSyllabus = await syllbusRepository.countSyllabus()
-    const totalPages = Math.ceil(totalSyllabus / size);
+    const searchString = req.query.searchString || '';
+    const syllabuses = await syllabusRepository.getAll(size, page, searchString);
+    console.log(syllabuses)
+    // const totalSyllabus = await syllabusRepository.countSyllabus()
+    // const totalPages = Math.ceil(totalSyllabus / size);
     res.status(200).json({
       message: 'Get syllabuses successfully.',
+      searchString,
       size,
       page,
-      total: totalPages,
+      // total: totalPages,
       data: syllabuses
     })
   }
@@ -75,29 +102,7 @@ const getSyllabusById = async (req, res) => {
   }
 };
 
-const searchSyllabus = async (req, res) => {
-  try {
-    const key = req.query.searchString || "";
-    const page = parseInt(req.query.page) || 1;
-    const size = parseInt(req.query.size) || 5;
-    const syllabus = await syllbusRepository.searchByKey(key, page, size);
-    const totalSearch = await syllbusRepository.totalSearchByKey(key);
-    const total = Math.ceil(totalSearch/size)
-    
-    res.status(200).json({
-      message: "Search syllabus successfully.",
-      searchString: key,
-      page: page,
-      size: size,
-      total: total,
-      data: syllabus,
-    });
-  } catch (error) {
-    res.status(500).json({
-      message: error.toString(),
-    });
-  }
-};
+
 
 
 const deleteSyllabus = async (req, res) => {
@@ -127,5 +132,5 @@ export default {
   getSyllabusById,
   updateSyllabus,
   deleteSyllabus,
-  searchSyllabus,
+  // searchSyllabus,
 };
