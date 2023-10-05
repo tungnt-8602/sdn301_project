@@ -30,6 +30,10 @@ const update = async (id, updateData) => {
       decision_id: updateData.decision_id,
       note: updateData.note,
       min_avg_mark_to_pass: updateData.min_avg_mark_to_pass,
+      LO: updateData.LO,
+      Question: updateData.Question,
+      Session: updateData.Session,
+      Material: updateData.Material
     }
   )
   if (result.matchedCount > 0) {
@@ -64,8 +68,7 @@ const searchByKey = async (key, page, size) => {
     .exec();
   return syllabus;
 };
-
-const totalSearchByKey = async (key, page, size) => {
+const totalSearchByKey = async (key) => {
   const syllabus = await Syllabus.countDocuments({
     $or: [
       { code: { $regex: new RegExp(key, "i") } },
@@ -82,6 +85,7 @@ const remove = async (id) => {
 };
 
 export default {
+  countSyllabus,
   create,
   getByNameAndCode,
   getAll,

@@ -1,4 +1,3 @@
-import { validationResult } from "express-validator";
 import { syllabusRepository } from "../repositories/index.js";
 
 const createSyllabus = async (req, res) => {
@@ -26,23 +25,25 @@ const createSyllabus = async (req, res) => {
 };
 
 const getAllSyllabus = async (req, res) => {
-    try {
-        const limit = req.params.limit || 2;
-        const page = req.params.page || 1;
-        const syllabuses = await syllabusRepository.getAll(limit,page);
-        const totalSyllabus = await syllabusRepository.countSyllabus()
-        const totalPages = Math.ceil(totalSyllabus / limit);
-        res.status(200).json({
-            message: 'Get syllabuses successfully.',
-            totalPages,
-            data: syllabuses
-        })
-    }
-    catch (error) {
-        res.status(500).json({
-            message: error.toString()
-        })
-    }
+  try {
+    const size = req.query.size || 5;
+    const page = req.query.page || 1;
+    const syllabuses = await syllbusRepository.getAll(size, page);
+    const totalSyllabus = await syllbusRepository.countSyllabus()
+    const totalPages = Math.ceil(totalSyllabus / size);
+    res.status(200).json({
+      message: 'Get syllabuses successfully.',
+      size,
+      page,
+      total: totalPages,
+      data: syllabuses
+    })
+  }
+  catch (error) {
+    res.status(500).json({
+      message: error.toString()
+    })
+  }
 }
 
 const updateSyllabus = async (req, res) => {
@@ -79,10 +80,10 @@ const searchSyllabus = async (req, res) => {
     const key = req.query.searchString || "";
     const page = parseInt(req.query.page) || 1;
     const size = parseInt(req.query.size) || 5;
-
-    const syllabus = await syllabusRepository.searchByKey(key, page, size);
-    const total = await syllabusRepository.totalSearchByKey(key, page, size);
-
+    const syllabus = await syllbusRepository.searchByKey(key, page, size);
+    const totalSearch = await syllbusRepository.totalSearchByKey(key);
+    const total = Math.ceil(totalSearch/size)
+    
     res.status(200).json({
       message: "Search syllabus successfully.",
       searchString: key,
