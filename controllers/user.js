@@ -1,5 +1,5 @@
 import { validationResult } from "express-validator"
-import { userRepository } from "../repositories/index.js"
+import { userRepository, refreshTokenRepository } from "../repositories/index.js"
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
@@ -25,10 +25,40 @@ const login = async (req, res) => {
         const token = jwt.sign(
             { userId: user.id, email: user.email, role: user.role },
             process.env.SECRET_KEY_JWT,
-            { expiresIn: "1h" }
+            { expiresIn: "30s" }
         );
 
-        res.status(200).json({ message: "Login successfully.", token });
+        const refreshToken = jwt.sign(
+            { userId: user.id, email: user.email, role: user.role },
+            process.env.SECRET_REFRESH_KEY_JWT,
+            { expiresIn: "7d" }
+        );
+        refreshTokenRepository.saveRefreshToken(refreshToken);
+        res.status(200).json({ message: "Login successfully.", token, refreshToken });
+    } catch (error) {
+        res.status(500).json({
+            error: error.toString(),
+        });
+    }
+};
+
+const getToken = async (req, res) => {
+    const requestToken = req.body.token;
+    if (requestToken == null) return res.status(401);
+
+    try {
+        const refreshTokenDoc = await refreshTokenRepository.findByToken(requestToken);
+        if (!refreshTokenDoc) return res.status(403);
+
+        jwt.verify(refreshTokenDoc.token, process.env.SECRET_REFRESH_KEY_JWT, (err, { id, email, role }) => {
+            if (err) return res.status(403);
+            const token = jwt.sign(
+                { userId: id, email: email, role: role },
+                process.env.SECRET_KEY_JWT,
+                { expiresIn: "30s" }
+            );
+            res.status(200).json({ token });
+        });
     } catch (error) {
         res.status(500).json({
             error: error.toString(),
@@ -82,7 +112,7 @@ const ableAndDisable = async (req, res) => {
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
     }
-    const {id} = req.params;
+    const { id } = req.params;
     try {
         const updatedUser = await userRepository.ableAndDisable(id);
         if (!updatedUser) {
@@ -97,9 +127,34 @@ const ableAndDisable = async (req, res) => {
     }
 }
 
+const logout = async (req, res) => {
+    const refreshToken = req.body.refreshToken;
+
+    if (!refreshToken) {
+        return res.status(400).json({ message: "Refresh token is missing." });
+    }
+
+    try {
+        const decoded = jwt.verify(refreshToken, process.env.SECRET_REFRESH_KEY_JWT);
+        const userId = decoded.userId;
+
+        const isDelete = await refreshTokenRepository.deleteRefreshTokensByUserId(userId);
+        if (isDelete) {
+            res.status(200).json({ message: "Logout successful." });
+        } else {
+            res.status(400).json({ message: "No tokens were deleted." });
+        }
+    } catch (error) {
+        res.status(500).json({ error: error.toString() });
+    }
+};
+
+
 export default {
     login,
     createNewAccount,
     getAllAccount,
-    ableAndDisable
+    ableAndDisable,
+    getToken,
+    logout
 }
