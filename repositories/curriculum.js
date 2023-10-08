@@ -62,9 +62,9 @@ const addPo = async (id, poData) => {
     }
 
     const newPo = {
-      po_name: poData.name,
-      po_description: poData.description,
-      po_status: poData.status,
+      po_name: poData.poname,
+      po_description: poData.podescription,
+      po_status: poData.postatus,
     };
 
     curriculum.po.push(newPo);
@@ -174,6 +174,127 @@ const updatePo = async (curriculum, poId, updatedPoData) => {
   }
 };
 
+const addPlo = async (id, ploData) => {
+  try {
+    const curriculum = await Curriculum.findById(id);
+
+    if (!curriculum) {
+      throw new Error("Curriculum not found");
+    }
+
+    const newPlo = {
+      plo_name: ploData.ploname,
+      plo_description: ploData.plodescription,
+      plo_status: ploData.plostatus,
+    };
+
+    curriculum.plo.push(newPlo);
+    await curriculum.save();
+
+    return ploData;
+  } catch (error) {
+    console.error("Error adding Po:", error);
+    throw error;
+  }
+};
+
+const getAllPlo = async (id) => {
+  try {
+    const curriculum = await Curriculum.findById(id);
+
+    if (!curriculum) {
+      throw new Error("Curriculum not found");
+    }
+
+    const allPlo = curriculum.plo;
+    return allPlo;
+  } catch (error) {
+    console.error("Error fetching all Po:", error);
+    throw error;
+  }
+};
+
+const getPloById = async (curriculumId, ploId) => {
+  try {
+    const curriculum = await Curriculum.findById(curriculumId);
+
+    if (!curriculum) {
+      throw new Error("Curriculum not found");
+    }
+
+    const plo = curriculum.plo.find((item) => String(item._id) === poId);
+    console.log(ploId);
+    if (!plo) {
+      throw new Error("Po not found");
+    }
+
+    return plo;
+  } catch (error) {
+    console.error("Error fetching Po by ID:", error);
+    throw error;
+  }
+};
+
+
+
+
+
+// const updatePo = async (curriculumId, poId, updatedPoData) => {
+//   try {
+//     const curriculum = await Curriculum.findById(curriculumId);
+
+//     if (!curriculum) {
+//       throw new Error("Curriculum not found");
+//     }
+
+//     const po = curriculum.po.find((item) => String(item._id) === poId);
+
+//     if (!po) {
+//       throw new Error("Po not found");
+//     }
+
+//     po.po_name = updatedPoData.po_name;
+//     po.po_description = updatedPoData.po_description;
+//     po.po_status = updatedPoData.po_status;
+
+//     await curriculum.save();
+
+//     return po;
+//   } catch (error) {
+//     console.error("Error updating Po:", error);
+//     throw error;
+//   }
+// };
+
+
+const updatePlo = async (curriculum, ploId, updatedPloData) => {
+  try {
+    const ploToUpdate = curriculum.plo.find((item) => String(item._id) === ploId);
+
+    if (!ploToUpdate) {
+      throw new Error("Po not found");
+    }
+
+    // Kiểm tra giá trị của po_status (nếu được cập nhật)
+    if (updatedPloData.plo_status !== undefined) {
+      if (typeof updatedPloData.plo_status !== 'boolean') {
+        throw new Error("Invalid po_status value. It must be a boolean.");
+      }
+      ploToUpdate.plo_status = updatedPloData.plo_status;
+    }
+
+    ploToUpdate.plo_name = updatedPloData.plo_name;
+    ploToUpdate.plo_description = updatedPloData.plo_description;
+
+    await curriculum.save();
+
+    return ploToUpdate;
+  } catch (error) {
+    console.error("Error updating Po:", error);
+    throw error;
+  }
+};
+
 
 export default {
   getCurriculums,
@@ -186,5 +307,9 @@ export default {
   addPo,
   getAllPo,
   getPoById,
-  updatePo
+  updatePo,
+  addPlo,
+  getAllPlo,
+  getPloById,
+  updatePlo
 };
