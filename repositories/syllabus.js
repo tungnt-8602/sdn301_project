@@ -45,7 +45,7 @@ const update = async (id, updateData) => {
       tools: updateData.tools,
       scoring_scale: updateData.scoring_scale,
       is_approved: updateData.is_approved,
-      decision_id: updateData.decision_id,
+      decision: updateData.decision,
       note: updateData.note,
       min_avg_mark_to_pass: updateData.min_avg_mark_to_pass,
       LO: updateData.LO,
