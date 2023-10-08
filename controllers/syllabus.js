@@ -32,7 +32,7 @@ const createSyllabus = async (req, res) => {
 //     const syllabus = await syllbusRepository.searchByKey(key, page, size);
 //     const totalSearch = await syllbusRepository.totalSearchByKey(key);
 //     const total = Mau.ceil(totalSearch/size)
-    
+
 //     res.status(200).json({
 //       message: "Search syllabus successfully.",
 //       searchString: key,
@@ -52,37 +52,38 @@ const getAllSyllabus = async (req, res) => {
   try {
     const size = req.query.size || 5;
     const page = req.query.page || 1;
-    const searchString = req.query.searchString || '';
-    const syllabuses = await syllabusRepository.getAll(size, page, searchString);
-    console.log(syllabuses)
-    // const totalSyllabus = await syllabusRepository.countSyllabus()
-    // const totalPages = Math.ceil(totalSyllabus / size);
+    const searchString = req.query.searchString || "";
+    const syllabuses = await syllabusRepository.getAll(
+      size,
+      page,
+      searchString
+    );
+    const totalPages = Math.ceil(syllabuses.count / size);
     res.status(200).json({
-      message: 'Get syllabuses successfully.',
+      message: "Get syllabuses successfully.",
       searchString,
       size,
       page,
-      // total: totalPages,
-      data: syllabuses
-    })
-  }
-  catch (error) {
+      total: totalPages,
+      data: syllabuses.data,
+    });
+  } catch (error) {
     res.status(500).json({
-      message: error.toString()
-    })
+      message: error.toString(),
+    });
   }
-}
+};
 
 const updateSyllabus = async (req, res) => {
   try {
     const updateData = req.body;
     const id = req.params.id;
-    const checkSyllabus = await syllabusRepository.getById(id)
+    const checkSyllabus = await syllabusRepository.getById(id);
     if (!checkSyllabus) {
-      res.status(401).json('Syllabus Not Found')
+      res.status(401).json("Syllabus Not Found");
     }
     const result = await syllabusRepository.update(id, updateData);
-    res.status(200).json(result)
+    res.status(200).json(result);
   } catch (error) {
     res.json(error);
   }
@@ -101,9 +102,6 @@ const getSyllabusById = async (req, res) => {
     });
   }
 };
-
-
-
 
 const deleteSyllabus = async (req, res) => {
   try {

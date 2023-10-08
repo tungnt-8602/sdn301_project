@@ -7,30 +7,35 @@ const create = async (syllabus) => {
 };
 
 const countSyllabus = async () => {
-    return await Syllabus.countDocuments()
-}
-
+  return await Syllabus.countDocuments();
+};
 
 const getAll = async (size, page, searchString) => {
   const skip = (page - 1) * size;
-  const syllabuses = await Syllabus.find(
-    {
-      $or: [{ name: { $regex: searchString } }, { code: { $regex: searchString } }],
-    }
-  ).skip(skip).limit(size);
+  const syllabuses = await Syllabus.find({
+    $or: [
+      { name: { $regex: searchString } },
+      { code: { $regex: searchString } },
+    ],
+  })
+    .skip(skip)
+    .limit(size);
 
-  const count = await Syllabus.find(
-    {
-      $or: [{ name: { $regex: searchString } }, { code: { $regex: searchString } }],
-    }
-  ).countDocuments;
-  return {syllabuses,count}
-  
-
-}
+  const count = await Syllabus.find({
+    $or: [
+      { name: { $regex: searchString } },
+      { code: { $regex: searchString } },
+    ],
+  }).countDocuments();
+  return {
+    data: syllabuses,
+    count: count,
+  };
+};
 
 const update = async (id, updateData) => {
-  const result = await Syllabus.updateOne({ _id: id },
+  const result = await Syllabus.updateOne(
+    { _id: id },
     {
       name: updateData.name,
       code: updateData.code,
@@ -46,15 +51,15 @@ const update = async (id, updateData) => {
       LO: updateData.LO,
       Question: updateData.Question,
       Session: updateData.Session,
-      Material: updateData.Material
+      Material: updateData.Material,
     }
-  )
+  );
   if (result.matchedCount > 0) {
-    return await Syllabus.findById(id)
+    return await Syllabus.findById(id);
   } else {
-    return 'lỗi edit'
+    return "lỗi edit";
   }
-}
+};
 
 const getById = async (id) => {
   const syllabus = await Syllabus.findById(id).exec();
@@ -107,5 +112,5 @@ export default {
   remove,
   searchByKey,
   totalSearchByKey,
-  countSyllabus
+  countSyllabus,
 };
