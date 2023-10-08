@@ -17,6 +17,7 @@ app.use('/user', userRouter)
 app.use('/syllabus', syllabusRouter) 
 app.use('/curriculums', curriculumRouter)
 
+
 const port = process.env.PORT || 8080
 
 app.listen(port, ()=>{

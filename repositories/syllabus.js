@@ -7,17 +7,35 @@ const create = async (syllabus) => {
 };
 
 const countSyllabus = async () => {
-    return await Syllabus.countDocuments()
-}
+  return await Syllabus.countDocuments();
+};
 
-const getAll = async (limit,page) =>{
-    const skip = (page - 1) * limit;
-    const syllabuses = await Syllabus.find().skip(skip).limit(limit);
-    return syllabuses
-}
+const getAll = async (size, page, searchString) => {
+  const skip = (page - 1) * size;
+  const syllabuses = await Syllabus.find({
+    $or: [
+      { name: { $regex: searchString } },
+      { code: { $regex: searchString } },
+    ],
+  })
+    .skip(skip)
+    .limit(size);
+
+  const count = await Syllabus.find({
+    $or: [
+      { name: { $regex: searchString } },
+      { code: { $regex: searchString } },
+    ],
+  }).countDocuments();
+  return {
+    data: syllabuses,
+    count: count,
+  };
+};
 
 const update = async (id, updateData) => {
-  const result = await Syllabus.updateOne({ _id: id },
+  const result = await Syllabus.updateOne(
+    { _id: id },
     {
       name: updateData.name,
       code: updateData.code,
@@ -27,17 +45,21 @@ const update = async (id, updateData) => {
       tools: updateData.tools,
       scoring_scale: updateData.scoring_scale,
       is_approved: updateData.is_approved,
-      decision_id: updateData.decision_id,
+      decision: updateData.decision,
       note: updateData.note,
       min_avg_mark_to_pass: updateData.min_avg_mark_to_pass,
+      LO: updateData.LO,
+      Question: updateData.Question,
+      Session: updateData.Session,
+      Material: updateData.Material,
     }
-  )
+  );
   if (result.matchedCount > 0) {
-    return await Syllabus.findById(id)
+    return await Syllabus.findById(id);
   } else {
-    return 'lỗi edit'
+    return "lỗi edit";
   }
-}
+};
 
 const getById = async (id) => {
   const syllabus = await Syllabus.findById(id).exec();
@@ -64,8 +86,7 @@ const searchByKey = async (key, page, size) => {
     .exec();
   return syllabus;
 };
-
-const totalSearchByKey = async (key, page, size) => {
+const totalSearchByKey = async (key) => {
   const syllabus = await Syllabus.countDocuments({
     $or: [
       { code: { $regex: new RegExp(key, "i") } },
@@ -82,6 +103,7 @@ const remove = async (id) => {
 };
 
 export default {
+  countSyllabus,
   create,
   getByNameAndCode,
   getAll,
@@ -90,4 +112,5 @@ export default {
   remove,
   searchByKey,
   totalSearchByKey,
+  countSyllabus,
 };

@@ -5,5 +5,6 @@ import syllabusRepository from './syllabus.js'
 export {
     userRepository,
     curriculumRepository, 
-    syllabusRepository
+    syllabusRepository,
+  
 }
