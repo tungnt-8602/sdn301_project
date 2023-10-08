@@ -27,4 +27,12 @@ userRouter.get('/all', isAuthenticated, Authorization.isAdmin, userController.ge
 
 userRouter.put('/changeStatus/:id', isAuthenticated, Authorization.isAdmin, userController.ableAndDisable);
 
+userRouter.post('/token', (req, res) => {
+  userController.getToken(req, res);
+})
+
+userRouter.delete('/logout', (req, res) => {
+  userController.logout(req, res);
+})
+
 export default userRouter
