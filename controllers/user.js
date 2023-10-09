@@ -1,5 +1,5 @@
 import { validationResult } from "express-validator"
-import { userRepository, refreshTokenRepository } from "../repositories/index.js"
+import { userRepository } from "../repositories/index.js"
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 
@@ -16,7 +16,7 @@ const login = async (req, res) => {
         if (!user) {
             return res.status(401).json({ message: "Invalid email or password." });
         } else if (user.status === false) {
-            return res.status(401).json({ message: "Your account is disable." });
+            return res.status(401).json({ message: "Your account is disabled." });
         }
         const isPasswordValid = await bcrypt.compare(password, user.password);
         if (!isPasswordValid) {
@@ -25,7 +25,7 @@ const login = async (req, res) => {
         const token = jwt.sign(
             { userId: user._id, email: user.email, role: user.role },
             process.env.SECRET_KEY_JWT,
-            { expiresIn: "30s" }
+            { expiresIn: "30m" }
         );
 
         const refreshToken = jwt.sign(
@@ -33,15 +33,23 @@ const login = async (req, res) => {
             process.env.SECRET_REFRESH_KEY_JWT,
             { expiresIn: "7d" }
         );
-        refreshTokenRepository.saveRefreshToken(refreshToken);
-        res.status(200).json({  message: "Login successfully.",
-                                token, 
-                                refreshToken, 
-                                user: { id: user._id, 
-                                        username: user.username, 
-                                        email: user.email,
-                                        role: user.role,
-                                        status: user.status } });
+
+        res.cookie('refreshToken', refreshToken, {
+            httpOnly: true,
+            maxAge: 7 * 24 * 60 * 60 * 1000
+        })
+
+        res.status(200).json({
+            message: "Login successfully.",
+            token,
+            user: {
+                id: user._id,
+                username: user.username,
+                email: user.email,
+                role: user.role,
+                status: user.status
+            }
+        });
     } catch (error) {
         res.status(500).json({
             error: error.toString(),
@@ -50,27 +58,38 @@ const login = async (req, res) => {
 };
 
 const getToken = async (req, res) => {
-    const requestToken = req.body.token;
-    if (requestToken == null) return res.status(401);
 
     try {
-        const refreshTokenDoc = await refreshTokenRepository.findByToken(requestToken);
-        if (!refreshTokenDoc) return res.status(403);
+        const refreshToken = req.cookies.refreshToken;
+        const decodedRefreshToken = jwt.verify(refreshToken, process.env.SECRET_REFRESH_KEY_JWT);
+        const { userId, email, role } = decodedRefreshToken;
 
-        jwt.verify(refreshTokenDoc.token, process.env.SECRET_REFRESH_KEY_JWT, (err, { id, email, role }) => {
-            if (err) return res.status(403);
-            const token = jwt.sign(
-                { userId: id, email: email, role: role },
-                process.env.SECRET_KEY_JWT,
-                { expiresIn: "30s" }
-            );
-            res.status(200).json({ token });
+        const newAccessToken = jwt.sign(
+            { userId, email, role },
+            process.env.SECRET_KEY_JWT,
+            { expiresIn: "30m" }
+        );
+
+        const newRefreshToken = jwt.sign(
+            { userId, email, role },
+            process.env.SECRET_REFRESH_KEY_JWT,
+            { expiresIn: "7d" }
+        );
+
+        res.cookie('refreshToken', newRefreshToken, {
+            httpOnly: true,
+            maxAge: 7 * 24 * 60 * 60 * 1000
         });
+        
+        res.status(200).json({
+            message: "Token refreshed successfully.",
+            token: newAccessToken,
+        });
+        
     } catch (error) {
-        res.status(500).json({
-            error: error.toString(),
-        });
+        return res.status(401).json({ message: "Invalid refresh token." });
     }
+
 };
 
 const createNewAccount = async (req, res) => {
@@ -135,25 +154,8 @@ const ableAndDisable = async (req, res) => {
 }
 
 const logout = async (req, res) => {
-    const refreshToken = req.body.refreshToken;
-
-    if (!refreshToken) {
-        return res.status(400).json({ message: "Refresh token is missing." });
-    }
-
-    try {
-        const decoded = jwt.verify(refreshToken, process.env.SECRET_REFRESH_KEY_JWT);
-        const userId = decoded.userId;
-
-        const isDelete = await refreshTokenRepository.deleteRefreshTokensByUserId(userId);
-        if (isDelete) {
-            res.status(200).json({ message: "Logout successful." });
-        } else {
-            res.status(400).json({ message: "No tokens were deleted." });
-        }
-    } catch (error) {
-        res.status(500).json({ error: error.toString() });
-    }
+    res.clearCookie('refreshToken');
+    res.status(200).json({ message: "Logged out successfully." });
 };
 
 
