@@ -2,13 +2,17 @@ import mongoose, {ObjectId, Schema} from "mongoose"
 
 const Syllabus = mongoose.model('Syllabus' , new Schema({
     id: {type: ObjectId},
-    name:{
+    syllabus_name:{
         type: String,
         require: true,
         validate: {
             validator: (value) => value.length > 10,
             message: 'Length of syllabus name > 10'
         }
+    },
+    syllabus_Ename:{
+        type: String,
+        require: false
     },
     code:{
         type: String,
@@ -63,6 +67,22 @@ const Syllabus = mongoose.model('Syllabus' , new Schema({
         }
     },
     approved_date:{
+        type: String,
+        require: true
+    },
+    description:{
+        type: String,
+        require: true
+    },
+    no_credit:{
+        type: Number,
+        require: true,
+        validate: {
+            validator: (value) => value >= 0 && value <= 10,
+            message: 'Min average mark to pass in range of 0 to 10'
+        }
+    },
+    degree_level:{
         type: String,
         require: true
     },
