@@ -16,16 +16,7 @@ const isMaterialDesigner = (req, res, next) => {
   }
 };
 
-const isMaterialReviewer = (req, res, next) => {
-  if (req.user && req.user.role === roleConstants.MATERIAL_REVIEWER) {
-    return next();
-  } else {
-    return res.status(403).json({ message: 'Forbidden: Only material reviewer users can access this.' });
-  }
-};
-
 export default {
   isAdmin,
-  isMaterialDesigner,
-  isMaterialReviewer
+  isMaterialDesigner
 }

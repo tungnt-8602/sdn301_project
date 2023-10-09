@@ -1,26 +1,27 @@
-import express from "express"
-import * as dotenv from 'dotenv'
-import { userRouter, curriculumRouter, syllabusRouter } from './routes/index.js'
-import connectDB from "./database/database.js"
-// import passport from 'passport';
+import express from "express";
+import * as dotenv from 'dotenv';
+import { userRouter, curriculumRouter, syllabusRouter } from './routes/index.js';
+import connectDB from "./database/database.js";
 import cors from 'cors';
+import cookieParser from 'cookie-parser'; 
 
-
-dotenv.config()
-const app = express()
-app.use(express.json()) // Config cho express lam viec voi du lieu theo dinh dang json
-// app.use(passport.initialize());
-app.use(cors());
+dotenv.config();
+const app = express();
+app.use(express.json());
+app.use(cors({
+    origin: 'http://localhost:3000',
+    credentials: true
+}));
+app.use(cookieParser()); 
 
 // Routes:
-app.use('/user', userRouter)
-app.use('/syllabus', syllabusRouter) 
-app.use('/curriculums', curriculumRouter)
+app.use('/user', userRouter);
+app.use('/syllabus', syllabusRouter);
+app.use('/curriculums', curriculumRouter);
 
+const port = process.env.PORT || 8080;
 
-const port = process.env.PORT || 8080
-
-app.listen(port, ()=>{
-    connectDB()
+app.listen(port, () => {
+    connectDB();
     console.log(`Server is running on port ${port}`);
-})
+});
