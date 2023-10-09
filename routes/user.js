@@ -27,11 +27,11 @@ userRouter.get('/all', isAuthenticated, Authorization.isAdmin, userController.ge
 
 userRouter.put('/changeStatus/:id', isAuthenticated, Authorization.isAdmin, userController.ableAndDisable);
 
-userRouter.post('/token', (req, res) => {
+userRouter.post('/token', isAuthenticated, (req, res) => {
   userController.getToken(req, res);
 })
 
-userRouter.delete('/logout', (req, res) => {
+userRouter.delete('/logout', isAuthenticated, (req, res) => {
   userController.logout(req, res);
 })
 

@@ -23,18 +23,25 @@ const login = async (req, res) => {
             return res.status(401).json({ message: "Invalid email or password." });
         }
         const token = jwt.sign(
-            { userId: user.id, email: user.email, role: user.role },
+            { userId: user._id, email: user.email, role: user.role },
             process.env.SECRET_KEY_JWT,
             { expiresIn: "30s" }
         );
 
         const refreshToken = jwt.sign(
-            { userId: user.id, email: user.email, role: user.role },
+            { userId: user._id, email: user.email, role: user.role },
             process.env.SECRET_REFRESH_KEY_JWT,
             { expiresIn: "7d" }
         );
         refreshTokenRepository.saveRefreshToken(refreshToken);
-        res.status(200).json({ message: "Login successfully.", token, refreshToken });
+        res.status(200).json({  message: "Login successfully.",
+                                token, 
+                                refreshToken, 
+                                user: { id: user._id, 
+                                        username: user.username, 
+                                        email: user.email,
+                                        role: user.role,
+                                        status: user.status } });
     } catch (error) {
         res.status(500).json({
             error: error.toString(),
