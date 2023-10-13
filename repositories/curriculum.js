@@ -222,18 +222,22 @@ const getPloById = async (curriculumId, ploId) => {
       throw new Error("Curriculum not found");
     }
 
-    const plo = curriculum.plo.find((item) => String(item._id) === poId);
+    const plo = curriculum.plo.find((item) => String(item._id) === ploId);
+    console.log(plo);
     console.log(ploId);
     if (!plo) {
-      throw new Error("Po not found");
+      throw new Error("Plo not found");
     }
 
     return plo;
   } catch (error) {
-    console.error("Error fetching Po by ID:", error);
+    console.error("Error fetching Plo by ID:", error);
     throw error;
   }
 };
+
+ getPloById ('65180b99637c98dcef23b671', '65180b99637c98dcef23b674')
+
 
 
 
