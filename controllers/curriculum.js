@@ -87,6 +87,30 @@ const searchCurriculums = async (req, res) => {
     }
 };
 
+
+const updateCurriculum = async (req, res) => {
+    try {
+      const curriculumExisted = await curriculumRepository.getById(req.params.id);
+  
+      const data = req.body
+      if (!curriculumExisted) {
+        return res.status(404).json({
+          message: "Curriculum not found."
+        });
+      }
+  
+      const curriculum = await curriculumRepository.updateCurriculum(curriculumExisted, data);
+      res.status(201).json({
+        message: 'Updated curriculum successfully.',
+        data: curriculum
+      });
+    } catch (error) {
+      res.status(500).json({
+        message: error.toString()
+      });
+    }
+  }
+
 //////////////////////////////////////////////////////[---PO---]///////////////////////////////////////////////////////////////////
 
 const addPo = async (req, res) => {
@@ -479,4 +503,5 @@ export default {
     getAllPlo,
     getPloById,
     updatePlo,
+    updateCurriculum,
 }
