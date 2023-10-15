@@ -1,5 +1,67 @@
 import mongoose, { ObjectId, Schema } from "mongoose";
 
+const LO = new Schema({
+    CLO_Name: {
+        type: String,
+        required: true,
+        validate: {
+            validator: (value) => value.length <= 10,
+            message: 'Clo Name cannot be longer than 10 characters.'
+        }
+    },
+    CLO_Details: {
+        type: String,
+        required: true,
+        validate: {
+            validator: (value) => value.length <= 30,
+            message: 'Clo details cannot be longer than 30 characters.'
+        }
+    }
+});
+
+const Material = new Schema({
+    MaterialDescription: {
+        type: String,
+        required: true
+    },
+    Author: {
+        type: String,
+        required: false
+    },
+    Publisher: {
+        type: String,
+        required: false
+    },
+    PublishedDate: {
+        type: String,
+        required: false
+    },
+    Edition: {
+        type: String,
+        required: false
+    },
+    ISBN: {
+        type: String,
+        required: false
+    },
+    IsMainMaterial: {
+        type: Boolean,
+        required: true
+    },
+    IsHardCopy: {
+        type: Boolean,
+        required: true
+    },
+    IsOnline: {
+        type: Boolean,
+        required: true
+    },
+    Note: {
+        type: String,
+        required: false
+    }
+});
+
 const Syllabus = mongoose.model('Syllabus' , new Schema({
     id: {type: ObjectId},
     syllabus_name:{
@@ -87,10 +149,10 @@ const Syllabus = mongoose.model('Syllabus' , new Schema({
         require: true
     },
     LO:{
-        type: [Object]
+      type: [LO]
     },
     Material: {
-      type: [Object]
+      type: [Material]
     },
     Session: {
       type: [Object]
