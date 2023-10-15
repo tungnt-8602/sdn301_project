@@ -53,6 +53,47 @@ const totalCurriculums = async (searchString, page, size) => {
   return students;
 };
 
+const updateCurriculum = async (curriculumId, updatedData) => {
+  return new Promise(async (resolve, reject) => {
+    try {
+        const checkCurriculum = await Curriculum.findOne({
+          _id: curriculumId
+        })
+        if (checkCurriculum === null) {
+            resolve({
+                status: 'ERR',
+                message: 'The Curriculum is not defined'
+            })
+        }
+        
+        const updatedCurriculum = await Curriculum.findByIdAndUpdate(curriculumId, updatedData, { new: true })
+        const dataUpdateCurriculum={
+          curriculum_code: updatedData.curriculum_code
+        }
+        const cc = Curriculum.findOne((item) => item.curriculum_code === dataUpdateCurriculum.curriculum_code)
+        if(cc){
+          return res.status(400).json({
+            status: 'ERR',
+            message: "Invalid po_status value. It must be a boolean."
+        });
+        }
+        console.log(poId);
+        if (!po) {
+          throw new Error("Po not found");
+        }
+    
+
+        resolve({
+            status: 'OK',
+            message: 'SUCCESS',
+            data: dataUpdateCurriculum
+        })
+    } catch (e) {
+        reject(e)
+    }
+})
+};
+
 const addPo = async (id, poData) => {
   try {
     const curriculum = await Curriculum.findById(id);
@@ -165,6 +206,8 @@ const updatePo = async (curriculum, poId, updatedPoData) => {
     poToUpdate.po_name = updatedPoData.po_name;
     poToUpdate.po_description = updatedPoData.po_description;
 
+
+
     await curriculum.save();
 
     return poToUpdate;
@@ -222,7 +265,7 @@ const getPloById = async (curriculumId, ploId) => {
       throw new Error("Curriculum not found");
     }
 
-    const plo = curriculum.plo.find((item) => String(item._id) === poId);
+    const plo = curriculum.plo.find((item) => String(item._id) === ploId);
     console.log(ploId);
     if (!plo) {
       throw new Error("Po not found");
@@ -304,6 +347,7 @@ export default {
   deleteCurriculumById,
   searchCurriculums,
   totalCurriculums,
+  updateCurriculum,
   addPo,
   getAllPo,
   getPoById,

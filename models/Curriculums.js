@@ -14,8 +14,8 @@ const PoSchema = new Schema({
         type: String,
         required: true,
         validate: {
-            validator: (value) => value.length <= 30,
-            message: 'Po description cannot be longer than 30 characters.'
+            validator: (value) => value.length <= 1000,
+            message: 'Po description cannot be longer than 1000 characters.'
         }
     },
     po_status: {
@@ -38,8 +38,8 @@ const PloSchema = new Schema({
         type: String,
         required: true,
         validate: {
-            validator: (value) => value.length <= 30,
-            message: 'PLO description cannot be longer than 30 characters.'
+            validator: (value) => value.length <= 1000,
+            message: 'PLO description cannot be longer than 1000 characters.'
         }
     },
     plo_status: {

@@ -87,6 +87,29 @@ const searchCurriculums = async (req, res) => {
     }
 };
 
+
+
+const updateCurriculum = async(req,res)=>{
+    try {
+        const curriculumExisted = await curriculumRepository.getById(req.params.id);
+        if (!curriculumExisted) {
+            return res.status(404).json({
+              message: "Curriculum not found."
+            });
+          }
+          
+        const curriculum = await curriculumRepository.updateCurriculum(curriculumExisted,req.body);
+        res.status(201).json({
+            message: 'updateCurriculums curriculum successfully.',
+            data: curriculum
+        })
+    } catch (error) {
+        res.status(500).json({
+            message: error.toString()
+        });
+    }
+}
+
 //////////////////////////////////////////////////////[---PO---]///////////////////////////////////////////////////////////////////
 
 const addPo = async (req, res) => {
@@ -109,7 +132,7 @@ const addPo = async (req, res) => {
 
         // Kiểm tra xem po_name có bắt đầu bằng "PO" không
         if (!po_name.startsWith("PO")) {
-            return res.status(400).json({ message: `${po_name} name must start with 'PO'.`} );
+            return res.status(400).json({ message: `${po_name} name must start with 'PO'.` });
         }
 
         // Kiểm tra xem Po_name tồn tại ko nè
@@ -222,6 +245,7 @@ const updatePo = async (req, res) => {
             po_status: req.body.po_status
         };
 
+
         // Kiểm tra tồn tại của curriculum
         if (!curriculum) {
             return res.status(404).json({
@@ -245,7 +269,7 @@ const updatePo = async (req, res) => {
                 message: "Po name must be between 3 and 100 characters."
             });
         }
-      
+
         // Kiểm tra xem Po_name đã tồn tại và có cùng ID không
         const existingPo = curriculum.po.find((item) => item.po_name === updatedPoData.po_name && String(item._id) !== poId);
         if (existingPo) {
@@ -260,6 +284,12 @@ const updatePo = async (req, res) => {
                     message: "Invalid po_status value. It must be a boolean."
                 });
             }
+        }
+
+        // Kiểm tra người nhập có đúng không
+        if (!updatedPoData.po_name.startsWith("PO")) {
+            return res.status(400).json({ message: `${updatedPoData.po_name} name must start with 'PO'.` });
+
         }
 
         // ok chốt đơn
@@ -295,7 +325,7 @@ const addPlo = async (req, res) => {
             return res.status(400).json({ message: "Plo name must be between 3 and 10 characters." });
         }
 
-        // Kiểm tra xem po_name có bắt đầu bằng "PO" không
+        // Kiểm tra xem po_name có bắt đầu bằng "PLO" không
         if (!plo_name.startsWith("PLO")) {
             return res.status(400).json({ message: `${plo_name} name must start with 'PLO'.` });
         }
@@ -381,7 +411,7 @@ const getPloById = async (req, res) => {
             return res.status(404).json({ message: "Curriculum not found." });
         }
 
-        const ploId = req.params.poId;
+        const ploId = req.params.ploId;
         if (!ploId) {
             return res.status(404).json({ message: "Plo Id not found." });
         }
@@ -433,21 +463,27 @@ const updatePlo = async (req, res) => {
                 message: "Plo name must be between 3 and 100 characters."
             });
         }
-      
+
         // Kiểm tra xem Po_name đã tồn tại và có cùng ID không
         const existingPo = curriculum.plo.find((item) => item.plo_name === updatedPloData.plo_name && String(item._id) !== ploId);
         if (existingPo) {
-            return res.status(400).json({ message: `${updatedPloData.po_name} already exists with a different ID` });
+            return res.status(400).json({ message: `${updatedPloData.plo_name} already exists with a different ID` });
         }
 
         // Kiểm tra giá trị của po_status (nếu được gửi trong yêu cầu)
         if (updatedPloData.plo_status !== undefined) {
-            if (typeof updatedPloData.po_status !== 'boolean') {
+            if (typeof updatedPloData.plo_status !== 'boolean') {
                 return res.status(400).json({
                     status: 'ERR',
                     message: "Invalid plo_status value. It must be a boolean."
                 });
             }
+        }
+
+         // Kiểm tra người nhập có đúng không
+         if (!updatedPloData.plo_name.startsWith("PLO")) {
+            return res.status(400).json({ message: `${updatedPloData.plo_name} name must start with 'PLO'.` });
+
         }
 
         // ok chốt đơn
@@ -471,6 +507,7 @@ export default {
     addCurriculum,
     deleteCurriculumById,
     searchCurriculums,
+    updateCurriculum,
     addPo,
     getAllPo,
     getPoById,
