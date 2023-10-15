@@ -16,24 +16,80 @@ const login = async (req, res) => {
         if (!user) {
             return res.status(401).json({ message: "Invalid email or password." });
         } else if (user.status === false) {
-            return res.status(401).json({ message: "Your account is disable." });
+            return res.status(401).json({ message: "Your account is disabled." });
         }
         const isPasswordValid = await bcrypt.compare(password, user.password);
         if (!isPasswordValid) {
             return res.status(401).json({ message: "Invalid email or password." });
         }
         const token = jwt.sign(
-            { userId: user.id, email: user.email, role: user.role },
+            { userId: user._id, email: user.email, role: user.role },
             process.env.SECRET_KEY_JWT,
-            { expiresIn: "1h" }
+            { expiresIn: "30m" }
         );
 
-        res.status(200).json({ message: "Login successfully.", token });
+        const refreshToken = jwt.sign(
+            { userId: user._id, email: user.email, role: user.role },
+            process.env.SECRET_REFRESH_KEY_JWT,
+            { expiresIn: "7d" }
+        );
+
+        res.cookie('refreshToken', refreshToken, {
+            httpOnly: true,
+            maxAge: 7 * 24 * 60 * 60 * 1000
+        })
+
+        res.status(200).json({
+            message: "Login successfully.",
+            token,
+            user: {
+                id: user._id,
+                username: user.username,
+                email: user.email,
+                role: user.role,
+                status: user.status
+            }
+        });
     } catch (error) {
         res.status(500).json({
             error: error.toString(),
         });
     }
+};
+
+const getToken = async (req, res) => {
+
+    try {
+        const refreshToken = req.cookies.refreshToken;
+        const decodedRefreshToken = jwt.verify(refreshToken, process.env.SECRET_REFRESH_KEY_JWT);
+        const { userId, email, role } = decodedRefreshToken;
+
+        const newAccessToken = jwt.sign(
+            { userId, email, role },
+            process.env.SECRET_KEY_JWT,
+            { expiresIn: "30m" }
+        );
+
+        const newRefreshToken = jwt.sign(
+            { userId, email, role },
+            process.env.SECRET_REFRESH_KEY_JWT,
+            { expiresIn: "7d" }
+        );
+
+        res.cookie('refreshToken', newRefreshToken, {
+            httpOnly: true,
+            maxAge: 7 * 24 * 60 * 60 * 1000
+        });
+        
+        res.status(200).json({
+            message: "Token refreshed successfully.",
+            token: newAccessToken,
+        });
+        
+    } catch (error) {
+        return res.status(401).json({ message: "Invalid refresh token." });
+    }
+
 };
 
 const createNewAccount = async (req, res) => {
@@ -82,7 +138,7 @@ const ableAndDisable = async (req, res) => {
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
     }
-    const {id} = req.params;
+    const { id } = req.params;
     try {
         const updatedUser = await userRepository.ableAndDisable(id);
         if (!updatedUser) {
@@ -97,9 +153,17 @@ const ableAndDisable = async (req, res) => {
     }
 }
 
+const logout = async (req, res) => {
+    res.clearCookie('refreshToken');
+    res.status(200).json({ message: "Logged out successfully." });
+};
+
+
 export default {
     login,
     createNewAccount,
     getAllAccount,
-    ableAndDisable
+    ableAndDisable,
+    getToken,
+    logout
 }

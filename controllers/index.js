@@ -5,5 +5,5 @@ import syllabusController from './syllabus.js'
 export {
     userController, 
     curriculumController,
-    syllabusController
+    syllabusController,
 }

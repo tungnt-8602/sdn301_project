@@ -13,4 +13,24 @@ curriculumRouter.delete('/:id', curriculumController.deleteCurriculumById);
 
 curriculumRouter.get('/', curriculumController.searchCurriculums);
 
+curriculumRouter.put('/:id', curriculumController.updateCurriculum);
+
+// po 
+curriculumRouter.post('/po/:id', curriculumController.addPo);
+
+curriculumRouter.get('/po/:id', curriculumController.getAllPo);
+
+curriculumRouter.get('/po/:id/:poId', curriculumController.getPoById);
+
+curriculumRouter.put('/po/:id/:poId', curriculumController.updatePo);
+
+// plo 
+curriculumRouter.post('/plo/:id', curriculumController.addPlo);
+
+curriculumRouter.get('/plo/:id', curriculumController.getAllPlo);
+
+curriculumRouter.get('/plo/:id/:ploId', curriculumController.getPloById);
+
+curriculumRouter.put('/plo/:id/:ploId', curriculumController.updatePlo);
+
 export default curriculumRouter;

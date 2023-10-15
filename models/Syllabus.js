@@ -1,4 +1,4 @@
-import mongoose, {ObjectId, Schema} from "mongoose"
+import mongoose, { ObjectId, Schema } from "mongoose";
 
 const Syllabus = mongoose.model('Syllabus' , new Schema({
     id: {type: ObjectId},
@@ -22,53 +22,53 @@ const Syllabus = mongoose.model('Syllabus' , new Schema({
             message: 'Length of syllabus code > 3'
         }
     },
-    time_allocation:{
-        type: String,
-        require: true
+    time_allocation: {
+      type: String,
+      require: true,
     },
-    prerequisites:{
-        type: String,
-        require: false
+    prerequisites: {
+      type: String,
+      require: false,
     },
-    student_tasks:{
-        type: String,
-        require: true
+    student_tasks: {
+      type: String,
+      require: true,
     },
-    tools:{
-        type: String,
-        require: true
+    tools: {
+      type: String,
+      require: true,
     },
-    scoring_scale:{
-        type: Number,
-        require: true,
-        validate: {
-            validator: (value) => value >= 0 && value <= 10,
-            message: 'Scale in range of 0 to 10'
-        }
+    scoring_scale: {
+      type: Number,
+      require: true,
+      validate: {
+        validator: (value) => value >= 0 && value <= 10,
+        message: "Scale in range of 0 to 10",
+      },
     },
-    is_approved:{
-        type: Boolean,
-        require: true
+    is_approved: {
+      type: Boolean,
+      require: true,
     },
-    decision_id:{
-        type: Number,
-        require: true
+    decision: {
+      type: String,
+      require: true,
     },
-    note:{
-        type: String,
-        require: false
+    note: {
+      type: String,
+      require: false,
     },
-    min_avg_mark_to_pass:{
-        type: Number,
-        require: true,
-        validate: {
-            validator: (value) => value >= 0 && value <= 10,
-            message: 'Min average mark to pass in range of 0 to 10'
-        }
+    min_avg_mark_to_pass: {
+      type: Number,
+      require: true,
+      validate: {
+        validator: (value) => value >= 0 && value <= 10,
+        message: "Min average mark to pass in range of 0 to 10",
+      },
     },
-    approved_date:{
-        type: String,
-        require: true
+    approved_date: {
+      type: String,
+      require: true,
     },
     description:{
         type: String,
@@ -90,22 +90,23 @@ const Syllabus = mongoose.model('Syllabus' , new Schema({
         type: [Object],
         require: true
     },
-    Material:{
-        type: [Object],
-        require: true
+    Material: {
+      type: [Object],
+      require: true,
     },
-    Session:{
-        type: [Object],
-        require: true
+    Session: {
+      type: [Object],
+      require: true,
     },
-    Assessment:{
-        type: [Object],
-        require: true
+    Assessment: {
+      type: [Object],
+      require: true,
     },
-    Question:{
-        type: [Object],
-        require: true
-    }
-}))
+    Question: {
+      type: [Object],
+      require: true,
+    },
+  })
+);
 
-export default Syllabus
+export default Syllabus;

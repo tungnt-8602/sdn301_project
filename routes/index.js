@@ -5,5 +5,6 @@ import syllabusRouter from './syllabus.js';
 export {
   userRouter, 
   curriculumRouter,
-  syllabusRouter
+  syllabusRouter,
+
 }
