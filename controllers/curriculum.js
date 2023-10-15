@@ -87,6 +87,30 @@ const searchCurriculums = async (req, res) => {
     }
 };
 
+
+const updateCurriculum = async (req, res) => {
+    try {
+      const curriculumExisted = await curriculumRepository.getById(req.params.id);
+  
+      const data = req.body
+      if (!curriculumExisted) {
+        return res.status(404).json({
+          message: "Curriculum not found."
+        });
+      }
+  
+      const curriculum = await curriculumRepository.updateCurriculum(curriculumExisted, data);
+      res.status(201).json({
+        message: 'Updated curriculum successfully.',
+        data: curriculum
+      });
+    } catch (error) {
+      res.status(500).json({
+        message: error.toString()
+      });
+    }
+  }
+
 //////////////////////////////////////////////////////[---PO---]///////////////////////////////////////////////////////////////////
 
 const addPo = async (req, res) => {
@@ -381,7 +405,7 @@ const getPloById = async (req, res) => {
             return res.status(404).json({ message: "Curriculum not found." });
         }
 
-        const ploId = req.params.poId;
+        const ploId = req.params.ploId;
         if (!ploId) {
             return res.status(404).json({ message: "Plo Id not found." });
         }
@@ -434,15 +458,15 @@ const updatePlo = async (req, res) => {
             });
         }
       
-        // Kiểm tra xem Po_name đã tồn tại và có cùng ID không
-        const existingPo = curriculum.plo.find((item) => item.plo_name === updatedPloData.plo_name && String(item._id) !== ploId);
-        if (existingPo) {
-            return res.status(400).json({ message: `${updatedPloData.po_name} already exists with a different ID` });
+        // Kiểm tra xem Plo_name đã tồn tại và có cùng ID không
+        const existingPlo = curriculum.plo.find((item) => item.plo_name === updatedPloData.plo_name && String(item._id) !== ploId);
+        if (existingPlo) {
+            return res.status(400).json({ message: `${updatedPloData.plo_name} already exists with a different ID` });
         }
 
-        // Kiểm tra giá trị của po_status (nếu được gửi trong yêu cầu)
+        // Kiểm tra giá trị của plo_status (nếu được gửi trong yêu cầu)
         if (updatedPloData.plo_status !== undefined) {
-            if (typeof updatedPloData.po_status !== 'boolean') {
+            if (typeof updatedPloData.plo_status !== 'boolean') {
                 return res.status(400).json({
                     status: 'ERR',
                     message: "Invalid plo_status value. It must be a boolean."
@@ -479,4 +503,5 @@ export default {
     getAllPlo,
     getPloById,
     updatePlo,
+    updateCurriculum,
 }

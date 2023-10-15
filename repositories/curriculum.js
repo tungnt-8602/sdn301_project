@@ -77,6 +77,38 @@ const addPo = async (id, poData) => {
   }
 };
 
+
+const updateCurriculum = async (curriculumId, updatedData) => {
+  try {
+    // Kiểm tra curriculum có tồn tại không
+    const checkCurriculum = await Curriculum.findOne({
+      _id: curriculumId
+    });
+
+    if (checkCurriculum === null) {
+      throw new Error('Không tìm thấy Curriculum');
+    }
+
+    // Kiểm tra xem `curriculum_code` không vượt quá 50 ký tự
+    if (updatedData.curriculum_code.length > 50) {
+      throw new Error('Curriculum code không được dài hơn 50 ký tự');
+    }
+
+    const updatedCurriculum = await Curriculum.findByIdAndUpdate(curriculumId, updatedData, { new: true });
+
+        return updatedCurriculum;
+
+   
+  } catch (error) {
+    console.error("Lỗi cập nhật Curriculum:", error);
+    throw error;
+  }
+};
+
+
+
+
+
 const getAllPo = async (id) => {
   try {
     const curriculum = await Curriculum.findById(id);
@@ -222,18 +254,22 @@ const getPloById = async (curriculumId, ploId) => {
       throw new Error("Curriculum not found");
     }
 
-    const plo = curriculum.plo.find((item) => String(item._id) === poId);
+    const plo = curriculum.plo.find((item) => String(item._id) === ploId);
+    console.log(plo);
     console.log(ploId);
     if (!plo) {
-      throw new Error("Po not found");
+      throw new Error("Plo not found");
     }
 
     return plo;
   } catch (error) {
-    console.error("Error fetching Po by ID:", error);
+    console.error("Error fetching Plo by ID:", error);
     throw error;
   }
 };
+
+//  getPloById ('65180b99637c98dcef23b671', '65180b99637c98dcef23b674')
+
 
 
 
@@ -311,5 +347,6 @@ export default {
   addPlo,
   getAllPlo,
   getPloById,
-  updatePlo
+  updatePlo,
+  updateCurriculum
 };
