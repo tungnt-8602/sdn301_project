@@ -87,24 +87,19 @@ const Syllabus = mongoose.model('Syllabus' , new Schema({
         require: true
     },
     LO:{
-        type: [Object],
-        require: true
+        type: [Object]
     },
     Material: {
-      type: [Object],
-      require: true,
+      type: [Object]
     },
     Session: {
-      type: [Object],
-      require: true,
+      type: [Object]
     },
     Assessment: {
-      type: [Object],
-      require: true,
+      type: [Object]
     },
     Question: {
-      type: [Object],
-      require: true,
+      type: [Object]
     },
   })
 );
