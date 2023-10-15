@@ -79,7 +79,7 @@ const Syllabus = mongoose.model('Syllabus' , new Schema({
         require: true,
         validate: {
             validator: (value) => value >= 0 && value <= 10,
-            message: 'Min average mark to pass in range of 0 to 10'
+            message: 'Number of credit in range of 0 to 10'
         }
     },
     degree_level:{
