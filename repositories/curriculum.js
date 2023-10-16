@@ -134,7 +134,6 @@ const getPoById = async (curriculumId, poId) => {
     }
 
     const po = curriculum.po.find((item) => String(item._id) === poId);
-    console.log(poId);
     if (!po) {
       throw new Error("Po not found");
     }
@@ -255,8 +254,6 @@ const getPloById = async (curriculumId, ploId) => {
     }
 
     const plo = curriculum.plo.find((item) => String(item._id) === ploId);
-    console.log(plo);
-    console.log(ploId);
     if (!plo) {
       throw new Error("Plo not found");
     }
