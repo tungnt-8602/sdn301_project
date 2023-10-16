@@ -205,7 +205,7 @@ const updatePo = async (curriculum, poId, updatedPoData) => {
     throw error;
   }
 };
-
+/////////////////////////////////////////////////////////////////////////////////////////////////
 const addPlo = async (id, ploData) => {
   try {
     const curriculum = await Curriculum.findById(id);
@@ -333,6 +333,7 @@ const updatePlo = async (curriculum, ploId, updatedPloData) => {
 
 
 export default {
+  
   getCurriculums,
   getById,
   addCurriculum,
