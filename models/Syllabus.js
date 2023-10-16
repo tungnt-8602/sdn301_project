@@ -1,24 +1,26 @@
 import mongoose, { ObjectId, Schema } from "mongoose";
 
-const Syllabus = mongoose.model(
-  "Syllabus",
-  new Schema({
-    id: { type: ObjectId },
-    name: {
-      type: String,
-      require: true,
-      validate: {
-        validator: (value) => value.length > 10,
-        message: "Length of syllabus name > 10",
-      },
+const Syllabus = mongoose.model('Syllabus' , new Schema({
+    id: {type: ObjectId},
+    syllabus_name:{
+        type: String,
+        require: true,
+        validate: {
+            validator: (value) => value.length > 10,
+            message: 'Length of syllabus name > 10'
+        }
     },
-    code: {
-      type: String,
-      require: true,
-      validate: {
-        validator: (value) => value.length > 3,
-        message: "Length of syllabus code > 3",
-      },
+    syllabus_Ename:{
+        type: String,
+        require: false
+    },
+    code:{
+        type: String,
+        require: true,
+        validate: {
+            validator: (value) => value.length > 3,
+            message: 'Length of syllabus code > 3'
+        }
     },
     time_allocation: {
       type: String,
@@ -68,25 +70,36 @@ const Syllabus = mongoose.model(
       type: String,
       require: true,
     },
-    LO: {
-      type: [Object],
-      require: true,
+    description:{
+        type: String,
+        require: true
+    },
+    no_credit:{
+        type: Number,
+        require: true,
+        validate: {
+            validator: (value) => value >= 0 && value <= 10,
+            message: 'Number of credit in range of 0 to 10'
+        }
+    },
+    degree_level:{
+        type: String,
+        require: true
+    },
+    LO:{
+        type: [Object]
     },
     Material: {
-      type: [Object],
-      require: true,
+      type: [Object]
     },
     Session: {
-      type: [Object],
-      require: true,
+      type: [Object]
     },
     Assessment: {
-      type: [Object],
-      require: true,
+      type: [Object]
     },
     Question: {
-      type: [Object],
-      require: true,
+      type: [Object]
     },
   })
 );

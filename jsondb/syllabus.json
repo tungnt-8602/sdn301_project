@@ -1,7 +1,8 @@
 [
     {
       "id": 1,
-      "name": "Front-End web development with React",
+      "syllabus_name": "Front-End web development with React",
+      "syllabus_Ename": "",
       "code": "FER201m",
       "time_allocation": "Study hour (150h) = 45h contact hours + 1h final exam + 104h self-study",
       "prerequisites": "WED201c",
@@ -13,6 +14,10 @@
       "note": "1) On-going Assessment\n- At least 2 progress tests: 15%\n- 8 labs: 20%\n- 1 assignment: 15%\n- 1 practi",
       "min_avg_mark_to_pass": 5,
       "approved_date": "2018-10-08",
+      "description":"Learn front-end web development for implementing a multi-platform solution:\n- This subject introduces an overview of client-side web UI frameworks, in particular Bootstrap. The student will learn about grids and responsive design; Bootstrap CSS and JavaScript components; CSS preprocessors, Less and Sass.\n- The basics of Node.js and NPM and task runners like Grunt and Gulp.\n- Explores Javascript based front-end application development, and in particular the React library: JavaScript ES6 for developing React application, Reactstrap for Bootstrap based responsive UI design, React components, React router and its use in developing single-page applications, designing controlled forms.\n- The student will be introduced to the Flux architecture and Redux. Explore various aspects of Redux and use it to develop React-Redux powered applications.\n- Use Fetch for client-server communication and the use of REST API on the server side.",
+      "no_credit": 3,
+      "degree_level": "Bachelor",
+      "semester": "",
       "LO": [
         {
           "CLO_Name": "CLO1",
@@ -218,7 +223,8 @@
     },
     {
       "id": 2,
-      "name": "Server-Side development with NodeJS, Express, and MongoDB",
+      "syllabus_name": "Server-Side development with NodeJS, Express, and MongoDB_Phát triển Server-Side với NodeJS, Express và MongoDB",
+      "syllabus_Ename": "Server-Side development with NodeJS, Express, and MongoDB",
       "code": "SDN301m",
       "time_allocation": "Study hour (150h) = 45h contact hours + 1 h final exam + 104h self-study",
       "prerequisites": "DBI202; FER201m",
@@ -230,6 +236,9 @@
       "note": "",
       "min_avg_mark_to_pass": 5,
       "approved_date": "2023-07-04",
+      "description":"This course tackles all the problems related to NodeJS-based web servers. Contents to be implemented include:\n- Overview of Web protocols: HTTP and HTTPS.\n- Introduction of NodeJS and NodeJS: Express modules to build a web server.\n- Deploy the application on a web server with basic CRUD operations. Work with NoSQL databases, specifically MongoDB and Mongoose, to access MongoDB from NodeJS.\n- Overview of REST and building a RESTful API.\n- Learn Authentication and security-related issues for web applications.",
+      "no_credit": 3,
+      "degree_level": "Bachelor",
       "LO": [
         {
           "CLO_Name": "CLO1",
@@ -435,7 +444,8 @@
     },
     {
       "id": 3,
-      "name": "C# and .NET",
+      "syllabus_name": "C# and .NET",
+      "syllabus_Ename": "",
       "code": "PRN292",
       "time_allocation": "Sessions: 33\nLectures: 14\nLab/Tutorials: 19\nSelf-study: 120 hours",
       "prerequisites": "PRO192 & DBI201",
@@ -447,6 +457,9 @@
       "note": "",
       "min_avg_mark_to_pass": 5,
       "approved_date": "2017-12-04",
+      "description":"",
+      "no_credit": 3,
+      "degree_level": "Bachelor",
       "LO": [
         {
           "CLO_Name": "CLO1.1",
@@ -684,7 +697,8 @@
     },
     {
       "id": 4,
-      "name": "Python programming",
+      "syllabus_name": "Python programming_Lập trình Python",
+      "syllabus_Ename": "Python programming",
       "code": "PRP201c",
       "time_allocation": "Online: 60 hours + 5 slot offline",
       "prerequisites": "Recommend to have knowledge of basic programming in advance",
@@ -696,6 +710,9 @@
       "note": "",
       "min_avg_mark_to_pass": 5,
       "approved_date": "2023-03-08",
+      "description":"This course helps students learn and practice\n1. C# language,\n2. .NET platform, including.NET framework, data access, ADO.NET, WinForms, WebForms, and related issues.",
+      "no_credit": 3,
+      "degree_level": "Bachelor",
       "LO":[
           {
               "CLO_Name": "CLO1",
@@ -891,7 +908,8 @@
     },
     {
       "id": 5,
-      "name": "AI with Tensorflow",
+      "syllabus_name": "AI with Tensorflow_AI với Tensorflow",
+      "syllabus_Ename": "AI with Tensorflow",
       "code": "AIT301",
       "time_allocation": "Study hour (150h) = 45h contact hours + 1h final exam + 104h self-study",
       "prerequisites": "MAD101, CSD201, MAS291, PRP201c",
@@ -903,6 +921,9 @@
       "note": "",
       "min_avg_mark_to_pass": 5,
       "approved_date": "2022-12-22",
+      "description":"The developing of cloud computing, big data, open source software, and improved algorithms kicked Artificial Intelligence (AI) into the mainstream of focus in technologies nowadays. AI technologies are fundamentally changing the ways we work, live, and manage businesses. This course is designed to present to student the coherent body of ideas and methods which were contributed to the development of Artificial Intelligence discipline. Student will be acquaint with the basic programs in the field and their underlying theory and will explore this through problem-solving paradigms, logic and theorem proving, language and image understanding, search and control methods and learning. This course aims to create following results on students:\n1. Graduates will have ability to work with Tensor Flow machine learning library as a framework in developing AI their applications\nMO-1a: An ability to build models by plugging together building blocks with the user-friendly Keras sequential API.\nMO-1b: An ability to build models then write the forward and backward pass, create custom layers, activations, and training loops by using a define-by-run interface for customization and advanced research from Keras functional and subclassing APIs.\n2. Graduates will have a broad understanding of the fundamental theories, concepts, and applications of Artificial Intelligence.\nMO-2a: An ability to apply knowledge of Artificial Intelligence appropriate to the discipline.\nMO-2b: An ability to analyze a problem and identify and define the AI requirements appropriate to its solution.\nMO-2c: An ability to design, implement, and evaluate an AI system to meet desired needs.\n3. Graduates will be prepared for careers in Artificial Intelligence field.\nMO-3a: An ability to use current methodologies, techniques, skills, and tools necessary for AI practice.\n4. Graduates will communicate effectively, both orally and in writing of Artificial Intelligence-related works.\nMO-4a: An ability to communicate effectively in AI-related works.\nMO-4b: An ability to discuss about how to control and to manage APIs of Tensor Flow library effectively.",
+      "no_credit": 3,
+      "degree_level": "Bachelor",
       "LO": [
         {
           "CLO_Name": "CLO1",
