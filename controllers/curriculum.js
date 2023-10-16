@@ -161,33 +161,6 @@ const addPo = async (req, res) => {
     }
 };
 
-// const addPo = async (req, res) => {
-//     try {
-//         const { po_name, po_description, po_status } = req.body;
-//         const curriculum = await curriculumRepository.getById(req.params.id);
-
-//         if (!curriculum) {
-//             return res.status(404).json({ message: "Curriculum not found." });
-//         }
-
-//         const defaultPoStatus = po_status || false;
-
-//         const createdPo = await curriculumRepository.addPo(curriculum, {
-//             name: po_name,
-//             description: po_description,
-//             status: defaultPoStatus,
-//         });
-
-//         res.status(201).json({
-//             message: 'Add po successfully.',
-//             data: createdPo
-//         });
-//     } catch (error) {
-//         res.status(500).json({
-//             message: error.toString()
-//         });
-//     }
-// };
 
 const getAllPo = async (req, res) => {
     try {
@@ -375,7 +348,6 @@ const addPlo = async (req, res) => {
 //             message: error.toString()
 //         });
 //     }
-// };
 
 const getAllPlo = async (req, res) => {
     try {
