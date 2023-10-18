@@ -6,5 +6,4 @@ export {
     userController, 
     curriculumController,
     syllabusController,
-
 }

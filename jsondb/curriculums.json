@@ -24,12 +24,44 @@
       "_id": {
         "$oid": "65180b99637c98dcef23b673"
       }
+    },
+    {
+      "po_name": "PO1",
+      "po_description": "Describe the legal system law",
+      "po_status": false,
+      "_id": {
+        "$oid": "652373ac21b19a96248eeef1"
+      }
+    },
+    {
+      "po_name": "PO2 update",
+      "po_description": "PO2 update",
+      "po_status": false,
+      "_id": {
+        "$oid": "65266620338e0bc55e7903bb"
+      }
+    },
+    {
+      "po_name": "PO3 update",
+      "po_description": "PO3 update",
+      "po_status": false,
+      "_id": {
+        "$oid": "6526668c338e0bc55e7903e0"
+      }
+    },
+    {
+      "po_name": "PO4 update",
+      "po_description": "PO4 update",
+      "po_status": false,
+      "_id": {
+        "$oid": "6527483f43332e73704027ac"
+      }
     }
   ],
   "plo": [
     {
-      "plo_name": "PLO Name 1",
-      "plo_description": "PLO Detail 1",
+      "plo_name": "PLO2",
+      "plo_description": "PLO Detail 2",
       "_id": {
         "$oid": "65180b99637c98dcef23b674"
       }
@@ -40,9 +72,25 @@
       "_id": {
         "$oid": "65180b99637c98dcef23b675"
       }
+    },
+    {
+      "plo_name": "PLO1",
+      "plo_description": "aaaa",
+      "plo_status": true,
+      "_id": {
+        "$oid": "65294a3c5de08f9059d63fb0"
+      }
+    },
+    {
+      "plo_name": "PLO5",
+      "plo_description": "PLO5",
+      "plo_status": false,
+      "_id": {
+        "$oid": "65294a5d5de08f9059d63ff3"
+      }
     }
   ],
-  "__v": 0
+  "__v": 6
 },
 {
   "_id": {
@@ -89,6 +137,116 @@
     }
   ],
   "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65184e4579a72f34b2d9622d"
+  },
+  "curriculum_code": "duc test curriculum_code",
+  "name": "duc test name",
+  "english_name": "duc test english_name",
+  "description": "duc test description",
+  "decision": "duc test decision",
+  "status": true,
+  "subject_id": [],
+  "combo_id": [],
+  "po": [],
+  "plo": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "651a53e6139347b9015f4d23"
+  },
+  "curriculum_code": "duc test 2",
+  "name": "duc test 2",
+  "english_name": "duc test 2",
+  "description": "aaaa",
+  "decision": "duc test 2",
+  "status": true,
+  "subject_id": [],
+  "combo_id": [],
+  "po": [],
+  "plo": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "651c1708d6c8cfca76cacea0"
+  },
+  "curriculum_code": "duc test 3",
+  "name": "duc test 3",
+  "english_name": "duc test 3",
+  "description": "duc test 3",
+  "decision": "duc test 3",
+  "status": true,
+  "subject_id": [],
+  "combo_id": [],
+  "po": [],
+  "plo": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "651ccd68b7f5ff12c6cae919"
+  },
+  "curriculum_code": "SDN 11111111 test",
+  "name": "Sample SDN 1",
+  "english_name": "English Name 1",
+  "description": "1243",
+  "decision": "test update",
+  "status": true,
+  "subject_id": [],
+  "combo_id": [],
+  "po": [],
+  "plo": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6524aa17aa445fda99daa913"
+  },
+  "curriculum_code": "test 2",
+  "name": "test 2",
+  "english_name": "test 2",
+  "description": "test",
+  "decision": "test 2",
+  "status": true,
+  "subject_id": [],
+  "combo_id": [],
+  "po": [],
+  "plo": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6524ab0941b45f4fc0536180"
+  },
+  "curriculum_code": "test 3",
+  "name": "test 3",
+  "english_name": "test 3",
+  "description": "test 3",
+  "decision": "test 3",
+  "status": true,
+  "subject_id": [],
+  "combo_id": [],
+  "po": [],
+  "plo": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "652661bf338e0bc55e7901be"
+  },
+  "curriculum_code": "test 4",
+  "name": "test 4",
+  "english_name": "test 4",
+  "description": "test 4",
+  "decision": "test 4",
+  "status": true,
+  "subject_id": [],
+  "combo_id": [],
+  "po": [],
+  "plo": [],
+  "__v": 0
 }]
-
-

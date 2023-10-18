@@ -75,7 +75,7 @@ const getById = async (id) => {
 
 const getByNameAndCode = async (name, code) => {
   const syllabus = await Syllabus.findOne({
-    $or: [{ name: name }, { code: code }],
+    $or: [{ syllabus_name: name }, { code: code }],
   }).exec();
   return syllabus;
 };
@@ -84,7 +84,7 @@ const searchByKey = async (key, page, size) => {
   const syllabus = await Syllabus.find({
     $or: [
       { code: { $regex: new RegExp(key, "i") } },
-      { name: { $regex: new RegExp(key, "i") } },
+      { syllabus_name: { $regex: new RegExp(key, "i") } },
       { prerequisites: { $regex: new RegExp(key, "i") } },
     ],
   })
@@ -97,7 +97,7 @@ const totalSearchByKey = async (key) => {
   const syllabus = await Syllabus.countDocuments({
     $or: [
       { code: { $regex: new RegExp(key, "i") } },
-      { name: { $regex: new RegExp(key, "i") } },
+      { syllabus_name: { $regex: new RegExp(key, "i") } },
       { prerequisites: { $regex: new RegExp(key, "i") } },
     ],
   });

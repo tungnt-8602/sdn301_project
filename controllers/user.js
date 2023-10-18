@@ -16,25 +16,84 @@ const login = async (req, res) => {
         if (!user) {
             return res.status(401).json({ message: "Invalid email or password." });
         } else if (user.status === false) {
-            return res.status(401).json({ message: "Your account is disable." });
+            return res.status(401).json({ message: "Your account is disabled." });
         }
         const isPasswordValid = await bcrypt.compare(password, user.password);
         if (!isPasswordValid) {
             return res.status(401).json({ message: "Invalid email or password." });
         }
         const token = jwt.sign(
-            { userId: user.id, email: user.email, role: user.role },
+            { userId: user._id, email: user.email, role: user.role },
             process.env.SECRET_KEY_JWT,
-            { expiresIn: "1h" }
+            { expiresIn: "30s" }
         );
 
-        res.status(200).json({ message: "Login successfully.", token });
+        const refreshToken = jwt.sign(
+            { userId: user._id, email: user.email, role: user.role },
+            process.env.SECRET_REFRESH_KEY_JWT,
+            { expiresIn: "7d" }
+        );
+
+        res.cookie('refreshToken', refreshToken, {
+            httpOnly: true,
+            maxAge: 7 * 24 * 60 * 60 * 1000
+        })
+
+        res.status(200).json({
+            message: "Login successfully.",
+            token,
+            user: {
+                id: user._id,
+                username: user.username,
+                email: user.email,
+                role: user.role,
+                status: user.status
+            }
+        });
     } catch (error) {
         res.status(500).json({
             error: error.toString(),
         });
     }
 };
+
+const getToken = async (req, res) => {
+    try {
+        const refreshToken = req.cookies.refreshToken;
+        const decodedRefreshToken = jwt.verify(refreshToken, process.env.SECRET_REFRESH_KEY_JWT);
+        const { userId, email, role } = decodedRefreshToken;
+
+        const newAccessToken = jwt.sign(
+            { userId, email, role },
+            process.env.SECRET_KEY_JWT,
+            { expiresIn: "30s" }
+        );
+
+        const newRefreshToken = jwt.sign(
+            { userId, email, role },
+            process.env.SECRET_REFRESH_KEY_JWT,
+            { expiresIn: "7d" }
+        );
+
+        res.cookie('refreshToken', newRefreshToken, {
+            httpOnly: true,
+            maxAge: 7 * 24 * 60 * 60 * 1000
+        });
+        
+        res.status(200).json({
+            message: "Token refreshed successfully.",
+            token: newAccessToken,
+        });
+    } catch (error) {
+        console.error("Error refreshing token:", error);
+        if (error.name === 'TokenExpiredError') {
+            return res.status(401).json({ message: "Token has expired. Please re-login." });
+        } else {
+            return res.status(401).json({ message: "Invalid refresh token." });
+        }
+    }
+};
+
 
 const createNewAccount = async (req, res) => {
     const errors = validationResult(req);
@@ -82,7 +141,7 @@ const ableAndDisable = async (req, res) => {
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
     }
-    const {id} = req.params;
+    const { id } = req.params;
     try {
         const updatedUser = await userRepository.ableAndDisable(id);
         if (!updatedUser) {
@@ -92,14 +151,37 @@ const ableAndDisable = async (req, res) => {
             message: 'Update status successfully.',
             data: updatedUser
         });
-    } catch (err) {
+    } catch (error) {
         res.status(500).json({ error: error.toString() });
     }
 }
+
+const logout = async (req, res) => {
+    try {
+        res.clearCookie('refreshToken', { httpOnly: true, maxAge: 0, path: '/', domain: 'localhost' });
+        res.status(200).json({ message: "Logged out successfully." });
+    } catch (error) {
+        res.status(500).json({ error: error.toString() });
+    }
+};
+
+const searchUsers = async (req, res) => {
+    const { query } = req.query;
+
+    try {
+        const users = await userRepository.searchUsers(query);
+        res.status(200).json({ users });
+    } catch (error) {
+        res.status(500).json({ error: error.toString() });
+    }
+};
 
 export default {
     login,
     createNewAccount,
     getAllAccount,
-    ableAndDisable
+    ableAndDisable,
+    getToken,
+    logout,
+    searchUsers
 }
