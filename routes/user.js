@@ -35,4 +35,6 @@ userRouter.get('/logout', (req, res) => {
   userController.logout(req, res);
 })
 
+userRouter.get('/search', isAuthenticated, Authorization.isAdmin, userController.searchUsers);
+
 export default userRouter

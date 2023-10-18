@@ -82,9 +82,25 @@ const ableAndDisable = async (userId) => {
     }
 }
 
+const searchUsers = async (query) => {
+    try {
+        const users = await User.find({
+            $or: [
+                { username: { $regex: new RegExp(query, 'i') } },
+                { email: { $regex: new RegExp(query, 'i') } },
+            ],
+        }).exec();
+
+        return users;
+    } catch (error) {
+        throw error;
+    }
+};
+
 export default {
     findByEmail,
     createNewAccount,
     getAllAccount,
-    ableAndDisable
+    ableAndDisable,
+    searchUsers
 }

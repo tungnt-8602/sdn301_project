@@ -1,3 +1,104 @@
+import mongoose, { Schema, ObjectId } from "mongoose";
+// Session_Session: sessionData.Session,
+//       Session_topic: sessionData.Topic,
+//       Session_LearningType: sessionData.LearningType,
+//       Session_Lo: sessionData.Lo,
+//       Session_ITU: sessionData.Itu,
+//       Session_StudentMaterials: sessionData.StudentMaterials,
+//       Session_SDownload: sessionData.SDownload,
+//       Session_StudentTask: sessionData.StudentTask,
+//       Session_URLs: sessionData.URLs,
+const SessionSchema = new Schema({
+  id: { type: mongoose.Schema.Types.ObjectId },
+  Session_Session: {
+    type: String,
+    required: false,
+  },
+  Session_topic: {
+    type: String,
+    required: false,
+  },
+  Session_LearningType: {
+    type: String,
+    required: false,
+  },
+  Session_Lo: {
+    type: Array,
+    required: false,
+  },
+  Session_ITU: {
+    type: Array,
+    required: false,
+  },
+  Session_StudentMaterials: {
+    type: String,
+    required: false,
+  },
+  Session_SDownload: {
+    type: String,
+    required: false,
+  },
+  Session_StudentTask: {
+    type: String,
+    required: false,
+  },
+  Session_URLs: {
+    type: String,
+    required: false,
+  },
+});
+
+const AssessmentSchema = new Schema({
+  id: { type: mongoose.Schema.Types.ObjectId },
+  Assessment_Category: {
+    type: String,
+    required: false,
+  },
+  Assessment_Type: {
+    type: String,
+    required: false,
+  },
+  Assessment_Part: {
+    type: Number,
+    required: false,
+  },
+  Assessment_Weight: {
+    type: Number,
+    required: false,
+  },
+  Assessment_CompletionCriteria: {
+    type: String,
+    required: false,
+  },
+  Assessment_Duration: {
+    type: String,
+    required: false,
+  },
+  Assessment_CLO: {
+    type: String,
+    required: false,
+  },
+  Assessment_QuestionType: {
+    type: String,
+    required: false,
+  },
+  Assessment_NoQuestion: {
+    type: String,
+    required: false,
+  },
+  Assessment_KnowledgeAndSkill: {
+    type: String,
+    required: false,
+  },
+  Assessment_GradingGuide: {
+    type: String,
+    required: false,
+  },
+  Assessment_Note: {
+    type: String,
+    required: false,
+  },
+});
 import mongoose, { ObjectId, Schema } from "mongoose";
 
 const LO = new Schema({
@@ -62,27 +163,29 @@ const Material = new Schema({
     }
 });
 
-const Syllabus = mongoose.model('Syllabus' , new Schema({
-    id: {type: ObjectId},
-    syllabus_name:{
-        type: String,
-        require: true,
-        validate: {
-            validator: (value) => value.length > 10,
-            message: 'Length of syllabus name > 10'
-        }
+const Syllabus = mongoose.model(
+  "Syllabus",
+  new Schema({
+    _id: { type: mongoose.Schema.Types.ObjectId },
+    syllabus_name: {
+      type: String,
+      require: true,
+      validate: {
+        validator: (value) => value.length > 10,
+        message: "Length of syllabus name > 10",
+      },
     },
-    syllabus_Ename:{
-        type: String,
-        require: false
+    syllabus_Ename: {
+      type: String,
+      require: false,
     },
-    code:{
-        type: String,
-        require: true,
-        validate: {
-            validator: (value) => value.length > 3,
-            message: 'Length of syllabus code > 3'
-        }
+    code: {
+      type: String,
+      require: true,
+      // validate: {
+      //   validator: (value) => value.length > 3,
+      //   message: "Length of syllabus code > 3",
+      // },
     },
     time_allocation: {
       type: String,
@@ -132,22 +235,23 @@ const Syllabus = mongoose.model('Syllabus' , new Schema({
       type: String,
       require: true,
     },
-    description:{
-        type: String,
-        require: true
+    description: {
+      type: String,
+      require: true,
     },
-    no_credit:{
-        type: Number,
-        require: true,
-        validate: {
-            validator: (value) => value >= 0 && value <= 10,
-            message: 'Number of credit in range of 0 to 10'
-        }
+    no_credit: {
+      type: Number,
+      require: true,
+      validate: {
+        validator: (value) => value >= 0 && value <= 10,
+        message: "Number of credit in range of 0 to 10",
+      },
     },
-    degree_level:{
-        type: String,
-        require: true
+    degree_level: {
+      type: String,
+      require: true,
     },
+
     LO:{
       type: [LO]
     },
@@ -155,13 +259,13 @@ const Syllabus = mongoose.model('Syllabus' , new Schema({
       type: [Material]
     },
     Session: {
-      type: [Object]
+      type: [SessionSchema],
     },
     Assessment: {
-      type: [Object]
+      type: [AssessmentSchema],
     },
     Question: {
-      type: [Object]
+      type: [Object],
     },
   })
 );
