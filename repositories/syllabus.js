@@ -6,6 +6,11 @@ const create = async (syllabus) => {
   return result;
 };
 
+const getSyllabusByCode = async (code) => {
+  const syllabus = await Syllabus.findOne({ code }).exec();
+  return syllabus;
+};
+
 const countSyllabus = async () => {
   return await Syllabus.countDocuments();
 };
@@ -63,6 +68,8 @@ const update = async (id, updateData) => {
 
 const getById = async (id) => {
   const syllabus = await Syllabus.findById(id).exec();
+  console.log("id: ", id);
+  console.log(syllabus);
   return syllabus;
 };
 
@@ -102,7 +109,235 @@ const remove = async (id) => {
   return result;
 };
 
+const addSession = async (id, sessionData) => {
+  try {
+    const syllabus = await Syllabus.findById(id);
+    // console.log("Syllabus: ", syllabus);
+    if (!syllabus) {
+      throw new Error("Syllabus not found");
+    }
+
+    const newSession = {
+      Session_Session: sessionData.Session,
+      Session_topic: sessionData.Topic,
+      Session_LearningType: sessionData.LearningType,
+      Session_Lo: sessionData.Lo,
+      Session_ITU: sessionData.Itu,
+      Session_StudentMaterials: sessionData.StudentMaterials,
+      Session_SDownload: sessionData.SDownload,
+      Session_StudentTask: sessionData.StudentTask,
+      Session_URLs: sessionData.URLs,
+    };
+
+    syllabus.Session.push(newSession);
+
+    await syllabus.save();
+    console.log("aaaaaaaaaaaaaaa: ", newSession);
+    return newSession;
+  } catch (error) {
+    console.error("Error adding Session:", error);
+    throw error;
+  }
+};
+
+const getAllSession = async (id) => {
+  try {
+    const syllabus = await Syllabus.findById(id);
+
+    if (!Syllabus) {
+      throw new Error("Syllasbus not found");
+    }
+
+    const allSession = syllabus.Session;
+    return allSession;
+  } catch (error) {
+    console.error("Error fetching all Session:", error);
+    throw error;
+  }
+};
+
+const getSessionById = async (syllabusId, sessionId) => {
+  try {
+    const syllabus = await Syllabus.findById(syllabusId);
+    console.log("Session ID Repo", sessionId);
+    if (!syllabus) {
+      throw new Error("syllabus not found");
+    }
+
+    const session = syllabus.Session.find(
+      (item) => String(item._id) === sessionId
+    );
+    console.log(session);
+    if (!session) {
+      throw new Error("Session not found");
+    }
+
+    return session;
+  } catch (error) {
+    console.error("Error fetching Session by ID:", error);
+    throw error;
+  }
+};
+
+const updateSession = async (syllabus, sessionId, updatedSessionData) => {
+  try {
+    console.log("Session updated:", updatedSessionData);
+    const sessionToUpdate = syllabus.Session.find(
+      (item) => String(item._id) === sessionId
+    );
+
+    // console.log("Session find", sessionToUpdate);
+
+    if (!sessionToUpdate) {
+      throw new Error("Session not found");
+    }
+
+    console.log("Session number", sessionToUpdate.Session_Session);
+    sessionToUpdate.Session_Session = updatedSessionData.Session_Session;
+    sessionToUpdate.Session_topic = updatedSessionData.Session_topic;
+    sessionToUpdate.Session_LearningType =
+      updatedSessionData.Session_LearningType;
+    sessionToUpdate.Session_Lo = updatedSessionData.Session_Lo;
+    sessionToUpdate.Session_ITU = updatedSessionData.Session_ITU;
+    sessionToUpdate.Session_StudentMaterials =
+      updatedSessionData.Session_StudentMaterials;
+    sessionToUpdate.Session_SDownload = updatedSessionData.Session_SDownload;
+    sessionToUpdate.Session_StudentTask =
+      updatedSessionData.Session_StudentTask;
+    sessionToUpdate.Session_URLs = updatedSessionData.Session_URLs;
+    // console.log("Session update before save", sessionToUpdate);
+    await syllabus.save();
+    // console.log("Session update after save", sessionToUpdate);
+    return sessionToUpdate;
+  } catch (error) {
+    console.error("Error updating session:", error);
+    throw error;
+  }
+};
+//Assessment
+const getAllAssessment = async (id) => {
+  try {
+    const syllabus = await Syllabus.findById(id);
+    // console.log("Syllabus: ", syllabus);
+    if (!Syllabus) {
+      throw new Error("Syllasbus not found");
+    }
+
+    const allAssessment = syllabus.Assessment;
+    return allAssessment;
+  } catch (error) {
+    console.error("Error fetching all Session:", error);
+    throw error;
+  }
+};
+
+const getAssessmentById = async (syllabusId, assessmentId) => {
+  try {
+    const syllabus = await Syllabus.findById(syllabusId);
+    console.log("Session ID Repo", assessmentId);
+    if (!syllabus) {
+      throw new Error("syllabus not found");
+    }
+
+    const assessment = syllabus.Assessment.find(
+      (item) => String(item._id) === assessmentId
+    );
+    console.log("Syllabus Repo: ", syllabus);
+    console.log("Assessment by id:", assessment);
+    if (!assessment) {
+      throw new Error("Assessment not found");
+    }
+
+    return assessment;
+  } catch (error) {
+    console.error("Error fetching Session by ID:", error);
+    throw error;
+  }
+};
+
+const updateAssessment = async (
+  syllabus,
+  assessmentId,
+  updatedAssessmentData
+) => {
+  try {
+    // console.log("Assessment updated:", updatedAssessmentData);
+    const assessmentToUpdate = syllabus.Assessment.find(
+      (item) => String(item._id) === assessmentId
+    );
+
+    // console.log("Session find", sessionToUpdate);
+
+    if (!assessmentToUpdate) {
+      throw new Error("Assessment not found");
+    }
+
+    assessmentToUpdate.Assessment_Category =
+      updatedAssessmentData.Assessment_Category;
+    assessmentToUpdate.Assessment_Type = updatedAssessmentData.Assessment_Type;
+    assessmentToUpdate.Assessment_Part = updatedAssessmentData.Assessment_Part;
+    assessmentToUpdate.Assessment_Weight =
+      updatedAssessmentData.Assessment_Weight;
+    assessmentToUpdate.Assessment_CompletionCriteria =
+      updatedAssessmentData.Assessment_CompletionCriteria;
+    assessmentToUpdate.Assessment_Duration =
+      updatedAssessmentData.Assessment_Duration;
+    assessmentToUpdate.Assessment_CLO = updatedAssessmentData.Assessment_CLO;
+    assessmentToUpdate.Assessment_QuestionType =
+      updatedAssessmentData.Assessment_QuestionType;
+    assessmentToUpdate.Assessment_NoQuestion =
+      updatedAssessmentData.Assessment_NoQuestion;
+    assessmentToUpdate.Assessment_KnowledgeAndSkill =
+      updatedAssessmentData.Assessment_KnowledgeAndSkill;
+    assessmentToUpdate.Assessment_GradingGuide =
+      updatedAssessmentData.Assessment_GradingGuide;
+    assessmentToUpdate.Assessment_Note = updatedAssessmentData.Assessment_Note;
+    // console.log("Session update before save", sessionToUpdate);
+    await syllabus.save();
+    // console.log("Session update after save", sessionToUpdate);
+    return assessmentToUpdate;
+  } catch (error) {
+    console.error("Error updating assessment:", error);
+    throw error;
+  }
+};
+
+const addAssessment = async (id, assessmentData) => {
+  try {
+    const syllabus = await Syllabus.findById(id);
+    // console.log("Syllabus: ", syllabus);
+    if (!syllabus) {
+      throw new Error("Syllabus not found");
+    }
+
+    const newAssessment = {
+      Assessment_Category: assessmentData.Category,
+      Assessment_Type: assessmentData.Type,
+      Assessment_Part: assessmentData.Part,
+      Assessment_Weight: assessmentData.Weight,
+      Assessment_CompletionCriteria: assessmentData.CompletionCriteria,
+      Assessment_Duration: assessmentData.Duration,
+      Assessment_CLO: assessmentData.Clo,
+      Assessment_QuestionType: assessmentData.QuestionType,
+      Assessment_NoQuestion: assessmentData.NoQuestion,
+      Assessment_KnowledgeAndSkill: assessmentData.KnowledgeAndSkill,
+      Assessment_GradingGuide: assessmentData.GradingGuide,
+      Assessment_Note: assessmentData.Note,
+    };
+
+    syllabus.Assessment.push(newAssessment);
+
+    await syllabus.save();
+    // console.log("aaaaaaaaaaaaaaa: ", newSession);
+    return newAssessment;
+  } catch (error) {
+    console.error("Error adding Assessment:", error);
+    throw error;
+  }
+};
+
 export default {
+  getSyllabusByCode,
   countSyllabus,
   create,
   getByNameAndCode,
@@ -113,4 +348,12 @@ export default {
   searchByKey,
   totalSearchByKey,
   countSyllabus,
+  getAllSession,
+  getSessionById,
+  addSession,
+  updateSession,
+  getAllAssessment,
+  getAssessmentById,
+  updateAssessment,
+  addAssessment,
 };

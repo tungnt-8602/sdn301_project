@@ -1,1157 +1,316 @@
-[
-    {
-      "id": 1,
-      "name": "Front-End web development with React",
-      "code": "FER201m",
-      "time_allocation": "Study hour (150h) = 45h contact hours + 1h final exam + 104h self-study",
-      "prerequisites": "WED201c",
-      "student_tasks": "- Students must attend more than 80% of contact slots in order to be accepted to the final examination.\n- Student is responsible to do all exercises given by instructor in class or at home and submit on time\n- Constantly follow announcements on FU CMS at https://cmshn.fpt.edu.vn/ and FU FLM at https://flm.fpt.edu.vn/ for up-to-date course information regarding assignment submission and feedback on assignments and project work.",
-      "tools": "- Visual Studio Code (https://code.visualstudio.com)\n- Internet",
-      "scoring_scale": 10,
-      "is_approved": true,
-      "decision": "1",
-      "note": "1) On-going Assessment\n- At least 2 progress tests: 15%\n- 8 labs: 20%\n- 1 assignment: 15%\n- 1 practi",
-      "min_avg_mark_to_pass": 5,
-      "approved_date": "2018-10-08",
-      "LO": [
-        {
-          "CLO_Name": "CLO1",
-          "CLO_Details": "Describe Front-end Web UI Frameworks"
-        },
-        {
-          "CLO_Name": "CLO2",
-          "CLO_Details": "Explain the Bootstrap CSS Components"
-        },
-        {
-          "CLO_Name": "CLO3",
-          "CLO_Details": "Explain the Bootstrap Javascript Components"
-        },
-        {
-          "CLO_Name": "CLO4",
-          "CLO_Details": "Describe about Web tools"
-        },
-        {
-          "CLO_Name": "CLO5",
-          "CLO_Details": "Install React application, create a React component"
-        },
-        {
-          "CLO_Name": "CLO6",
-          "CLO_Details": "Discuss about React Router and Single Page Applications"
-        },
-        {
-          "CLO_Name": "CLO7",
-          "CLO_Details": "Discuss about React Forms, Flow Architecture and Introduction to Redux"
-        },
-        {
-          "CLO_Name": "CLO8",
-          "CLO_Details": "Discuss about more Redux and Client-Server Communication"
-        }
-      ],
-      "Material": [
-        {
-          "MaterialDescription": "https://www.coursera.org/learn/bootstrap-4/home/welcome",
-          "Author": "",
-          "Publisher": "Coursera",
-          "PublishedDate": "",
-          "Edition": "",
-          "ISBN": "",
-          "IsMainMaterial": true,
-          "IsHardCopy": false,
-          "IsOnline": true,
-          "Note": "MOOC1: Front-End Web UI Frameworks and Tools: Bootstrap 4"
-        },
-        {
-          "MaterialDescription": "https://www.coursera.org/learn/front-end-react/home/welcome",
-          "Author": "",
-          "Publisher": "Coursera",
-          "PublishedDate": "",
-          "Edition": "",
-          "ISBN": "",
-          "IsMainMaterial": true,
-          "IsHardCopy": false,
-          "IsOnline": true,
-          "Note": "MOOC2: Front-End Web Development with React"
-        },
-        {
-          "MaterialDescription": "Pro MERN Stack - Full Stack Web App Development with Mongo, Express, React, and Node",
-          "Author": "Vasan Subramanian",
-          "Publisher": "Apress",
-          "PublishedDate": "2019",
-          "Edition": "2nd",
-          "ISBN": "978-1484243909",
-          "IsMainMaterial": true,
-          "IsHardCopy": true,
-          "IsOnline": false,
-          "Note": ""
-        }
-      ],
-      "Session": [
-        {
-          "Session": 1,
-          "Topic": "1.1. Course Introduction",
-          "Learning-Teaching Type": "Offline",
-          "LO": ["LO1"],
-          "ITU": "I",
-          "Student Materials": "Slides",
-          "S-Download": "https://drive.google.com/drive/folders/1pG-FQU9MMJaJs8029-59sseMu4Jc2ZGP?usp=sharing",
-          "Student's Tasks": "",
-          "URLs": ""
-        },
-        {
-          "Session": 2,
-          "Topic": "1.2. Full Stack Web Development: The Big Picture",
-          "Learning-Teaching Type": "Offline",
-          "LO": ["LO1"],
-          "ITU": "I",
-          "Student Materials": "Slides",
-          "S-Download": "",
-          "Student's Tasks": "",
-          "URLs": ""
-        },
-        {
-          "Session": 3,
-          "Topic": "2.1. Git",
-          "Learning-Teaching Type": "Offline",
-          "LO": ["LO2"],
-          "ITU": ["I", "T", "U"],
-          "Student Materials": "Slides",
-          "S-Download": "",
-          "Student's Tasks": "",
-          "URLs": ""
-        },
-        {
-          "Session": 4,
-          "Topic": "2.2. Node.js and NPM",
-          "Learning-Teaching Type": "Offline",
-          "LO": ["LO2"],
-          "ITU": ["I", "T", "U"],
-          "Student Materials": "Slides",
-          "S-Download": "",
-          "Student's Tasks": "",
-          "URLs": ""
-        },
-        {
-          "Session": 5,
-          "Topic": "3.1. Bootstrap Introduction",
-          "Learning-Teaching Type": "Offline",
-          "LO": ["LO3", "LO4"],
-          "ITU": ["I", "T", "U"],
-          "Student Materials": "Slides",
-          "S-Download": "",
-          "Student's Tasks": "",
-          "URLs": ""
-        }
-      ],
-      "Assessment": [
-        {
-          "Category": "Assignment",
-          "Type": "on-going",
-          "Part": 1,
-          "Weight": 15.0,
-          "Completion Criteria": ">0",
-          "Duration": "Guided and reviewed in tutorial sesions; Cont. at home",
-          "CLO": "Problem(s) to solve by programming (LO1 - LO8)",
-          "Question Type": "Individual or team work, guided by instructor, submission by a given deadline",
-          "No Question": "",
-          "Knowledge and Skill": "",
-          "Grading Guide": "",
-          "Note": ""
-        },
-        {
-          "Category": "Labs",
-          "Type": "on-going",
-          "Part": 8,
-          "Weight": 20.0,
-          "Completion Criteria": ">0",
-          "Duration": "Guided and reviewed in tutorial sesions; Cont. at home",
-          "CLO": "",
-          "Question Type": "practical exercises",
-          "No Question": "Lab 1: LO1\nLab 2: LO2\nLab 3: LO3\nLab 4: LO4\nLab 5: LO5\nLab 6: LO6\nLab 7: LO7\nLab 8: LO8",
-          "Knowledge and Skill": "",
-          "Grading Guide": "",
-          "Note": "Teachers support tutorials and students do them by themselves"
-        },
-        {
-          "Category": "Practical Exam",
-          "Type": "on-going",
-          "Part": 1,
-          "Weight": 20.0,
-          "Completion Criteria": "4",
-          "Duration": "85'",
-          "CLO": "Problem(s) to solve by programming (LO1 - LO8)",
-          "Question Type": "Preferable to be marked by scripts",
-          "No Question": "",
-          "Knowledge and Skill": "",
-          "Grading Guide": "Supervised by proctor(s) sent by exam board",
-          "Note": ""
-        },
-        {
-          "Category": "Progress test",
-          "Type": "on-going",
-          "Part": 2,
-          "Weight": 15.0,
-          "Completion Criteria": ">0",
-          "Duration": "20'-40'",
-          "CLO": "15-30\nif multiple choice\nPT 1: LO1 - LO4\nPT 2: LO5 - LO8\nNumber of questions:\n3-8 for each LOx",
-          "Question Type": "essay or multiple choice",
-          "No Question": "",
-          "Knowledge and Skill": "",
-          "Grading Guide": "Supervised by instructor\nProgress test must be taken right after the last lectures of required material.\nInstructor has responsibility to review the test for students after graded.",
-          "Note": ""
-        },
-        {
-          "Category": "Final exam",
-          "Type": "final exam",
-          "Part": 1,
-          "Weight": 30.0,
-          "Completion Criteria": "4",
-          "Duration": "60'",
-          "CLO": "",
-          "Question Type": "multiple choice",
-          "No Question": "50",
-          "Knowledge and Skill": "All topics;\nMore than 70% new questions (for the current semester);",
-          "Grading Guide": "Supervised by proctor(s) sent by exam board",
-          "Note": ""
-        }
-      ],
-      "Question": []
-    },
-    {
-      "id": 2,
-      "name": "Server-Side development with NodeJS, Express, and MongoDB",
-      "code": "SDN301m",
-      "time_allocation": "Study hour (150h) = 45h contact hours + 1 h final exam + 104h self-study",
-      "prerequisites": "DBI202; FER201m",
-      "student_tasks": "- Students must attend more than 80% of contact slots in order to be accepted to the final examination.\n- Student is responsible to do all exercises given by instructor in class or at home and submit on time\n- Constantly follow announcements on FU CMS at https://cmshn.fpt.edu.vn/ and FU FLM at https://flm.fpt.edu.vn/ for up-to-date course information regarding assignment submission and feedback on assignments and project work.",
-      "tools": "- Visual Studio Code (https://code.visualstudio.com)\n- Internet",
-      "scoring_scale": 10,
-      "is_approved": true,
-      "decision": "",
-      "note": "",
-      "min_avg_mark_to_pass": 5,
-      "approved_date": "2023-07-04",
-      "LO": [
-        {
-          "CLO_Name": "CLO1",
-          "CLO_Details": "Understand Node, Node modules, and the Node HTTP server"
-        },
-        {
-          "CLO_Name": "CLO2",
-          "CLO_Details": "Understand Express framework, operating principles, and methods of building a web server that supports REST API"
-        },
-        {
-          "CLO_Name": "CLO3",
-          "CLO_Details": "Be able to use the Express Generator tool to generate Express applications"
-        },
-        {
-          "CLO_Name": "CLO4",
-          "CLO_Details": "Understand MongoDB basics"
-        },
-        {
-          "CLO_Name": "CLO5",
-          "CLO_Details": "Be able to develop Node applications that work with data through MongoDB and Mongoose ODM"
-        },
-        {
-          "CLO_Name": "CLO6",
-          "CLO_Details": "Be able to implement REST APIs with Express, MongoDB and Mongoose"
-        },
-        {
-          "CLO_Name": "CLO7",
-          "CLO_Details": "Be able to understand and implement user authentication mechanisms for applications"
-        },
-        {
-          "CLO_Name": "CLO8",
-          "CLO_Details": "Use Backend as a Service (BaaS) to enhance secure communication between client and server applications"
-        }
-      ],
-      "Material": [
-        {
-          "MaterialDescription": "https://www.coursera.org/learn/bootstrap-4/home/welcome",
-          "Author": "",
-          "Publisher": "Coursera",
-          "PublishedDate": "",
-          "Edition": "",
-          "ISBN": "",
-          "IsMainMaterial": true,
-          "IsHardCopy": false,
-          "IsOnline": true,
-          "Note": "MOOC1: Front-End Web UI Frameworks and Tools: Bootstrap 4"
-        },
-        {
-          "MaterialDescription": "https://www.coursera.org/learn/front-end-react/home/welcome",
-          "Author": "",
-          "Publisher": "Coursera",
-          "PublishedDate": "",
-          "Edition": "",
-          "ISBN": "",
-          "IsMainMaterial": true,
-          "IsHardCopy": false,
-          "IsOnline": true,
-          "Note": "MOOC2: Front-End Web Development with React"
-        },
-        {
-          "MaterialDescription": "Pro MERN Stack - Full Stack Web App Development with Mongo, Express, React, and Node",
-          "Author": "Vasan Subramanian",
-          "Publisher": "Apress",
-          "PublishedDate": "2019",
-          "Edition": "2nd",
-          "ISBN": "978-1484243909",
-          "IsMainMaterial": true,
-          "IsHardCopy": true,
-          "IsOnline": false,
-          "Note": ""
-        }
-      ],
-      "Session": [
-        {
-          "Session": 1,
-          "Topic": "1.1. Course Introduction \n1.2. Introduction to Node.js and NPM",
-          "Learning-Teaching Type": "Offline",
-          "LO": ["LO1"],
-          "ITU": "I",
-          "Student Materials": "Slides",
-          "S-Download": "https://flm.fpt.edu.vn/download/9094/S/1_SDN301m.zip",
-          "Student's Tasks": "Slides",
-          "URLs": ""
-        },
-        {
-          "Session": 2,
-          "Topic": "2.1. Introduction to Node.js and NPM (contd.)\n- Download and install Node.js and NPM\n- Verify the installation was successful and ready for using Node.js and NPM",
-          "Learning-Teaching Type": "Offline",
-          "LO": ["LO1"],
-          "ITU": ["T", "U"],
-          "Student Materials": "Slides",
-          "S-Download": "https://flm.fpt.edu.vn/download/9094/S/2_SDN301m.zip",
-          "Student's Tasks": "Slides",
-          "URLs": ""
-        },
-        {
-          "Session": 3,
-          "Topic": "2.1. Git",
-          "Learning-Teaching Type": "Offline",
-          "LO": ["LO2"],
-          "ITU": ["T", "U"],
-          "Student Materials": "Slides",
-          "S-Download": "",
-          "Student's Tasks": "",
-          "URLs": ""
-        },
-        {
-          "Session": 4,
-          "Topic": "4.1. Node and HTTP\n- Create a simple HTTP server using the Node HTTP core module\n- Create a web server to serve static HTML files from a folder",
-          "Learning-Teaching Type": "Offline",
-          "LO": ["LO1"],
-          "ITU": ["T", "U"],
-          "Student Materials": "Slides",
-          "S-Download": "",
-          "Student's Tasks": "",
-          "URLs": ""
-        },
-        {
-          "Session": 5,
-          "Topic": "5.1. Introduction to Express\n- Implement a simple web server using Express framework",
-          "Learning-Teaching Type": "Offline",
-          "LO": ["LO2"],
-          "ITU": ["I", "U"],
-          "Student Materials": "Slides",
-          "S-Download": "https://flm.fpt.edu.vn/download/9094/S/5_SDN301m.zip",
-          "Student's Tasks": "",
-          "URLs": ""
-        }
-      ],
-      "Assessment": [
-        {
-          "Category": "Assignment",
-          "Type": "on-going",
-          "Part": 4,
-          "Weight": 15.0,
-          "Completion Criteria": ">0",
-          "Duration": "Guided and reviewed in tutorial sesions; Cont. at home",
-          "CLO": "Problem(s) to solve by programming (LO1 - LO8)",
-          "Question Type": "Individual or team work, guided by instructor, submission by a given deadline",
-          "No Question": "",
-          "Knowledge and Skill": "",
-          "Grading Guide": "",
-          "Note": ""
-        },
-        {
-          "Category": "Progress test",
-          "Type": "on-going",
-          "Part": 3,
-          "Weight": 15.0,
-          "Completion Criteria": ">0",
-          "Duration": "20'-40'",
-          "CLO": "PT 1: LO1 - LO2PT 2: LO3 - LO7 3: LO8",
-          "Question Type": "essay or multiple choice",
-          "No Question": "15-30 if multiple choice",
-          "Knowledge and Skill": "PT 1: LO1 - LO2 PT 2: LO3 - LO7 PT 3: LO8",
-          "Grading Guide": "supervised by instructor",
-          "Note": "Progress test must be taken right after the last lectures of required material. Instructor has responsibility to review the test for students after graded."
-        },
-        {
-          "Category": "Practical Exam",
-          "Type": "on-going",
-          "Part": 1,
-          "Weight": 20.0,
-          "Completion Criteria": 4,
-          "Duration": "85'",
-          "CLO": "LO1 - LO8",
-          "Question Type": "Preferable to be marked by scripts",
-          "No Question": "",
-          "Knowledge and Skill": "problem(s) to solve by programming using LO1 - LO8",
-          "Grading Guide": "Supervised by proctor(s) sent by exam board",
-          "Note": ""
-        },
-        {
-          "Category": "Project",
-          "Type": "on-going",
-          "Part": 1,
-          "Weight": 20.0,
-          "Completion Criteria": ">0",
-          "Duration": "Guided and reviewed in tutorial sesions;Cont. at home",
-          "CLO": "LO1 - LO8",
-          "Question Type": "a problem similar to real one",
-          "No Question": "",
-          "Knowledge and Skill": "problem(s) to solve by programming using LO1 - LO8",
-          "Grading Guide": "Supervised by instructor\nProgress test must be taken right after the last lectures of required material.\nInstructor has responsibility to review the test for students after graded.",
-          "Note": ""
-        },
-        {
-          "Category": "Final exam",
-          "Type": "final exam",
-          "Part": 1,
-          "Weight": 30.0,
-          "Completion Criteria": 4,
-          "Duration": "60'",
-          "CLO": "",
-          "Question Type": "multiple choice",
-          "No Question": "50",
-          "Knowledge and Skill": "All topics;\nMore than 70% new questions (for the current semester);",
-          "Grading Guide": "Supervised by proctor(s) sent by exam board",
-          "Note": ""
-        }
-      ],
-      "Question": []
-    },
-    {
-      "id": 3,
-      "name": "C# and .NET",
-      "code": "PRN292",
-      "time_allocation": "Sessions: 33\nLectures: 14\nLab/Tutorials: 19\nSelf-study: 120 hours",
-      "prerequisites": "PRO192 & DBI201",
-      "student_tasks": "- Students must attend more than 80% of contact slots in order to be accepted to the final examination.\n- Student is responsible to do all exercises given by instructor in class or at home and submit on time\n- Constantly follow announcements on FU CMS at https://cmshn.fpt.edu.vn/ and FU FLM at https://flm.fpt.edu.vn/ for up-to-date course information regarding assignment submission and feedback on assignments and project work.",
-      "tools": "- Internet\n- .Net Framework 3.5 and Microsoft Visual Studio 2008 (download from MSDN provided by Mic",
-      "scoring_scale": 10,
-      "is_approved": true,
-      "decision": "1",
-      "note": "",
-      "min_avg_mark_to_pass": 5,
-      "approved_date": "2017-12-04",
-      "LO": [
-        {
-          "CLO_Name": "CLO1.1",
-          "CLO_Details": "Understand C# language for developing .NET applications;"
-        },
-        {
-          "CLO_Name": "CLO1.2",
-          "CLO_Details": "Fundamental concepts of .NET Platform"
-        },
-        {
-          "CLO_Name": "CLO1.3",
-          "CLO_Details": "Basic knowledge of WinForms .NET"
-        },
-        {
-          "CLO_Name": "CLO1.4",
-          "CLO_Details": "Basic knowledge of WebForms .NET"
-        },
-        {
-          "CLO_Name": "CLO2.1",
-          "CLO_Details": "Develop Windows forms applications"
-        },
-        {
-          "CLO_Name": "CLO2.2",
-          "CLO_Details": "Develop Web forms applications"
-        },
-        {
-          "CLO_Name": "CLO3",
-          "CLO_Details": "Be able to work in team and present group's results"
-        }
-      ],
-      "Material": [
-        {
-          "MaterialDescription": "MSDN Library:.NET development in MSDN provided by Microsoft Academics Alliance (or http://msdn.microsoft.com/en-us/library)",
-          "Author": "",
-          "Publisher": "Coursera",
-          "PublishedDate": "",
-          "Edition": "",
-          "ISBN": "",
-          "IsMainMaterial": true,
-          "IsHardCopy": false,
-          "IsOnline": true,
-          "Note": ""
-        },
-        {
-          "MaterialDescription": "FU CMS at http://cms.fpt.edu.vn",
-          "Author": "",
-          "Publisher": "",
-          "PublishedDate": "",
-          "Edition": "",
-          "ISBN": "",
-          "IsMainMaterial": false,
-          "IsHardCopy": false,
-          "IsOnline": true,
-          "Note": ""
-        },
-        {
-          "MaterialDescription": "ProC# with .NET 3.0",
-          "Author": "Andrew Troelsen",
-          "Publisher": "",
-          "PublishedDate": "2007",
-          "Edition": "",
-          "ISBN": "",
-          "IsMainMaterial": false,
-          "IsHardCopy": false,
-          "IsOnline": true,
-          "Note": ""
-        },
-        {
-          "MaterialDescription": "Pro CSharp 2008 and the NET 3.5 Platform",
-          "Author": "Andrew Troelsen",
-          "Publisher": "2008",
-          "PublishedDate": "",
-          "Edition": "4th",
-          "ISBN": "",
-          "IsMainMaterial": false,
-          "IsHardCopy": false,
-          "IsOnline": true,
-          "Note": ""
-        },
-        {
-          "MaterialDescription": ".Net Framework Essentials 2e (.pdf file, CD-ROM)",
-          "Author": "",
-          "Publisher": "",
-          "PublishedDate": "",
-          "Edition": "",
-          "ISBN": "",
-          "IsMainMaterial": false,
-          "IsHardCopy": false,
-          "IsOnline": true,
-          "Note": ""
-        },
-        {
-          "MaterialDescription": "C# How to Progam, Prentice Hall (in Library)",
-          "Author": "",
-          "Publisher": "",
-          "PublishedDate": "",
-          "Edition": "",
-          "ISBN": "",
-          "IsMainMaterial": false,
-          "IsHardCopy": true,
-          "IsOnline": false,
-          "Note": ""
-        }
-      ],
-      "Session": [
-        {
-          "Session": 1,
-          "Topic": "Course Introduction Chapter 1 - The philosophy of .NET",
-          "Learning-Teaching Type": "Offline",
-          "LO": [],
-          "ITU": [],
-          "Student Materials": "Ref. 1 Part 1 - Introducing C# and the .NET Platform",
-          "S-Download": "",
-          "Student's Tasks": "",
-          "URLs": ""
-        },
-        {
-          "Session": 2,
-          "Topic": "Chapter 1 - The philosophy of .NET (cont.) \nChapter 3 - C# Language Fundamentals",
-          "Learning-Teaching Type": "Offline",
-          "LO": [],
-          "ITU": [],
-          "Student Materials": "Ref. 1 Part 1 - Introducing C# and the .NET Platform",
-          "S-Download": "",
-          "Student's Tasks": "CMS",
-          "URLs": ""
-        },
-        {
-          "Session": 3,
-          "Topic": "Chapter 4 - Object-Oriented Programming with C# 2.0 Chapter 6 - Understanding Structured Exception Handling",
-          "Learning-Teaching Type": "Offline",
-          "LO": [],
-          "ITU": [],
-          "Student Materials": "",
-          "S-Download": "",
-          "Student's Tasks": "",
-          "URLs": ""
-        },
-        {
-          "Session": 4,
-          "Topic": "Lab 1: Guiding Lab 1 - C# Programming",
-          "Learning-Teaching Type": "Offline",
-          "LO": [],
-          "ITU": [],
-          "Student Materials": "",
-          "S-Download": "",
-          "Student's Tasks": "",
-          "URLs": ""
-        },
-        {
-          "Session": 5,
-          "Topic": "Chapter 7 - Interfaces and Collections Chapter 10 - Understanding Generics",
-          "Learning-Teaching Type": "Offline",
-          "LO": [],
-          "ITU": [],
-          "Student Materials": "Ref. 1 Part 2 - The C# Programming Language",
-          "S-Download": "",
-          "Student's Tasks": "",
-          "URLs": ""
-        }
-      ],
-      "Assessment": [
-        {
-          "Category": "Labs ",
-          "Type": "on-going",
-          "Part": 4,
-          "Weight": 15.0,
-          "Completion Criteria": ">0",
-          "Duration": "Guided and reviewed in tutorial sesions; Cont. at home",
-          "CLO": "",
-          "Question Type": "",
-          "No Question": "",
-          "Knowledge and Skill": "Lab 1: C# Programming, Lab 2: Programming with .Net Assemblies, Lab 3: Programming with Windows Forms, Lab 4: Database Programming with ADO.NET",
-          "Grading Guide": "",
-          "Note": ""
-        },
-        {
-          "Category": "Progress test",
-          "Type": "quiz",
-          "Part": 2,
-          "Weight": 15.0,
-          "Completion Criteria": ">0",
-          "Duration": "10'-20'",
-          "CLO": "",
-          "Question Type": "Multiple choices Marked by Computer or a suitable format",
-          "No Question": "10-20 (At least 10*n questions where n is the number of Part covered in the test.)",
-          "Knowledge and Skill": "concepts, algorithms in a topic Current chapter(s) Each Progess Test covers at least 01 Part and at most 02 Parts, and overall they must cover all learned Parts of the course.",
-          "Grading Guide": "by instructor, using computer",
-          "Note": "Instruction and shedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus. Progress test must be taken right after the last lectures of required material. Instructor has resposibility to review the test for students after graded."
-        },
-        {
-          "Category": "Practical Exam",
-          "Type": "practical exam",
-          "Part": 1,
-          "Weight": 20.0,
-          "Completion Criteria": ">0",
-          "Duration": "85'",
-          "CLO": "",
-          "Question Type": "Preferable to be marked by scripts",
-          "No Question": "",
-          "Knowledge and Skill": "Window Forms Application and/or Web Forms Application",
-          "Grading Guide": "by Exam Board and Department",
-          "Note": ""
-        },
-        {
-          "Category": "Group Project",
-          "Type": "on-going",
-          "Part": 1,
-          "Weight": 20.0,
-          "Completion Criteria": ">0",
-          "Duration": "guided in tutorial sesions;Cont. at home",
-          "CLO": "",
-          "Question Type": "",
-          "No Question": "",
-          "Knowledge and Skill": "Develop a management information system (Desktop or Web application) SRS, Design (GUI, Business, Database)",
-          "Grading Guide": "regularly by instructor",
-          "Note": "Students should submit 02 project documents on specified deadlines before presentation"
-        },
-        {
-          "Category": "Final exam",
-          "Type": "final exam",
-          "Part": 1,
-          "Weight": 30.0,
-          "Completion Criteria": "4",
-          "Duration": "60'",
-          "CLO": "",
-          "Question Type": "Multiple choices Marked by Computer",
-          "No Question": "50",
-          "Knowledge and Skill": "All topics;\nMore than 70% new questions (for the current semester);",
-          "Grading Guide": "by Exam Board and Department",
-          "Note": ""
-        }
-      ],
-      "Question": []
-    },
-    {
-      "id": 4,
-      "name": "Python programming",
-      "code": "PRP201c",
-      "time_allocation": "Online: 60 hours + 5 slot offline",
-      "prerequisites": "Recommend to have knowledge of basic programming in advance",
-      "student_tasks": "- Student must get the certification of Python for Everybody specialization from Coursera to be accepted to the final examination",
-      "tools": "- Internet\n- .Net Framework 3.5 and Microsoft Visual Studio 2008 (download from MSDN provided by Mic",
-      "scoring_scale": 10,
-      "is_approved": true,
-      "decision": "1",
-      "note": "",
-      "min_avg_mark_to_pass": 5,
-      "approved_date": "2023-03-08",
-      "LO":[
-          {
-              "CLO_Name": "CLO1",
-              "CLO_Details": "Explain the basics of programming computers using Python"
-            },
-            {
-              "CLO_Name": "CLO2",
-              "CLO_Details": "Understand fundamental programming concepts such as data structures"
-            },
-            {
-              "CLO_Name": "CLOCreate your own applications for data retrieval and processing"
-            },
-            {
-              "CLO_Name": "CLO4",
-              "CLO_Details": "Describe the basics of the Structured Query Language (SQL) and database design"
-            }
-      ],
-      "Material":[
-          {
-              "MaterialDescription": "https://www.coursera.org/learn/python-data-visualization?specialization=python",
-              "Author": "",
-              "Publisher": "Coursera",
-              "PublishedDate": "",
-              "Edition": "",
-              "ISBN": "",
-              "IsMainMaterial": true,
-              "IsHardCopy": false,
-              "IsOnline": true,
-              "Note": "MOOC 5: Capstone: Retrieving, Processing, and Visualizing Data with Python"
-            },
-            {
-              "MaterialDescription": "https://learner.coursera.help/hc/en-us/articles/208280036-Coursera-Code-of-Conduct",
-              "Author": "",
-              "Publisher": "Coursera",
-              "PublishedDate": "",
-              "Edition": "",
-              "ISBN": "",
-              "IsMainMaterial": false,
-              "IsHardCopy": false,
-              "IsOnline": true,
-              "Note": "Help Articles"
-            },
-            {
-              "MaterialDescription": "https://www.coursera.org/specializations/python",
-              "Author": "",
-              "Publisher": "Coursera",
-              "PublishedDate": "",
-              "Edition": "",
-              "ISBN": "",
-              "IsMainMaterial": true,
-              "IsHardCopy": false,
-              "IsOnline": true,
-              "Note": "SPEC: Python for Everybody Specialization"
-            },
-            {
-              "MaterialDescription": "https://www.coursera.org/learn/python-data?specialization=python",
-              "Author": "",
-              "Publisher": "Coursera",
-              "PublishedDate": "",
-              "Edition": "",
-              "ISBN": "",
-              "IsMainMaterial": true,
-              "IsHardCopy": false,
-              "IsOnline": true,
-              "Note": "MOOC 2: Python Data Structures"
-            },
-            {
-              "MaterialDescription": "https://www.coursera.org/learn/python?specialization=python",
-              "Author": "",
-              "Publisher": "Coursera",
-              "PublishedDate": "",
-              "Edition": "",
-              "ISBN": "",
-              "IsMainMaterial": true,
-              "IsHardCopy": false,
-              "IsOnline": true,
-              "Note": "MOOC 1: Programming for Everybody (Getting Started with Python"
-            },
-            {
-              "MaterialDescription": "https://www.coursera.org/learn/python-network-data?specialization=python",
-              "Author": "",
-              "Publisher": "Coursera",
-              "PublishedDate": "",
-              "Edition": "",
-              "ISBN": "",
-              "IsMainMaterial": true,
-              "IsHardCopy": false,
-              "IsOnline": true,
-              "Note": "MOOC 3: Using Python to Access Web Data"
-            },
-            {
-              "MaterialDescription": "https://www.coursera.org/learn/python-databases?specialization=python",
-              "Author": "",
-              "Publisher": "Coursera",
-              "PublishedDate": "",
-              "Edition": "",
-              "ISBN": "",
-              "IsMainMaterial": true,
-              "IsHardCopy": false,
-              "IsOnline": true,
-              "Note": "MOOC 4: Using Databases with Python"
-            }
-      ],
-      "Session": [
-          {
-              "Session": 1,
-              "Topic": "Specialization Introduction\nGetting started with Python\n- Why we Program?\n- Installing and Using Python\n- Variables and Expressions\nCourse 1 Review",
-              "Learning-Teaching Type": "Offline,Online",
-              "LO": ["LO1"],
-              "ITU": [],
-              "Student Materials": "",
-              "S-Download": "",
-              "Student's Tasks": "",
-              "URLs": ""
-            },
-            {
-              "Session": 2,
-              "Topic": "Getting started with Python\n- Conditional Code\n- Functions\n- Loops and Iteration",
-              "Learning-Teaching Type": "Online",
-              "LO": ["LO1"],
-              "ITU": [],
-              "Student Materials": "",
-              "S-Download": "",
-              "Student's Tasks": "Complete Week 5, 6, 7 of the course Getting started with Python Deadline of Course 1 Completion: End of Friday of the week.",
-              "URLs": ""
-            },
-            {
-              "Session": 3,
-              "Topic": "Python Data Structures\n- Strings\n- Installing and Using Python (for writing Python programs)\n- Files",
-              "Learning-Teaching Type": "Online",
-              "LO": ["LO2"],
-              "ITU": [],
-              "Student Materials": "",
-              "S-Download": "",
-              "Student's Tasks": "Complete Week 1, 2, 3 of the course Python Data Structures",
-              "URLs": ""
-            },
-            {
-              "Session": 4,
-              "Topic": "Python Data Structures\n- Lists\n- Dictionaries\n- Tuples\n- Graduation\nCourse 2 Review",
-              "Learning-Teaching Type": "Offline,Online",
-              "LO": ["LO2"],
-              "ITU": [],
-              "Student Materials": "",
-              "S-Download": "",
-              "Student's Tasks": "Complete Week 4, 5, 6, 7 of the course Python Data Structures\n- Deadline of Course 2 Completion: End of Friday of the week.\n- Students should participate in offline slot\n(Offline 2: Review Course 2)",
-              "URLs": ""
-            },
-            {
-              "Session": 5,
-              "Topic": "Using Python to Access Web Data\n- Getting Started\n- Regular Expressions",
-              "Learning-Teaching Type": "Offline",
-              "LO": ["LO3"],
-              "ITU": [],
-              "Student Materials": "",
-              "S-Download": "",
-              "Student's Tasks": "Complete Week 1, 2 of the course Using Python to Access Web Data",
-              "URLs": ""
-            }
-      ],
-      "Assessment":[
-          {
-              "Category": "Final Exam (PE)",
-              "Type": "final exam",
-              "Part": 1,
-              "Weight": 50.0,
-              "Completion Criteria": "4",
-              "Duration": "120'",
-              "CLO": "",
-              "Question Type": "",
-              "No Question": "N/A",
-              "Knowledge and Skill": "All studied courses",
-              "Grading Guide": "by Exam Board",
-              "Note": "Customized from the Assignment & Capstone Project of this specialization 1st Evaluation (exam): For students who completed & got Coursera's specialization certificates (Option at week 10 or 11); 2nd Evaluation (exam): For students who completed & got Coursera's specialization certificates) at week 13; 3rd Evaluation (re-exam): For students who completed & got Coursera's specialization certificates) at week 14"
-            },
-            {
-              "Category": "Final Exam (TE)",
-              "Type": "final exam",
-              "Part": 1,
-              "Weight": 50.0,
-              "Completion Criteria": "4",
-              "Duration": "60'",
-              "CLO": "",
-              "Question Type": "Computer gradable",
-              "No Question": "50",
-              "Knowledge and Skill": "All studied courses. Each module of course contributes 3-5 questions.",
-              "Grading Guide": "by Exam Board",
-              "Note": "Customized from the quizzes of this specialization. 1st Evaluation (exam): For students who completed & got Coursera's specialization certificates (Option at week 9); 2nd Evaluation (exam): For students who completed & got Coursera's specialization certificates) at week 13; 3rd Evaluation (re-exam): For students who completed & got Coursera's specialization certificates) at week 14."
+[{
+
+  "_id": {
+    "$oid": "615253229d1e60b210e076c4"
+  },
+  "syllabus_name": "Tên chương trình học",
+  "syllabus_Ename": "English Syllabus Name",
+  "code": "ABC",
+  "time_allocation": "Thời gian phân bổ",
+  "prerequisites": "Tiên quyết",
+  "student_tasks": "Nhiệm vụ của sinh viên",
+  "tools": "Công cụ sử dụng",
+  "scoring_scale": 8,
+  "is_approved": true,
+  "decision": "Quyết định",
+  "note": "Ghi chú",
+  "min_avg_mark_to_pass": 7,
+  "approved_date": "2021-09-30",
+  "description": "Mô tả chương trình học",
+  "no_credit": 3,
+  "degree_level": "Bậc học",
+  "LO": [
+      {
           
-            }
-      ],
-      "Question":[]
-    },
-    {
-      "id": 5,
-      "name": "AI with Tensorflow",
-      "code": "AIT301",
-      "time_allocation": "Study hour (150h) = 45h contact hours + 1h final exam + 104h self-study",
-      "prerequisites": "MAD101, CSD201, MAS291, PRP201c",
-      "student_tasks": "- Students must attend more than 80% of contact slots in order to be accepted to the final examination.\n- Student is responsible to do all exercises given by instructor in class or at home and submit on time\n- use laptop in the class for learning purpose only\n- Constantly follow announcements on intranet/CMS at http://cms.fpt.edu.vn for up-to-date course information regarding assignment submission and feedback on assignments",
-      "tools": "- TensorFlow\n- Internet",
-      "scoring_scale": 10,
-      "is_approved": true,
-      "decision": "1",
-      "note": "",
-      "min_avg_mark_to_pass": 5,
-      "approved_date": "2022-12-22",
-      "LO": [
-        {
-          "CLO_Name": "CLO1",
-          "CLO_Details": "Demonstrate working knowledge in Tensor Flow in order to write simple AI programs and explore more sophisticated Tensor Flow code on their own"
-        },
-        {
-          "CLO_Name": "CLO10",
-          "CLO_Details": "Ability to carry out works related to AI independently or collaborated with others and communicate effectively in a TensorFlow AI-related project setting."
-        },
-        {
-          "CLO_Name": "CLO2",
-          "CLO_Details": "Understand about Artificial Intelligence, its history and concepts such as Fuzzy Logic, Intelligent Agents, Machine Learning…"
-        },
-        {
-          "CLO_Name": "CLO3",
-          "CLO_Details": "Understand different types of AI agents."
-        },
-        {
-          "CLO_Name": "CLO4",
-          "CLO_Details": "Know various AI search algorithms (uninformed, informed, constraint satisfaction, genetic algorithms)"
-        },
-        {
-          "CLO_Name": "CLO5",
-          "CLO_Details": "Understand the fundamentals of knowledge representation (logic-based, frame-based, semantic nets), inference and theorem proving"
-        },
-        {
-          "CLO_Name": "CLO6",
-          "CLO_Details": "Know how to build simple knowledge-based systems"
-        },
-        {
-          "CLO_Name": "CLO7",
-          "CLO_Details": "Know some popular applications of Artificial Intelligence"
-        },
-        {
-          "CLO_Name": "CLO8",
-          "CLO_Details": "Demonstrate working knowledge of reasoning in the presence of incomplete and/or uncertain information"
-        },
-        {
-          "CLO_Name": "CLO9",
-          "CLO_Details": "Ability to apply knowledge representation, reasoning, and machine learning techniques to real-world problems"
-        }
-      ],
-      "Material": [
-        {
-          "MaterialDescription": "Artificial Intelligence: A Modern Approach",
-          "Author": "Stuart Russell and Peter Norvig",
-          "Publisher": "Pearson Education",
-          "PublishedDate": "2009",
-          "Edition": "3rd",
-          "ISBN": "978-0136042594",
-          "IsMainMaterial": true,
-          "IsHardCopy": true,
-          "IsOnline": false,
-          "Note": ""
-        },
-        {
-          "MaterialDescription": "Essentials of Artificial Intelligence",
-          "Author": "M.Ginsberg",
-          "Publisher": "Morgan Kaufmann",
-          "PublishedDate": "1993",
-          "Edition": "",
-          "ISBN": "978-1558603349",
-          "IsMainMaterial": false,
-          "IsHardCopy": true,
-          "IsOnline": false,
-          "Note": ""
-        },
-        {
-          "MaterialDescription": "Artificial Intelligence By Example: Develop machine intelligence from scratch using real artificial intelligence use cases",
-          "Author": "Denis Rothman",
-          "Publisher": "Puckt Publishing",
-          "PublishedDate": "2018",
-          "Edition": "",
-          "ISBN": "978-1788990547",
-          "IsMainMaterial": false,
-          "IsHardCopy": true,
-          "IsOnline": false,
-          "Note": ""
-        },
-        {
-          "MaterialDescription": "Tensor Flow Tutorials: https://www.tensorflow.org/tutorials/",
-          "Author": "",
-          "Publisher": "",
-          "PublishedDate": "",
-          "Edition": "",
-          "ISBN": "",
-          "IsMainMaterial": false,
-          "IsHardCopy": false,
-          "IsOnline": true,
-          "Note": ""
-        },
-        {
-          "MaterialDescription": "Artificial Intelligent Tutorial: https://www.javatpoint.com/ai-resolution-in-first-order-logic",
-          "Author": "",
-          "Publisher": "",
-          "PublishedDate": "",
-          "Edition": "",
-          "ISBN": "",
-          "IsMainMaterial": false,
-          "IsHardCopy": false,
-          "IsOnline": true,
-          "Note": ""
-        },
-        {
-          "MaterialDescription": "Machines Who Think",
-          "Author": "McCorduck, Pamela",
-          "Publisher": "Routledge",
-          "PublishedDate": "2004",
-          "Edition": "2nd",
-          "ISBN": "1-56881-205-1",
-          "IsMainMaterial": false,
-          "IsHardCopy": true,
-          "IsOnline": false,
-          "Note": ""
-        }
-      ],
-      "Session": [
-        {
-          "Session": 1,
-          "Topic": "Chapter 1: Introduction",
-          "Learning-Teaching Type": "Offline",
-          "LO": ["LO2", "LO3"],
-          "ITU": ["T"],
-          "Student Materials": "Read Textbook on Chapter 1 in advance",
-          "S-Download": "https://flm.fpt.edu.vn/download/4020/S/1_AIT301.zip",
-          "Student's Tasks": "Do practice in class following teacher requests",
-          "URLs": ""
-        },
-        {
-          "Session": 2,
-          "Topic": "Chapter 1: Introduction",
-          "Learning-Teaching Type": "Offline",
-          "LO": ["LO2", "LO3"],
-          "ITU": ["T"],
-          "Student Materials": "Read Textbook on Chapter 1 in advance",
-          "S-Download": "https://flm.fpt.edu.vn/download/4020/S/2_AIT301.zip",
-          "Student's Tasks": "Do practice in class following teacher requests",
-          "URLs": ""
-        },
-        {
-          "Session": 3,
-          "Topic": "Chapter 2: Intelligent Agents",
-          "Learning-Teaching Type": "Offline",
-          "LO": ["LO2", "LO3"],
-          "ITU": ["T"],
-          "Student Materials": "Read Textbook on Chapter 2 in advance",
-          "S-Download": "",
-          "Student's Tasks": "Do practice in class following teacher requests",
-          "URLs": ""
-        },
-        {
-          "Session": 4,
-          "Topic": "Chapter 2: Intelligent Agents",
-          "Learning-Teaching Type": "Offline",
-          "LO": ["LO2", "LO3"],
-          "ITU": ["T"],
-          "Student Materials": "Read Textbook on Chapter 2 in advance",
-          "S-Download": "",
-          "Student's Tasks": "Do practice in class following teacher requests",
-          "URLs": ""
-        },
-        {
-          "Session": 5,
-          "Topic": "Chapter 3: Problem Solving and Search",
-          "Learning-Teaching Type": "Offline",
-          "LO": ["LO4"],
-          "ITU": ["T"],
-          "Student Materials": "Read Textbook on Chapter 2 in advance",
-          "S-Download": "",
-          "Student's Tasks": "Do practice in class following teacher requests",
-          "URLs": ""
-        }
-      ],
-      "Assessment": [
-        {
-          "Category": "Progress test",
-          "Type": "on-going",
-          "Part": 3,
-          "Weight": 30.0,
-          "Completion Criteria": ">0",
-          "Duration": "20'-30'",
-          "CLO": "",
-          "Question Type": "MC or a suitable format",
-          "No Question": "25-30",
-          "Knowledge and Skill": "Chapters introduced ( 1-7, 8-14, 15-21)",
-          "Grading Guide": "by instructor, and by suitable means (computer, paper, oral...)",
-          "Note": "Instruction and shedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus. Progress test must be taken right after the last lectures of required material. Instructor has resposibility to review the test for students after graded."
-        },
-        {
-          "Category": "Project",
-          "Type": "on-going",
-          "Part": 1,
-          "Weight": 30.0,
-          "Completion Criteria": ">0",
-          "Duration": "guided in tutorial sesions;Cont. at home",
-          "CLO": "LO1; LO7; LO8; LO9; LO10",
-          "Question Type": "Project",
-          "No Question": "",
-          "Knowledge and Skill": "Student will work in group to create one of three simple AI projects by applying Tensor Flow including Natural Language Processing, Handwriting Text Recognition, Autonomous Car and etc..",
-          "Grading Guide": "guided by instructor in class, completed by group of students at home, submmited by deadline",
-          "Note": "The project will be evaluated at the end of the course in a walkthrough defense session"
-        },
-        {
-          "Category": "Final exam",
-          "Type": "final exam",
-          "Part": 1,
-          "Weight": 40.0,
-          "Completion Criteria": "4",
-          "Duration": "60'",
-          "CLO": "All Los",
-          "Question Type": "Computer gradable.",
-          "No Question": "50",
-          "Knowledge and Skill": "All topics;\nMore than 70% new questions (for the current semester);",
-          "Grading Guide": "by Exam Board",
-          "Note": "~10% of questions is ABET a2-objective oriented and cover LO1;LO8;LO9;LO10"
-        }
-      ],
-      "Question": [
-        {
-          "id": 1,
-          "session_no": 1,
-          "name": "CQ1.1",
-          "details": "How is the development history of Tensorflow?"
-        },
-        {
-          "id": 2,
-          "session_no": 2,
-          "name": "CQ1.2",
-          "details": "Why is TensorFlow used to implement AI algorithms?"
-        },
-        {
-          "id": 3,
-          "session_no": 3,
-          "name": "CQ1.3",
-          "details": "Which platform are used to deploy TensorFlow-based AI algorithms? Why do we often use them?"
-        },
-        {
-          "id": 4,
-          "session_no": 4,
-          "name": "CQ2.1",
-          "details": "How is the development of AI?"
-        },
-        {
-          "id": 5,
-          "session_no": 5,
-          "name": "CQ2.2",
-          "details": "What fields of life is AI recently applied for? How is the performance of AI in current life?"
-        }
-      ]
-    }
+          "content": "Mục tiêu học tập 1"
+      },
+      {
+          
+          "content": "Mục tiêu học tập 2"
+      }
+  ],
+  "Material": [
+      {
+          
+          "type": "Loại tài liệu",
+          "content": "Nội dung tài liệu"
+      }
+  ],
+  "Session": [
+      {
+        
+          "_id": {
+            "$oid": "652f392396edd76fa58af34f"
+          },
+          "Session_Session": "Thông tin phiên học",
+          "Session_topic": "Chủ đề phiên học",
+          "Session_LearningType": "Loại hình học",
+          "Session_Lo": [
+              "Mục tiêu học tập 1",
+              "Mục tiêu học tập 2"
+          ],
+          "Session_ITU": [
+              "ITU 1",
+              "ITU 2"
+          ],
+          "Session_StudentMaterials": "Tài liệu của sinh viên",
+          "Session_SDownload": "Tải về tài liệu",
+          "Session_StudentTask": "Nhiệm vụ của sinh viên",
+          "Session_URLs": "URLs liên quan"
+      }
+  ],
+  "Assessment": [
+      {
+          
+          "_id": {
+            "$oid": "652f392396edd76fa58af350"
+          },
+          "Assessment_Category": "Thể loại đánh giá",
+          "Assessment_Type": "Loại đánh giá",
+          "Assessment_Part": 1,
+          "Assessment_Weight": 0.8,
+          "Assessment_CompletionCriteria": "Tiêu chí hoàn thành",
+          "Assessment_Duration": "Thời gian thực hiện",
+          "Assessment_CLO": "Mục tiêu học tập",
+          "Assessment_QuestionType": "Loại câu hỏi",
+          "Assessment_NoQuestion": "Số lượng câu hỏi",
+          "Assessment_KnowledgeAndSkill": "Kiến thức và kỹ năng",
+          "Assessment_GradingGuide": "Hướng dẫn chấm điểm",
+          "Assessment_Note": "Ghi chú"
+      }
+  ],
+  "Question": [
+      {
+          
+          "content": "Nội dung câu hỏi",
+          "answers": [
+              "Đáp án 1",
+              "Đáp án 2",
+              "Đáp án 3",
+              "Đáp án 4"
+          ],
+          "correctAnswer": "Đáp án đúng"
+      }
   ]
+},
+{
+  "_id": {
+    "$oid": "652eaf690fea2a27896b79e1"
+  },
   
+  "syllabus_name": "Tên chương trình học",
+  "syllabus_Ename": "English Syllabus Name",
+  "code": "ABC",
+  "time_allocation": "Thời gian phân bổ",
+  "prerequisites": "Tiên quyết",
+  "student_tasks": "Nhiệm vụ của sinh viên",
+  "tools": "Công cụ sử dụng",
+  "scoring_scale": 8,
+  "is_approved": true,
+  "decision": "Quyết định",
+  "note": "Ghi chú",
+  "min_avg_mark_to_pass": 7,
+  "approved_date": "2021-09-30",
+  "description": "Mô tả chương trình học",
+  "no_credit": 3,
+  "degree_level": "Bậc học",
+  "LO": [
+      {
+          "content": "Mục tiêu học tập 1"
+      },
+      {
+          "content": "Mục tiêu học tập 2"
+      }
+  ],
+  "Material": [
+      {
+          "type": "Loại tài liệu",
+          "content": "Nội dung tài liệu"
+      }
+  ],
+  "Session": [
+      {
+        "_id": {
+          "$oid": "652f392396edd76fa58af351"
+        },
+          
+          "Session_Session": "Thông tin phiên học",
+          "Session_topic": "Chủ đề phiên học",
+          "Session_LearningType": "Loại hình học",
+          "Session_Lo": [
+              "Mục tiêu học tập 1",
+              "Mục tiêu học tập 2"
+          ],
+          "Session_ITU": [
+              "ITU 1",
+              "ITU 2"
+          ],
+          "Session_StudentMaterials": "Tài liệu của sinh viên",
+          "Session_SDownload": "Tải về tài liệu",
+          "Session_StudentTask": "Nhiệm vụ của sinh viên",
+          "Session_URLs": "URLs liên quan"
+      }
+  ],
+  "Assessment": [
+      {
+        "_id": {
+          "$oid": "652f392396edd76fa58af352"
+        },
+          
+          "Assessment_Category": "Thể loại đánh giá",
+          "Assessment_Type": "Loại đánh giá",
+          "Assessment_Part": 1,
+          "Assessment_Weight": 0.8,
+          "Assessment_CompletionCriteria": "Tiêu chí hoàn thành",
+          "Assessment_Duration": "Thời gian thực hiện",
+          "Assessment_CLO": "Mục tiêu học tập",
+          "Assessment_QuestionType": "Loại câu hỏi",
+          "Assessment_NoQuestion": "Số lượng câu hỏi",
+          "Assessment_KnowledgeAndSkill": "Kiến thức và kỹ năng",
+          "Assessment_GradingGuide": "Hướng dẫn chấm điểm",
+          "Assessment_Note": "Ghi chú"
+      },
+      {
+          "Assessment_Category": "Thể loại đánh giá111",
+          "Assessment_Type": "Loại đánh gi111á",
+          "Assessment_Part": 11,
+          "Assessment_Weight": 0.811,
+          "Assessment_CompletionCriteria": "Tiêu chí hoàn thành1111",
+          "Assessment_Duration": "Thời gian thực hiện111",
+          "Assessment_QuestionType": "Loại câu hỏi111",
+          "Assessment_NoQuestion": "Số lượng câu hỏi11",
+          "Assessment_KnowledgeAndSkill": "Kiến thức và kỹ năng111",
+          "Assessment_GradingGuide": "Hướng dẫn chấm điểm111",
+          "Assessment_Note": "Ghi chú111",
+          "_id": {
+            "$oid": "652f353933b014ccba3f0c96"
+          }
+        
+      }
+  ],
+  "Question": [
+      {
+          "content": "Nội dung câu hỏi",
+          "answers": [
+              "Đáp án 1",
+              "Đáp án 2",
+              "Đáp án 3",
+              "Đáp án 4"
+          ],
+          "correctAnswer": "Đáp án đúng"
+      }
+  ],
+  "__v": 1
+},
+{
+  "_id": {
+    "$oid": "652eb0730fea2a27896b79e3"
+  },  
+  
+  "syllabus_name": "Tên chương trình học",
+  "syllabus_Ename": "English Syllabus Name",
+  "code": "ABCcccc",
+  "time_allocation": "Thời gian phân bổ",
+  "prerequisites": "Tiên quyết",
+  "student_tasks": "Nhiệm vụ của sinh viên",
+  "tools": "Công cụ sử dụng",
+  "scoring_scale": 8,
+  "is_approved": true,
+  "decision": "Quyết định",
+  "note": "Ghi chú",
+  "min_avg_mark_to_pass": 7,
+  "approved_date": "2021-09-30",
+  "description": "Mô tả chương trình học",
+  "no_credit": 3,
+  "degree_level": "Bậc học",
+  "LO": [
+      {
+          "content": "Mục tiêu học tập 1"
+      },
+      {
+          "content": "Mục tiêu học tập 2"
+      }
+  ],
+  "Material": [
+      {
+          "type": "Loại tài liệu",
+          "content": "Nội dung tài liệu"
+      }
+  ],
+  "Session": [
+      {
+          "Session_Session": "Thông tin phiên học",
+          "Session_topic": "Chủ đề phiên học",
+          "Session_LearningType": "Loại hình học",
+          "Session_Lo": [
+              "Mục tiêu học tập 1",
+              "Mục tiêu học tập 2"
+          ],
+          "Session_ITU": [
+              "ITU 1",
+              "ITU 2"
+          ],
+          "Session_StudentMaterials": "Tài liệu của sinh viên",
+          "Session_SDownload": "Tải về tài liệu",
+          "Session_StudentTask": "Nhiệm vụ của sinh viên",
+          "Session_URLs": "URLs liên quan",
+          "_id": {
+            "$oid": "652eb1b243cd0abf1e4b106a"
+          }
+          
+      },
+      {
+          "Session_Session": "Thông tin phiên họcccc",
+          "Session_topic": "Chủ đề phiên họcccc",
+          "Session_LearningType": "Loại hình họcccc",
+          "Session_Lo": [
+              "Mục tiêu học tập 11",
+              "Mục tiêu học tập 22"
+          ],
+          "Session_ITU": [
+              "ITU 11",
+              "ITU 22"
+          ],
+          "Session_StudentMaterials": "Tài liệu của sinh viênnnn",
+          "Session_SDownload": "Tải về tài liệuuuu",
+          "Session_StudentTask": "Nhiệm vụ của sinh viênnn",
+          "Session_URLs": "URLs liên quannn",
+          "_id": {
+            "$oid": "652f381a96edd76fa58af347"
+          }
+      }
+  ],
+  "Assessment": [
+      {
+        "_id": {
+          "$oid": "652f392396edd76fa58af356"
+        },
+          "Assessment_Category": "Thể loại đánh giá",
+          "Assessment_Type": "Loại đánh giá",
+          "Assessment_Part": 1,
+          "Assessment_Weight": 0.8,
+          "Assessment_CompletionCriteria": "Tiêu chí hoàn thành",
+          "Assessment_Duration": "Thời gian thực hiện",
+          "Assessment_CLO": "Mục tiêu học tập",
+          "Assessment_QuestionType": "Loại câu hỏi",
+          "Assessment_NoQuestion": "Số lượng câu hỏi",
+          "Assessment_KnowledgeAndSkill": "Kiến thức và kỹ năng",
+          "Assessment_GradingGuide": "Hướng dẫn chấm điểm",
+          "Assessment_Note": "Ghi chú"
+      }
+  ],
+  "Question": [
+      {
+          "content": "Nội dung câu hỏi",
+          "answers": [
+              "Đáp án 1",
+              "Đáp án 2",
+              "Đáp án 3",
+              "Đáp án 4"
+          ],
+          "correctAnswer": "Đáp án đúng"
+      }
+  ],
+  "__v": 2
+}
+]
