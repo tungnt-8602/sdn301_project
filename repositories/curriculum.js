@@ -53,6 +53,23 @@ const totalCurriculums = async (searchString, page, size) => {
   return students;
 };
 
+const ableAndDisable = async (curriculumId) => {
+  try {
+
+      const curriculum = await Curriculum.findById(curriculumId).exec();
+      if (!curriculum) {
+          throw new Error('Curriculum not found');
+      }
+
+      curriculum.status = !curriculum.status;
+      await curriculum.save();
+
+      return curriculum;
+  } catch (error) {
+      throw error;
+  }
+}
+
 const addPo = async (id, poData) => {
   try {
     const curriculum = await Curriculum.findById(id);
@@ -346,5 +363,6 @@ export default {
   getAllPlo,
   getPloById,
   updatePlo,
-  updateCurriculum
+  updateCurriculum,
+  ableAndDisable,
 };

@@ -23,7 +23,9 @@ userRouter.post('/login',
 ], 
 userController.login);
 
-userRouter.get('/all', isAuthenticated, Authorization.isAdmin, userController.getAllAccount);
+// userRouter.get('/all', isAuthenticated, Authorization.isAdmin, userController.getAllAccount);
+
+userRouter.get('/all', userController.getAllAccount);
 
 userRouter.put('/changeStatus/:id', isAuthenticated, Authorization.isAdmin, userController.ableAndDisable);
 

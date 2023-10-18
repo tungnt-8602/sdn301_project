@@ -1,3 +1,4 @@
+import { validationResult } from "express-validator"
 import { curriculumRepository } from "../repositories/index.js";
 import validator from 'validator'
 const getCurriculums = async (req, res) => {
@@ -46,6 +47,26 @@ const addCurriculum = async (req, res) => {
         res.status(500).json({
             message: error.toString()
         })
+    }
+}
+
+const ableAndDisable = async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+    }
+    const { id } = req.params;
+    try {
+        const updatedCu = await curriculumRepository.ableAndDisable(id);
+        if (!updatedCu) {
+            return res.status(404).json({ message: 'Curriculum not found' });
+        }
+        res.status(200).json({
+            message: 'Update status successfully.',
+            data: updatedCu
+        });
+    } catch (err) {
+        res.status(500).json({ error: err.toString() });
     }
 }
 
@@ -476,4 +497,5 @@ export default {
     getPloById,
     updatePlo,
     updateCurriculum,
+    ableAndDisable,
 }
