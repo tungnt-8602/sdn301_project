@@ -30,6 +30,21 @@ syllabusRouter.post("/", async (req, res) => {
   syllabusController.createSyllabus(req, res);
 });
 
+//LO
+syllabusRouter.post("/addLO/:id", syllabusController.addLO);
+
+syllabusRouter.get("/getAllLO/:id", syllabusController.getAllLO);
+
+syllabusRouter.get(
+  "/getLOById/:id/:LOId",
+  syllabusController.getLOById
+);
+
+syllabusRouter.put(
+  "/updateLO/:id/:LOId",
+  syllabusController.updateLO
+);
+
 //Session
 syllabusRouter.post("/addSession/:id", syllabusController.addSession);
 

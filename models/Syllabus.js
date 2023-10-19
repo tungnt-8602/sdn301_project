@@ -99,31 +99,21 @@ const AssessmentSchema = new Schema({
     required: false,
   },
 });
-import mongoose, { ObjectId, Schema } from "mongoose";
 
 const LO = new Schema({
+    id: { type: ObjectId },
     CLO_Name: {
-        type: String,
-        required: true,
-        validate: {
-            validator: (value) => value.length <= 10,
-            message: 'Clo Name cannot be longer than 10 characters.'
-        }
+        type: String
     },
     CLO_Details: {
-        type: String,
-        required: true,
-        validate: {
-            validator: (value) => value.length <= 30,
-            message: 'Clo details cannot be longer than 30 characters.'
-        }
+        type: String
     }
 });
 
 const Material = new Schema({
+    id: { type: ObjectId },
     MaterialDescription: {
-        type: String,
-        required: true
+        type: String
     },
     Author: {
         type: String,
@@ -146,16 +136,13 @@ const Material = new Schema({
         required: false
     },
     IsMainMaterial: {
-        type: Boolean,
-        required: true
+        type: Boolean
     },
     IsHardCopy: {
-        type: Boolean,
-        required: true
+        type: Boolean
     },
     IsOnline: {
-        type: Boolean,
-        required: true
+        type: Boolean
     },
     Note: {
         type: String,

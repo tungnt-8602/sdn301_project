@@ -20,56 +20,56 @@
       "CLO_Name": "CLO1",
       "CLO_Details": "Describe Front-end Web UI Frameworks",
       "_id": {
-        "$oid": "652371e6ef415589d7028d3f"
+        "$oid": "652371e6ef415589d7028d40"
       }
     },
     {
       "CLO_Name": "CLO2",
       "CLO_Details": "Explain the Bootstrap CSS Components",
       "_id": {
-        "$oid": "652371e6ef415589d7028d3f"
+        "$oid": "652371e6ef415589d7028d41"
       }
     },
     {
       "CLO_Name": "CLO3",
       "CLO_Details": "Explain the Bootstrap Javascript Components",
       "_id": {
-        "$oid": "652371e6ef415589d7028d3f"
+        "$oid": "652371e6ef415589d7028d42"
       }
     },
     {
       "CLO_Name": "CLO4",
       "CLO_Details": "Describe about Web tools",
       "_id": {
-        "$oid": "652371e6ef415589d7028d3f"
+        "$oid": "652371e6ef415589d7028d43"
       }
     },
     {
       "CLO_Name": "CLO5",
       "CLO_Details": "Install React application, create a React component",
       "_id": {
-        "$oid": "652371e6ef415589d7028d3f"
+        "$oid": "652371e6ef415589d7028d44"
       }
     },
     {
       "CLO_Name": "CLO6",
       "CLO_Details": "Discuss about React Router and Single Page Applications",
       "_id": {
-        "$oid": "652371e6ef415589d7028d3f"
+        "$oid": "652371e6ef415589d7028d45"
       }
     },
     {
       "CLO_Name": "CLO7",
       "CLO_Details": "Discuss about React Forms, Flow Architecture and Introduction to Redux",
       "_id": {
-        "$oid": "652371e6ef415589d7028d3f"
+        "$oid": "652371e6ef415589d7028d46"
       }
     },
     {
       "CLO_Name": "CLO8",
       "CLO_Details": "Discuss about more Redux and Client-Server Communication",
       "_id": {
-        "$oid": "652371e6ef415589d7028d3f"
+        "$oid": "652371e6ef415589d7028d47"
       }
     }
   ],
@@ -86,7 +86,7 @@
       "IsOnline": true,
       "Note": "MOOC1: Front-End Web UI Frameworks and Tools: Bootstrap 4",
       "_id": {
-        "$oid": "652371e6ef415589d7028d3f"
+        "$oid": "652371e6ef415589d7028d48"
       }
     },
     {
@@ -101,7 +101,7 @@
       "IsOnline": true,
       "Note": "MOOC2: Front-End Web Development with React",
       "_id": {
-        "$oid": "652371e6ef415589d7028d3f"
+        "$oid": "652371e6ef415589d7028d49"
       }
     },
     {
@@ -116,7 +116,7 @@
       "IsOnline": false,
       "Note": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d3f"
+        "$oid": "652371e6ef415589d7028d4a"
       }
     }
   ],
@@ -134,7 +134,7 @@
       "Student's Tasks": "",
       "URLs": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d3f"
+        "$oid": "652371e6ef415589d7028d4b"
       }
     },
     {
@@ -150,7 +150,7 @@
       "Student's Tasks": "",
       "URLs": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d3f"
+        "$oid": "652371e6ef415589d7028d4d"
       }
     },
     {
@@ -170,7 +170,7 @@
       "Student's Tasks": "",
       "URLs": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d3f"
+        "$oid": "652371e6ef415589d7028d4e"
       }
     },
     {
@@ -190,7 +190,7 @@
       "Student's Tasks": "",
       "URLs": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d3f"
+        "$oid": "652371e6ef415589d7028d4f"
       }
     },
     {
@@ -211,7 +211,7 @@
       "Student's Tasks": "",
       "URLs": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d3f"
+        "$oid": "652371e6ef415589d7028d50"
       }
     }
   ],
@@ -230,7 +230,7 @@
       "Grading Guide": "",
       "Note": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d3f"
+        "$oid": "652371e6ef415589d7028d51"
       }
     },
     {
@@ -247,7 +247,7 @@
       "Grading Guide": "",
       "Note": "Teachers support tutorials and students do them by themselves",
       "_id": {
-        "$oid": "652371e6ef415589d7028d3f"
+        "$oid": "652371e6ef415589d7028d52"
       }
     },
     {
@@ -264,7 +264,7 @@
       "Grading Guide": "Supervised by proctor(s) sent by exam board",
       "Note": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d3f"
+        "$oid": "652371e6ef415589d7028d53"
       }
     },
     {
@@ -281,7 +281,7 @@
       "Grading Guide": "Supervised by instructor\nProgress test must be taken right after the last lectures of required material.\nInstructor has responsibility to review the test for students after graded.",
       "Note": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d3f"
+        "$oid": "652371e6ef415589d7028d54"
       }
     },
     {
@@ -298,7 +298,7 @@
       "Grading Guide": "Supervised by proctor(s) sent by exam board",
       "Note": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d3f"
+        "$oid": "652371e6ef415589d7028d55"
       }
     }
   ],
@@ -306,7 +306,7 @@
 },
 {
   "_id": {
-    "$oid": "652371e6ef415589d7028d40"
+    "$oid": "652371e6ef415589d7028d56"
   },
   "id": 2,
   "name": "Server-Side development with NodeJS, Express, and MongoDB",
@@ -326,56 +326,56 @@
       "CLO_Name": "CLO1",
       "CLO_Details": "Understand Node, Node modules, and the Node HTTP server",
       "_id": {
-        "$oid": "652371e6ef415589d7028d40"
+        "$oid": "652371e6ef415589d7028d57"
       }
     },
     {
       "CLO_Name": "CLO2",
       "CLO_Details": "Understand Express framework, operating principles, and methods of building a web server that supports REST API",
       "_id": {
-        "$oid": "652371e6ef415589d7028d40"
+        "$oid": "652371e6ef415589d7028d58"
       }
     },
     {
       "CLO_Name": "CLO3",
       "CLO_Details": "Be able to use the Express Generator tool to generate Express applications",
       "_id": {
-        "$oid": "652371e6ef415589d7028d40"
+        "$oid": "652371e6ef415589d7028d59"
       }
     },
     {
       "CLO_Name": "CLO4",
       "CLO_Details": "Understand MongoDB basics",
       "_id": {
-        "$oid": "652371e6ef415589d7028d40"
+        "$oid": "652371e6ef415589d7028d5a"
       }
     },
     {
       "CLO_Name": "CLO5",
       "CLO_Details": "Be able to develop Node applications that work with data through MongoDB and Mongoose ODM",
       "_id": {
-        "$oid": "652371e6ef415589d7028d40"
+        "$oid": "652371e6ef415589d7028d5b"
       }
     },
     {
       "CLO_Name": "CLO6",
       "CLO_Details": "Be able to implement REST APIs with Express, MongoDB and Mongoose",
       "_id": {
-        "$oid": "652371e6ef415589d7028d40"
+        "$oid": "652371e6ef415589d7028d5c"
       }
     },
     {
       "CLO_Name": "CLO7",
       "CLO_Details": "Be able to understand and implement user authentication mechanisms for applications",
       "_id": {
-        "$oid": "652371e6ef415589d7028d40"
+        "$oid": "652371e6ef415589d7028d5d"
       }
     },
     {
       "CLO_Name": "CLO8",
       "CLO_Details": "Use Backend as a Service (BaaS) to enhance secure communication between client and server applications",
       "_id": {
-        "$oid": "652371e6ef415589d7028d40"
+        "$oid": "652371e6ef415589d7028d5e"
       }
     }
   ],
@@ -392,7 +392,7 @@
       "IsOnline": true,
       "Note": "MOOC1: Front-End Web UI Frameworks and Tools: Bootstrap 4",
       "_id": {
-        "$oid": "652371e6ef415589d7028d40"
+        "$oid": "652371e6ef415589d7028d5f"
       }
     },
     {
@@ -407,7 +407,7 @@
       "IsOnline": true,
       "Note": "MOOC2: Front-End Web Development with React",
       "_id": {
-        "$oid": "652371e6ef415589d7028d40"
+        "$oid": "652371e6ef415589d7028d60"
       }
     },
     {
@@ -422,7 +422,7 @@
       "IsOnline": false,
       "Note": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d40"
+        "$oid": "652371e6ef415589d7028d61"
       }
     }
   ],
@@ -440,7 +440,7 @@
       "Student's Tasks": "Slides",
       "URLs": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d40"
+        "$oid": "652371e6ef415589d7028d62"
       }
     },
     {
@@ -459,7 +459,7 @@
       "Student's Tasks": "Slides",
       "URLs": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d40"
+        "$oid": "652371e6ef415589d7028d63"
       }
     },
     {
@@ -478,7 +478,7 @@
       "Student's Tasks": "",
       "URLs": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d40"
+        "$oid": "652371e6ef415589d7028d64"
       }
     },
     {
@@ -497,7 +497,7 @@
       "Student's Tasks": "",
       "URLs": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d40"
+        "$oid": "652371e6ef415589d7028d65"
       }
     },
     {
@@ -516,7 +516,7 @@
       "Student's Tasks": "",
       "URLs": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d40"
+        "$oid": "652371e6ef415589d7028d66"
       }
     }
   ],
@@ -535,7 +535,7 @@
       "Grading Guide": "",
       "Note": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d40"
+        "$oid": "652371e6ef415589d7028d67"
       }
     },
     {
@@ -552,7 +552,7 @@
       "Grading Guide": "supervised by instructor",
       "Note": "Progress test must be taken right after the last lectures of required material. Instructor has responsibility to review the test for students after graded.",
       "_id": {
-        "$oid": "652371e6ef415589d7028d40"
+        "$oid": "652371e6ef415589d7028d68"
       }
     },
     {
@@ -569,7 +569,7 @@
       "Grading Guide": "Supervised by proctor(s) sent by exam board",
       "Note": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d40"
+        "$oid": "652371e6ef415589d7028d69"
       }
     },
     {
@@ -586,7 +586,7 @@
       "Grading Guide": "Supervised by instructor\nProgress test must be taken right after the last lectures of required material.\nInstructor has responsibility to review the test for students after graded.",
       "Note": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d40"
+        "$oid": "652371e6ef415589d7028d6a"
       }
     },
     {
@@ -603,7 +603,7 @@
       "Grading Guide": "Supervised by proctor(s) sent by exam board",
       "Note": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d40"
+        "$oid": "652371e6ef415589d7028d6b"
       }
     }
   ],
@@ -611,7 +611,7 @@
 },
 {
   "_id": {
-    "$oid": "652371e6ef415589d7028d41"
+    "$oid": "652371e6ef415589d7028d6c"
   },
   "id": 3,
   "name": "C# and .NET",
@@ -631,49 +631,49 @@
       "CLO_Name": "CLO1.1",
       "CLO_Details": "Understand C# language for developing .NET applications;",
       "_id": {
-        "$oid": "652371e6ef415589d7028d41"
+        "$oid": "652371e6ef415589d7028d6d"
       }
     },
     {
       "CLO_Name": "CLO1.2",
       "CLO_Details": "Fundamental concepts of .NET Platform",
       "_id": {
-        "$oid": "652371e6ef415589d7028d41"
+        "$oid": "652371e6ef415589d7028d6e"
       }
     },
     {
       "CLO_Name": "CLO1.3",
       "CLO_Details": "Basic knowledge of WinForms .NET",
       "_id": {
-        "$oid": "652371e6ef415589d7028d41"
+        "$oid": "652371e6ef415589d7028d6f"
       }
     },
     {
       "CLO_Name": "CLO1.4",
       "CLO_Details": "Basic knowledge of WebForms .NET",
       "_id": {
-        "$oid": "652371e6ef415589d7028d41"
+        "$oid": "652371e6ef415589d7028d70"
       }
     },
     {
       "CLO_Name": "CLO2.1",
       "CLO_Details": "Develop Windows forms applications",
       "_id": {
-        "$oid": "652371e6ef415589d7028d41"
+        "$oid": "652371e6ef415589d7028d71"
       }
     },
     {
       "CLO_Name": "CLO2.2",
       "CLO_Details": "Develop Web forms applications",
       "_id": {
-        "$oid": "652371e6ef415589d7028d41"
+        "$oid": "652371e6ef415589d7028d72"
       }
     },
     {
       "CLO_Name": "CLO3",
       "CLO_Details": "Be able to work in team and present group's results",
       "_id": {
-        "$oid": "652371e6ef415589d7028d41"
+        "$oid": "652371e6ef415589d7028d73"
       }
     }
   ],
@@ -690,7 +690,7 @@
       "IsOnline": true,
       "Note": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d41"
+        "$oid": "652371e6ef415589d7028d74"
       }
     },
     {
@@ -705,7 +705,7 @@
       "IsOnline": true,
       "Note": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d41"
+        "$oid": "652371e6ef415589d7028d75"
       }
     },
     {
@@ -720,7 +720,7 @@
       "IsOnline": true,
       "Note": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d41"
+        "$oid": "652371e6ef415589d7028d76"
       }
     },
     {
@@ -735,7 +735,7 @@
       "IsOnline": true,
       "Note": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d41"
+        "$oid": "652371e6ef415589d7028d77"
       }
     },
     {
@@ -750,7 +750,7 @@
       "IsOnline": true,
       "Note": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d41"
+        "$oid": "652371e6ef415589d7028d78"
       }
     },
     {
@@ -765,7 +765,7 @@
       "IsOnline": false,
       "Note": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d41"
+        "$oid": "652371e6ef415589d7028d79"
       }
     }
   ],
@@ -781,7 +781,7 @@
       "Student's Tasks": "",
       "URLs": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d41"
+        "$oid": "652371e6ef415589d7028d7a"
       }
     },
     {
@@ -795,7 +795,7 @@
       "Student's Tasks": "CMS",
       "URLs": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d41"
+        "$oid": "652371e6ef415589d7028d7b"
       }
     },
     {
@@ -809,7 +809,7 @@
       "Student's Tasks": "",
       "URLs": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d41"
+        "$oid": "652371e6ef415589d7028d7c"
       }
     },
     {
@@ -823,7 +823,7 @@
       "Student's Tasks": "",
       "URLs": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d41"
+        "$oid": "652371e6ef415589d7028d7d"
       }
     },
     {
@@ -837,7 +837,7 @@
       "Student's Tasks": "",
       "URLs": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d41"
+        "$oid": "652371e6ef415589d7028d7e"
       }
     }
   ],
@@ -856,7 +856,7 @@
       "Grading Guide": "",
       "Note": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d41"
+        "$oid": "652371e6ef415589d7028d7f"
       }
     },
     {
@@ -873,7 +873,7 @@
       "Grading Guide": "by instructor, using computer",
       "Note": "Instruction and shedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus. Progress test must be taken right after the last lectures of required material. Instructor has resposibility to review the test for students after graded.",
       "_id": {
-        "$oid": "652371e6ef415589d7028d41"
+        "$oid": "652371e6ef415589d7028d80"
       }
     },
     {
@@ -890,7 +890,7 @@
       "Grading Guide": "by Exam Board and Department",
       "Note": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d41"
+        "$oid": "652371e6ef415589d7028d81"
       }
     },
     {
@@ -907,7 +907,7 @@
       "Grading Guide": "regularly by instructor",
       "Note": "Students should submit 02 project documents on specified deadlines before presentation",
       "_id": {
-        "$oid": "652371e6ef415589d7028d41"
+        "$oid": "652371e6ef415589d7028d82"
       }
     },
     {
@@ -924,7 +924,7 @@
       "Grading Guide": "by Exam Board and Department",
       "Note": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d41"
+        "$oid": "652371e6ef415589d7028d83"
       }
     }
   ],
@@ -932,7 +932,7 @@
 },
 {
   "_id": {
-    "$oid": "652371e6ef415589d7028d42"
+    "$oid": "652371e6ef415589d7028d84"
   },
   "id": 4,
   "name": "Python programming",
@@ -952,28 +952,28 @@
       "CLO_Name": "CLO1",
       "CLO_Details": "Explain the basics of programming computers using Python",
       "_id": {
-        "$oid": "652371e6ef415589d7028d42"
+        "$oid": "652371e6ef415589d7028d85"
       }
     },
     {
       "CLO_Name": "CLO2",
       "CLO_Details": "Understand fundamental programming concepts such as data structures",
       "_id": {
-        "$oid": "652371e6ef415589d7028d42"
+        "$oid": "652371e6ef415589d7028d86"
       }
     },
     {
-      "CLO_Name": "CLOCreate your own applications for data retrieval and processing",
+      "CLO_Name": "CLO3",
       "CLO_Details": "Describe the basics of the Structured Query Language (SQL) and database design",
       "_id": {
-        "$oid": "652371e6ef415589d7028d42"
+        "$oid": "652371e6ef415589d7028d87"
       }
     },
     {
       "CLO_Name": "CLO4",
       "CLO_Details": "Describe the basics of the Structured Query Language (SQL) and database design",
       "_id": {
-        "$oid": "652371e6ef415589d7028d42"
+        "$oid": "652371e6ef415589d7028d88"
       }
     }
   ],
@@ -990,7 +990,7 @@
       "IsOnline": true,
       "Note": "MOOC 5: Capstone: Retrieving, Processing, and Visualizing Data with Python",
       "_id": {
-        "$oid": "652371e6ef415589d7028d42"
+        "$oid": "652371e6ef415589d7028d89"
       }
     },
     {
@@ -1005,7 +1005,7 @@
       "IsOnline": true,
       "Note": "Help Articles",
       "_id": {
-        "$oid": "652371e6ef415589d7028d42"
+        "$oid": "652371e6ef415589d7028d8a"
       }
     },
     {
@@ -1020,7 +1020,7 @@
       "IsOnline": true,
       "Note": "SPEC: Python for Everybody Specialization",
       "_id": {
-        "$oid": "652371e6ef415589d7028d42"
+        "$oid": "652371e6ef415589d7028d8b"
       }
     },
     {
@@ -1035,7 +1035,7 @@
       "IsOnline": true,
       "Note": "MOOC 2: Python Data Structures",
       "_id": {
-        "$oid": "652371e6ef415589d7028d42"
+        "$oid": "652371e6ef415589d7028d8c"
       }
     },
     {
@@ -1050,7 +1050,7 @@
       "IsOnline": true,
       "Note": "MOOC 1: Programming for Everybody (Getting Started with Python",
       "_id": {
-        "$oid": "652371e6ef415589d7028d42"
+        "$oid": "652371e6ef415589d7028d8d"
       }
     },
     {
@@ -1065,7 +1065,7 @@
       "IsOnline": true,
       "Note": "MOOC 3: Using Python to Access Web Data",
       "_id": {
-        "$oid": "652371e6ef415589d7028d42"
+        "$oid": "652371e6ef415589d7028d8e"
       }
     },
     {
@@ -1080,7 +1080,7 @@
       "IsOnline": true,
       "Note": "MOOC 4: Using Databases with Python",
       "_id": {
-        "$oid": "652371e6ef415589d7028d42"
+        "$oid": "652371e6ef415589d7028d8f"
       }
     }
   ],
@@ -1098,7 +1098,7 @@
       "Student's Tasks": "",
       "URLs": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d42"
+        "$oid": "652371e6ef415589d7028d90"
       }
     },
     {
@@ -1114,7 +1114,7 @@
       "Student's Tasks": "Complete Week 5, 6, 7 of the course Getting started with Python Deadline of Course 1 Completion: End of Friday of the week.",
       "URLs": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d42"
+        "$oid": "652371e6ef415589d7028d91"
       }
     },
     {
@@ -1130,7 +1130,7 @@
       "Student's Tasks": "Complete Week 1, 2, 3 of the course Python Data Structures",
       "URLs": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d42"
+        "$oid": "652371e6ef415589d7028d92"
       }
     },
     {
@@ -1146,7 +1146,7 @@
       "Student's Tasks": "Complete Week 4, 5, 6, 7 of the course Python Data Structures\n- Deadline of Course 2 Completion: End of Friday of the week.\n- Students should participate in offline slot\n(Offline 2: Review Course 2)",
       "URLs": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d42"
+        "$oid": "652371e6ef415589d7028d93"
       }
     },
     {
@@ -1162,7 +1162,7 @@
       "Student's Tasks": "Complete Week 1, 2 of the course Using Python to Access Web Data",
       "URLs": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d42"
+        "$oid": "652371e6ef415589d7028d94"
       }
     }
   ],
@@ -1181,7 +1181,7 @@
       "Grading Guide": "by Exam Board",
       "Note": "Customized from the Assignment & Capstone Project of this specialization 1st Evaluation (exam): For students who completed & got Coursera's specialization certificates (Option at week 10 or 11); 2nd Evaluation (exam): For students who completed & got Coursera's specialization certificates) at week 13; 3rd Evaluation (re-exam): For students who completed & got Coursera's specialization certificates) at week 14",
       "_id": {
-        "$oid": "652371e6ef415589d7028d42"
+        "$oid": "652371e6ef415589d7028d95"
       }
     },
     {
@@ -1198,7 +1198,7 @@
       "Grading Guide": "by Exam Board",
       "Note": "Customized from the quizzes of this specialization. 1st Evaluation (exam): For students who completed & got Coursera's specialization certificates (Option at week 9); 2nd Evaluation (exam): For students who completed & got Coursera's specialization certificates) at week 13; 3rd Evaluation (re-exam): For students who completed & got Coursera's specialization certificates) at week 14.",
       "_id": {
-        "$oid": "652371e6ef415589d7028d42"
+        "$oid": "652371e6ef415589d7028d96"
       }
     }
   ],
@@ -1206,7 +1206,7 @@
 },
 {
   "_id": {
-    "$oid": "652371e6ef415589d7028d43"
+    "$oid": "652371e6ef415589d7028d97"
   },
   "id": 5,
   "name": "AI with Tensorflow",
@@ -1226,70 +1226,70 @@
       "CLO_Name": "CLO1",
       "CLO_Details": "Demonstrate working knowledge in Tensor Flow in order to write simple AI programs and explore more sophisticated Tensor Flow code on their own",
       "_id": {
-        "$oid": "652371e6ef415589d7028d43"
+        "$oid": "652371e6ef415589d7028d98"
       }
     },
     {
       "CLO_Name": "CLO10",
       "CLO_Details": "Ability to carry out works related to AI independently or collaborated with others and communicate effectively in a TensorFlow AI-related project setting.",
       "_id": {
-        "$oid": "652371e6ef415589d7028d43"
+        "$oid": "652371e6ef415589d7028d99"
       }
     },
     {
       "CLO_Name": "CLO2",
       "CLO_Details": "Understand about Artificial Intelligence, its history and concepts such as Fuzzy Logic, Intelligent Agents, Machine Learning…",
       "_id": {
-        "$oid": "652371e6ef415589d7028d43"
+        "$oid": "652371e6ef415589d7028d9a"
       }
     },
     {
       "CLO_Name": "CLO3",
       "CLO_Details": "Understand different types of AI agents.",
       "_id": {
-        "$oid": "652371e6ef415589d7028d43"
+        "$oid": "652371e6ef415589d7028d9b"
       }
     },
     {
       "CLO_Name": "CLO4",
       "CLO_Details": "Know various AI search algorithms (uninformed, informed, constraint satisfaction, genetic algorithms)",
       "_id": {
-        "$oid": "652371e6ef415589d7028d43"
+        "$oid": "652371e6ef415589d7028d9c"
       }
     },
     {
       "CLO_Name": "CLO5",
       "CLO_Details": "Understand the fundamentals of knowledge representation (logic-based, frame-based, semantic nets), inference and theorem proving",
       "_id": {
-        "$oid": "652371e6ef415589d7028d43"
+        "$oid": "652371e6ef415589d7028d9d"
       }
     },
     {
       "CLO_Name": "CLO6",
       "CLO_Details": "Know how to build simple knowledge-based systems",
       "_id": {
-        "$oid": "652371e6ef415589d7028d43"
+        "$oid": "652371e6ef415589d7028d9e"
       }
     },
     {
       "CLO_Name": "CLO7",
       "CLO_Details": "Know some popular applications of Artificial Intelligence",
       "_id": {
-        "$oid": "652371e6ef415589d7028d43"
+        "$oid": "652371e6ef415589d7028d9f"
       }
     },
     {
       "CLO_Name": "CLO8",
       "CLO_Details": "Demonstrate working knowledge of reasoning in the presence of incomplete and/or uncertain information",
       "_id": {
-        "$oid": "652371e6ef415589d7028d43"
+        "$oid": "652371e6ef415589d7028e00"
       }
     },
     {
       "CLO_Name": "CLO9",
       "CLO_Details": "Ability to apply knowledge representation, reasoning, and machine learning techniques to real-world problems",
       "_id": {
-        "$oid": "652371e6ef415589d7028d43"
+        "$oid": "652371e6ef415589d7028e01"
       }
     }
   ],
@@ -1306,7 +1306,7 @@
       "IsOnline": false,
       "Note": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d43"
+        "$oid": "652371e6ef415589d7028e02"
       }
     },
     {
@@ -1321,7 +1321,7 @@
       "IsOnline": false,
       "Note": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d43"
+        "$oid": "652371e6ef415589d7028e03"
       }
     },
     {
@@ -1336,7 +1336,7 @@
       "IsOnline": false,
       "Note": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d43"
+        "$oid": "652371e6ef415589d7028e04"
       }
     },
     {
@@ -1351,7 +1351,7 @@
       "IsOnline": true,
       "Note": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d43"
+        "$oid": "652371e6ef415589d7028e05"
       }
     },
     {
@@ -1366,7 +1366,7 @@
       "IsOnline": true,
       "Note": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d43"
+        "$oid": "652371e6ef415589d7028e06"
       }
     },
     {
@@ -1381,7 +1381,7 @@
       "IsOnline": false,
       "Note": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d43"
+        "$oid": "652371e6ef415589d7028e07"
       }
     }
   ],
@@ -1402,7 +1402,7 @@
       "Student's Tasks": "Do practice in class following teacher requests",
       "URLs": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d43"
+        "$oid": "652371e6ef415589d7028e08"
       }
     },
     {
@@ -1421,7 +1421,7 @@
       "Student's Tasks": "Do practice in class following teacher requests",
       "URLs": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d43"
+        "$oid": "652371e6ef415589d7028e09"
       }
     },
     {
@@ -1440,7 +1440,7 @@
       "Student's Tasks": "Do practice in class following teacher requests",
       "URLs": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d43"
+        "$oid": "652371e6ef415589d7028e0a"
       }
     },
     {
@@ -1459,7 +1459,7 @@
       "Student's Tasks": "Do practice in class following teacher requests",
       "URLs": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d43"
+        "$oid": "652371e6ef415589d7028e0b"
       }
     },
     {
@@ -1477,7 +1477,7 @@
       "Student's Tasks": "Do practice in class following teacher requests",
       "URLs": "",
       "_id": {
-        "$oid": "652371e6ef415589d7028d43"
+        "$oid": "652371e6ef415589d7028e0c"
       }
     }
   ],
@@ -1496,7 +1496,7 @@
       "Grading Guide": "by instructor, and by suitable means (computer, paper, oral...)",
       "Note": "Instruction and shedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus. Progress test must be taken right after the last lectures of required material. Instructor has resposibility to review the test for students after graded.",
       "_id": {
-        "$oid": "652371e6ef415589d7028d43"
+        "$oid": "652371e6ef415589d7028e0d"
       }
     },
     {
@@ -1513,7 +1513,7 @@
       "Grading Guide": "guided by instructor in class, completed by group of students at home, submmited by deadline",
       "Note": "The project will be evaluated at the end of the course in a walkthrough defense session",
       "_id": {
-        "$oid": "652371e6ef415589d7028d43"
+        "$oid": "652371e6ef415589d7028e0e"
       }
     },
     {
@@ -1530,7 +1530,7 @@
       "Grading Guide": "by Exam Board",
       "Note": "~10% of questions is ABET a2-objective oriented and cover LO1;LO8;LO9;LO10",
       "_id": {
-        "$oid": "652371e6ef415589d7028d43"
+        "$oid": "652371e6ef415589d7028e0f"
       }
     }
   ],
@@ -1541,7 +1541,7 @@
       "name": "CQ1.1",
       "details": "How is the development history of Tensorflow?",
       "_id": {
-        "$oid": "652371e6ef415589d7028d43"
+        "$oid": "652371e6ef415589d7028e10"
       }
     },
     {
@@ -1550,7 +1550,7 @@
       "name": "CQ1.2",
       "details": "Why is TensorFlow used to implement AI algorithms?",
       "_id": {
-        "$oid": "652371e6ef415589d7028d43"
+        "$oid": "652371e6ef415589d7028e11"
       }
     },
     {
@@ -1559,7 +1559,7 @@
       "name": "CQ1.3",
       "details": "Which platform are used to deploy TensorFlow-based AI algorithms? Why do we often use them?",
       "_id": {
-        "$oid": "652371e6ef415589d7028d43"
+        "$oid": "652371e6ef415589d7028e12"
       }
     },
     {
@@ -1568,7 +1568,7 @@
       "name": "CQ2.1",
       "details": "How is the development of AI?",
       "_id": {
-        "$oid": "652371e6ef415589d7028d43"
+        "$oid": "652371e6ef415589d7028e13"
       }
     },
     {
@@ -1577,7 +1577,7 @@
       "name": "CQ2.2",
       "details": "What fields of life is AI recently applied for? How is the performance of AI in current life?",
       "_id": {
-        "$oid": "652371e6ef415589d7028d43"
+        "$oid": "652371e6ef415589d7028e14"
       }
     }
   ]

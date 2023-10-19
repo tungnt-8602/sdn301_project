@@ -146,6 +146,139 @@ const deleteSyllabus = async (req, res) => {
   }
 };
 
+//LO
+const addLO = async (req, res) => {
+  try {
+    // lấy res
+    const {
+      CLO_Name,
+      CLO_Details
+    } = req.body;
+    const syllabus = await syllabusRepository.getById(req.params.id);
+    const syllabusId = req.params.id;
+    // Kiểm tra có đúng syllabus
+    if (!syllabus) {
+      return res.status(404).json({ message: "Syllabus not found." });
+    }
+
+    const checkLOName = syllabus.LO.find((item) => String(item.CLO_Name) === CLO_Name)
+        if (checkLOName) {
+            return res.status(400).json({ message: "LO name exsit." });
+        }
+        console.log(checkLOName);
+
+    const createdLO = await syllabusRepository.addLO(syllabusId, {
+      CLO_Name: CLO_Name,
+      CLO_Details: CLO_Details,
+    });
+
+    res.status(201).json({
+      message: "Add LO successfully.",
+      data: createdLO,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.toString(),
+    });
+  }
+};
+
+const getAllLO = async (req, res) => {
+  try {
+    const syllabus = await syllabusRepository.getById(req.params.id);
+
+    if (!syllabus) {
+      return res.status(404).json({ message: "Syllabus not found." });
+    }
+
+    const list = await syllabusRepository.getAllLO(syllabus);
+    res.status(200).json({
+      message: "Get all LO successfully.",
+      data: list,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.toString(),
+    });
+  }
+};
+
+const getLOById = async (req, res) => {
+  try {
+    const syllabus = await syllabusRepository.getById(req.params.id);
+
+    // Kiểm tra có đúng syllabus
+    if (!syllabus) {
+      return res.status(404).json({ message: "Syllabus not found." });
+    }
+
+    const LOId = req.params.LOId;
+    console.log("LOId: ", LOId);
+    if (!LOId) {
+      return res.status(404).json({ message: "LO Id not found." });
+    }
+    const LO = await syllabusRepository.getLOById(
+      syllabus,
+      LOId
+    );
+
+    res.status(200).json({
+      message: "Get LO by ID successfully.",
+      data: LO,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.toString(),
+    });
+  }
+};
+
+const updateLO = async (req, res) => {
+  try {
+    const syllabus = await syllabusRepository.getById(req.params.id);
+    const LOId = req.params.LOId;
+    console.log("LO to update in controller:", req.body);
+    const updatedLOData = {
+      CLO_Name: req.body.CLO_Name,
+      CLO_Details: req.body.CLO_Details,
+    };
+
+    // Kiểm tra tồn tại của curriculum
+    if (!syllabus) {
+      return res.status(404).json({
+        status: "ERR",
+        message: "Syllabus not found.",
+      });
+    }
+
+    // Kiểm tra tồn tại của poId
+    if (!LOId) {
+      return res.status(404).json({
+        status: "ERR",
+        message: "The LOId is required",
+      });
+    }
+
+    // Kiểm tra xem Po_name đã tồn tại và có cùng ID không
+
+    const updatedLO = await syllabusRepository.updateLO(
+      syllabus,
+      LOId,
+      updatedLOData
+    );
+
+    res.status(200).json({
+      message: "Update session by ID successfully.",
+      data: updatedLO,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.toString(),
+    });
+  }
+};
+
+//Session
 const addSession = async (req, res) => {
   try {
     // lấy res
@@ -297,6 +430,7 @@ const updateSession = async (req, res) => {
     });
   }
 };
+
 //Assessment
 const getAllAssessment = async (req, res) => {
   try {
@@ -459,12 +593,19 @@ export default {
   getSyllabusById,
   updateSyllabus,
   deleteSyllabus,
+
   getAllSession,
   getSessionById,
   addSession,
   updateSession,
+
   getAllAssessment,
   getAssessmentById,
   updateAssessment,
   addAssessment,
+
+  addLO,
+  getAllLO,
+  getLOById,
+  updateLO,
 };
