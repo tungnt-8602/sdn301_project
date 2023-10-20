@@ -14,8 +14,8 @@ const PoSchema = new Schema({
         type: String,
         required: true,
         validate: {
-            validator: (value) => value.length <= 30,
-            message: 'Po description cannot be longer than 30 characters.'
+            validator: (value) => value.length <= 300,
+            message: 'Po description cannot be longer than 300 characters.'
         }
     },
     po_status: {
@@ -38,8 +38,8 @@ const PloSchema = new Schema({
         type: String,
         required: true,
         validate: {
-            validator: (value) => value.length <= 30,
-            message: 'PLO description cannot be longer than 30 characters.'
+            validator: (value) => value.length <= 300,
+            message: 'PLO description cannot be longer than 300 characters.'
         }
     },
     plo_status: {
@@ -82,9 +82,7 @@ const Curriculum = mongoose.model("Curriculum", new Schema({
     subject_id: {
         type: [String] // This is an array
     },
-    combo_id: {
-        type: [String] // This is an array
-    },
+    combo_id: { type: [String] },
     po: {
         type: [PoSchema] // This is an array of PoSchema
     },

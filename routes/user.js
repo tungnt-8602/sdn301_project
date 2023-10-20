@@ -6,7 +6,7 @@ import { isAuthenticated } from '../middleware/authentication.js'
 
 const userRouter = express.Router()
 
-userRouter.post('/create', isAuthenticated, Authorization.isAdmin,
+userRouter.post('/', isAuthenticated, Authorization.isAdmin,
 [ 
   body('username').isLength({ min: 4 }).withMessage('Length of username must be at least 4 characters'),
   body('email').isEmail().withMessage('Incorrect email format'),
@@ -35,6 +35,6 @@ userRouter.get('/logout', (req, res) => {
   userController.logout(req, res);
 })
 
-userRouter.get('/search', isAuthenticated, Authorization.isAdmin, userController.searchUsers);
+userRouter.get('/', isAuthenticated, Authorization.isAdmin, userController.searchUsers);
 
 export default userRouter
