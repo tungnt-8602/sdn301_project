@@ -15,6 +15,8 @@ curriculumRouter.get('/', curriculumController.searchCurriculums);
 
 curriculumRouter.put('/:id', curriculumController.updateCurriculum);
 
+curriculumRouter.put('/changeStatus/:id', curriculumController.ableAndDisable);
+
 // po 
 curriculumRouter.post('/po/:id', curriculumController.addPo);
 

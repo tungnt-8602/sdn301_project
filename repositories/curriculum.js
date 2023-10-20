@@ -53,6 +53,23 @@ const totalCurriculums = async (searchString, page, size) => {
   return students;
 };
 
+const ableAndDisable = async (curriculumId) => {
+  try {
+
+      const curriculum = await Curriculum.findById(curriculumId).exec();
+      if (!curriculum) {
+          throw new Error('Curriculum not found');
+      }
+
+      curriculum.status = !curriculum.status;
+      await curriculum.save();
+
+      return curriculum;
+  } catch (error) {
+      throw error;
+  }
+}
+
 const addPo = async (id, poData) => {
   try {
     const curriculum = await Curriculum.findById(id);
@@ -134,7 +151,6 @@ const getPoById = async (curriculumId, poId) => {
     }
 
     const po = curriculum.po.find((item) => String(item._id) === poId);
-    console.log(poId);
     if (!po) {
       throw new Error("Po not found");
     }
@@ -205,7 +221,7 @@ const updatePo = async (curriculum, poId, updatedPoData) => {
     throw error;
   }
 };
-
+/////////////////////////////////////////////////////////////////////////////////////////////////
 const addPlo = async (id, ploData) => {
   try {
     const curriculum = await Curriculum.findById(id);
@@ -255,8 +271,6 @@ const getPloById = async (curriculumId, ploId) => {
     }
 
     const plo = curriculum.plo.find((item) => String(item._id) === ploId);
-    console.log(plo);
-    console.log(ploId);
     if (!plo) {
       throw new Error("Plo not found");
     }
@@ -333,6 +347,7 @@ const updatePlo = async (curriculum, ploId, updatedPloData) => {
 
 
 export default {
+  
   getCurriculums,
   getById,
   addCurriculum,
@@ -348,5 +363,6 @@ export default {
   getAllPlo,
   getPloById,
   updatePlo,
-  updateCurriculum
+  updateCurriculum,
+  ableAndDisable,
 };

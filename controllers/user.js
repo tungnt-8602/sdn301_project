@@ -151,7 +151,7 @@ const ableAndDisable = async (req, res) => {
             message: 'Update status successfully.',
             data: updatedUser
         });
-    } catch (err) {
+    } catch (error) {
         res.status(500).json({ error: error.toString() });
     }
 }
