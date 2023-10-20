@@ -167,10 +167,17 @@ const logout = async (req, res) => {
 
 const searchUsers = async (req, res) => {
     const { query } = req.query;
+    const page = parseInt(req.query.page) || 1;
+    const size = parseInt(req.query.size) || 5; 
 
     try {
-        const users = await userRepository.searchUsers(query);
-        res.status(200).json({ users });
+        const users = await userRepository.searchUsers(query, page, size);
+        const total = await userRepository.totalUsersSearch(query);
+        if(users.length > 0){
+            res.status(200).json({message: "Search users successfully", searchString: query, page: page, size: size, total: total, data: users });
+        } else{
+            res.status(200).json({message: "Not found user from email or username provided" });
+        }
     } catch (error) {
         res.status(500).json({ error: error.toString() });
     }
