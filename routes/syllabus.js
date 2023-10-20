@@ -31,19 +31,26 @@ syllabusRouter.post("/", async (req, res) => {
 });
 
 //LO
-syllabusRouter.post("/addLO/:id", syllabusController.addLO);
+syllabusRouter.post("/lo/:id", syllabusController.addLO);
 
-syllabusRouter.get("/getAllLO/:id", syllabusController.getAllLO);
+syllabusRouter.get("/lo/:id", syllabusController.getAllLO);
 
-syllabusRouter.get(
-  "/getLOById/:id/:LOId",
-  syllabusController.getLOById
-);
+syllabusRouter.get("/lo/:id/:loId",syllabusController.getLOById);
 
-syllabusRouter.put(
-  "/updateLO/:id/:LOId",
-  syllabusController.updateLO
-);
+syllabusRouter.put("/lo/:id/:loId",syllabusController.updateLO);
+
+syllabusRouter.delete('/lo/:id/:loId', syllabusController.deleteLOById);
+
+//Material
+syllabusRouter.post("/material/:id", syllabusController.addMaterial);
+
+syllabusRouter.get("/material/:id", syllabusController.getAllMaterial);
+
+syllabusRouter.get("/material/:id/:materialId",syllabusController.getMaterialById);
+
+syllabusRouter.put("/material/:id/:materialId",syllabusController.updateMaterial);
+
+syllabusRouter.delete('/material/:id/:materialId', syllabusController.deleteMaterialById);
 
 //Session
 syllabusRouter.post("/addSession/:id", syllabusController.addSession);

@@ -15,6 +15,7 @@
   "note": "1) On-going Assessment\n- At least 2 progress tests: 15%\n- 8 labs: 20%\n- 1 assignment: 15%\n- 1 practi",
   "min_avg_mark_to_pass": 5,
   "approved_date": "2018-10-08",
+  "status": true,
   "LO": [
     {
       "CLO_Name": "CLO1",
@@ -321,6 +322,7 @@
   "note": "",
   "min_avg_mark_to_pass": 5,
   "approved_date": "2023-07-04",
+  "status": true,
   "LO": [
     {
       "CLO_Name": "CLO1",
@@ -626,6 +628,7 @@
   "note": "",
   "min_avg_mark_to_pass": 5,
   "approved_date": "2017-12-04",
+  "status": true,
   "LO": [
     {
       "CLO_Name": "CLO1.1",
@@ -947,6 +950,7 @@
   "note": "",
   "min_avg_mark_to_pass": 5,
   "approved_date": "2023-03-08",
+  "status": true,
   "LO": [
     {
       "CLO_Name": "CLO1",
@@ -1221,6 +1225,7 @@
   "note": "",
   "min_avg_mark_to_pass": 5,
   "approved_date": "2022-12-22",
+  "status": true,
   "LO": [
     {
       "CLO_Name": "CLO1",

@@ -188,6 +188,28 @@ const updateLO = async (syllabus, LOId, updatedLOData) => {
   }
 };
 
+const deleteLOById = async (syllabusId, LOId) => {
+  try {
+    const syllabus = await Syllabus.findById(syllabusId).exec();
+    if (!syllabus) {
+      throw new Error("Syllabus not found");
+    }
+
+    const loIndex = syllabus.LO.findIndex((item) => String(item._id) === LOId);
+    if (loIndex === -1) {
+      throw new Error("Po not found");
+    }
+    const deletedlo = syllabus.LO.splice(loIndex, 1);
+    
+    // Lưu syllabus sau khi xóa lo (tuỳ thuộc vào cách lưu dữ liệu của bạn)
+    await syllabus.save();
+    return deletedlo;
+  } catch (error) {
+    console.error("Error deleting lo by ID:", error);
+    throw error;
+  }
+};
+
 //Material
 const addMaterial = async (id, MaterialData) => {
   try {
@@ -264,7 +286,7 @@ const updateMaterial = async (syllabus, MaterialId, updatedMaterialData) => {
       throw new Error("Session not found");
     }
     newMaterial.MaterialDescription = updatedMaterialData.MaterialDescription;
-    newMaterial.AuthornewMaterial = updatedMaterialData.Author;
+    newMaterial.Author = updatedMaterialData.Author;
     newMaterial.Publisher = updatedMaterialData.Publisher;
     newMaterial.PublishedDate = updatedMaterialData.PublishedDate;
     newMaterial.Edition = updatedMaterialData.Edition;
@@ -277,6 +299,28 @@ const updateMaterial = async (syllabus, MaterialId, updatedMaterialData) => {
     return newMaterial;
   } catch (error) {
     console.error("Error updating newMaterial:", error);
+    throw error;
+  }
+};
+
+const deleteMaterialById = async (syllabusId, materialId) => {
+  try {
+    const syllabus = await Syllabus.findById(syllabusId).exec();
+    if (!syllabus) {
+      throw new Error("Syllabus not found");
+    }
+
+    const materialIndex = syllabus.Material.findIndex((item) => String(item._id) === materialId);
+    if (materialIndex === -1) {
+      throw new Error("Material not found");
+    }
+    const deletedMaterial = syllabus.Material.splice(materialIndex, 1);
+    
+    // Lưu syllabus sau khi xóa lo (tuỳ thuộc vào cách lưu dữ liệu của bạn)
+    await syllabus.save();
+    return deletedMaterial;
+  } catch (error) {
+    console.error("Error deleting Material by ID:", error);
     throw error;
   }
 };
@@ -537,9 +581,11 @@ export default {
   getAllLO,
   getLOById,
   updateLO,
+  deleteLOById,
 
   addMaterial,
   getAllMaterial,
   getMaterialById,
-  updateMaterial
+  updateMaterial,
+  deleteMaterialById
 };
