@@ -110,6 +110,23 @@ const remove = async (id) => {
   return result;
 };
 
+const setStatusSyllabusById = async (id) => {
+  try {
+
+      const syllabus = await Syllabus.findById(id).exec();
+      if (!syllabus) {
+          throw new Error('Syllabus not found');
+      }
+
+      syllabus.status = !syllabus.status;
+      await syllabus.save();
+
+      return syllabus;
+  } catch (error) {
+      throw error;
+  }
+}
+
 //LO
 const addLO = async (id, LOData) => {
   try {
@@ -566,6 +583,7 @@ export default {
   searchByKey,
   totalSearchByKey,
   countSyllabus,
+  setStatusSyllabusById,
 
   getAllSession,
   getSessionById,
