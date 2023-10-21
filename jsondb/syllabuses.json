@@ -15,38 +15,63 @@
   "note": "1) On-going Assessment\n- At least 2 progress tests: 15%\n- 8 labs: 20%\n- 1 assignment: 15%\n- 1 practi",
   "min_avg_mark_to_pass": 5,
   "approved_date": "2018-10-08",
+  "status": true,
   "LO": [
     {
       "CLO_Name": "CLO1",
-      "CLO_Details": "Describe Front-end Web UI Frameworks"
+      "CLO_Details": "Describe Front-end Web UI Frameworks",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d40"
+      }
     },
     {
       "CLO_Name": "CLO2",
-      "CLO_Details": "Explain the Bootstrap CSS Components"
+      "CLO_Details": "Explain the Bootstrap CSS Components",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d41"
+      }
     },
     {
       "CLO_Name": "CLO3",
-      "CLO_Details": "Explain the Bootstrap Javascript Components"
+      "CLO_Details": "Explain the Bootstrap Javascript Components",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d42"
+      }
     },
     {
       "CLO_Name": "CLO4",
-      "CLO_Details": "Describe about Web tools"
+      "CLO_Details": "Describe about Web tools",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d43"
+      }
     },
     {
       "CLO_Name": "CLO5",
-      "CLO_Details": "Install React application, create a React component"
+      "CLO_Details": "Install React application, create a React component",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d44"
+      }
     },
     {
       "CLO_Name": "CLO6",
-      "CLO_Details": "Discuss about React Router and Single Page Applications"
+      "CLO_Details": "Discuss about React Router and Single Page Applications",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d45"
+      }
     },
     {
       "CLO_Name": "CLO7",
-      "CLO_Details": "Discuss about React Forms, Flow Architecture and Introduction to Redux"
+      "CLO_Details": "Discuss about React Forms, Flow Architecture and Introduction to Redux",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d46"
+      }
     },
     {
       "CLO_Name": "CLO8",
-      "CLO_Details": "Discuss about more Redux and Client-Server Communication"
+      "CLO_Details": "Discuss about more Redux and Client-Server Communication",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d47"
+      }
     }
   ],
   "Material": [
@@ -60,7 +85,10 @@
       "IsMainMaterial": true,
       "IsHardCopy": false,
       "IsOnline": true,
-      "Note": "MOOC1: Front-End Web UI Frameworks and Tools: Bootstrap 4"
+      "Note": "MOOC1: Front-End Web UI Frameworks and Tools: Bootstrap 4",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d48"
+      }
     },
     {
       "MaterialDescription": "https://www.coursera.org/learn/front-end-react/home/welcome",
@@ -72,7 +100,10 @@
       "IsMainMaterial": true,
       "IsHardCopy": false,
       "IsOnline": true,
-      "Note": "MOOC2: Front-End Web Development with React"
+      "Note": "MOOC2: Front-End Web Development with React",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d49"
+      }
     },
     {
       "MaterialDescription": "Pro MERN Stack - Full Stack Web App Development with Mongo, Express, React, and Node",
@@ -84,7 +115,10 @@
       "IsMainMaterial": true,
       "IsHardCopy": true,
       "IsOnline": false,
-      "Note": ""
+      "Note": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d4a"
+      }
     }
   ],
   "Session": [
@@ -99,7 +133,10 @@
       "Student Materials": "Slides",
       "S-Download": "https://drive.google.com/drive/folders/1pG-FQU9MMJaJs8029-59sseMu4Jc2ZGP?usp=sharing",
       "Student's Tasks": "",
-      "URLs": ""
+      "URLs": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d4b"
+      }
     },
     {
       "Session": 2,
@@ -112,7 +149,10 @@
       "Student Materials": "Slides",
       "S-Download": "",
       "Student's Tasks": "",
-      "URLs": ""
+      "URLs": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d4d"
+      }
     },
     {
       "Session": 3,
@@ -129,7 +169,10 @@
       "Student Materials": "Slides",
       "S-Download": "",
       "Student's Tasks": "",
-      "URLs": ""
+      "URLs": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d4e"
+      }
     },
     {
       "Session": 4,
@@ -146,7 +189,10 @@
       "Student Materials": "Slides",
       "S-Download": "",
       "Student's Tasks": "",
-      "URLs": ""
+      "URLs": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d4f"
+      }
     },
     {
       "Session": 5,
@@ -164,7 +210,10 @@
       "Student Materials": "Slides",
       "S-Download": "",
       "Student's Tasks": "",
-      "URLs": ""
+      "URLs": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d50"
+      }
     }
   ],
   "Assessment": [
@@ -180,7 +229,10 @@
       "No Question": "",
       "Knowledge and Skill": "",
       "Grading Guide": "",
-      "Note": ""
+      "Note": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d51"
+      }
     },
     {
       "Category": "Labs",
@@ -194,7 +246,10 @@
       "No Question": "Lab 1: LO1\nLab 2: LO2\nLab 3: LO3\nLab 4: LO4\nLab 5: LO5\nLab 6: LO6\nLab 7: LO7\nLab 8: LO8",
       "Knowledge and Skill": "",
       "Grading Guide": "",
-      "Note": "Teachers support tutorials and students do them by themselves"
+      "Note": "Teachers support tutorials and students do them by themselves",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d52"
+      }
     },
     {
       "Category": "Practical Exam",
@@ -208,7 +263,10 @@
       "No Question": "",
       "Knowledge and Skill": "",
       "Grading Guide": "Supervised by proctor(s) sent by exam board",
-      "Note": ""
+      "Note": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d53"
+      }
     },
     {
       "Category": "Progress test",
@@ -222,7 +280,10 @@
       "No Question": "",
       "Knowledge and Skill": "",
       "Grading Guide": "Supervised by instructor\nProgress test must be taken right after the last lectures of required material.\nInstructor has responsibility to review the test for students after graded.",
-      "Note": ""
+      "Note": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d54"
+      }
     },
     {
       "Category": "Final exam",
@@ -236,14 +297,17 @@
       "No Question": "50",
       "Knowledge and Skill": "All topics;\nMore than 70% new questions (for the current semester);",
       "Grading Guide": "Supervised by proctor(s) sent by exam board",
-      "Note": ""
+      "Note": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d55"
+      }
     }
   ],
   "Question": []
 },
 {
   "_id": {
-    "$oid": "652371e6ef415589d7028d40"
+    "$oid": "652371e6ef415589d7028d56"
   },
   "id": 2,
   "name": "Server-Side development with NodeJS, Express, and MongoDB",
@@ -258,38 +322,63 @@
   "note": "",
   "min_avg_mark_to_pass": 5,
   "approved_date": "2023-07-04",
+  "status": true,
   "LO": [
     {
       "CLO_Name": "CLO1",
-      "CLO_Details": "Understand Node, Node modules, and the Node HTTP server"
+      "CLO_Details": "Understand Node, Node modules, and the Node HTTP server",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d57"
+      }
     },
     {
       "CLO_Name": "CLO2",
-      "CLO_Details": "Understand Express framework, operating principles, and methods of building a web server that supports REST API"
+      "CLO_Details": "Understand Express framework, operating principles, and methods of building a web server that supports REST API",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d58"
+      }
     },
     {
       "CLO_Name": "CLO3",
-      "CLO_Details": "Be able to use the Express Generator tool to generate Express applications"
+      "CLO_Details": "Be able to use the Express Generator tool to generate Express applications",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d59"
+      }
     },
     {
       "CLO_Name": "CLO4",
-      "CLO_Details": "Understand MongoDB basics"
+      "CLO_Details": "Understand MongoDB basics",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d5a"
+      }
     },
     {
       "CLO_Name": "CLO5",
-      "CLO_Details": "Be able to develop Node applications that work with data through MongoDB and Mongoose ODM"
+      "CLO_Details": "Be able to develop Node applications that work with data through MongoDB and Mongoose ODM",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d5b"
+      }
     },
     {
       "CLO_Name": "CLO6",
-      "CLO_Details": "Be able to implement REST APIs with Express, MongoDB and Mongoose"
+      "CLO_Details": "Be able to implement REST APIs with Express, MongoDB and Mongoose",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d5c"
+      }
     },
     {
       "CLO_Name": "CLO7",
-      "CLO_Details": "Be able to understand and implement user authentication mechanisms for applications"
+      "CLO_Details": "Be able to understand and implement user authentication mechanisms for applications",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d5d"
+      }
     },
     {
       "CLO_Name": "CLO8",
-      "CLO_Details": "Use Backend as a Service (BaaS) to enhance secure communication between client and server applications"
+      "CLO_Details": "Use Backend as a Service (BaaS) to enhance secure communication between client and server applications",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d5e"
+      }
     }
   ],
   "Material": [
@@ -303,7 +392,10 @@
       "IsMainMaterial": true,
       "IsHardCopy": false,
       "IsOnline": true,
-      "Note": "MOOC1: Front-End Web UI Frameworks and Tools: Bootstrap 4"
+      "Note": "MOOC1: Front-End Web UI Frameworks and Tools: Bootstrap 4",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d5f"
+      }
     },
     {
       "MaterialDescription": "https://www.coursera.org/learn/front-end-react/home/welcome",
@@ -315,7 +407,10 @@
       "IsMainMaterial": true,
       "IsHardCopy": false,
       "IsOnline": true,
-      "Note": "MOOC2: Front-End Web Development with React"
+      "Note": "MOOC2: Front-End Web Development with React",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d60"
+      }
     },
     {
       "MaterialDescription": "Pro MERN Stack - Full Stack Web App Development with Mongo, Express, React, and Node",
@@ -327,7 +422,10 @@
       "IsMainMaterial": true,
       "IsHardCopy": true,
       "IsOnline": false,
-      "Note": ""
+      "Note": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d61"
+      }
     }
   ],
   "Session": [
@@ -342,7 +440,10 @@
       "Student Materials": "Slides",
       "S-Download": "https://flm.fpt.edu.vn/download/9094/S/1_SDN301m.zip",
       "Student's Tasks": "Slides",
-      "URLs": ""
+      "URLs": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d62"
+      }
     },
     {
       "Session": 2,
@@ -358,7 +459,10 @@
       "Student Materials": "Slides",
       "S-Download": "https://flm.fpt.edu.vn/download/9094/S/2_SDN301m.zip",
       "Student's Tasks": "Slides",
-      "URLs": ""
+      "URLs": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d63"
+      }
     },
     {
       "Session": 3,
@@ -374,7 +478,10 @@
       "Student Materials": "Slides",
       "S-Download": "",
       "Student's Tasks": "",
-      "URLs": ""
+      "URLs": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d64"
+      }
     },
     {
       "Session": 4,
@@ -390,7 +497,10 @@
       "Student Materials": "Slides",
       "S-Download": "",
       "Student's Tasks": "",
-      "URLs": ""
+      "URLs": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d65"
+      }
     },
     {
       "Session": 5,
@@ -406,7 +516,10 @@
       "Student Materials": "Slides",
       "S-Download": "https://flm.fpt.edu.vn/download/9094/S/5_SDN301m.zip",
       "Student's Tasks": "",
-      "URLs": ""
+      "URLs": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d66"
+      }
     }
   ],
   "Assessment": [
@@ -422,7 +535,10 @@
       "No Question": "",
       "Knowledge and Skill": "",
       "Grading Guide": "",
-      "Note": ""
+      "Note": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d67"
+      }
     },
     {
       "Category": "Progress test",
@@ -436,7 +552,10 @@
       "No Question": "15-30 if multiple choice",
       "Knowledge and Skill": "PT 1: LO1 - LO2 PT 2: LO3 - LO7 PT 3: LO8",
       "Grading Guide": "supervised by instructor",
-      "Note": "Progress test must be taken right after the last lectures of required material. Instructor has responsibility to review the test for students after graded."
+      "Note": "Progress test must be taken right after the last lectures of required material. Instructor has responsibility to review the test for students after graded.",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d68"
+      }
     },
     {
       "Category": "Practical Exam",
@@ -450,7 +569,10 @@
       "No Question": "",
       "Knowledge and Skill": "problem(s) to solve by programming using LO1 - LO8",
       "Grading Guide": "Supervised by proctor(s) sent by exam board",
-      "Note": ""
+      "Note": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d69"
+      }
     },
     {
       "Category": "Project",
@@ -464,7 +586,10 @@
       "No Question": "",
       "Knowledge and Skill": "problem(s) to solve by programming using LO1 - LO8",
       "Grading Guide": "Supervised by instructor\nProgress test must be taken right after the last lectures of required material.\nInstructor has responsibility to review the test for students after graded.",
-      "Note": ""
+      "Note": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d6a"
+      }
     },
     {
       "Category": "Final exam",
@@ -478,14 +603,17 @@
       "No Question": "50",
       "Knowledge and Skill": "All topics;\nMore than 70% new questions (for the current semester);",
       "Grading Guide": "Supervised by proctor(s) sent by exam board",
-      "Note": ""
+      "Note": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d6b"
+      }
     }
   ],
   "Question": []
 },
 {
   "_id": {
-    "$oid": "652371e6ef415589d7028d41"
+    "$oid": "652371e6ef415589d7028d6c"
   },
   "id": 3,
   "name": "C# and .NET",
@@ -500,34 +628,56 @@
   "note": "",
   "min_avg_mark_to_pass": 5,
   "approved_date": "2017-12-04",
+  "status": true,
   "LO": [
     {
       "CLO_Name": "CLO1.1",
-      "CLO_Details": "Understand C# language for developing .NET applications;"
+      "CLO_Details": "Understand C# language for developing .NET applications;",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d6d"
+      }
     },
     {
       "CLO_Name": "CLO1.2",
-      "CLO_Details": "Fundamental concepts of .NET Platform"
+      "CLO_Details": "Fundamental concepts of .NET Platform",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d6e"
+      }
     },
     {
       "CLO_Name": "CLO1.3",
-      "CLO_Details": "Basic knowledge of WinForms .NET"
+      "CLO_Details": "Basic knowledge of WinForms .NET",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d6f"
+      }
     },
     {
       "CLO_Name": "CLO1.4",
-      "CLO_Details": "Basic knowledge of WebForms .NET"
+      "CLO_Details": "Basic knowledge of WebForms .NET",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d70"
+      }
     },
     {
       "CLO_Name": "CLO2.1",
-      "CLO_Details": "Develop Windows forms applications"
+      "CLO_Details": "Develop Windows forms applications",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d71"
+      }
     },
     {
       "CLO_Name": "CLO2.2",
-      "CLO_Details": "Develop Web forms applications"
+      "CLO_Details": "Develop Web forms applications",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d72"
+      }
     },
     {
       "CLO_Name": "CLO3",
-      "CLO_Details": "Be able to work in team and present group's results"
+      "CLO_Details": "Be able to work in team and present group's results",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d73"
+      }
     }
   ],
   "Material": [
@@ -541,7 +691,10 @@
       "IsMainMaterial": true,
       "IsHardCopy": false,
       "IsOnline": true,
-      "Note": ""
+      "Note": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d74"
+      }
     },
     {
       "MaterialDescription": "FU CMS at http://cms.fpt.edu.vn",
@@ -553,7 +706,10 @@
       "IsMainMaterial": false,
       "IsHardCopy": false,
       "IsOnline": true,
-      "Note": ""
+      "Note": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d75"
+      }
     },
     {
       "MaterialDescription": "ProC# with .NET 3.0",
@@ -565,7 +721,10 @@
       "IsMainMaterial": false,
       "IsHardCopy": false,
       "IsOnline": true,
-      "Note": ""
+      "Note": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d76"
+      }
     },
     {
       "MaterialDescription": "Pro CSharp 2008 and the NET 3.5 Platform",
@@ -577,7 +736,10 @@
       "IsMainMaterial": false,
       "IsHardCopy": false,
       "IsOnline": true,
-      "Note": ""
+      "Note": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d77"
+      }
     },
     {
       "MaterialDescription": ".Net Framework Essentials 2e (.pdf file, CD-ROM)",
@@ -589,7 +751,10 @@
       "IsMainMaterial": false,
       "IsHardCopy": false,
       "IsOnline": true,
-      "Note": ""
+      "Note": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d78"
+      }
     },
     {
       "MaterialDescription": "C# How to Progam, Prentice Hall (in Library)",
@@ -601,7 +766,10 @@
       "IsMainMaterial": false,
       "IsHardCopy": true,
       "IsOnline": false,
-      "Note": ""
+      "Note": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d79"
+      }
     }
   ],
   "Session": [
@@ -614,7 +782,10 @@
       "Student Materials": "Ref. 1 Part 1 - Introducing C# and the .NET Platform",
       "S-Download": "",
       "Student's Tasks": "",
-      "URLs": ""
+      "URLs": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d7a"
+      }
     },
     {
       "Session": 2,
@@ -625,7 +796,10 @@
       "Student Materials": "Ref. 1 Part 1 - Introducing C# and the .NET Platform",
       "S-Download": "",
       "Student's Tasks": "CMS",
-      "URLs": ""
+      "URLs": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d7b"
+      }
     },
     {
       "Session": 3,
@@ -636,7 +810,10 @@
       "Student Materials": "",
       "S-Download": "",
       "Student's Tasks": "",
-      "URLs": ""
+      "URLs": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d7c"
+      }
     },
     {
       "Session": 4,
@@ -647,7 +824,10 @@
       "Student Materials": "",
       "S-Download": "",
       "Student's Tasks": "",
-      "URLs": ""
+      "URLs": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d7d"
+      }
     },
     {
       "Session": 5,
@@ -658,7 +838,10 @@
       "Student Materials": "Ref. 1 Part 2 - The C# Programming Language",
       "S-Download": "",
       "Student's Tasks": "",
-      "URLs": ""
+      "URLs": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d7e"
+      }
     }
   ],
   "Assessment": [
@@ -674,7 +857,10 @@
       "No Question": "",
       "Knowledge and Skill": "Lab 1: C# Programming, Lab 2: Programming with .Net Assemblies, Lab 3: Programming with Windows Forms, Lab 4: Database Programming with ADO.NET",
       "Grading Guide": "",
-      "Note": ""
+      "Note": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d7f"
+      }
     },
     {
       "Category": "Progress test",
@@ -688,7 +874,10 @@
       "No Question": "10-20 (At least 10*n questions where n is the number of Part covered in the test.)",
       "Knowledge and Skill": "concepts, algorithms in a topic Current chapter(s) Each Progess Test covers at least 01 Part and at most 02 Parts, and overall they must cover all learned Parts of the course.",
       "Grading Guide": "by instructor, using computer",
-      "Note": "Instruction and shedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus. Progress test must be taken right after the last lectures of required material. Instructor has resposibility to review the test for students after graded."
+      "Note": "Instruction and shedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus. Progress test must be taken right after the last lectures of required material. Instructor has resposibility to review the test for students after graded.",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d80"
+      }
     },
     {
       "Category": "Practical Exam",
@@ -702,7 +891,10 @@
       "No Question": "",
       "Knowledge and Skill": "Window Forms Application and/or Web Forms Application",
       "Grading Guide": "by Exam Board and Department",
-      "Note": ""
+      "Note": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d81"
+      }
     },
     {
       "Category": "Group Project",
@@ -716,7 +908,10 @@
       "No Question": "",
       "Knowledge and Skill": "Develop a management information system (Desktop or Web application) SRS, Design (GUI, Business, Database)",
       "Grading Guide": "regularly by instructor",
-      "Note": "Students should submit 02 project documents on specified deadlines before presentation"
+      "Note": "Students should submit 02 project documents on specified deadlines before presentation",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d82"
+      }
     },
     {
       "Category": "Final exam",
@@ -730,14 +925,17 @@
       "No Question": "50",
       "Knowledge and Skill": "All topics;\nMore than 70% new questions (for the current semester);",
       "Grading Guide": "by Exam Board and Department",
-      "Note": ""
+      "Note": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d83"
+      }
     }
   ],
   "Question": []
 },
 {
   "_id": {
-    "$oid": "652371e6ef415589d7028d42"
+    "$oid": "652371e6ef415589d7028d84"
   },
   "id": 4,
   "name": "Python programming",
@@ -752,21 +950,35 @@
   "note": "",
   "min_avg_mark_to_pass": 5,
   "approved_date": "2023-03-08",
+  "status": true,
   "LO": [
     {
       "CLO_Name": "CLO1",
-      "CLO_Details": "Explain the basics of programming computers using Python"
+      "CLO_Details": "Explain the basics of programming computers using Python",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d85"
+      }
     },
     {
       "CLO_Name": "CLO2",
-      "CLO_Details": "Understand fundamental programming concepts such as data structures"
+      "CLO_Details": "Understand fundamental programming concepts such as data structures",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d86"
+      }
     },
     {
-      "CLO_Name": "CLOCreate your own applications for data retrieval and processing"
+      "CLO_Name": "CLO3",
+      "CLO_Details": "Describe the basics of the Structured Query Language (SQL) and database design",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d87"
+      }
     },
     {
       "CLO_Name": "CLO4",
-      "CLO_Details": "Describe the basics of the Structured Query Language (SQL) and database design"
+      "CLO_Details": "Describe the basics of the Structured Query Language (SQL) and database design",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d88"
+      }
     }
   ],
   "Material": [
@@ -780,7 +992,10 @@
       "IsMainMaterial": true,
       "IsHardCopy": false,
       "IsOnline": true,
-      "Note": "MOOC 5: Capstone: Retrieving, Processing, and Visualizing Data with Python"
+      "Note": "MOOC 5: Capstone: Retrieving, Processing, and Visualizing Data with Python",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d89"
+      }
     },
     {
       "MaterialDescription": "https://learner.coursera.help/hc/en-us/articles/208280036-Coursera-Code-of-Conduct",
@@ -792,7 +1007,10 @@
       "IsMainMaterial": false,
       "IsHardCopy": false,
       "IsOnline": true,
-      "Note": "Help Articles"
+      "Note": "Help Articles",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d8a"
+      }
     },
     {
       "MaterialDescription": "https://www.coursera.org/specializations/python",
@@ -804,7 +1022,10 @@
       "IsMainMaterial": true,
       "IsHardCopy": false,
       "IsOnline": true,
-      "Note": "SPEC: Python for Everybody Specialization"
+      "Note": "SPEC: Python for Everybody Specialization",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d8b"
+      }
     },
     {
       "MaterialDescription": "https://www.coursera.org/learn/python-data?specialization=python",
@@ -816,7 +1037,10 @@
       "IsMainMaterial": true,
       "IsHardCopy": false,
       "IsOnline": true,
-      "Note": "MOOC 2: Python Data Structures"
+      "Note": "MOOC 2: Python Data Structures",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d8c"
+      }
     },
     {
       "MaterialDescription": "https://www.coursera.org/learn/python?specialization=python",
@@ -828,7 +1052,10 @@
       "IsMainMaterial": true,
       "IsHardCopy": false,
       "IsOnline": true,
-      "Note": "MOOC 1: Programming for Everybody (Getting Started with Python"
+      "Note": "MOOC 1: Programming for Everybody (Getting Started with Python",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d8d"
+      }
     },
     {
       "MaterialDescription": "https://www.coursera.org/learn/python-network-data?specialization=python",
@@ -840,7 +1067,10 @@
       "IsMainMaterial": true,
       "IsHardCopy": false,
       "IsOnline": true,
-      "Note": "MOOC 3: Using Python to Access Web Data"
+      "Note": "MOOC 3: Using Python to Access Web Data",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d8e"
+      }
     },
     {
       "MaterialDescription": "https://www.coursera.org/learn/python-databases?specialization=python",
@@ -852,7 +1082,10 @@
       "IsMainMaterial": true,
       "IsHardCopy": false,
       "IsOnline": true,
-      "Note": "MOOC 4: Using Databases with Python"
+      "Note": "MOOC 4: Using Databases with Python",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d8f"
+      }
     }
   ],
   "Session": [
@@ -867,7 +1100,10 @@
       "Student Materials": "",
       "S-Download": "",
       "Student's Tasks": "",
-      "URLs": ""
+      "URLs": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d90"
+      }
     },
     {
       "Session": 2,
@@ -880,7 +1116,10 @@
       "Student Materials": "",
       "S-Download": "",
       "Student's Tasks": "Complete Week 5, 6, 7 of the course Getting started with Python Deadline of Course 1 Completion: End of Friday of the week.",
-      "URLs": ""
+      "URLs": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d91"
+      }
     },
     {
       "Session": 3,
@@ -893,7 +1132,10 @@
       "Student Materials": "",
       "S-Download": "",
       "Student's Tasks": "Complete Week 1, 2, 3 of the course Python Data Structures",
-      "URLs": ""
+      "URLs": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d92"
+      }
     },
     {
       "Session": 4,
@@ -906,7 +1148,10 @@
       "Student Materials": "",
       "S-Download": "",
       "Student's Tasks": "Complete Week 4, 5, 6, 7 of the course Python Data Structures\n- Deadline of Course 2 Completion: End of Friday of the week.\n- Students should participate in offline slot\n(Offline 2: Review Course 2)",
-      "URLs": ""
+      "URLs": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d93"
+      }
     },
     {
       "Session": 5,
@@ -919,7 +1164,10 @@
       "Student Materials": "",
       "S-Download": "",
       "Student's Tasks": "Complete Week 1, 2 of the course Using Python to Access Web Data",
-      "URLs": ""
+      "URLs": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d94"
+      }
     }
   ],
   "Assessment": [
@@ -935,7 +1183,10 @@
       "No Question": "N/A",
       "Knowledge and Skill": "All studied courses",
       "Grading Guide": "by Exam Board",
-      "Note": "Customized from the Assignment & Capstone Project of this specialization 1st Evaluation (exam): For students who completed & got Coursera's specialization certificates (Option at week 10 or 11); 2nd Evaluation (exam): For students who completed & got Coursera's specialization certificates) at week 13; 3rd Evaluation (re-exam): For students who completed & got Coursera's specialization certificates) at week 14"
+      "Note": "Customized from the Assignment & Capstone Project of this specialization 1st Evaluation (exam): For students who completed & got Coursera's specialization certificates (Option at week 10 or 11); 2nd Evaluation (exam): For students who completed & got Coursera's specialization certificates) at week 13; 3rd Evaluation (re-exam): For students who completed & got Coursera's specialization certificates) at week 14",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d95"
+      }
     },
     {
       "Category": "Final Exam (TE)",
@@ -949,14 +1200,17 @@
       "No Question": "50",
       "Knowledge and Skill": "All studied courses. Each module of course contributes 3-5 questions.",
       "Grading Guide": "by Exam Board",
-      "Note": "Customized from the quizzes of this specialization. 1st Evaluation (exam): For students who completed & got Coursera's specialization certificates (Option at week 9); 2nd Evaluation (exam): For students who completed & got Coursera's specialization certificates) at week 13; 3rd Evaluation (re-exam): For students who completed & got Coursera's specialization certificates) at week 14."
+      "Note": "Customized from the quizzes of this specialization. 1st Evaluation (exam): For students who completed & got Coursera's specialization certificates (Option at week 9); 2nd Evaluation (exam): For students who completed & got Coursera's specialization certificates) at week 13; 3rd Evaluation (re-exam): For students who completed & got Coursera's specialization certificates) at week 14.",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d96"
+      }
     }
   ],
   "Question": []
 },
 {
   "_id": {
-    "$oid": "652371e6ef415589d7028d43"
+    "$oid": "652371e6ef415589d7028d97"
   },
   "id": 5,
   "name": "AI with Tensorflow",
@@ -971,46 +1225,77 @@
   "note": "",
   "min_avg_mark_to_pass": 5,
   "approved_date": "2022-12-22",
+  "status": true,
   "LO": [
     {
       "CLO_Name": "CLO1",
-      "CLO_Details": "Demonstrate working knowledge in Tensor Flow in order to write simple AI programs and explore more sophisticated Tensor Flow code on their own"
+      "CLO_Details": "Demonstrate working knowledge in Tensor Flow in order to write simple AI programs and explore more sophisticated Tensor Flow code on their own",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d98"
+      }
     },
     {
       "CLO_Name": "CLO10",
-      "CLO_Details": "Ability to carry out works related to AI independently or collaborated with others and communicate effectively in a TensorFlow AI-related project setting."
+      "CLO_Details": "Ability to carry out works related to AI independently or collaborated with others and communicate effectively in a TensorFlow AI-related project setting.",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d99"
+      }
     },
     {
       "CLO_Name": "CLO2",
-      "CLO_Details": "Understand about Artificial Intelligence, its history and concepts such as Fuzzy Logic, Intelligent Agents, Machine Learning…"
+      "CLO_Details": "Understand about Artificial Intelligence, its history and concepts such as Fuzzy Logic, Intelligent Agents, Machine Learning…",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d9a"
+      }
     },
     {
       "CLO_Name": "CLO3",
-      "CLO_Details": "Understand different types of AI agents."
+      "CLO_Details": "Understand different types of AI agents.",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d9b"
+      }
     },
     {
       "CLO_Name": "CLO4",
-      "CLO_Details": "Know various AI search algorithms (uninformed, informed, constraint satisfaction, genetic algorithms)"
+      "CLO_Details": "Know various AI search algorithms (uninformed, informed, constraint satisfaction, genetic algorithms)",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d9c"
+      }
     },
     {
       "CLO_Name": "CLO5",
-      "CLO_Details": "Understand the fundamentals of knowledge representation (logic-based, frame-based, semantic nets), inference and theorem proving"
+      "CLO_Details": "Understand the fundamentals of knowledge representation (logic-based, frame-based, semantic nets), inference and theorem proving",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d9d"
+      }
     },
     {
       "CLO_Name": "CLO6",
-      "CLO_Details": "Know how to build simple knowledge-based systems"
+      "CLO_Details": "Know how to build simple knowledge-based systems",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d9e"
+      }
     },
     {
       "CLO_Name": "CLO7",
-      "CLO_Details": "Know some popular applications of Artificial Intelligence"
+      "CLO_Details": "Know some popular applications of Artificial Intelligence",
+      "_id": {
+        "$oid": "652371e6ef415589d7028d9f"
+      }
     },
     {
       "CLO_Name": "CLO8",
-      "CLO_Details": "Demonstrate working knowledge of reasoning in the presence of incomplete and/or uncertain information"
+      "CLO_Details": "Demonstrate working knowledge of reasoning in the presence of incomplete and/or uncertain information",
+      "_id": {
+        "$oid": "652371e6ef415589d7028e00"
+      }
     },
     {
       "CLO_Name": "CLO9",
-      "CLO_Details": "Ability to apply knowledge representation, reasoning, and machine learning techniques to real-world problems"
+      "CLO_Details": "Ability to apply knowledge representation, reasoning, and machine learning techniques to real-world problems",
+      "_id": {
+        "$oid": "652371e6ef415589d7028e01"
+      }
     }
   ],
   "Material": [
@@ -1024,7 +1309,10 @@
       "IsMainMaterial": true,
       "IsHardCopy": true,
       "IsOnline": false,
-      "Note": ""
+      "Note": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028e02"
+      }
     },
     {
       "MaterialDescription": "Essentials of Artificial Intelligence",
@@ -1036,7 +1324,10 @@
       "IsMainMaterial": false,
       "IsHardCopy": true,
       "IsOnline": false,
-      "Note": ""
+      "Note": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028e03"
+      }
     },
     {
       "MaterialDescription": "Artificial Intelligence By Example: Develop machine intelligence from scratch using real artificial intelligence use cases",
@@ -1048,7 +1339,10 @@
       "IsMainMaterial": false,
       "IsHardCopy": true,
       "IsOnline": false,
-      "Note": ""
+      "Note": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028e04"
+      }
     },
     {
       "MaterialDescription": "Tensor Flow Tutorials: https://www.tensorflow.org/tutorials/",
@@ -1060,7 +1354,10 @@
       "IsMainMaterial": false,
       "IsHardCopy": false,
       "IsOnline": true,
-      "Note": ""
+      "Note": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028e05"
+      }
     },
     {
       "MaterialDescription": "Artificial Intelligent Tutorial: https://www.javatpoint.com/ai-resolution-in-first-order-logic",
@@ -1072,7 +1369,10 @@
       "IsMainMaterial": false,
       "IsHardCopy": false,
       "IsOnline": true,
-      "Note": ""
+      "Note": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028e06"
+      }
     },
     {
       "MaterialDescription": "Machines Who Think",
@@ -1084,7 +1384,10 @@
       "IsMainMaterial": false,
       "IsHardCopy": true,
       "IsOnline": false,
-      "Note": ""
+      "Note": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028e07"
+      }
     }
   ],
   "Session": [
@@ -1102,7 +1405,10 @@
       "Student Materials": "Read Textbook on Chapter 1 in advance",
       "S-Download": "https://flm.fpt.edu.vn/download/4020/S/1_AIT301.zip",
       "Student's Tasks": "Do practice in class following teacher requests",
-      "URLs": ""
+      "URLs": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028e08"
+      }
     },
     {
       "Session": 2,
@@ -1118,7 +1424,10 @@
       "Student Materials": "Read Textbook on Chapter 1 in advance",
       "S-Download": "https://flm.fpt.edu.vn/download/4020/S/2_AIT301.zip",
       "Student's Tasks": "Do practice in class following teacher requests",
-      "URLs": ""
+      "URLs": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028e09"
+      }
     },
     {
       "Session": 3,
@@ -1134,7 +1443,10 @@
       "Student Materials": "Read Textbook on Chapter 2 in advance",
       "S-Download": "",
       "Student's Tasks": "Do practice in class following teacher requests",
-      "URLs": ""
+      "URLs": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028e0a"
+      }
     },
     {
       "Session": 4,
@@ -1150,7 +1462,10 @@
       "Student Materials": "Read Textbook on Chapter 2 in advance",
       "S-Download": "",
       "Student's Tasks": "Do practice in class following teacher requests",
-      "URLs": ""
+      "URLs": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028e0b"
+      }
     },
     {
       "Session": 5,
@@ -1165,7 +1480,10 @@
       "Student Materials": "Read Textbook on Chapter 2 in advance",
       "S-Download": "",
       "Student's Tasks": "Do practice in class following teacher requests",
-      "URLs": ""
+      "URLs": "",
+      "_id": {
+        "$oid": "652371e6ef415589d7028e0c"
+      }
     }
   ],
   "Assessment": [
@@ -1181,7 +1499,10 @@
       "No Question": "25-30",
       "Knowledge and Skill": "Chapters introduced ( 1-7, 8-14, 15-21)",
       "Grading Guide": "by instructor, and by suitable means (computer, paper, oral...)",
-      "Note": "Instruction and shedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus. Progress test must be taken right after the last lectures of required material. Instructor has resposibility to review the test for students after graded."
+      "Note": "Instruction and shedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus. Progress test must be taken right after the last lectures of required material. Instructor has resposibility to review the test for students after graded.",
+      "_id": {
+        "$oid": "652371e6ef415589d7028e0d"
+      }
     },
     {
       "Category": "Project",
@@ -1195,7 +1516,10 @@
       "No Question": "",
       "Knowledge and Skill": "Student will work in group to create one of three simple AI projects by applying Tensor Flow including Natural Language Processing, Handwriting Text Recognition, Autonomous Car and etc..",
       "Grading Guide": "guided by instructor in class, completed by group of students at home, submmited by deadline",
-      "Note": "The project will be evaluated at the end of the course in a walkthrough defense session"
+      "Note": "The project will be evaluated at the end of the course in a walkthrough defense session",
+      "_id": {
+        "$oid": "652371e6ef415589d7028e0e"
+      }
     },
     {
       "Category": "Final exam",
@@ -1209,7 +1533,10 @@
       "No Question": "50",
       "Knowledge and Skill": "All topics;\nMore than 70% new questions (for the current semester);",
       "Grading Guide": "by Exam Board",
-      "Note": "~10% of questions is ABET a2-objective oriented and cover LO1;LO8;LO9;LO10"
+      "Note": "~10% of questions is ABET a2-objective oriented and cover LO1;LO8;LO9;LO10",
+      "_id": {
+        "$oid": "652371e6ef415589d7028e0f"
+      }
     }
   ],
   "Question": [
@@ -1217,31 +1544,46 @@
       "id": 1,
       "session_no": 1,
       "name": "CQ1.1",
-      "details": "How is the development history of Tensorflow?"
+      "details": "How is the development history of Tensorflow?",
+      "_id": {
+        "$oid": "652371e6ef415589d7028e10"
+      }
     },
     {
       "id": 2,
       "session_no": 2,
       "name": "CQ1.2",
-      "details": "Why is TensorFlow used to implement AI algorithms?"
+      "details": "Why is TensorFlow used to implement AI algorithms?",
+      "_id": {
+        "$oid": "652371e6ef415589d7028e11"
+      }
     },
     {
       "id": 3,
       "session_no": 3,
       "name": "CQ1.3",
-      "details": "Which platform are used to deploy TensorFlow-based AI algorithms? Why do we often use them?"
+      "details": "Which platform are used to deploy TensorFlow-based AI algorithms? Why do we often use them?",
+      "_id": {
+        "$oid": "652371e6ef415589d7028e12"
+      }
     },
     {
       "id": 4,
       "session_no": 4,
       "name": "CQ2.1",
-      "details": "How is the development of AI?"
+      "details": "How is the development of AI?",
+      "_id": {
+        "$oid": "652371e6ef415589d7028e13"
+      }
     },
     {
       "id": 5,
       "session_no": 5,
       "name": "CQ2.2",
-      "details": "What fields of life is AI recently applied for? How is the performance of AI in current life?"
+      "details": "What fields of life is AI recently applied for? How is the performance of AI in current life?",
+      "_id": {
+        "$oid": "652371e6ef415589d7028e14"
+      }
     }
   ]
 }]
