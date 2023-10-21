@@ -30,6 +30,10 @@ syllabusRouter.post("/", async (req, res) => {
   syllabusController.createSyllabus(req, res);
 });
 
+syllabusRouter.put('/changeStatus/:id', async (req, res) => {
+  syllabusController.setStatusSyllabusById(req, res);
+});
+
 //LO
 syllabusRouter.post("/lo/:id", syllabusController.addLO);
 

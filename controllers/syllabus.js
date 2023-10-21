@@ -1,5 +1,5 @@
 import { syllabusRepository } from "../repositories/index.js";
-
+import { validationResult } from "express-validator"
 const createSyllabus = async (req, res) => {
   try {
     const syllabusExisted = await syllabusRepository.getSyllabusByCode(
@@ -145,6 +145,26 @@ const deleteSyllabus = async (req, res) => {
     });
   }
 };
+
+const setStatusSyllabusById = async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+  }
+  const { id } = req.params;
+  try {
+      const updatedSyllabus = await syllabusRepository.setStatusSyllabusById(id);
+      if (!updatedSyllabus) {
+          return res.status(404).json({ message: 'Syllabus not found' });
+      }
+      res.status(200).json({
+          message: 'Update status successfully.',
+          data: updatedSyllabus
+      });
+  } catch (err) {
+      res.status(500).json({ error: err.toString() });
+  }
+}
 
 //LO
 const addLO = async (req, res) => {
@@ -783,6 +803,7 @@ export default {
   getSyllabusById,
   updateSyllabus,
   deleteSyllabus,
+  setStatusSyllabusById,
 
   getAllSession,
   getSessionById,
