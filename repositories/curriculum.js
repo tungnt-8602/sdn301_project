@@ -21,6 +21,39 @@ const getCurriculumByCode = async (curriculum_code) => {
   return curriculum;
 };
 
+const getAllCurriculumByStatus = async (size, page, searchString) => {
+  const skip = (page - 1) * size;
+  const syllabuses = await Curriculum.find({
+    status: true,
+    $or: [
+      { name: { $regex: searchString } },
+      { code: { $regex: searchString } },
+    ],
+  })
+    .skip(skip)
+    .limit(size);
+
+  const count = await Curriculum.find({
+    $or: [
+      { name: { $regex: searchString } },
+      { code: { $regex: searchString } },
+    ],
+  }).countDocuments();
+  return {
+    data: syllabuses,
+    count: count,
+  };
+};
+
+const getCurriculumByStatus = async () => {
+  try {
+    // Sử dụng Mongoose để tìm các đối tượng có status = true
+    const curriculums = await Curriculum.find(String({ status: true })).exec();
+    return curriculums;
+  } catch (error) {
+    throw error; // Xử lý lỗi nếu có
+  }
+};
 const deleteCurriculumById = async (id) => {
   const result = await Curriculum.findByIdAndDelete(id).exec();
   return result;
@@ -480,4 +513,6 @@ export default {
   deletePloById,
   setStatusPoById,
   setStatusPloById,
+  getCurriculumByStatus,
+  getAllCurriculumByStatus,
 };
