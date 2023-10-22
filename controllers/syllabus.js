@@ -71,6 +71,33 @@ const createSyllabus = async (req, res) => {
 //   }
 // };
 
+const getSyllabusTrue = async (req, res) => {
+  try {
+    const size = req.query.size || 5;
+    const page = req.query.page || 1;
+    const searchString = req.query.searchString || "";
+    console.log("search string: ", searchString);
+    const syllabuses = await syllabusRepository.getAllTrue(
+      size,
+      page,
+      searchString
+    );
+    const totalPages = Math.ceil(syllabuses.count / size);
+    res.status(200).json({
+      message: "Get syllabuses successfully.",
+      searchString,
+      size,
+      page,
+      total: totalPages,
+      data: syllabuses.data,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.toString(),
+    });
+  }
+};
+
 const getAllSyllabus = async (req, res) => {
   try {
     const size = req.query.size || 5;
@@ -477,6 +504,7 @@ const deleteAssessment = async (req, res) => {
 export default {
   createSyllabus,
   getAllSyllabus,
+  getSyllabusTrue,
   getSyllabusById,
   updateSyllabus,
   deleteSyllabus,

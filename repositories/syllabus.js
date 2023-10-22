@@ -18,7 +18,6 @@ const countSyllabus = async () => {
 const getAll = async (size, page, searchString) => {
   const skip = (page - 1) * size;
   const syllabuses = await Syllabus.find({
-    status: true,
     $or: [
       { name: { $regex: searchString } },
       { code: { $regex: searchString } },
@@ -30,6 +29,31 @@ const getAll = async (size, page, searchString) => {
   const count = await Syllabus.find({
     $or: [
       { name: { $regex: searchString } },
+      { code: { $regex: searchString } },
+    ],
+  }).countDocuments();
+  return {
+    data: syllabuses,
+    count: count,
+  };
+};
+
+const getAllTrue = async (size, page, searchString) => {
+  console.log("search string: ", searchString);
+  const skip = (page - 1) * size;
+  const syllabuses = await Syllabus.find({
+    status: true,
+    $or: [
+      // { name: { $regex: searchString } },
+      { code: { $regex: searchString } },
+    ],
+  })
+    .skip(skip)
+    .limit(size);
+
+  const count = await Syllabus.find({
+    $or: [
+      // { name: { $regex: searchString } },
       { code: { $regex: searchString } },
     ],
   }).countDocuments();
@@ -353,6 +377,7 @@ export default {
   countSyllabus,
   create,
   getByNameAndCode,
+  getAllTrue,
   getAll,
   getById,
   update,
