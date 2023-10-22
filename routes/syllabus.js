@@ -8,9 +8,12 @@ const syllabusRouter = express.Router();
 // });
 
 //Syllabus
-syllabusRouter.get("/", async (req, res) => {
-  syllabusController.getAllSyllabus(req, res);
+syllabusRouter.get("/view", async (req, res) => {
+  syllabusController.getSyllabusTrue(req, res);
 }),
+  syllabusRouter.get("/", async (req, res) => {
+    syllabusController.getAllSyllabus(req, res);
+  }),
   syllabusRouter.put("/:id", async (req, res) => {
     syllabusController.updateSyllabus(req, res);
   });
