@@ -10,39 +10,41 @@ import mongoose, { Schema, ObjectId } from "mongoose";
 //       Session_URLs: sessionData.URLs,
 const SessionSchema = new Schema({
   id: { type: mongoose.Schema.Types.ObjectId },
-  Session_Session: {
+  Session: {
     type: String,
     required: false,
   },
-  Session_topic: {
+  Topic: {
     type: String,
     required: false,
   },
-  Session_LearningType: {
+  LearningTeachingType: {
     type: String,
     required: false,
   },
-  Session_Lo: {
+  LO: {
     type: Array,
     required: false,
   },
-  Session_ITU: {
+  ITU: {
     type: Array,
     required: false,
   },
-  Session_StudentMaterials: {
+
+  StudentMaterials: {
     type: String,
     required: false,
   },
-  Session_SDownload: {
+
+  SDownload: {
     type: String,
     required: false,
   },
-  Session_StudentTask: {
+  StudentTasks: {
     type: String,
     required: false,
   },
-  Session_URLs: {
+  URLs: {
     type: String,
     required: false,
   },
@@ -50,51 +52,51 @@ const SessionSchema = new Schema({
 
 const AssessmentSchema = new Schema({
   id: { type: mongoose.Schema.Types.ObjectId },
-  Assessment_Category: {
+  Category: {
     type: String,
     required: false,
   },
-  Assessment_Type: {
+  Type: {
     type: String,
     required: false,
   },
-  Assessment_Part: {
+  Part: {
     type: Number,
     required: false,
   },
-  Assessment_Weight: {
+  Weight: {
     type: Number,
     required: false,
   },
-  Assessment_CompletionCriteria: {
+  CompletionCriteria: {
     type: String,
     required: false,
   },
-  Assessment_Duration: {
+  Duration: {
     type: String,
     required: false,
   },
-  Assessment_CLO: {
+  CLO: {
     type: String,
     required: false,
   },
-  Assessment_QuestionType: {
+  QuestionType: {
     type: String,
     required: false,
   },
-  Assessment_NoQuestion: {
+  NoQuestion: {
     type: String,
     required: false,
   },
-  Assessment_KnowledgeAndSkill: {
+  KnowledgeAndSkill: {
     type: String,
     required: false,
   },
-  Assessment_GradingGuide: {
+  GradingGuide: {
     type: String,
     required: false,
   },
-  Assessment_Note: {
+  Note: {
     type: String,
     required: false,
   },

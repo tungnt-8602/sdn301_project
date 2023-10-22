@@ -142,15 +142,15 @@ const addSession = async (id, sessionData) => {
     }
     // console.log("Sesion data:", sessionData);
     const newSession = {
-      Session_Session: sessionData.Session,
-      Session_topic: sessionData.Topic,
-      Session_LearningType: sessionData.LearningType,
-      Session_Lo: sessionData.Lo,
-      Session_ITU: sessionData.Itu,
-      Session_StudentMaterials: sessionData.StudentMaterials,
-      Session_SDownload: sessionData.SDownload,
-      Session_StudentTask: sessionData.StudentTask,
-      Session_URLs: sessionData.URLs,
+      Session: sessionData.Session,
+      Topic: sessionData.Topic,
+      LearningTeachingType: sessionData.LearningType,
+      LO: sessionData.Lo,
+      ITU: sessionData.Itu,
+      StudentMaterials: sessionData.StudentMaterials,
+      SDownload: sessionData.SDownload,
+      StudentTasks: sessionData.StudentTask,
+      URLs: sessionData.URLs,
     };
     // console.log("New Sesion:", newSession);
     syllabus.Session.push(newSession);
@@ -218,18 +218,17 @@ const updateSession = async (syllabus, sessionId, updatedSessionData) => {
       throw new Error("Session not found");
     }
 
-    sessionToUpdate.Session_Session = updatedSessionData.Session_Session;
-    sessionToUpdate.Session_topic = updatedSessionData.Session_topic;
-    sessionToUpdate.Session_LearningType =
+    sessionToUpdate.Session = updatedSessionData.Session_Session;
+    sessionToUpdate.Topic = updatedSessionData.Session_topic;
+    sessionToUpdate.LearningTeachingType =
       updatedSessionData.Session_LearningType;
-    sessionToUpdate.Session_Lo = updatedSessionData.Session_Lo;
-    sessionToUpdate.Session_ITU = updatedSessionData.Session_ITU;
-    sessionToUpdate.Session_StudentMaterials =
+    sessionToUpdate.LO = updatedSessionData.Session_LO;
+    sessionToUpdate.ITU = updatedSessionData.Session_ITU;
+    sessionToUpdate.StudentMaterials =
       updatedSessionData.Session_StudentMaterials;
-    sessionToUpdate.Session_SDownload = updatedSessionData.Session_SDownload;
-    sessionToUpdate.Session_StudentTask =
-      updatedSessionData.Session_StudentTask;
-    sessionToUpdate.Session_URLs = updatedSessionData.Session_URLs;
+    sessionToUpdate.SDownload = updatedSessionData.Session_SDownload;
+    sessionToUpdate.StudentTasks = updatedSessionData.Session_StudentTask;
+    sessionToUpdate.URLs = updatedSessionData.Session_URLs;
     // console.log("Session update before save", sessionToUpdate);
     await syllabus.save();
     // console.log("Session update after save", sessionToUpdate);
@@ -296,26 +295,22 @@ const updateAssessment = async (
       throw new Error("Assessment not found");
     }
 
-    assessmentToUpdate.Assessment_Category =
-      updatedAssessmentData.Assessment_Category;
-    assessmentToUpdate.Assessment_Type = updatedAssessmentData.Assessment_Type;
-    assessmentToUpdate.Assessment_Part = updatedAssessmentData.Assessment_Part;
-    assessmentToUpdate.Assessment_Weight =
-      updatedAssessmentData.Assessment_Weight;
-    assessmentToUpdate.Assessment_CompletionCriteria =
+    assessmentToUpdate.Category = updatedAssessmentData.Assessment_Category;
+    assessmentToUpdate.Type = updatedAssessmentData.Assessment_Type;
+    assessmentToUpdate.Part = updatedAssessmentData.Assessment_Part;
+    assessmentToUpdate.Weight = updatedAssessmentData.Assessment_Weight;
+    assessmentToUpdate.CompletionCriteria =
       updatedAssessmentData.Assessment_CompletionCriteria;
-    assessmentToUpdate.Assessment_Duration =
-      updatedAssessmentData.Assessment_Duration;
-    assessmentToUpdate.Assessment_CLO = updatedAssessmentData.Assessment_CLO;
-    assessmentToUpdate.Assessment_QuestionType =
+    assessmentToUpdate.Duration = updatedAssessmentData.Assessment_Duration;
+    assessmentToUpdate.CLO = updatedAssessmentData.Assessment_CLO;
+    assessmentToUpdate.QuestionType =
       updatedAssessmentData.Assessment_QuestionType;
-    assessmentToUpdate.Assessment_NoQuestion =
-      updatedAssessmentData.Assessment_NoQuestion;
-    assessmentToUpdate.Assessment_KnowledgeAndSkill =
+    assessmentToUpdate.NoQuestion = updatedAssessmentData.Assessment_NoQuestion;
+    assessmentToUpdate.KnowledgeAndSkill =
       updatedAssessmentData.Assessment_KnowledgeAndSkill;
-    assessmentToUpdate.Assessment_GradingGuide =
+    assessmentToUpdate.GradingGuide =
       updatedAssessmentData.Assessment_GradingGuide;
-    assessmentToUpdate.Assessment_Note = updatedAssessmentData.Assessment_Note;
+    assessmentToUpdate.Note = updatedAssessmentData.Assessment_Note;
     // console.log("Session update before save", sessionToUpdate);
     await syllabus.save();
     // console.log("Session update after save", sessionToUpdate);
@@ -335,18 +330,18 @@ const addAssessment = async (id, assessmentData) => {
     }
 
     const newAssessment = {
-      Assessment_Category: assessmentData.Category,
-      Assessment_Type: assessmentData.Type,
-      Assessment_Part: assessmentData.Part,
-      Assessment_Weight: assessmentData.Weight,
-      Assessment_CompletionCriteria: assessmentData.CompletionCriteria,
-      Assessment_Duration: assessmentData.Duration,
-      Assessment_CLO: assessmentData.Clo,
-      Assessment_QuestionType: assessmentData.QuestionType,
-      Assessment_NoQuestion: assessmentData.NoQuestion,
-      Assessment_KnowledgeAndSkill: assessmentData.KnowledgeAndSkill,
-      Assessment_GradingGuide: assessmentData.GradingGuide,
-      Assessment_Note: assessmentData.Note,
+      Category: assessmentData.Category,
+      Type: assessmentData.Type,
+      Part: assessmentData.Part,
+      Weight: assessmentData.Weight,
+      CompletionCriteria: assessmentData.CompletionCriteria,
+      Duration: assessmentData.Duration,
+      CLO: assessmentData.Clo,
+      QuestionType: assessmentData.QuestionType,
+      NoQuestion: assessmentData.NoQuestion,
+      KnowledgeAndSkill: assessmentData.KnowledgeAndSkill,
+      GradingGuide: assessmentData.GradingGuide,
+      Note: assessmentData.Note,
     };
 
     syllabus.Assessment.push(newAssessment);
