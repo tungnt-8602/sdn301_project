@@ -131,7 +131,7 @@
       ],
       "ITU": "I",
       "StudentMaterials": "Slides",
-      "S-Download": "https://drive.google.com/drive/folders/1pG-FQU9MMJaJs8029-59sseMu4Jc2ZGP?usp=sharing",
+      "SDownload": "https://drive.google.com/drive/folders/1pG-FQU9MMJaJs8029-59sseMu4Jc2ZGP?usp=sharing",
       "StudentTasks": "",
       "URLs": "",
       "_id": {
@@ -147,7 +147,7 @@
       ],
       "ITU": "I",
       "StudentMaterials": "Slides",
-      "S-Download": "",
+      "SDownload": "",
       "StudentTasks": "",
       "URLs": "",
       "_id": {
@@ -167,7 +167,7 @@
         "U"
       ],
       "StudentMaterials": "Slides",
-      "S-Download": "",
+      "SDownload": "",
       "StudentTasks": "",
       "URLs": "",
       "_id": {
@@ -187,7 +187,7 @@
         "U"
       ],
       "StudentMaterials": "Slides",
-      "S-Download": "",
+      "SDownload": "",
       "StudentTasks": "",
       "URLs": "",
       "_id": {
@@ -208,7 +208,7 @@
         "U"
       ],
       "StudentMaterials": "Slides",
-      "S-Download": "",
+      "SDownload": "",
       "StudentTasks": "",
       "URLs": "",
       "_id": {
@@ -438,7 +438,7 @@
       ],
       "ITU": "I",
       "StudentMaterials": "Slides",
-      "S-Download": "https://flm.fpt.edu.vn/download/9094/S/1_SDN301m.zip",
+      "SDownload": "https://flm.fpt.edu.vn/download/9094/S/1_SDN301m.zip",
       "StudentTasks": "Slides",
       "URLs": "",
       "_id": {
@@ -457,7 +457,7 @@
         "U"
       ],
       "StudentMaterials": "Slides",
-      "S-Download": "https://flm.fpt.edu.vn/download/9094/S/2_SDN301m.zip",
+      "SDownload": "https://flm.fpt.edu.vn/download/9094/S/2_SDN301m.zip",
       "StudentTasks": "Slides",
       "URLs": "",
       "_id": {
@@ -476,7 +476,7 @@
         "U"
       ],
       "StudentMaterials": "Slides",
-      "S-Download": "",
+      "SDownload": "",
       "StudentTasks": "",
       "URLs": "",
       "_id": {
@@ -495,7 +495,7 @@
         "U"
       ],
       "StudentMaterials": "Slides",
-      "S-Download": "",
+      "SDownload": "",
       "StudentTasks": "",
       "URLs": "",
       "_id": {
@@ -514,7 +514,7 @@
         "U"
       ],
       "StudentMaterials": "Slides",
-      "S-Download": "https://flm.fpt.edu.vn/download/9094/S/5_SDN301m.zip",
+      "SDownload": "https://flm.fpt.edu.vn/download/9094/S/5_SDN301m.zip",
       "StudentTasks": "",
       "URLs": "",
       "_id": {
@@ -780,7 +780,7 @@
       "LO": [],
       "ITU": [],
       "StudentMaterials": "Ref. 1 Part 1 - Introducing C# and the .NET Platform",
-      "S-Download": "",
+      "SDownload": "",
       "StudentTasks": "",
       "URLs": "",
       "_id": {
@@ -794,7 +794,7 @@
       "LO": [],
       "ITU": [],
       "StudentMaterials": "Ref. 1 Part 1 - Introducing C# and the .NET Platform",
-      "S-Download": "",
+      "SDownload": "",
       "StudentTasks": "CMS",
       "URLs": "",
       "_id": {
@@ -808,7 +808,7 @@
       "LO": [],
       "ITU": [],
       "StudentMaterials": "",
-      "S-Download": "",
+      "SDownload": "",
       "StudentTasks": "",
       "URLs": "",
       "_id": {
@@ -822,7 +822,7 @@
       "LO": [],
       "ITU": [],
       "StudentMaterials": "",
-      "S-Download": "",
+      "SDownload": "",
       "StudentTasks": "",
       "URLs": "",
       "_id": {
@@ -836,7 +836,7 @@
       "LO": [],
       "ITU": [],
       "StudentMaterials": "Ref. 1 Part 2 - The C# Programming Language",
-      "S-Download": "",
+      "SDownload": "",
       "StudentTasks": "",
       "URLs": "",
       "_id": {
@@ -1098,7 +1098,7 @@
       ],
       "ITU": [],
       "StudentMaterials": "",
-      "S-Download": "",
+      "SDownload": "",
       "StudentTasks": "",
       "URLs": "",
       "_id": {
@@ -1114,7 +1114,7 @@
       ],
       "ITU": [],
       "StudentMaterials": "",
-      "S-Download": "",
+      "SDownload": "",
       "StudentTasks": "Complete Week 5, 6, 7 of the course Getting started with Python Deadline of Course 1 Completion: End of Friday of the week.",
       "URLs": "",
       "_id": {
@@ -1130,7 +1130,7 @@
       ],
       "ITU": [],
       "StudentMaterials": "",
-      "S-Download": "",
+      "SDownload": "",
       "StudentTasks": "Complete Week 1, 2, 3 of the course Python Data Structures",
       "URLs": "",
       "_id": {
@@ -1146,7 +1146,7 @@
       ],
       "ITU": [],
       "StudentMaterials": "",
-      "S-Download": "",
+      "SDownload": "",
       "StudentTasks": "Complete Week 4, 5, 6, 7 of the course Python Data Structures\n- Deadline of Course 2 Completion: End of Friday of the week.\n- Students should participate in offline slot\n(Offline 2: Review Course 2)",
       "URLs": "",
       "_id": {
@@ -1162,7 +1162,7 @@
       ],
       "ITU": [],
       "StudentMaterials": "",
-      "S-Download": "",
+      "SDownload": "",
       "StudentTasks": "Complete Week 1, 2 of the course Using Python to Access Web Data",
       "URLs": "",
       "_id": {
@@ -1403,7 +1403,7 @@
         "T"
       ],
       "StudentMaterials": "Read Textbook on Chapter 1 in advance",
-      "S-Download": "https://flm.fpt.edu.vn/download/4020/S/1_AIT301.zip",
+      "SDownload": "https://flm.fpt.edu.vn/download/4020/S/1_AIT301.zip",
       "StudentTasks": "Do practice in class following teacher requests",
       "URLs": "",
       "_id": {
@@ -1422,7 +1422,7 @@
         "T"
       ],
       "StudentMaterials": "Read Textbook on Chapter 1 in advance",
-      "S-Download": "https://flm.fpt.edu.vn/download/4020/S/2_AIT301.zip",
+      "SDownload": "https://flm.fpt.edu.vn/download/4020/S/2_AIT301.zip",
       "StudentTasks": "Do practice in class following teacher requests",
       "URLs": "",
       "_id": {
@@ -1441,7 +1441,7 @@
         "T"
       ],
       "StudentMaterials": "Read Textbook on Chapter 2 in advance",
-      "S-Download": "",
+      "SDownload": "",
       "StudentTasks": "Do practice in class following teacher requests",
       "URLs": "",
       "_id": {
@@ -1460,7 +1460,7 @@
         "T"
       ],
       "StudentMaterials": "Read Textbook on Chapter 2 in advance",
-      "S-Download": "",
+      "SDownload": "",
       "StudentTasks": "Do practice in class following teacher requests",
       "URLs": "",
       "_id": {
@@ -1478,7 +1478,7 @@
         "T"
       ],
       "StudentMaterials": "Read Textbook on Chapter 2 in advance",
-      "S-Download": "",
+      "SDownload": "",
       "StudentTasks": "Do practice in class following teacher requests",
       "URLs": "",
       "_id": {
