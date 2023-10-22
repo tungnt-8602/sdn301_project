@@ -31,35 +31,33 @@ syllabusRouter.post("/", async (req, res) => {
 });
 
 //Session
-syllabusRouter.post("/addSession/:id", syllabusController.addSession);
+syllabusRouter.post("/session/:id", syllabusController.addSession);
 
-syllabusRouter.get("/getAllSession/:id", syllabusController.getAllSession);
+syllabusRouter.get("/session/:id", syllabusController.getAllSession);
 
 syllabusRouter.get(
-  "/getSessionById/:id/:sessionId",
+  "/session/:id/:sessionId",
   syllabusController.getSessionById
 );
 
-syllabusRouter.put(
-  "/updateSession/:id/:sessionId",
-  syllabusController.updateSession
-);
+syllabusRouter.put("/session/:id/:sessionId", syllabusController.updateSession);
 
 //Assessment
-syllabusRouter.post("/addAssessment/:id", syllabusController.addAssessment);
-syllabusRouter.get(
-  "/getAllAssessment/:id",
-  syllabusController.getAllAssessment
-);
+syllabusRouter.post("/assessment/:id", syllabusController.addAssessment);
+syllabusRouter.get("/assessment/:id", syllabusController.getAllAssessment);
 
 syllabusRouter.get(
-  "/getAssessmentById/:id/:assessmentId",
+  "/assessment/:id/:assessmentId",
   syllabusController.getAssessmentById
 );
 
 syllabusRouter.put(
-  "/updateAssessment/:id/:assessmentId",
+  "/assessment/:id/:assessmentId",
   syllabusController.updateAssessment
 );
+
+syllabusRouter.delete("/assessment/:id/:assessmentId", async (req, res) => {
+  syllabusController.deleteAssessment(req, res);
+});
 
 export default syllabusRouter;
