@@ -125,14 +125,14 @@
     {
       "Session": 1,
       "Topic": "1.1. Course Introduction",
-      "Learning-Teaching Type": "Offline",
+      "LearningTeachingType": "Offline",
       "LO": [
         "LO1"
       ],
       "ITU": "I",
-      "Student Materials": "Slides",
+      "StudentMaterials": "Slides",
       "S-Download": "https://drive.google.com/drive/folders/1pG-FQU9MMJaJs8029-59sseMu4Jc2ZGP?usp=sharing",
-      "Student's Tasks": "",
+      "StudentTasks": "",
       "URLs": "",
       "_id": {
         "$oid": "652371e6ef415589d7028d4b"
@@ -141,14 +141,14 @@
     {
       "Session": 2,
       "Topic": "1.2. Full Stack Web Development: The Big Picture",
-      "Learning-Teaching Type": "Offline",
+      "LearningTeachingType": "Offline",
       "LO": [
         "LO1"
       ],
       "ITU": "I",
-      "Student Materials": "Slides",
+      "StudentMaterials": "Slides",
       "S-Download": "",
-      "Student's Tasks": "",
+      "StudentTasks": "",
       "URLs": "",
       "_id": {
         "$oid": "652371e6ef415589d7028d4d"
@@ -157,7 +157,7 @@
     {
       "Session": 3,
       "Topic": "2.1. Git",
-      "Learning-Teaching Type": "Offline",
+      "LearningTeachingType": "Offline",
       "LO": [
         "LO2"
       ],
@@ -166,9 +166,9 @@
         "T",
         "U"
       ],
-      "Student Materials": "Slides",
+      "StudentMaterials": "Slides",
       "S-Download": "",
-      "Student's Tasks": "",
+      "StudentTasks": "",
       "URLs": "",
       "_id": {
         "$oid": "652371e6ef415589d7028d4e"
@@ -177,7 +177,7 @@
     {
       "Session": 4,
       "Topic": "2.2. Node.js and NPM",
-      "Learning-Teaching Type": "Offline",
+      "LearningTeachingType": "Offline",
       "LO": [
         "LO2"
       ],
@@ -186,9 +186,9 @@
         "T",
         "U"
       ],
-      "Student Materials": "Slides",
+      "StudentMaterials": "Slides",
       "S-Download": "",
-      "Student's Tasks": "",
+      "StudentTasks": "",
       "URLs": "",
       "_id": {
         "$oid": "652371e6ef415589d7028d4f"
@@ -197,7 +197,7 @@
     {
       "Session": 5,
       "Topic": "3.1. Bootstrap Introduction",
-      "Learning-Teaching Type": "Offline",
+      "LearningTeachingType": "Offline",
       "LO": [
         "LO3",
         "LO4"
@@ -207,9 +207,9 @@
         "T",
         "U"
       ],
-      "Student Materials": "Slides",
+      "StudentMaterials": "Slides",
       "S-Download": "",
-      "Student's Tasks": "",
+      "StudentTasks": "",
       "URLs": "",
       "_id": {
         "$oid": "652371e6ef415589d7028d50"
@@ -222,13 +222,13 @@
       "Type": "on-going",
       "Part": 1,
       "Weight": 15,
-      "Completion Criteria": ">0",
+      "CompletionCriteria": ">0",
       "Duration": "Guided and reviewed in tutorial sesions; Cont. at home",
       "CLO": "Problem(s) to solve by programming (LO1 - LO8)",
-      "Question Type": "Individual or team work, guided by instructor, submission by a given deadline",
-      "No Question": "",
-      "Knowledge and Skill": "",
-      "Grading Guide": "",
+      "QuestionType": "Individual or team work, guided by instructor, submission by a given deadline",
+      "NoQuestion": "",
+      "KnowledgeAndSkill": "",
+      "GradingGuide": "",
       "Note": "",
       "_id": {
         "$oid": "652371e6ef415589d7028d51"
@@ -239,13 +239,13 @@
       "Type": "on-going",
       "Part": 8,
       "Weight": 20,
-      "Completion Criteria": ">0",
+      "CompletionCriteria": ">0",
       "Duration": "Guided and reviewed in tutorial sesions; Cont. at home",
       "CLO": "",
-      "Question Type": "practical exercises",
-      "No Question": "Lab 1: LO1\nLab 2: LO2\nLab 3: LO3\nLab 4: LO4\nLab 5: LO5\nLab 6: LO6\nLab 7: LO7\nLab 8: LO8",
-      "Knowledge and Skill": "",
-      "Grading Guide": "",
+      "QuestionType": "practical exercises",
+      "NoQuestion": "Lab 1: LO1\nLab 2: LO2\nLab 3: LO3\nLab 4: LO4\nLab 5: LO5\nLab 6: LO6\nLab 7: LO7\nLab 8: LO8",
+      "KnowledgeAndSkill": "",
+      "GradingGuide": "",
       "Note": "Teachers support tutorials and students do them by themselves",
       "_id": {
         "$oid": "652371e6ef415589d7028d52"
@@ -256,13 +256,13 @@
       "Type": "on-going",
       "Part": 1,
       "Weight": 20,
-      "Completion Criteria": "4",
+      "CompletionCriteria": "4",
       "Duration": "85'",
       "CLO": "Problem(s) to solve by programming (LO1 - LO8)",
-      "Question Type": "Preferable to be marked by scripts",
-      "No Question": "",
-      "Knowledge and Skill": "",
-      "Grading Guide": "Supervised by proctor(s) sent by exam board",
+      "QuestionType": "Preferable to be marked by scripts",
+      "NoQuestion": "",
+      "KnowledgeAndSkill": "",
+      "GradingGuide": "Supervised by proctor(s) sent by exam board",
       "Note": "",
       "_id": {
         "$oid": "652371e6ef415589d7028d53"
@@ -273,13 +273,13 @@
       "Type": "on-going",
       "Part": 2,
       "Weight": 15,
-      "Completion Criteria": ">0",
+      "CompletionCriteria": ">0",
       "Duration": "20'-40'",
       "CLO": "15-30\nif multiple choice\nPT 1: LO1 - LO4\nPT 2: LO5 - LO8\nNumber of questions:\n3-8 for each LOx",
-      "Question Type": "essay or multiple choice",
-      "No Question": "",
-      "Knowledge and Skill": "",
-      "Grading Guide": "Supervised by instructor\nProgress test must be taken right after the last lectures of required material.\nInstructor has responsibility to review the test for students after graded.",
+      "QuestionType": "essay or multiple choice",
+      "NoQuestion": "",
+      "KnowledgeAndSkill": "",
+      "GradingGuide": "Supervised by instructor\nProgress test must be taken right after the last lectures of required material.\nInstructor has responsibility to review the test for students after graded.",
       "Note": "",
       "_id": {
         "$oid": "652371e6ef415589d7028d54"
@@ -290,13 +290,13 @@
       "Type": "final exam",
       "Part": 1,
       "Weight": 30,
-      "Completion Criteria": "4",
+      "CompletionCriteria": "4",
       "Duration": "60'",
       "CLO": "",
-      "Question Type": "multiple choice",
-      "No Question": "50",
-      "Knowledge and Skill": "All topics;\nMore than 70% new questions (for the current semester);",
-      "Grading Guide": "Supervised by proctor(s) sent by exam board",
+      "QuestionType": "multiple choice",
+      "NoQuestion": "50",
+      "KnowledgeAndSkill": "All topics;\nMore than 70% new questions (for the current semester);",
+      "GradingGuide": "Supervised by proctor(s) sent by exam board",
       "Note": "",
       "_id": {
         "$oid": "652371e6ef415589d7028d55"
@@ -432,14 +432,14 @@
     {
       "Session": 1,
       "Topic": "1.1. Course Introduction \n1.2. Introduction to Node.js and NPM",
-      "Learning-Teaching Type": "Offline",
+      "LearningTeachingType": "Offline",
       "LO": [
         "LO1"
       ],
       "ITU": "I",
-      "Student Materials": "Slides",
+      "StudentMaterials": "Slides",
       "S-Download": "https://flm.fpt.edu.vn/download/9094/S/1_SDN301m.zip",
-      "Student's Tasks": "Slides",
+      "StudentTasks": "Slides",
       "URLs": "",
       "_id": {
         "$oid": "652371e6ef415589d7028d62"
@@ -448,7 +448,7 @@
     {
       "Session": 2,
       "Topic": "2.1. Introduction to Node.js and NPM (contd.)\n- Download and install Node.js and NPM\n- Verify the installation was successful and ready for using Node.js and NPM",
-      "Learning-Teaching Type": "Offline",
+      "LearningTeachingType": "Offline",
       "LO": [
         "LO1"
       ],
@@ -456,9 +456,9 @@
         "T",
         "U"
       ],
-      "Student Materials": "Slides",
+      "StudentMaterials": "Slides",
       "S-Download": "https://flm.fpt.edu.vn/download/9094/S/2_SDN301m.zip",
-      "Student's Tasks": "Slides",
+      "StudentTasks": "Slides",
       "URLs": "",
       "_id": {
         "$oid": "652371e6ef415589d7028d63"
@@ -467,7 +467,7 @@
     {
       "Session": 3,
       "Topic": "2.1. Git",
-      "Learning-Teaching Type": "Offline",
+      "LearningTeachingType": "Offline",
       "LO": [
         "LO2"
       ],
@@ -475,9 +475,9 @@
         "T",
         "U"
       ],
-      "Student Materials": "Slides",
+      "StudentMaterials": "Slides",
       "S-Download": "",
-      "Student's Tasks": "",
+      "StudentTasks": "",
       "URLs": "",
       "_id": {
         "$oid": "652371e6ef415589d7028d64"
@@ -486,7 +486,7 @@
     {
       "Session": 4,
       "Topic": "4.1. Node and HTTP\n- Create a simple HTTP server using the Node HTTP core module\n- Create a web server to serve static HTML files from a folder",
-      "Learning-Teaching Type": "Offline",
+      "LearningTeachingType": "Offline",
       "LO": [
         "LO1"
       ],
@@ -494,9 +494,9 @@
         "T",
         "U"
       ],
-      "Student Materials": "Slides",
+      "StudentMaterials": "Slides",
       "S-Download": "",
-      "Student's Tasks": "",
+      "StudentTasks": "",
       "URLs": "",
       "_id": {
         "$oid": "652371e6ef415589d7028d65"
@@ -505,7 +505,7 @@
     {
       "Session": 5,
       "Topic": "5.1. Introduction to Express\n- Implement a simple web server using Express framework",
-      "Learning-Teaching Type": "Offline",
+      "LearningTeachingType": "Offline",
       "LO": [
         "LO2"
       ],
@@ -513,9 +513,9 @@
         "I",
         "U"
       ],
-      "Student Materials": "Slides",
+      "StudentMaterials": "Slides",
       "S-Download": "https://flm.fpt.edu.vn/download/9094/S/5_SDN301m.zip",
-      "Student's Tasks": "",
+      "StudentTasks": "",
       "URLs": "",
       "_id": {
         "$oid": "652371e6ef415589d7028d66"
@@ -528,13 +528,13 @@
       "Type": "on-going",
       "Part": 4,
       "Weight": 15,
-      "Completion Criteria": ">0",
+      "CompletionCriteria": ">0",
       "Duration": "Guided and reviewed in tutorial sesions; Cont. at home",
       "CLO": "Problem(s) to solve by programming (LO1 - LO8)",
-      "Question Type": "Individual or team work, guided by instructor, submission by a given deadline",
-      "No Question": "",
-      "Knowledge and Skill": "",
-      "Grading Guide": "",
+      "QuestionType": "Individual or team work, guided by instructor, submission by a given deadline",
+      "NoQuestion": "",
+      "KnowledgeAndSkill": "",
+      "GradingGuide": "",
       "Note": "",
       "_id": {
         "$oid": "652371e6ef415589d7028d67"
@@ -545,13 +545,13 @@
       "Type": "on-going",
       "Part": 3,
       "Weight": 15,
-      "Completion Criteria": ">0",
+      "CompletionCriteria": ">0",
       "Duration": "20'-40'",
       "CLO": "PT 1: LO1 - LO2PT 2: LO3 - LO7 3: LO8",
-      "Question Type": "essay or multiple choice",
-      "No Question": "15-30 if multiple choice",
-      "Knowledge and Skill": "PT 1: LO1 - LO2 PT 2: LO3 - LO7 PT 3: LO8",
-      "Grading Guide": "supervised by instructor",
+      "QuestionType": "essay or multiple choice",
+      "NoQuestion": "15-30 if multiple choice",
+      "KnowledgeAndSkill": "PT 1: LO1 - LO2 PT 2: LO3 - LO7 PT 3: LO8",
+      "GradingGuide": "supervised by instructor",
       "Note": "Progress test must be taken right after the last lectures of required material. Instructor has responsibility to review the test for students after graded.",
       "_id": {
         "$oid": "652371e6ef415589d7028d68"
@@ -562,13 +562,13 @@
       "Type": "on-going",
       "Part": 1,
       "Weight": 20,
-      "Completion Criteria": 4,
+      "CompletionCriteria": 4,
       "Duration": "85'",
       "CLO": "LO1 - LO8",
-      "Question Type": "Preferable to be marked by scripts",
-      "No Question": "",
-      "Knowledge and Skill": "problem(s) to solve by programming using LO1 - LO8",
-      "Grading Guide": "Supervised by proctor(s) sent by exam board",
+      "QuestionType": "Preferable to be marked by scripts",
+      "NoQuestion": "",
+      "KnowledgeAndSkill": "problem(s) to solve by programming using LO1 - LO8",
+      "GradingGuide": "Supervised by proctor(s) sent by exam board",
       "Note": "",
       "_id": {
         "$oid": "652371e6ef415589d7028d69"
@@ -579,13 +579,13 @@
       "Type": "on-going",
       "Part": 1,
       "Weight": 20,
-      "Completion Criteria": ">0",
+      "CompletionCriteria": ">0",
       "Duration": "Guided and reviewed in tutorial sesions;Cont. at home",
       "CLO": "LO1 - LO8",
-      "Question Type": "a problem similar to real one",
-      "No Question": "",
-      "Knowledge and Skill": "problem(s) to solve by programming using LO1 - LO8",
-      "Grading Guide": "Supervised by instructor\nProgress test must be taken right after the last lectures of required material.\nInstructor has responsibility to review the test for students after graded.",
+      "QuestionType": "a problem similar to real one",
+      "NoQuestion": "",
+      "KnowledgeAndSkill": "problem(s) to solve by programming using LO1 - LO8",
+      "GradingGuide": "Supervised by instructor\nProgress test must be taken right after the last lectures of required material.\nInstructor has responsibility to review the test for students after graded.",
       "Note": "",
       "_id": {
         "$oid": "652371e6ef415589d7028d6a"
@@ -596,13 +596,13 @@
       "Type": "final exam",
       "Part": 1,
       "Weight": 30,
-      "Completion Criteria": 4,
+      "CompletionCriteria": 4,
       "Duration": "60'",
       "CLO": "",
-      "Question Type": "multiple choice",
-      "No Question": "50",
-      "Knowledge and Skill": "All topics;\nMore than 70% new questions (for the current semester);",
-      "Grading Guide": "Supervised by proctor(s) sent by exam board",
+      "QuestionType": "multiple choice",
+      "NoQuestion": "50",
+      "KnowledgeAndSkill": "All topics;\nMore than 70% new questions (for the current semester);",
+      "GradingGuide": "Supervised by proctor(s) sent by exam board",
       "Note": "",
       "_id": {
         "$oid": "652371e6ef415589d7028d6b"
@@ -776,12 +776,12 @@
     {
       "Session": 1,
       "Topic": "Course Introduction Chapter 1 - The philosophy of .NET",
-      "Learning-Teaching Type": "Offline",
+      "LearningTeachingType": "Offline",
       "LO": [],
       "ITU": [],
-      "Student Materials": "Ref. 1 Part 1 - Introducing C# and the .NET Platform",
+      "StudentMaterials": "Ref. 1 Part 1 - Introducing C# and the .NET Platform",
       "S-Download": "",
-      "Student's Tasks": "",
+      "StudentTasks": "",
       "URLs": "",
       "_id": {
         "$oid": "652371e6ef415589d7028d7a"
@@ -790,12 +790,12 @@
     {
       "Session": 2,
       "Topic": "Chapter 1 - The philosophy of .NET (cont.) \nChapter 3 - C# Language Fundamentals",
-      "Learning-Teaching Type": "Offline",
+      "LearningTeachingType": "Offline",
       "LO": [],
       "ITU": [],
-      "Student Materials": "Ref. 1 Part 1 - Introducing C# and the .NET Platform",
+      "StudentMaterials": "Ref. 1 Part 1 - Introducing C# and the .NET Platform",
       "S-Download": "",
-      "Student's Tasks": "CMS",
+      "StudentTasks": "CMS",
       "URLs": "",
       "_id": {
         "$oid": "652371e6ef415589d7028d7b"
@@ -804,12 +804,12 @@
     {
       "Session": 3,
       "Topic": "Chapter 4 - Object-Oriented Programming with C# 2.0 Chapter 6 - Understanding Structured Exception Handling",
-      "Learning-Teaching Type": "Offline",
+      "LearningTeachingType": "Offline",
       "LO": [],
       "ITU": [],
-      "Student Materials": "",
+      "StudentMaterials": "",
       "S-Download": "",
-      "Student's Tasks": "",
+      "StudentTasks": "",
       "URLs": "",
       "_id": {
         "$oid": "652371e6ef415589d7028d7c"
@@ -818,12 +818,12 @@
     {
       "Session": 4,
       "Topic": "Lab 1: Guiding Lab 1 - C# Programming",
-      "Learning-Teaching Type": "Offline",
+      "LearningTeachingType": "Offline",
       "LO": [],
       "ITU": [],
-      "Student Materials": "",
+      "StudentMaterials": "",
       "S-Download": "",
-      "Student's Tasks": "",
+      "StudentTasks": "",
       "URLs": "",
       "_id": {
         "$oid": "652371e6ef415589d7028d7d"
@@ -832,12 +832,12 @@
     {
       "Session": 5,
       "Topic": "Chapter 7 - Interfaces and Collections Chapter 10 - Understanding Generics",
-      "Learning-Teaching Type": "Offline",
+      "LearningTeachingType": "Offline",
       "LO": [],
       "ITU": [],
-      "Student Materials": "Ref. 1 Part 2 - The C# Programming Language",
+      "StudentMaterials": "Ref. 1 Part 2 - The C# Programming Language",
       "S-Download": "",
-      "Student's Tasks": "",
+      "StudentTasks": "",
       "URLs": "",
       "_id": {
         "$oid": "652371e6ef415589d7028d7e"
@@ -850,13 +850,13 @@
       "Type": "on-going",
       "Part": 4,
       "Weight": 15,
-      "Completion Criteria": ">0",
+      "CompletionCriteria": ">0",
       "Duration": "Guided and reviewed in tutorial sesions; Cont. at home",
       "CLO": "",
-      "Question Type": "",
-      "No Question": "",
-      "Knowledge and Skill": "Lab 1: C# Programming, Lab 2: Programming with .Net Assemblies, Lab 3: Programming with Windows Forms, Lab 4: Database Programming with ADO.NET",
-      "Grading Guide": "",
+      "QuestionType": "",
+      "NoQuestion": "",
+      "KnowledgeAndSkill": "Lab 1: C# Programming, Lab 2: Programming with .Net Assemblies, Lab 3: Programming with Windows Forms, Lab 4: Database Programming with ADO.NET",
+      "GradingGuide": "",
       "Note": "",
       "_id": {
         "$oid": "652371e6ef415589d7028d7f"
@@ -867,13 +867,13 @@
       "Type": "quiz",
       "Part": 2,
       "Weight": 15,
-      "Completion Criteria": ">0",
+      "CompletionCriteria": ">0",
       "Duration": "10'-20'",
       "CLO": "",
-      "Question Type": "Multiple choices Marked by Computer or a suitable format",
-      "No Question": "10-20 (At least 10*n questions where n is the number of Part covered in the test.)",
-      "Knowledge and Skill": "concepts, algorithms in a topic Current chapter(s) Each Progess Test covers at least 01 Part and at most 02 Parts, and overall they must cover all learned Parts of the course.",
-      "Grading Guide": "by instructor, using computer",
+      "QuestionType": "Multiple choices Marked by Computer or a suitable format",
+      "NoQuestion": "10-20 (At least 10*n questions where n is the number of Part covered in the test.)",
+      "KnowledgeAndSkill": "concepts, algorithms in a topic Current chapter(s) Each Progess Test covers at least 01 Part and at most 02 Parts, and overall they must cover all learned Parts of the course.",
+      "GradingGuide": "by instructor, using computer",
       "Note": "Instruction and shedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus. Progress test must be taken right after the last lectures of required material. Instructor has resposibility to review the test for students after graded.",
       "_id": {
         "$oid": "652371e6ef415589d7028d80"
@@ -884,13 +884,13 @@
       "Type": "practical exam",
       "Part": 1,
       "Weight": 20,
-      "Completion Criteria": ">0",
+      "CompletionCriteria": ">0",
       "Duration": "85'",
       "CLO": "",
-      "Question Type": "Preferable to be marked by scripts",
-      "No Question": "",
-      "Knowledge and Skill": "Window Forms Application and/or Web Forms Application",
-      "Grading Guide": "by Exam Board and Department",
+      "QuestionType": "Preferable to be marked by scripts",
+      "NoQuestion": "",
+      "KnowledgeAndSkill": "Window Forms Application and/or Web Forms Application",
+      "GradingGuide": "by Exam Board and Department",
       "Note": "",
       "_id": {
         "$oid": "652371e6ef415589d7028d81"
@@ -901,13 +901,13 @@
       "Type": "on-going",
       "Part": 1,
       "Weight": 20,
-      "Completion Criteria": ">0",
+      "CompletionCriteria": ">0",
       "Duration": "guided in tutorial sesions;Cont. at home",
       "CLO": "",
-      "Question Type": "",
-      "No Question": "",
-      "Knowledge and Skill": "Develop a management information system (Desktop or Web application) SRS, Design (GUI, Business, Database)",
-      "Grading Guide": "regularly by instructor",
+      "QuestionType": "",
+      "NoQuestion": "",
+      "KnowledgeAndSkill": "Develop a management information system (Desktop or Web application) SRS, Design (GUI, Business, Database)",
+      "GradingGuide": "regularly by instructor",
       "Note": "Students should submit 02 project documents on specified deadlines before presentation",
       "_id": {
         "$oid": "652371e6ef415589d7028d82"
@@ -918,13 +918,13 @@
       "Type": "final exam",
       "Part": 1,
       "Weight": 30,
-      "Completion Criteria": "4",
+      "CompletionCriteria": "4",
       "Duration": "60'",
       "CLO": "",
-      "Question Type": "Multiple choices Marked by Computer",
-      "No Question": "50",
-      "Knowledge and Skill": "All topics;\nMore than 70% new questions (for the current semester);",
-      "Grading Guide": "by Exam Board and Department",
+      "QuestionType": "Multiple choices Marked by Computer",
+      "NoQuestion": "50",
+      "KnowledgeAndSkill": "All topics;\nMore than 70% new questions (for the current semester);",
+      "GradingGuide": "by Exam Board and Department",
       "Note": "",
       "_id": {
         "$oid": "652371e6ef415589d7028d83"
@@ -1092,14 +1092,14 @@
     {
       "Session": 1,
       "Topic": "Specialization Introduction\nGetting started with Python\n- Why we Program?\n- Installing and Using Python\n- Variables and Expressions\nCourse 1 Review",
-      "Learning-Teaching Type": "Offline,Online",
+      "LearningTeachingType": "Offline,Online",
       "LO": [
         "LO1"
       ],
       "ITU": [],
-      "Student Materials": "",
+      "StudentMaterials": "",
       "S-Download": "",
-      "Student's Tasks": "",
+      "StudentTasks": "",
       "URLs": "",
       "_id": {
         "$oid": "652371e6ef415589d7028d90"
@@ -1108,14 +1108,14 @@
     {
       "Session": 2,
       "Topic": "Getting started with Python\n- Conditional Code\n- Functions\n- Loops and Iteration",
-      "Learning-Teaching Type": "Online",
+      "LearningTeachingType": "Online",
       "LO": [
         "LO1"
       ],
       "ITU": [],
-      "Student Materials": "",
+      "StudentMaterials": "",
       "S-Download": "",
-      "Student's Tasks": "Complete Week 5, 6, 7 of the course Getting started with Python Deadline of Course 1 Completion: End of Friday of the week.",
+      "StudentTasks": "Complete Week 5, 6, 7 of the course Getting started with Python Deadline of Course 1 Completion: End of Friday of the week.",
       "URLs": "",
       "_id": {
         "$oid": "652371e6ef415589d7028d91"
@@ -1124,14 +1124,14 @@
     {
       "Session": 3,
       "Topic": "Python Data Structures\n- Strings\n- Installing and Using Python (for writing Python programs)\n- Files",
-      "Learning-Teaching Type": "Online",
+      "LearningTeachingType": "Online",
       "LO": [
         "LO2"
       ],
       "ITU": [],
-      "Student Materials": "",
+      "StudentMaterials": "",
       "S-Download": "",
-      "Student's Tasks": "Complete Week 1, 2, 3 of the course Python Data Structures",
+      "StudentTasks": "Complete Week 1, 2, 3 of the course Python Data Structures",
       "URLs": "",
       "_id": {
         "$oid": "652371e6ef415589d7028d92"
@@ -1140,14 +1140,14 @@
     {
       "Session": 4,
       "Topic": "Python Data Structures\n- Lists\n- Dictionaries\n- Tuples\n- Graduation\nCourse 2 Review",
-      "Learning-Teaching Type": "Offline,Online",
+      "LearningTeachingType": "Offline,Online",
       "LO": [
         "LO2"
       ],
       "ITU": [],
-      "Student Materials": "",
+      "StudentMaterials": "",
       "S-Download": "",
-      "Student's Tasks": "Complete Week 4, 5, 6, 7 of the course Python Data Structures\n- Deadline of Course 2 Completion: End of Friday of the week.\n- Students should participate in offline slot\n(Offline 2: Review Course 2)",
+      "StudentTasks": "Complete Week 4, 5, 6, 7 of the course Python Data Structures\n- Deadline of Course 2 Completion: End of Friday of the week.\n- Students should participate in offline slot\n(Offline 2: Review Course 2)",
       "URLs": "",
       "_id": {
         "$oid": "652371e6ef415589d7028d93"
@@ -1156,14 +1156,14 @@
     {
       "Session": 5,
       "Topic": "Using Python to Access Web Data\n- Getting Started\n- Regular Expressions",
-      "Learning-Teaching Type": "Offline",
+      "LearningTeachingType": "Offline",
       "LO": [
         "LO3"
       ],
       "ITU": [],
-      "Student Materials": "",
+      "StudentMaterials": "",
       "S-Download": "",
-      "Student's Tasks": "Complete Week 1, 2 of the course Using Python to Access Web Data",
+      "StudentTasks": "Complete Week 1, 2 of the course Using Python to Access Web Data",
       "URLs": "",
       "_id": {
         "$oid": "652371e6ef415589d7028d94"
@@ -1176,13 +1176,13 @@
       "Type": "final exam",
       "Part": 1,
       "Weight": 50,
-      "Completion Criteria": "4",
+      "CompletionCriteria": "4",
       "Duration": "120'",
       "CLO": "",
-      "Question Type": "",
-      "No Question": "N/A",
-      "Knowledge and Skill": "All studied courses",
-      "Grading Guide": "by Exam Board",
+      "QuestionType": "",
+      "NoQuestion": "N/A",
+      "KnowledgeAndSkill": "All studied courses",
+      "GradingGuide": "by Exam Board",
       "Note": "Customized from the Assignment & Capstone Project of this specialization 1st Evaluation (exam): For students who completed & got Coursera's specialization certificates (Option at week 10 or 11); 2nd Evaluation (exam): For students who completed & got Coursera's specialization certificates) at week 13; 3rd Evaluation (re-exam): For students who completed & got Coursera's specialization certificates) at week 14",
       "_id": {
         "$oid": "652371e6ef415589d7028d95"
@@ -1193,13 +1193,13 @@
       "Type": "final exam",
       "Part": 1,
       "Weight": 50,
-      "Completion Criteria": "4",
+      "CompletionCriteria": "4",
       "Duration": "60'",
       "CLO": "",
-      "Question Type": "Computer gradable",
-      "No Question": "50",
-      "Knowledge and Skill": "All studied courses. Each module of course contributes 3-5 questions.",
-      "Grading Guide": "by Exam Board",
+      "QuestionType": "Computer gradable",
+      "NoQuestion": "50",
+      "KnowledgeAndSkill": "All studied courses. Each module of course contributes 3-5 questions.",
+      "GradingGuide": "by Exam Board",
       "Note": "Customized from the quizzes of this specialization. 1st Evaluation (exam): For students who completed & got Coursera's specialization certificates (Option at week 9); 2nd Evaluation (exam): For students who completed & got Coursera's specialization certificates) at week 13; 3rd Evaluation (re-exam): For students who completed & got Coursera's specialization certificates) at week 14.",
       "_id": {
         "$oid": "652371e6ef415589d7028d96"
@@ -1394,7 +1394,7 @@
     {
       "Session": 1,
       "Topic": "Chapter 1: Introduction",
-      "Learning-Teaching Type": "Offline",
+      "LearningTeachingType": "Offline",
       "LO": [
         "LO2",
         "LO3"
@@ -1402,9 +1402,9 @@
       "ITU": [
         "T"
       ],
-      "Student Materials": "Read Textbook on Chapter 1 in advance",
+      "StudentMaterials": "Read Textbook on Chapter 1 in advance",
       "S-Download": "https://flm.fpt.edu.vn/download/4020/S/1_AIT301.zip",
-      "Student's Tasks": "Do practice in class following teacher requests",
+      "StudentTasks": "Do practice in class following teacher requests",
       "URLs": "",
       "_id": {
         "$oid": "652371e6ef415589d7028e08"
@@ -1413,7 +1413,7 @@
     {
       "Session": 2,
       "Topic": "Chapter 1: Introduction",
-      "Learning-Teaching Type": "Offline",
+      "LearningTeachingType": "Offline",
       "LO": [
         "LO2",
         "LO3"
@@ -1421,9 +1421,9 @@
       "ITU": [
         "T"
       ],
-      "Student Materials": "Read Textbook on Chapter 1 in advance",
+      "StudentMaterials": "Read Textbook on Chapter 1 in advance",
       "S-Download": "https://flm.fpt.edu.vn/download/4020/S/2_AIT301.zip",
-      "Student's Tasks": "Do practice in class following teacher requests",
+      "StudentTasks": "Do practice in class following teacher requests",
       "URLs": "",
       "_id": {
         "$oid": "652371e6ef415589d7028e09"
@@ -1432,7 +1432,7 @@
     {
       "Session": 3,
       "Topic": "Chapter 2: Intelligent Agents",
-      "Learning-Teaching Type": "Offline",
+      "LearningTeachingType": "Offline",
       "LO": [
         "LO2",
         "LO3"
@@ -1440,9 +1440,9 @@
       "ITU": [
         "T"
       ],
-      "Student Materials": "Read Textbook on Chapter 2 in advance",
+      "StudentMaterials": "Read Textbook on Chapter 2 in advance",
       "S-Download": "",
-      "Student's Tasks": "Do practice in class following teacher requests",
+      "StudentTasks": "Do practice in class following teacher requests",
       "URLs": "",
       "_id": {
         "$oid": "652371e6ef415589d7028e0a"
@@ -1451,7 +1451,7 @@
     {
       "Session": 4,
       "Topic": "Chapter 2: Intelligent Agents",
-      "Learning-Teaching Type": "Offline",
+      "LearningTeachingType": "Offline",
       "LO": [
         "LO2",
         "LO3"
@@ -1459,9 +1459,9 @@
       "ITU": [
         "T"
       ],
-      "Student Materials": "Read Textbook on Chapter 2 in advance",
+      "StudentMaterials": "Read Textbook on Chapter 2 in advance",
       "S-Download": "",
-      "Student's Tasks": "Do practice in class following teacher requests",
+      "StudentTasks": "Do practice in class following teacher requests",
       "URLs": "",
       "_id": {
         "$oid": "652371e6ef415589d7028e0b"
@@ -1470,16 +1470,16 @@
     {
       "Session": 5,
       "Topic": "Chapter 3: Problem Solving and Search",
-      "Learning-Teaching Type": "Offline",
+      "LearningTeachingType": "Offline",
       "LO": [
         "LO4"
       ],
       "ITU": [
         "T"
       ],
-      "Student Materials": "Read Textbook on Chapter 2 in advance",
+      "StudentMaterials": "Read Textbook on Chapter 2 in advance",
       "S-Download": "",
-      "Student's Tasks": "Do practice in class following teacher requests",
+      "StudentTasks": "Do practice in class following teacher requests",
       "URLs": "",
       "_id": {
         "$oid": "652371e6ef415589d7028e0c"
@@ -1492,13 +1492,13 @@
       "Type": "on-going",
       "Part": 3,
       "Weight": 30,
-      "Completion Criteria": ">0",
+      "CompletionCriteria": ">0",
       "Duration": "20'-30'",
       "CLO": "",
-      "Question Type": "MC or a suitable format",
-      "No Question": "25-30",
-      "Knowledge and Skill": "Chapters introduced ( 1-7, 8-14, 15-21)",
-      "Grading Guide": "by instructor, and by suitable means (computer, paper, oral...)",
+      "QuestionType": "MC or a suitable format",
+      "NoQuestion": "25-30",
+      "KnowledgeAndSkill": "Chapters introduced ( 1-7, 8-14, 15-21)",
+      "GradingGuide": "by instructor, and by suitable means (computer, paper, oral...)",
       "Note": "Instruction and shedules for Progress tests must be presented in the Course Implementation Plan approved by director of the campus. Progress test must be taken right after the last lectures of required material. Instructor has resposibility to review the test for students after graded.",
       "_id": {
         "$oid": "652371e6ef415589d7028e0d"
@@ -1509,13 +1509,13 @@
       "Type": "on-going",
       "Part": 1,
       "Weight": 30,
-      "Completion Criteria": ">0",
+      "CompletionCriteria": ">0",
       "Duration": "guided in tutorial sesions;Cont. at home",
       "CLO": "LO1; LO7; LO8; LO9; LO10",
-      "Question Type": "Project",
-      "No Question": "",
-      "Knowledge and Skill": "Student will work in group to create one of three simple AI projects by applying Tensor Flow including Natural Language Processing, Handwriting Text Recognition, Autonomous Car and etc..",
-      "Grading Guide": "guided by instructor in class, completed by group of students at home, submmited by deadline",
+      "QuestionType": "Project",
+      "NoQuestion": "",
+      "KnowledgeAndSkill": "Student will work in group to create one of three simple AI projects by applying Tensor Flow including Natural Language Processing, Handwriting Text Recognition, Autonomous Car and etc..",
+      "GradingGuide": "guided by instructor in class, completed by group of students at home, submmited by deadline",
       "Note": "The project will be evaluated at the end of the course in a walkthrough defense session",
       "_id": {
         "$oid": "652371e6ef415589d7028e0e"
@@ -1526,13 +1526,13 @@
       "Type": "final exam",
       "Part": 1,
       "Weight": 40,
-      "Completion Criteria": "4",
+      "CompletionCriteria": "4",
       "Duration": "60'",
       "CLO": "All Los",
-      "Question Type": "Computer gradable.",
-      "No Question": "50",
-      "Knowledge and Skill": "All topics;\nMore than 70% new questions (for the current semester);",
-      "Grading Guide": "by Exam Board",
+      "QuestionType": "Computer gradable.",
+      "NoQuestion": "50",
+      "KnowledgeAndSkill": "All topics;\nMore than 70% new questions (for the current semester);",
+      "GradingGuide": "by Exam Board",
       "Note": "~10% of questions is ABET a2-objective oriented and cover LO1;LO8;LO9;LO10",
       "_id": {
         "$oid": "652371e6ef415589d7028e0f"
