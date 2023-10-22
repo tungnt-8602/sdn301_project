@@ -153,7 +153,6 @@ const Material = new Schema({
 const Syllabus = mongoose.model(
   "Syllabus",
   new Schema({
-    _id: { type: mongoose.Schema.Types.ObjectId },
     syllabus_name: {
       type: String,
       require: true,
@@ -201,6 +200,7 @@ const Syllabus = mongoose.model(
     is_approved: {
       type: Boolean,
       require: true,
+      default: true,
     },
     decision: {
       type: String,
@@ -255,6 +255,10 @@ const Syllabus = mongoose.model(
     },
     Question: {
       type: [Object],
+    },
+    status: {
+      type: Boolean,
+      default: true,
     },
   })
 );

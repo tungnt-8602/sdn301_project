@@ -1,5 +1,6 @@
 import { syllabusRepository } from "../repositories/index.js";
 import { validationResult } from "express-validator"
+
 const createSyllabus = async (req, res) => {
   try {
     const syllabusExisted = await syllabusRepository.getSyllabusByCode(
@@ -493,16 +494,17 @@ const addSession = async (req, res) => {
   try {
     // lấy res
     const {
-      Session_Session,
-      Session_topic,
-      Session_LearningType,
-      Session_Lo,
-      Session_ITU,
-      Session_StudentMaterials,
-      Session_SDownload,
-      Session_StudentTask,
-      Session_URLs,
+      Session,
+      Topic,
+      Learning_Teaching_Type,
+      Lo,
+      ITU,
+      Student_Materials,
+      S_Download,
+      Student_Tasks,
+      URLs,
     } = req.body;
+
     const syllabus = await syllabusRepository.getById(req.params.id);
     const syllabusId = req.params.id;
     // Kiểm tra có đúng syllabus
@@ -517,15 +519,15 @@ const addSession = async (req, res) => {
     // }
 
     const createdSession = await syllabusRepository.addSession(syllabusId, {
-      Session: Session_Session,
-      Topic: Session_topic,
-      LearningType: Session_LearningType,
-      Lo: Session_Lo,
-      Itu: Session_ITU,
-      StudentMaterials: Session_StudentMaterials,
-      SDownload: Session_SDownload,
-      StudentTask: Session_StudentTask,
-      URLs: Session_URLs,
+      Session: Session,
+      Topic: Topic,
+      LearningType: Learning_Teaching_Type,
+      Lo: Lo,
+      Itu: ITU,
+      StudentMaterials: Student_Materials,
+      SDownload: S_Download,
+      StudentTask: Student_Tasks,
+      URLs: URLs,
     });
 
     res.status(201).json({
@@ -569,7 +571,6 @@ const getSessionById = async (req, res) => {
     }
 
     const SessionId = req.params.sessionId;
-    console.log("SessionId: ", SessionId);
     if (!SessionId) {
       return res.status(404).json({ message: "Session Id not found." });
     }
@@ -593,17 +594,16 @@ const updateSession = async (req, res) => {
   try {
     const syllabus = await syllabusRepository.getById(req.params.id);
     const sessionId = req.params.sessionId;
-    console.log("Session to update in controller:", req.body);
     const updatedSessionData = {
-      Session_Session: req.body.Session_Session,
-      Session_topic: req.body.Session_topic,
-      Session_LearningType: req.body.Session_LearningType,
-      Session_Lo: req.body.Session_Lo,
-      Session_ITU: req.body.Session_ITU,
-      Session_StudentMaterials: req.body.Session_StudentMaterials,
-      Session_SDownload: req.body.Session_SDownload,
-      Session_StudentTask: req.body.Session_StudentTask,
-      Session_URLs: req.body.Session_URLs,
+      Session_Session: req.body.Session,
+      Session_topic: req.body.Topic,
+      Session_LearningType: req.body.Learning_Teaching_Type,
+      Session_Lo: req.body.LO,
+      Session_ITU: req.body.ITU,
+      Session_StudentMaterials: req.body.Student_Materials,
+      Session_SDownload: req.body.S_Download,
+      Session_StudentTask: req.body.Student_Tasks,
+      Session_URLs: req.body.URLs,
     };
 
     // Kiểm tra tồn tại của curriculum
@@ -645,7 +645,6 @@ const updateSession = async (req, res) => {
 const getAllAssessment = async (req, res) => {
   try {
     const syllabus = await syllabusRepository.getById(req.params.id);
-    // console.log("Syllabus: ", syllabus);
     if (!syllabus) {
       return res.status(404).json({ message: "Syllabus not found." });
     }
@@ -672,7 +671,6 @@ const getAssessmentById = async (req, res) => {
     }
 
     const AssessmentId = req.params.assessmentId;
-    console.log("AssessmentId: ", AssessmentId);
     if (!AssessmentId) {
       return res.status(404).json({ message: "Session Id not found." });
     }
@@ -697,7 +695,6 @@ const updateAssessment = async (req, res) => {
     const syllabus = await syllabusRepository.getById(req.params.id);
     const assessmentId = req.params.assessmentId;
     // console.log("Assessment to update in controller:", req.body);
-    console.log("Assessment ID:", assessmentId);
     const updatedAssessmentData = {
       Assessment_Category: req.body.Assessment_Category,
       Assessment_Type: req.body.Assessment_Type,
@@ -790,6 +787,30 @@ const addAssessment = async (req, res) => {
       message: "Add assessment successfully.",
       data: createdAssessment,
     });
+  } catch (error) {
+    res.status(500).json({
+      message: error.toString(),
+    });
+  }
+};
+
+const deleteAssessment = async (req, res) => {
+  try {
+    const syllabusExist = await syllabusRepository.getById(req.params.id);
+    if (!syllabusExist) {
+      res.status(400).json({
+        message: "Syllabus unavailable.",
+      });
+    } else {
+      const assessment = await syllabusRepository.deleteAssessment(
+        syllabusExist,
+        req.params.assessmentId
+      );
+      res.status(201).json({
+        massage: "Delete successfully",
+        // data: syllabus,
+      });
+    }
   } catch (error) {
     res.status(500).json({
       message: error.toString(),

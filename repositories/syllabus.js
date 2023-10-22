@@ -1,4 +1,5 @@
 import Syllabus from "../models/Syllabus.js";
+import { ObjectId } from "mongodb";
 
 //Syllabus
 const create = async (syllabus) => {
@@ -19,6 +20,7 @@ const countSyllabus = async () => {
 const getAll = async (size, page, searchString) => {
   const skip = (page - 1) * size;
   const syllabuses = await Syllabus.find({
+    status: true,
     $or: [
       { name: { $regex: searchString } },
       { code: { $regex: searchString } },
@@ -69,8 +71,7 @@ const update = async (id, updateData) => {
 
 const getById = async (id) => {
   const syllabus = await Syllabus.findById(id).exec();
-  console.log("id: ", id);
-  console.log(syllabus);
+
   return syllabus;
 };
 
@@ -350,7 +351,7 @@ const addSession = async (id, sessionData) => {
     if (!syllabus) {
       throw new Error("Syllabus not found");
     }
-
+    // console.log("Sesion data:", sessionData);
     const newSession = {
       Session_Session: sessionData.Session,
       Session_topic: sessionData.Topic,
@@ -362,11 +363,11 @@ const addSession = async (id, sessionData) => {
       Session_StudentTask: sessionData.StudentTask,
       Session_URLs: sessionData.URLs,
     };
-
+    // console.log("New Sesion:", newSession);
     syllabus.Session.push(newSession);
 
     await syllabus.save();
-    console.log("aaaaaaaaaaaaaaa: ", newSession);
+    // console.log("aaaaaaaaaaaaaaa: ", newSession);
     return newSession;
   } catch (error) {
     console.error("Error adding Session:", error);
@@ -376,6 +377,11 @@ const addSession = async (id, sessionData) => {
 
 const getAllSession = async (id) => {
   try {
+    // const ádsadsa = await id.Session.find(
+    //   (item) => String(item.Session_topic) === ""
+    // );
+
+    // console.log("syllabuses", ádsadsa);
     const syllabus = await Syllabus.findById(id);
 
     if (!Syllabus) {
@@ -393,7 +399,6 @@ const getAllSession = async (id) => {
 const getSessionById = async (syllabusId, sessionId) => {
   try {
     const syllabus = await Syllabus.findById(syllabusId);
-    console.log("Session ID Repo", sessionId);
     if (!syllabus) {
       throw new Error("syllabus not found");
     }
@@ -401,7 +406,6 @@ const getSessionById = async (syllabusId, sessionId) => {
     const session = syllabus.Session.find(
       (item) => String(item._id) === sessionId
     );
-    console.log(session);
     if (!session) {
       throw new Error("Session not found");
     }
@@ -415,7 +419,6 @@ const getSessionById = async (syllabusId, sessionId) => {
 
 const updateSession = async (syllabus, sessionId, updatedSessionData) => {
   try {
-    console.log("Session updated:", updatedSessionData);
     const sessionToUpdate = syllabus.Session.find(
       (item) => String(item._id) === sessionId
     );
@@ -426,7 +429,6 @@ const updateSession = async (syllabus, sessionId, updatedSessionData) => {
       throw new Error("Session not found");
     }
 
-    console.log("Session number", sessionToUpdate.Session_Session);
     sessionToUpdate.Session_Session = updatedSessionData.Session_Session;
     sessionToUpdate.Session_topic = updatedSessionData.Session_topic;
     sessionToUpdate.Session_LearningType =
@@ -469,7 +471,7 @@ const getAllAssessment = async (id) => {
 const getAssessmentById = async (syllabusId, assessmentId) => {
   try {
     const syllabus = await Syllabus.findById(syllabusId);
-    console.log("Session ID Repo", assessmentId);
+    "Session ID Repo", assessmentId;
     if (!syllabus) {
       throw new Error("syllabus not found");
     }
@@ -477,8 +479,7 @@ const getAssessmentById = async (syllabusId, assessmentId) => {
     const assessment = syllabus.Assessment.find(
       (item) => String(item._id) === assessmentId
     );
-    console.log("Syllabus Repo: ", syllabus);
-    console.log("Assessment by id:", assessment);
+
     if (!assessment) {
       throw new Error("Assessment not found");
     }
@@ -571,6 +572,18 @@ const addAssessment = async (id, assessmentData) => {
   }
 };
 
+const deleteAssessment = async (syllabus, id) => {
+  const assessmentIndex = syllabus.Assessment.findIndex(
+    (item) => String(item._id) === id
+  );
+  if (assessmentIndex === -1) {
+    throw new Error("Assessment not found");
+  }
+  const deletedlo = syllabus.Assessment.splice(id, 1);
+  await syllabus.save();
+  return deletedlo;
+};
+
 export default {
   getSyllabusByCode,
   countSyllabus,
@@ -594,6 +607,7 @@ export default {
   getAssessmentById,
   updateAssessment,
   addAssessment,
+  deleteAssessment,
 
   addLO,
   getAllLO,
