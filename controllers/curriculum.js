@@ -16,6 +16,22 @@ const getCurriculums = async (req, res) => {
     }
 }
 
+const getCurriculumsStatus = async (req, res) => {
+    // try {
+    //     const listStatusTrue = await curriculumRepository.getCurriculumByStatus();
+    //     console.log(listStatusTrue);
+    //     res.status(200).json({
+    //         message: 'Get curriculums Has Status True successfully.',
+    //         data: listStatusTrue
+    //     })
+    // }
+    // catch (error) {
+    //     res.status(500).json({
+    //         message: error.toString()
+    //     })
+    // }
+}
+
 const getCurriculumById = async (req, res) => {
     try {
         const curriculum = await curriculumRepository.getById(req.params.id);
@@ -610,5 +626,6 @@ export default {
     deletePoById,
     deletePloById,
     setStatusPoById,
-    setStatusPloById
+    setStatusPloById,
+    getCurriculumsStatus
 }

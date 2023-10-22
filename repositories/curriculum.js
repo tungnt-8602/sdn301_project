@@ -21,6 +21,16 @@ const getCurriculumByCode = async (curriculum_code) => {
   return curriculum;
 };
 
+
+const getCurriculumByStatus = async () => {
+  try {
+    // Sử dụng Mongoose để tìm các đối tượng có status = true
+    const curriculums = await Curriculum.find(String({ status: true })).exec();
+    return curriculums;
+  } catch (error) {
+    throw error; // Xử lý lỗi nếu có
+  }
+};
 const deleteCurriculumById = async (id) => {
   const result = await Curriculum.findByIdAndDelete(id).exec();
   return result;
@@ -480,4 +490,5 @@ export default {
   deletePloById,
   setStatusPoById,
   setStatusPloById,
+  getCurriculumByStatus,
 };

@@ -7,6 +7,8 @@ const curriculumRouter = express.Router();
 
 curriculumRouter.get('/:id', curriculumController.getCurriculumById);
 
+curriculumRouter.get('/statusTrue', curriculumController.getCurriculumsStatus);
+
 curriculumRouter.post('/', curriculumController.addCurriculum);
 
 curriculumRouter.delete('/:id', curriculumController.deleteCurriculumById);
