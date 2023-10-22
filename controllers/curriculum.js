@@ -33,8 +33,8 @@ const getCurriculums = async (req, res) => {
 // }
 const getCurriculumsStatus = async (req, res) => {
     try {
-      const size = req.query.size || 5;
-      const page = req.query.page || 1;
+      const size = parseInt(req.query.size) || 5; // Convert to an integer
+      const page = parseInt(req.query.page) || 1; // Convert to an integer
       const searchString = req.query.searchString || "";
       const curriculum = await curriculumRepository.getAllCurriculumByStatus(
         size,
@@ -50,9 +50,11 @@ const getCurriculumsStatus = async (req, res) => {
         total: totalPages,
         data: curriculum.data,
       });
+     
     } catch (error) {
+      console.error("Error in getCurriculumsStatus:", error);
       res.status(500).json({
-        message: error.toString(),
+        message: "Internal server error",
       });
     }
   };

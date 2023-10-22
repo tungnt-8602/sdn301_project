@@ -21,9 +21,11 @@ const getCurriculumByCode = async (curriculum_code) => {
   return curriculum;
 };
 
+
+
 const getAllCurriculumByStatus = async (size, page, searchString) => {
   const skip = (page - 1) * size;
-  const syllabuses = await Curriculum.find({
+  const curriculum = await Curriculum.find({
     status: true,
     $or: [
       { name: { $regex: searchString } },
@@ -40,7 +42,7 @@ const getAllCurriculumByStatus = async (size, page, searchString) => {
     ],
   }).countDocuments();
   return {
-    data: syllabuses,
+    data: curriculum,
     count: count,
   };
 };

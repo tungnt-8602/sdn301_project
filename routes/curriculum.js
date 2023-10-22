@@ -6,15 +6,16 @@ const curriculumRouter = express.Router();
 
 // curriculumRouter.get('/', studentController.getStudents);
 
+curriculumRouter.get('/view', curriculumController.getCurriculumsStatus);
+
 curriculumRouter.get('/:id', curriculumController.getCurriculumById);
 
-curriculumRouter.get('/', curriculumController.getCurriculumsStatus);
+curriculumRouter.get('/', curriculumController.searchCurriculums);
 
 curriculumRouter.post('/', curriculumController.addCurriculum);
 
 curriculumRouter.delete('/:id', curriculumController.deleteCurriculumById);
 
-curriculumRouter.get('/', curriculumController.searchCurriculums);
 
 curriculumRouter.put('/:id', curriculumController.updateCurriculum);
 
