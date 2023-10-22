@@ -523,12 +523,12 @@ const addSession = async (req, res) => {
     const {
       Session,
       Topic,
-      Learning_Teaching_Type,
-      Lo,
+      LearningTeachingType,
+      LO,
       ITU,
-      Student_Materials,
-      S_Download,
-      Student_Tasks,
+      StudentMaterials,
+      SDownload,
+      StudentTasks,
       URLs,
     } = req.body;
 
@@ -548,12 +548,12 @@ const addSession = async (req, res) => {
     const createdSession = await syllabusRepository.addSession(syllabusId, {
       Session: Session,
       Topic: Topic,
-      LearningType: Learning_Teaching_Type,
-      Lo: Lo,
+      LearningType: LearningTeachingType,
+      Lo: LO,
       Itu: ITU,
-      StudentMaterials: Student_Materials,
-      SDownload: S_Download,
-      StudentTask: Student_Tasks,
+      StudentMaterials: StudentMaterials,
+      SDownload: SDownload,
+      StudentTask: StudentTasks,
       URLs: URLs,
     });
 
@@ -624,12 +624,12 @@ const updateSession = async (req, res) => {
     const updatedSessionData = {
       Session_Session: req.body.Session,
       Session_topic: req.body.Topic,
-      Session_LearningType: req.body.Learning_Teaching_Type,
-      Session_Lo: req.body.LO,
+      Session_LearningType: req.body.LearningTeachingType,
+      Session_LO: req.body.LO,
       Session_ITU: req.body.ITU,
-      Session_StudentMaterials: req.body.Student_Materials,
-      Session_SDownload: req.body.S_Download,
-      Session_StudentTask: req.body.Student_Tasks,
+      Session_StudentMaterials: req.body.StudentMaterials,
+      Session_SDownload: req.body.SDownload,
+      Session_StudentTask: req.body.StudentTasks,
       Session_URLs: req.body.URLs,
     };
 
@@ -723,18 +723,18 @@ const updateAssessment = async (req, res) => {
     const assessmentId = req.params.assessmentId;
     // console.log("Assessment to update in controller:", req.body);
     const updatedAssessmentData = {
-      Assessment_Category: req.body.Assessment_Category,
-      Assessment_Type: req.body.Assessment_Type,
-      Assessment_Part: req.body.Assessment_Part,
-      Assessment_Weight: req.body.Assessment_Weight,
-      Assessment_CompletionCriteria: req.body.Assessment_CompletionCriteria,
-      Assessment_Duration: req.body.Assessment_Duration,
-      Assessment_Clo: req.body.Assessment_CLO,
-      Assessment_QuestionType: req.body.Assessment_QuestionType,
-      Assessment_NoQuestion: req.body.Assessment_NoQuestion,
-      Assessment_KnowledgeAndSkill: req.body.Assessment_KnowledgeAndSkill,
-      Assessment_GradingGuide: req.body.Assessment_GradingGuide,
-      Assessment_Note: req.body.Assessment_Note,
+      Assessment_Category: req.body.Category,
+      Assessment_Type: req.body.Type,
+      Assessment_Part: req.body.Part,
+      Assessment_Weight: req.body.Weight,
+      Assessment_CompletionCriteria: req.body.CompletionCriteria,
+      Assessment_Duration: req.body.Duration,
+      Assessment_Clo: req.body.CLO,
+      Assessment_QuestionType: req.body.QuestionType,
+      Assessment_NoQuestion: req.body.NoQuestion,
+      Assessment_KnowledgeAndSkill: req.body.KnowledgeAndSkill,
+      Assessment_GradingGuide: req.body.GradingGuide,
+      Assessment_Note: req.body.Note,
     };
 
     if (!syllabus) {
@@ -772,18 +772,18 @@ const addAssessment = async (req, res) => {
   try {
     // lấy res
     const {
-      Assessment_Category,
-      Assessment_Type,
-      Assessment_Part,
-      Assessment_Weight,
-      Assessment_CompletionCriteria,
-      Assessment_Duration,
-      Assessment_CLO,
-      Assessment_QuestionType,
-      Assessment_NoQuestion,
-      Assessment_KnowledgeAndSkill,
-      Assessment_GradingGuide,
-      Assessment_Note,
+      Category,
+      Type,
+      Part,
+      Weight,
+      CompletionCriteria,
+      Duration,
+      CLO,
+      QuestionType,
+      NoQuestion,
+      KnowledgeAndSkill,
+      GradingGuide,
+      Note,
     } = req.body;
     const syllabus = await syllabusRepository.getById(req.params.id);
     const syllabusId = req.params.id;
@@ -795,18 +795,18 @@ const addAssessment = async (req, res) => {
     const createdAssessment = await syllabusRepository.addAssessment(
       syllabusId,
       {
-        Category: Assessment_Category,
-        Type: Assessment_Type,
-        Part: Assessment_Part,
-        Weight: Assessment_Weight,
-        CompletionCriteria: Assessment_CompletionCriteria,
-        Duration: Assessment_Duration,
-        CLO: Assessment_CLO,
-        QuestionType: Assessment_QuestionType,
-        NoQuestion: Assessment_NoQuestion,
-        KnowledgeAndSkill: Assessment_KnowledgeAndSkill,
-        GradingGuide: Assessment_GradingGuide,
-        Note: Assessment_Note,
+        Category: Category,
+        Type: Type,
+        Part: Part,
+        Weight: Weight,
+        CompletionCriteria: CompletionCriteria,
+        Duration: Duration,
+        CLO: CLO,
+        QuestionType: QuestionType,
+        NoQuestion: NoQuestion,
+        KnowledgeAndSkill: KnowledgeAndSkill,
+        GradingGuide: GradingGuide,
+        Note: Note,
       }
     );
 
