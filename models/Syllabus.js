@@ -100,6 +100,56 @@ const AssessmentSchema = new Schema({
   },
 });
 
+const LO = new Schema({
+    id: { type: ObjectId },
+    CLO_Name: {
+        type: String
+    },
+    CLO_Details: {
+        type: String
+    }
+});
+
+const Material = new Schema({
+    id: { type: ObjectId },
+    MaterialDescription: {
+        type: String
+    },
+    Author: {
+        type: String,
+        required: false
+    },
+    Publisher: {
+        type: String,
+        required: false
+    },
+    PublishedDate: {
+        type: String,
+        required: false
+    },
+    Edition: {
+        type: String,
+        required: false
+    },
+    ISBN: {
+        type: String,
+        required: false
+    },
+    IsMainMaterial: {
+        type: Boolean
+    },
+    IsHardCopy: {
+        type: Boolean
+    },
+    IsOnline: {
+        type: Boolean
+    },
+    Note: {
+        type: String,
+        required: false
+    }
+});
+
 const Syllabus = mongoose.model(
   "Syllabus",
   new Schema({
@@ -188,11 +238,14 @@ const Syllabus = mongoose.model(
       type: String,
       require: true,
     },
-    LO: {
-      type: [Object],
+    status: {
+      type: Boolean
+    },
+    LO:{
+      type: [LO]
     },
     Material: {
-      type: [Object],
+      type: [Material]
     },
     Session: {
       type: [SessionSchema],
