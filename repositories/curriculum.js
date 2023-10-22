@@ -21,6 +21,29 @@ const getCurriculumByCode = async (curriculum_code) => {
   return curriculum;
 };
 
+const getAllCurriculumByStatus = async (size, page, searchString) => {
+  const skip = (page - 1) * size;
+  const syllabuses = await Curriculum.find({
+    status: true,
+    $or: [
+      { name: { $regex: searchString } },
+      { code: { $regex: searchString } },
+    ],
+  })
+    .skip(skip)
+    .limit(size);
+
+  const count = await Curriculum.find({
+    $or: [
+      { name: { $regex: searchString } },
+      { code: { $regex: searchString } },
+    ],
+  }).countDocuments();
+  return {
+    data: syllabuses,
+    count: count,
+  };
+};
 
 const getCurriculumByStatus = async () => {
   try {
@@ -491,4 +514,5 @@ export default {
   setStatusPoById,
   setStatusPloById,
   getCurriculumByStatus,
+  getAllCurriculumByStatus,
 };

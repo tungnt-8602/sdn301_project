@@ -1,13 +1,14 @@
 import express from 'express'
 import { curriculumController } from '../controllers/index.js';
-
+import Authorization from '../middleware/authorization.js'
+import { isAuthenticated } from '../middleware/authentication.js'
 const curriculumRouter = express.Router();
 
 // curriculumRouter.get('/', studentController.getStudents);
 
 curriculumRouter.get('/:id', curriculumController.getCurriculumById);
 
-curriculumRouter.get('/statusTrue', curriculumController.getCurriculumsStatus);
+curriculumRouter.get('/', curriculumController.getCurriculumsStatus);
 
 curriculumRouter.post('/', curriculumController.addCurriculum);
 

@@ -16,7 +16,7 @@ const getCurriculums = async (req, res) => {
     }
 }
 
-const getCurriculumsStatus = async (req, res) => {
+// const getCurriculumsStatus = async (req, res) => {
     // try {
     //     const listStatusTrue = await curriculumRepository.getCurriculumByStatus();
     //     console.log(listStatusTrue);
@@ -30,7 +30,32 @@ const getCurriculumsStatus = async (req, res) => {
     //         message: error.toString()
     //     })
     // }
-}
+// }
+const getCurriculumsStatus = async (req, res) => {
+    try {
+      const size = req.query.size || 5;
+      const page = req.query.page || 1;
+      const searchString = req.query.searchString || "";
+      const curriculum = await curriculumRepository.getAllCurriculumByStatus(
+        size,
+        page,
+        searchString
+      );
+      const totalPages = Math.ceil(curriculum.count / size);
+      res.status(200).json({
+        message: "Get curriculum successfully.",
+        searchString,
+        size,
+        page,
+        total: totalPages,
+        data: curriculum.data,
+      });
+    } catch (error) {
+      res.status(500).json({
+        message: error.toString(),
+      });
+    }
+  };
 
 const getCurriculumById = async (req, res) => {
     try {
