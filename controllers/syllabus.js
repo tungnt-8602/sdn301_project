@@ -76,7 +76,6 @@ const getSyllabusTrue = async (req, res) => {
     const size = req.query.size || 5;
     const page = req.query.page || 1;
     const searchString = req.query.searchString || "";
-    console.log("search string: ", searchString);
     const syllabuses = await syllabusRepository.getAllTrue(
       size,
       page,

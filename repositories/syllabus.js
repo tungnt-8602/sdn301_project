@@ -41,7 +41,6 @@ const getAll = async (size, page, searchString) => {
 };
 
 const getAllTrue = async (size, page, searchString) => {
-  console.log("search string: ", searchString);
   const skip = (page - 1) * size;
   const syllabuses = await Syllabus.find({
     status: true,

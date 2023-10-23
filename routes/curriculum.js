@@ -4,11 +4,10 @@ import Authorization from '../middleware/authorization.js'
 import { isAuthenticated } from '../middleware/authentication.js'
 const curriculumRouter = express.Router();
 
+curriculumRouter.get('/view', curriculumController.getCurriculumsStatus);
 // curriculumRouter.get('/', studentController.getStudents);
 
 curriculumRouter.get('/:id', curriculumController.getCurriculumById);
-
-curriculumRouter.get('/', curriculumController.getCurriculumsStatus);
 
 curriculumRouter.post('/', curriculumController.addCurriculum);
 
