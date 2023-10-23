@@ -105,12 +105,11 @@ const createNewAccount = async (req, res) => {
         username,
         email,
         password,
-        role,
-        status
+        role
     } = req.body;
 
     try {
-        const newUser = await userRepository.createNewAccount({ username, email, password, role, status });
+        const newUser = await userRepository.createNewAccount({ username, email, password, role });
 
         if (!newUser) {
             return res.status(500).json({ error: 'Failed to create user.' });
@@ -174,7 +173,7 @@ const searchUsers = async (req, res) => {
         const users = await userRepository.searchUsers(query, page, size);
         const total = await userRepository.totalUsersSearch(query);
         if(users.length > 0){
-            res.status(200).json({message: "Search users successfully", searchString: query, page: page, size: size, total: total, data: users });
+            res.status(200).json({message: "Search users successfully", searchString: query, page: page, size: size, total: totalnpm, data: users });
         } else{
             res.status(200).json({message: "Not found user from email or username provided" });
         }
@@ -183,6 +182,10 @@ const searchUsers = async (req, res) => {
     }
 };
 
+const updateUsers = async (req, res) => {
+
+}
+
 export default {
     login,
     createNewAccount,
@@ -190,5 +193,6 @@ export default {
     ableAndDisable,
     getToken,
     logout,
-    searchUsers
+    searchUsers,
+    updateUsers
 }
