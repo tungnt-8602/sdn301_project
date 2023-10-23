@@ -21,6 +21,39 @@ const getCurriculumByCode = async (curriculum_code) => {
   return curriculum;
 };
 
+const getAllCurriculumByStatus = async (size, page, searchString) => {
+  const skip = (page - 1) * size;
+  const syllabuses = await Curriculum.find({
+    status: true,
+    $or: [
+      { name: { $regex: searchString } },
+      { code: { $regex: searchString } },
+    ],
+  })
+    .skip(skip)
+    .limit(size);
+
+  const count = await Curriculum.find({
+    $or: [
+      { name: { $regex: searchString } },
+      { code: { $regex: searchString } },
+    ],
+  }).countDocuments();
+  return {
+    data: syllabuses,
+    count: count,
+  };
+};
+
+const getCurriculumByStatus = async () => {
+  try {
+    // Sử dụng Mongoose để tìm các đối tượng có status = true
+    const curriculums = await Curriculum.find(String({ status: true })).exec();
+    return curriculums;
+  } catch (error) {
+    throw error; // Xử lý lỗi nếu có
+  }
+};
 const deleteCurriculumById = async (id) => {
   const result = await Curriculum.findByIdAndDelete(id).exec();
   return result;
@@ -162,6 +195,64 @@ const getPoById = async (curriculumId, poId) => {
   }
 };
 
+const deletePoById = async (curriculumId, poId) => {
+  try {
+    const curriculum = await Curriculum.findById(curriculumId);
+
+    if (!curriculum) {
+      throw new Error("Curriculum not found");
+    }
+
+    const poIndex = curriculum.po.findIndex((item) => String(item._id) === poId);
+    if (poIndex === -1) {
+      throw new Error("Po not found");
+    }
+    
+
+    const deletedPo = curriculum.po.splice(poIndex, 1);
+    
+    // Lưu curriculum sau khi xóa po (tuỳ thuộc vào cách lưu dữ liệu của bạn)
+    await curriculum.save();
+
+    return deletedPo;
+  } catch (error) {
+    console.error("Error deleting Po by ID:", error);
+    throw error;
+  }
+};
+
+
+const setStatusPoById = async (curriculumId, poId, status) => {
+  try {
+    const curriculum = await Curriculum.findById(curriculumId);
+
+    if (!curriculum) {
+      throw new Error("Curriculum not found");
+    }
+
+    const po = curriculum.po.find((item) => String(item._id) === poId);
+
+    if (!po) {
+      throw new Error("Po not found");
+    }
+
+    // Đặt trạng thái của "po" dựa trên giá trị được gửi trong tham số status
+    po.po_status = status;
+
+    // Lưu curriculum sau khi cập nhật
+    await curriculum.save();
+
+    return po;
+  } catch (error) {
+    console.error("Error setting Po status:", error);
+    throw error;
+  }
+};
+
+
+
+
+
 
 
 
@@ -282,6 +373,59 @@ const getPloById = async (curriculumId, ploId) => {
   }
 };
 
+const deletePloById = async (curriculumId, ploId) => {
+  try {
+    const curriculum = await Curriculum.findById(curriculumId);
+
+    if (!curriculum) {
+      throw new Error("Curriculum not found");
+    }
+
+    const ploIndex = curriculum.plo.findIndex((item) => String(item._id) === ploId);
+    if (ploIndex === -1) {
+      throw new Error("Po not found");
+    }
+    
+
+    const deletedPlo = curriculum.plo.splice(ploIndex, 1);
+    
+    // Lưu curriculum sau khi xóa po (tuỳ thuộc vào cách lưu dữ liệu của bạn)
+    await curriculum.save();
+
+    return deletedPlo;
+  } catch (error) {
+    console.error("Error deleting Plo by ID:", error);
+    throw error;
+  }
+};
+
+const setStatusPloById = async (curriculumId, ploId, status) => {
+  try {
+    const curriculum = await Curriculum.findById(curriculumId);
+
+    if (!curriculum) {
+      throw new Error("Curriculum not found");
+    }
+
+    const plo = curriculum.plo.find((item) => String(item._id) === ploId);
+
+    if (!plo) {
+      throw new Error("Plo not found");
+    }
+
+    // Đặt trạng thái của "plo" dựa trên giá trị được gửi trong tham số status
+    plo.plo_status = status;
+
+    // Lưu curriculum sau khi cập nhật
+    await curriculum.save();
+
+    return plo;
+  } catch (error) {
+    console.error("Error setting Plo status:", error);
+    throw error;
+  }
+};
+
 //  getPloById ('65180b99637c98dcef23b671', '65180b99637c98dcef23b674')
 
 
@@ -365,4 +509,10 @@ export default {
   updatePlo,
   updateCurriculum,
   ableAndDisable,
+  deletePoById,
+  deletePloById,
+  setStatusPoById,
+  setStatusPloById,
+  getCurriculumByStatus,
+  getAllCurriculumByStatus,
 };

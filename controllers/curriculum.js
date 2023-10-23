@@ -16,6 +16,47 @@ const getCurriculums = async (req, res) => {
     }
 }
 
+// const getCurriculumsStatus = async (req, res) => {
+    // try {
+    //     const listStatusTrue = await curriculumRepository.getCurriculumByStatus();
+    //     console.log(listStatusTrue);
+    //     res.status(200).json({
+    //         message: 'Get curriculums Has Status True successfully.',
+    //         data: listStatusTrue
+    //     })
+    // }
+    // catch (error) {
+    //     res.status(500).json({
+    //         message: error.toString()
+    //     })
+    // }
+// }
+const getCurriculumsStatus = async (req, res) => {
+    try {
+      const size = req.query.size || 5;
+      const page = req.query.page || 1;
+      const searchString = req.query.searchString || "";
+      const curriculum = await curriculumRepository.getAllCurriculumByStatus(
+        size,
+        page,
+        searchString
+      );
+      const totalPages = Math.ceil(curriculum.count / size);
+      res.status(200).json({
+        message: "Get curriculum successfully.",
+        searchString,
+        size,
+        page,
+        total: totalPages,
+        data: curriculum.data,
+      });
+    } catch (error) {
+      res.status(500).json({
+        message: error.toString(),
+      });
+    }
+  };
+
 const getCurriculumById = async (req, res) => {
     try {
         const curriculum = await curriculumRepository.getById(req.params.id);
@@ -111,26 +152,26 @@ const searchCurriculums = async (req, res) => {
 
 const updateCurriculum = async (req, res) => {
     try {
-      const curriculumExisted = await curriculumRepository.getById(req.params.id);
-  
-      const data = req.body
-      if (!curriculumExisted) {
-        return res.status(404).json({
-          message: "Curriculum not found."
+        const curriculumExisted = await curriculumRepository.getById(req.params.id);
+
+        const data = req.body
+        if (!curriculumExisted) {
+            return res.status(404).json({
+                message: "Curriculum not found."
+            });
+        }
+
+        const curriculum = await curriculumRepository.updateCurriculum(curriculumExisted, data);
+        res.status(201).json({
+            message: 'Updated curriculum successfully.',
+            data: curriculum
         });
-      }
-  
-      const curriculum = await curriculumRepository.updateCurriculum(curriculumExisted, data);
-      res.status(201).json({
-        message: 'Updated curriculum successfully.',
-        data: curriculum
-      });
     } catch (error) {
-      res.status(500).json({
-        message: error.toString()
-      });
+        res.status(500).json({
+            message: error.toString()
+        });
     }
-  }
+}
 
 //////////////////////////////////////////////////////[---PO---]///////////////////////////////////////////////////////////////////
 
@@ -154,7 +195,7 @@ const addPo = async (req, res) => {
 
         // Kiểm tra xem po_name có bắt đầu bằng "PO" không
         if (!po_name.startsWith("PO")) {
-            return res.status(400).json({ message: `${po_name} name must start with 'PO'.`} );
+            return res.status(400).json({ message: `${po_name} name must start with 'PO'.` });
         }
 
         // Kiểm tra xem Po_name tồn tại ko nè
@@ -229,6 +270,60 @@ const getPoById = async (req, res) => {
     }
 };
 
+const deletePoById = async (req, res) => {
+    try {
+        const curriculum = await curriculumRepository.getById(req.params.id);
+        console.log(curriculum);
+        if (!curriculum) {
+            return res.status(404).json({ message: "Curriculum not found." });
+        }
+
+        const poId = req.params.poId;
+
+        if (!poId) {
+            return res.status(400).json({ message: "Po Id not provided." });
+        }
+
+        const deletedPo = await curriculumRepository.deletePoById(curriculum, poId);
+
+        if (!deletedPo) {
+            return res.status(404).json({ message: "Po not found." });
+        }
+
+        res.status(200).json({
+            message: 'Po deleted successfully.',
+
+        });
+    } catch (error) {
+        res.status(500).json({
+            message: error.toString()
+        });
+    }
+};
+
+const setStatusPoById = async (req, res) => {
+    try {
+      const curriculumId = req.params.id;
+      const poId = req.params.poId;
+      const status = req.body.po_status;
+  
+      const updatedPo = await curriculumRepository.setStatusPoById(curriculumId, poId, status);
+  
+      if (!updatedPo) {
+        return res.status(404).json({ message: "Po not found." });
+      }
+  
+      res.status(200).json({
+        message: 'Po status updated successfully.',
+        data: updatedPo,
+      });
+    } catch (error) {
+      res.status(500).json({
+        message: error.toString(),
+      });
+    }
+  };
+
 const updatePo = async (req, res) => {
     try {
         const curriculum = await curriculumRepository.getById(req.params.id);
@@ -263,7 +358,7 @@ const updatePo = async (req, res) => {
                 message: "Po name must be between 3 and 100 characters."
             });
         }
-      
+
         // Kiểm tra xem Po_name đã tồn tại và có cùng ID không
         const existingPo = curriculum.po.find((item) => item.po_name === updatedPoData.po_name && String(item._id) !== poId);
         if (existingPo) {
@@ -416,6 +511,61 @@ const getPloById = async (req, res) => {
     }
 };
 
+const deletePloById = async (req, res) => {
+    try {
+        const curriculum = await curriculumRepository.getById(req.params.id);
+
+        if (!curriculum) {
+            return res.status(404).json({ message: "Curriculum not found." });
+        }
+
+        const ploId = req.params.ploId; // Đã sửa thành ploId
+
+        if (!ploId) {
+            return res.status(400).json({ message: "Plo Id not provided." });
+        }
+
+        const deletedPlo = await curriculumRepository.deletePloById(curriculum, ploId);
+
+        if (!deletedPlo) {
+            return res.status(404).json({ message: "Plo not found." });
+        }
+
+        res.status(200).json({
+            message: 'Plo deleted successfully.',
+        });
+    } catch (error) {
+        res.status(500).json({
+            message: error.toString()
+        });
+    }
+};
+
+
+
+const setStatusPloById = async (req, res) => {
+    try {
+        const curriculumId = req.params.id;
+        const ploId = req.params.ploId;
+        const status = req.body.plo_status;
+
+        const updatedPlo = await curriculumRepository.setStatusPloById(curriculumId, ploId, status);
+
+        if (!updatedPlo) {
+            return res.status(404).json({ message: "Plo not found." });
+        }
+
+        res.status(200).json({
+            message: 'Plo status updated successfully.',
+            data: updatedPlo,
+        });
+    } catch (error) {
+        res.status(500).json({
+            message: error.toString(),
+        });
+    }
+};
+
 const updatePlo = async (req, res) => {
     try {
         const curriculum = await curriculumRepository.getById(req.params.id);
@@ -450,7 +600,7 @@ const updatePlo = async (req, res) => {
                 message: "Plo name must be between 3 and 100 characters."
             });
         }
-      
+
         // Kiểm tra xem Plo_name đã tồn tại và có cùng ID không
         const existingPlo = curriculum.plo.find((item) => item.plo_name === updatedPloData.plo_name && String(item._id) !== ploId);
         if (existingPlo) {
@@ -498,4 +648,9 @@ export default {
     updatePlo,
     updateCurriculum,
     ableAndDisable,
+    deletePoById,
+    deletePloById,
+    setStatusPoById,
+    setStatusPloById,
+    getCurriculumsStatus
 }

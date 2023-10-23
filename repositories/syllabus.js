@@ -1,5 +1,7 @@
 import Syllabus from "../models/Syllabus.js";
+import { ObjectId } from "mongodb";
 
+//Syllabus
 const create = async (syllabus) => {
   const newSyllabus = new Syllabus(syllabus);
   const result = await newSyllabus.save();
@@ -29,6 +31,31 @@ const getAll = async (size, page, searchString) => {
   const count = await Syllabus.find({
     $or: [
       { name: { $regex: searchString } },
+      { code: { $regex: searchString } },
+    ],
+  }).countDocuments();
+  return {
+    data: syllabuses,
+    count: count,
+  };
+};
+
+const getAllTrue = async (size, page, searchString) => {
+  console.log("search string: ", searchString);
+  const skip = (page - 1) * size;
+  const syllabuses = await Syllabus.find({
+    status: true,
+    $or: [
+      // { name: { $regex: searchString } },
+      { code: { $regex: searchString } },
+    ],
+  })
+    .skip(skip)
+    .limit(size);
+
+  const count = await Syllabus.find({
+    $or: [
+      // { name: { $regex: searchString } },
       { code: { $regex: searchString } },
     ],
   }).countDocuments();
@@ -68,8 +95,7 @@ const update = async (id, updateData) => {
 
 const getById = async (id) => {
   const syllabus = await Syllabus.findById(id).exec();
-  console.log("id: ", id);
-  console.log(syllabus);
+
   return syllabus;
 };
 
@@ -109,6 +135,239 @@ const remove = async (id) => {
   return result;
 };
 
+const setStatusSyllabusById = async (id) => {
+  try {
+
+      const syllabus = await Syllabus.findById(id).exec();
+      if (!syllabus) {
+          throw new Error('Syllabus not found');
+      }
+
+      syllabus.status = !syllabus.status;
+      await syllabus.save();
+
+      return syllabus;
+  } catch (error) {
+      throw error;
+  }
+}
+
+//LO
+const addLO = async (id, LOData) => {
+  try {
+    const syllabus = await Syllabus.findById(id).exec();
+    if (!syllabus) {
+      throw new Error("Syllabus not found");
+    }
+
+    const newLO = {
+      CLO_Name: LOData.CLO_Name,
+      CLO_Details: LOData.CLO_Details
+    };
+
+    syllabus.LO.push(newLO);
+
+    await syllabus.save();
+    return newLO;
+  } catch (error) {
+    throw error;
+  }
+};
+
+const getAllLO = async (id) => {
+  try {
+    const syllabus = await Syllabus.findById(id);
+    if (!Syllabus) {
+      throw new Error("Syllasbus not found");
+    }
+
+    const allLO = syllabus.LO;
+    return allLO;
+  } catch (error) {
+    console.error("Error fetching all LO:", error);
+    throw error;
+  }
+};
+
+const getLOById = async (syllabusId, LOId) => {
+  try {
+    const syllabus = await Syllabus.findById(syllabusId);
+    if (!syllabus) {
+      throw new Error("syllabus not found");
+    }
+
+    const lo = syllabus.LO.find(
+      (item) => String(item._id) === LOId
+    );
+    console.log(lo);
+    if (!lo) {
+      throw new Error("LO not found");
+    }
+    return lo;
+  } catch (error) {
+    console.error("Error fetching LO by ID:", error);
+    throw error;
+  }
+};
+
+const updateLO = async (syllabus, LOId, updatedLOData) => {
+  try {
+    const newLO = syllabus.LO.find(
+      (item) => String(item._id) === LOId
+    );
+    if (!newLO) {
+      throw new Error("Session not found");
+    }
+    newLO.CLO_Name = updatedLOData.CLO_Name
+    newLO.CLO_Details = updatedLOData.CLO_Details
+    // console.log("Session update before save", sessionToUpdate);
+    await syllabus.save();
+    // console.log("Session update after save", sessionToUpdate);
+    return newLO;
+  } catch (error) {
+    console.error("Error updating LO:", error);
+    throw error;
+  }
+};
+
+const deleteLOById = async (syllabusId, LOId) => {
+  try {
+    const syllabus = await Syllabus.findById(syllabusId).exec();
+    if (!syllabus) {
+      throw new Error("Syllabus not found");
+    }
+
+    const loIndex = syllabus.LO.findIndex((item) => String(item._id) === LOId);
+    if (loIndex === -1) {
+      throw new Error("Po not found");
+    }
+    const deletedlo = syllabus.LO.splice(loIndex, 1);
+    
+    // Lưu syllabus sau khi xóa lo (tuỳ thuộc vào cách lưu dữ liệu của bạn)
+    await syllabus.save();
+    return deletedlo;
+  } catch (error) {
+    console.error("Error deleting lo by ID:", error);
+    throw error;
+  }
+};
+
+//Material
+const addMaterial = async (id, MaterialData) => {
+  try {
+    const syllabus = await Syllabus.findById(id);
+    if (!syllabus) {
+      throw new Error("Syllabus not found");
+    }
+
+    const newMaterial = {
+      MaterialDescription: MaterialData.MaterialDescription,
+      Author: MaterialData.Author,
+      Publisher: MaterialData.Publisher,
+      PublishedDate: MaterialData.PublishedDate,
+      Edition: MaterialData.Edition,
+      ISBN: MaterialData.ISBN,
+      IsMainMaterial: MaterialData.IsMainMaterial,
+      IsHardCopy: MaterialData.IsHardCopy,
+      IsOnline: MaterialData.IsOnline,
+      Note: MaterialData.Note,
+    };
+
+    syllabus.Material.push(newMaterial);
+
+    await syllabus.save();
+    return newMaterial;
+  } catch (error) {
+    console.error("Error adding Material:", error);
+    throw error;
+  }
+};
+
+const getAllMaterial = async (id) => {
+  try {
+    const syllabus = await Syllabus.findById(id);
+    if (!Syllabus) {
+      throw new Error("Syllasbus not found");
+    }
+
+    const allMaterial = syllabus.Material;
+    return allMaterial;
+  } catch (error) {
+    console.error("Error fetching all Material:", error);
+    throw error;
+  }
+};
+
+const getMaterialById = async (syllabusId, MaterialId) => {
+  try {
+    const syllabus = await Syllabus.findById(syllabusId);
+    if (!syllabus) {
+      throw new Error("syllabus not found");
+    }
+
+    const material = syllabus.Material.find(
+      (item) => String(item._id) === MaterialId
+    );
+    console.log(material);
+    if (!material) {
+      throw new Error("Material not found");
+    }
+    return material;
+  } catch (error) {
+    console.error("Error fetching Material by ID:", error);
+    throw error;
+  }
+};
+
+const updateMaterial = async (syllabus, MaterialId, updatedMaterialData) => {
+  try {
+    const newMaterial = syllabus.Material.find(
+      (item) => String(item._id) === MaterialId
+    );
+    if (!newMaterial) {
+      throw new Error("Session not found");
+    }
+    newMaterial.MaterialDescription = updatedMaterialData.MaterialDescription;
+    newMaterial.Author = updatedMaterialData.Author;
+    newMaterial.Publisher = updatedMaterialData.Publisher;
+    newMaterial.PublishedDate = updatedMaterialData.PublishedDate;
+    newMaterial.Edition = updatedMaterialData.Edition;
+    newMaterial.ISBN = updatedMaterialData.ISBN;
+    newMaterial.IsMainMaterial = updatedMaterialData.IsMainMaterial;
+    newMaterial.IsHardCopy = updatedMaterialData.IsHardCopy;
+    newMaterial.IsOnline = updatedMaterialData.IsOnline;
+    newMaterial.Note = updatedMaterialData.Note;
+    await syllabus.save();
+    return newMaterial;
+  } catch (error) {
+    console.error("Error updating newMaterial:", error);
+    throw error;
+  }
+};
+
+const deleteMaterialById = async (syllabusId, materialId) => {
+  try {
+    const syllabus = await Syllabus.findById(syllabusId).exec();
+    if (!syllabus) {
+      throw new Error("Syllabus not found");
+    }
+
+    const materialIndex = syllabus.Material.findIndex((item) => String(item._id) === materialId);
+    if (materialIndex === -1) {
+      throw new Error("Material not found");
+    }
+    const deletedMaterial = syllabus.Material.splice(materialIndex, 1);
+    
+    // Lưu syllabus sau khi xóa lo (tuỳ thuộc vào cách lưu dữ liệu của bạn)
+    await syllabus.save();
+    return deletedMaterial;
+  } catch (error) {
+    console.error("Error deleting Material by ID:", error);
+    throw error;
+  }
+};
+
+//Session
 const addSession = async (id, sessionData) => {
   try {
     const syllabus = await Syllabus.findById(id);
@@ -116,23 +375,23 @@ const addSession = async (id, sessionData) => {
     if (!syllabus) {
       throw new Error("Syllabus not found");
     }
-
+    // console.log("Sesion data:", sessionData);
     const newSession = {
-      Session_Session: sessionData.Session,
-      Session_topic: sessionData.Topic,
-      Session_LearningType: sessionData.LearningType,
-      Session_Lo: sessionData.Lo,
-      Session_ITU: sessionData.Itu,
-      Session_StudentMaterials: sessionData.StudentMaterials,
-      Session_SDownload: sessionData.SDownload,
-      Session_StudentTask: sessionData.StudentTask,
-      Session_URLs: sessionData.URLs,
+      Session: sessionData.Session,
+      Topic: sessionData.Topic,
+      LearningTeachingType: sessionData.LearningType,
+      LO: sessionData.Lo,
+      ITU: sessionData.Itu,
+      StudentMaterials: sessionData.StudentMaterials,
+      SDownload: sessionData.SDownload,
+      StudentTasks: sessionData.StudentTask,
+      URLs: sessionData.URLs,
     };
-
+    // console.log("New Sesion:", newSession);
     syllabus.Session.push(newSession);
 
     await syllabus.save();
-    console.log("aaaaaaaaaaaaaaa: ", newSession);
+    // console.log("aaaaaaaaaaaaaaa: ", newSession);
     return newSession;
   } catch (error) {
     console.error("Error adding Session:", error);
@@ -142,6 +401,11 @@ const addSession = async (id, sessionData) => {
 
 const getAllSession = async (id) => {
   try {
+    // const ádsadsa = await id.Session.find(
+    //   (item) => String(item.Session_topic) === ""
+    // );
+
+    // console.log("syllabuses", ádsadsa);
     const syllabus = await Syllabus.findById(id);
 
     if (!Syllabus) {
@@ -159,7 +423,6 @@ const getAllSession = async (id) => {
 const getSessionById = async (syllabusId, sessionId) => {
   try {
     const syllabus = await Syllabus.findById(syllabusId);
-    console.log("Session ID Repo", sessionId);
     if (!syllabus) {
       throw new Error("syllabus not found");
     }
@@ -167,7 +430,6 @@ const getSessionById = async (syllabusId, sessionId) => {
     const session = syllabus.Session.find(
       (item) => String(item._id) === sessionId
     );
-    console.log(session);
     if (!session) {
       throw new Error("Session not found");
     }
@@ -181,7 +443,6 @@ const getSessionById = async (syllabusId, sessionId) => {
 
 const updateSession = async (syllabus, sessionId, updatedSessionData) => {
   try {
-    console.log("Session updated:", updatedSessionData);
     const sessionToUpdate = syllabus.Session.find(
       (item) => String(item._id) === sessionId
     );
@@ -192,19 +453,17 @@ const updateSession = async (syllabus, sessionId, updatedSessionData) => {
       throw new Error("Session not found");
     }
 
-    console.log("Session number", sessionToUpdate.Session_Session);
-    sessionToUpdate.Session_Session = updatedSessionData.Session_Session;
-    sessionToUpdate.Session_topic = updatedSessionData.Session_topic;
-    sessionToUpdate.Session_LearningType =
+    sessionToUpdate.Session = updatedSessionData.Session_Session;
+    sessionToUpdate.Topic = updatedSessionData.Session_topic;
+    sessionToUpdate.LearningTeachingType =
       updatedSessionData.Session_LearningType;
-    sessionToUpdate.Session_Lo = updatedSessionData.Session_Lo;
-    sessionToUpdate.Session_ITU = updatedSessionData.Session_ITU;
-    sessionToUpdate.Session_StudentMaterials =
+    sessionToUpdate.LO = updatedSessionData.Session_LO;
+    sessionToUpdate.ITU = updatedSessionData.Session_ITU;
+    sessionToUpdate.StudentMaterials =
       updatedSessionData.Session_StudentMaterials;
-    sessionToUpdate.Session_SDownload = updatedSessionData.Session_SDownload;
-    sessionToUpdate.Session_StudentTask =
-      updatedSessionData.Session_StudentTask;
-    sessionToUpdate.Session_URLs = updatedSessionData.Session_URLs;
+    sessionToUpdate.SDownload = updatedSessionData.Session_SDownload;
+    sessionToUpdate.StudentTasks = updatedSessionData.Session_StudentTask;
+    sessionToUpdate.URLs = updatedSessionData.Session_URLs;
     // console.log("Session update before save", sessionToUpdate);
     await syllabus.save();
     // console.log("Session update after save", sessionToUpdate);
@@ -214,6 +473,7 @@ const updateSession = async (syllabus, sessionId, updatedSessionData) => {
     throw error;
   }
 };
+
 //Assessment
 const getAllAssessment = async (id) => {
   try {
@@ -234,7 +494,7 @@ const getAllAssessment = async (id) => {
 const getAssessmentById = async (syllabusId, assessmentId) => {
   try {
     const syllabus = await Syllabus.findById(syllabusId);
-    console.log("Session ID Repo", assessmentId);
+    "Session ID Repo", assessmentId;
     if (!syllabus) {
       throw new Error("syllabus not found");
     }
@@ -242,8 +502,7 @@ const getAssessmentById = async (syllabusId, assessmentId) => {
     const assessment = syllabus.Assessment.find(
       (item) => String(item._id) === assessmentId
     );
-    console.log("Syllabus Repo: ", syllabus);
-    console.log("Assessment by id:", assessment);
+
     if (!assessment) {
       throw new Error("Assessment not found");
     }
@@ -272,26 +531,22 @@ const updateAssessment = async (
       throw new Error("Assessment not found");
     }
 
-    assessmentToUpdate.Assessment_Category =
-      updatedAssessmentData.Assessment_Category;
-    assessmentToUpdate.Assessment_Type = updatedAssessmentData.Assessment_Type;
-    assessmentToUpdate.Assessment_Part = updatedAssessmentData.Assessment_Part;
-    assessmentToUpdate.Assessment_Weight =
-      updatedAssessmentData.Assessment_Weight;
-    assessmentToUpdate.Assessment_CompletionCriteria =
+    assessmentToUpdate.Category = updatedAssessmentData.Assessment_Category;
+    assessmentToUpdate.Type = updatedAssessmentData.Assessment_Type;
+    assessmentToUpdate.Part = updatedAssessmentData.Assessment_Part;
+    assessmentToUpdate.Weight = updatedAssessmentData.Assessment_Weight;
+    assessmentToUpdate.CompletionCriteria =
       updatedAssessmentData.Assessment_CompletionCriteria;
-    assessmentToUpdate.Assessment_Duration =
-      updatedAssessmentData.Assessment_Duration;
-    assessmentToUpdate.Assessment_CLO = updatedAssessmentData.Assessment_CLO;
-    assessmentToUpdate.Assessment_QuestionType =
+    assessmentToUpdate.Duration = updatedAssessmentData.Assessment_Duration;
+    assessmentToUpdate.CLO = updatedAssessmentData.Assessment_CLO;
+    assessmentToUpdate.QuestionType =
       updatedAssessmentData.Assessment_QuestionType;
-    assessmentToUpdate.Assessment_NoQuestion =
-      updatedAssessmentData.Assessment_NoQuestion;
-    assessmentToUpdate.Assessment_KnowledgeAndSkill =
+    assessmentToUpdate.NoQuestion = updatedAssessmentData.Assessment_NoQuestion;
+    assessmentToUpdate.KnowledgeAndSkill =
       updatedAssessmentData.Assessment_KnowledgeAndSkill;
-    assessmentToUpdate.Assessment_GradingGuide =
+    assessmentToUpdate.GradingGuide =
       updatedAssessmentData.Assessment_GradingGuide;
-    assessmentToUpdate.Assessment_Note = updatedAssessmentData.Assessment_Note;
+    assessmentToUpdate.Note = updatedAssessmentData.Assessment_Note;
     // console.log("Session update before save", sessionToUpdate);
     await syllabus.save();
     // console.log("Session update after save", sessionToUpdate);
@@ -311,18 +566,18 @@ const addAssessment = async (id, assessmentData) => {
     }
 
     const newAssessment = {
-      Assessment_Category: assessmentData.Category,
-      Assessment_Type: assessmentData.Type,
-      Assessment_Part: assessmentData.Part,
-      Assessment_Weight: assessmentData.Weight,
-      Assessment_CompletionCriteria: assessmentData.CompletionCriteria,
-      Assessment_Duration: assessmentData.Duration,
-      Assessment_CLO: assessmentData.Clo,
-      Assessment_QuestionType: assessmentData.QuestionType,
-      Assessment_NoQuestion: assessmentData.NoQuestion,
-      Assessment_KnowledgeAndSkill: assessmentData.KnowledgeAndSkill,
-      Assessment_GradingGuide: assessmentData.GradingGuide,
-      Assessment_Note: assessmentData.Note,
+      Category: assessmentData.Category,
+      Type: assessmentData.Type,
+      Part: assessmentData.Part,
+      Weight: assessmentData.Weight,
+      CompletionCriteria: assessmentData.CompletionCriteria,
+      Duration: assessmentData.Duration,
+      CLO: assessmentData.Clo,
+      QuestionType: assessmentData.QuestionType,
+      NoQuestion: assessmentData.NoQuestion,
+      KnowledgeAndSkill: assessmentData.KnowledgeAndSkill,
+      GradingGuide: assessmentData.GradingGuide,
+      Note: assessmentData.Note,
     };
 
     syllabus.Assessment.push(newAssessment);
@@ -336,11 +591,24 @@ const addAssessment = async (id, assessmentData) => {
   }
 };
 
+const deleteAssessment = async (syllabus, id) => {
+  const assessmentIndex = syllabus.Assessment.findIndex(
+    (item) => String(item._id) === id
+  );
+  if (assessmentIndex === -1) {
+    throw new Error("Assessment not found");
+  }
+  const deletedlo = syllabus.Assessment.splice(id, 1);
+  await syllabus.save();
+  return deletedlo;
+};
+
 export default {
   getSyllabusByCode,
   countSyllabus,
   create,
   getByNameAndCode,
+  getAllTrue,
   getAll,
   getById,
   update,
@@ -348,12 +616,28 @@ export default {
   searchByKey,
   totalSearchByKey,
   countSyllabus,
+  setStatusSyllabusById,
+
   getAllSession,
   getSessionById,
   addSession,
   updateSession,
+
   getAllAssessment,
   getAssessmentById,
   updateAssessment,
   addAssessment,
+  deleteAssessment,
+
+  addLO,
+  getAllLO,
+  getLOById,
+  updateLO,
+  deleteLOById,
+
+  addMaterial,
+  getAllMaterial,
+  getMaterialById,
+  updateMaterial,
+  deleteMaterialById
 };

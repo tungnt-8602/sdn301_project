@@ -1,4 +1,5 @@
 import { syllabusRepository } from "../repositories/index.js";
+import { validationResult } from "express-validator"
 
 const createSyllabus = async (req, res) => {
   try {
@@ -69,6 +70,33 @@ const createSyllabus = async (req, res) => {
 //     });
 //   }
 // };
+
+const getSyllabusTrue = async (req, res) => {
+  try {
+    const size = req.query.size || 5;
+    const page = req.query.page || 1;
+    const searchString = req.query.searchString || "";
+    console.log("search string: ", searchString);
+    const syllabuses = await syllabusRepository.getAllTrue(
+      size,
+      page,
+      searchString
+    );
+    const totalPages = Math.ceil(syllabuses.count / size);
+    res.status(200).json({
+      message: "Get syllabuses successfully.",
+      searchString,
+      size,
+      page,
+      total: totalPages,
+      data: syllabuses.data,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.toString(),
+    });
+  }
+};
 
 const getAllSyllabus = async (req, res) => {
   try {
@@ -146,20 +174,364 @@ const deleteSyllabus = async (req, res) => {
   }
 };
 
+const setStatusSyllabusById = async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+  }
+  const { id } = req.params;
+  try {
+      const updatedSyllabus = await syllabusRepository.setStatusSyllabusById(id);
+      if (!updatedSyllabus) {
+          return res.status(404).json({ message: 'Syllabus not found' });
+      }
+      res.status(200).json({
+          message: 'Update status successfully.',
+          data: updatedSyllabus
+      });
+  } catch (err) {
+      res.status(500).json({ error: err.toString() });
+  }
+}
+
+//LO
+const addLO = async (req, res) => {
+  try {
+    // lấy res
+    const {
+      CLO_Name,
+      CLO_Details
+    } = req.body;
+    const syllabus = await syllabusRepository.getById(req.params.id);
+    const syllabusId = req.params.id;
+    // Kiểm tra có đúng syllabus
+    if (!syllabus) {
+      return res.status(404).json({ message: "Syllabus not found." });
+    }
+
+    const checkLOName = syllabus.LO.find((item) => String(item.CLO_Name) === CLO_Name)
+        if (checkLOName) {
+            return res.status(400).json({ message: "LO name exsit." });
+        }
+        console.log(checkLOName);
+
+    const createdLO = await syllabusRepository.addLO(syllabusId, {
+      CLO_Name: CLO_Name,
+      CLO_Details: CLO_Details,
+    });
+
+    res.status(201).json({
+      message: "Add LO successfully.",
+      data: createdLO,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.toString(),
+    });
+  }
+};
+
+const getAllLO = async (req, res) => {
+  try {
+    const syllabus = await syllabusRepository.getById(req.params.id);
+
+    if (!syllabus) {
+      return res.status(404).json({ message: "Syllabus not found." });
+    }
+
+    const list = await syllabusRepository.getAllLO(syllabus);
+    res.status(200).json({
+      message: "Get all LO successfully.",
+      data: list,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.toString(),
+    });
+  }
+};
+
+const getLOById = async (req, res) => {
+  try {
+    const syllabus = await syllabusRepository.getById(req.params.id);
+
+    // Kiểm tra có đúng syllabus
+    if (!syllabus) {
+      return res.status(404).json({ message: "Syllabus not found." });
+    }
+
+    const loId = req.params.loId;
+    if (!loId) {
+      return res.status(404).json({ message: "LO Id not found." });
+    }
+    const lo = await syllabusRepository.getLOById(
+      syllabus,
+      loId
+    );
+
+    res.status(200).json({
+      message: "Get LO by ID successfully.",
+      data: lo,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.toString(),
+    });
+  }
+};
+
+const updateLO = async (req, res) => {
+  try {
+    const syllabus = await syllabusRepository.getById(req.params.id);
+    const loId = req.params.loId;
+
+    const updatedLOData = {
+      CLO_Name: req.body.CLO_Name,
+      CLO_Details: req.body.CLO_Details,
+    };
+
+    // Kiểm tra tồn tại của curriculum
+    if (!syllabus) {
+      return res.status(404).json({
+        status: "ERR",
+        message: "Syllabus not found.",
+      });
+    }
+
+    // Kiểm tra tồn tại của poId
+    if (!loId) {
+      return res.status(404).json({
+        status: "ERR",
+        message: "The loId is required",
+      });
+    }
+
+    // Kiểm tra xem Po_name đã tồn tại và có cùng ID không
+
+    const updatedLO = await syllabusRepository.updateLO(
+      syllabus,
+      loId,
+      updatedLOData
+    );
+
+    res.status(200).json({
+      message: "Update session by ID successfully.",
+      data: updatedLO,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.toString(),
+    });
+  }
+};
+
+const deleteLOById = async (req, res) => {
+  try {
+      const syllabus = await syllabusRepository.getById(req.params.id);
+
+      if (!syllabus) {
+          return res.status(404).json({ message: "Syllabus not found." });
+      }
+
+      const loId = req.params.loId; // Đã sửa thành loId
+
+      if (!loId) {
+          return res.status(400).json({ message: "lo Id not provided." });
+      }
+
+      const deletedLO = await syllabusRepository.deleteLOById(syllabus, loId);
+
+      if (!deletedLO) {
+          return res.status(404).json({ message: "lo not found." });
+      }
+
+      res.status(200).json({
+          message: 'lo deleted successfully.',
+      });
+  } catch (error) {
+      res.status(500).json({
+          message: error.toString()
+      });
+  }
+};
+
+//Material
+const addMaterial = async (req, res) => {
+  try {
+    // lấy res
+    const material = req.body;
+    const syllabus = await syllabusRepository.getById(req.params.id);
+    const syllabusId = req.params.id;
+    // Kiểm tra có đúng syllabus
+    if (!syllabus) {
+      return res.status(404).json({ message: "Syllabus not found." });
+    }
+
+    const checkMaterialDescription = syllabus.Material.find((item) => String(item.MaterialDescription) === material.MaterialDescription)
+        if (checkMaterialDescription) {
+            return res.status(400).json({ message: "Material Description exsit." });
+        }
+
+    const createdMaterial = await syllabusRepository.addMaterial(syllabusId, material);
+
+    res.status(201).json({
+      message: "Add Material successfully.",
+      data: createdMaterial,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.toString(),
+    });
+  }
+};
+
+const getAllMaterial = async (req, res) => {
+  try {
+    const syllabus = await syllabusRepository.getById(req.params.id);
+
+    if (!syllabus) {
+      return res.status(404).json({ message: "Syllabus not found." });
+    }
+
+    const list = await syllabusRepository.getAllMaterial(syllabus);
+    res.status(200).json({
+      message: "Get all LO successfully.",
+      data: list,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.toString(),
+    });
+  }
+};
+
+const getMaterialById = async (req, res) => {
+  try {
+    const syllabus = await syllabusRepository.getById(req.params.id);
+
+    // Kiểm tra có đúng syllabus
+    if (!syllabus) {
+      return res.status(404).json({ message: "Syllabus not found." });
+    }
+
+    const materialId = req.params.materialId;
+    if (!materialId) {
+      return res.status(404).json({ message: "Material Id not found." });
+    }
+    const material = await syllabusRepository.getMaterialById(
+      syllabus,
+      materialId
+    );
+
+    res.status(200).json({
+      message: "Get LO by ID successfully.",
+      data: material,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.toString(),
+    });
+  }
+};
+
+const updateMaterial = async (req, res) => {
+  try {
+    const syllabus = await syllabusRepository.getById(req.params.id);
+    const materialId = req.params.materialId;
+    const updatedMaterialData = {
+      MaterialDescription: req.body.MaterialDescription,
+      Author: req.body.Author,
+      Publisher: req.body.Publisher,
+      PublishedDate: req.body.PublishedDate,
+      Edition: req.body.Edition,
+      ISBN: req.body.ISBN,
+      IsMainMaterial: req.body.IsMainMaterial,
+      IsHardCopy: req.body.IsHardCopy,
+      IsOnline: req.body.IsOnline,
+      Note: req.body.Note,
+    };
+
+    // Kiểm tra tồn tại của syllabus
+    if (!syllabus) {
+      return res.status(404).json({
+        status: "ERR",
+        message: "Syllabus not found.",
+      });
+    }
+
+    // Kiểm tra tồn tại của poId
+    if (!materialId) {
+      return res.status(404).json({
+        status: "ERR",
+        message: "The MaterialId is required",
+      });
+    }
+
+    // Kiểm tra xem Po_name đã tồn tại và có cùng ID không
+
+    const updatedMaterial = await syllabusRepository.updateMaterial(
+      syllabus,
+      materialId,
+      updatedMaterialData
+    );
+
+    res.status(200).json({
+      message: "Update session by ID successfully.",
+      data: updatedMaterial,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: error.toString(),
+    });
+  }
+};
+
+const deleteMaterialById = async (req, res) => {
+  try {
+      const syllabus = await syllabusRepository.getById(req.params.id);
+
+      if (!syllabus) {
+          return res.status(404).json({ message: "Syllabus not found." });
+      }
+
+      const materialId = req.params.materialId; // Đã sửa thành materialId
+
+      if (!materialId) {
+          return res.status(400).json({ message: "material Id not provided." });
+      }
+
+      const deletedMaterial = await syllabusRepository.deleteMaterialById(syllabus, materialId);
+
+      if (!deletedMaterial) {
+          return res.status(404).json({ message: "material not found." });
+      }
+
+      res.status(200).json({
+          message: 'material deleted successfully.',
+      });
+  } catch (error) {
+      res.status(500).json({
+          message: error.toString()
+      });
+  }
+};
+
+//Session
 const addSession = async (req, res) => {
   try {
     // lấy res
     const {
-      Session_Session,
-      Session_topic,
-      Session_LearningType,
-      Session_Lo,
-      Session_ITU,
-      Session_StudentMaterials,
-      Session_SDownload,
-      Session_StudentTask,
-      Session_URLs,
+      Session,
+      Topic,
+      LearningTeachingType,
+      LO,
+      ITU,
+      StudentMaterials,
+      SDownload,
+      StudentTasks,
+      URLs,
     } = req.body;
+
     const syllabus = await syllabusRepository.getById(req.params.id);
     const syllabusId = req.params.id;
     // Kiểm tra có đúng syllabus
@@ -174,15 +546,15 @@ const addSession = async (req, res) => {
     // }
 
     const createdSession = await syllabusRepository.addSession(syllabusId, {
-      Session: Session_Session,
-      Topic: Session_topic,
-      LearningType: Session_LearningType,
-      Lo: Session_Lo,
-      Itu: Session_ITU,
-      StudentMaterials: Session_StudentMaterials,
-      SDownload: Session_SDownload,
-      StudentTask: Session_StudentTask,
-      URLs: Session_URLs,
+      Session: Session,
+      Topic: Topic,
+      LearningType: LearningTeachingType,
+      Lo: LO,
+      Itu: ITU,
+      StudentMaterials: StudentMaterials,
+      SDownload: SDownload,
+      StudentTask: StudentTasks,
+      URLs: URLs,
     });
 
     res.status(201).json({
@@ -226,7 +598,6 @@ const getSessionById = async (req, res) => {
     }
 
     const SessionId = req.params.sessionId;
-    console.log("SessionId: ", SessionId);
     if (!SessionId) {
       return res.status(404).json({ message: "Session Id not found." });
     }
@@ -250,17 +621,16 @@ const updateSession = async (req, res) => {
   try {
     const syllabus = await syllabusRepository.getById(req.params.id);
     const sessionId = req.params.sessionId;
-    console.log("Session to update in controller:", req.body);
     const updatedSessionData = {
-      Session_Session: req.body.Session_Session,
-      Session_topic: req.body.Session_topic,
-      Session_LearningType: req.body.Session_LearningType,
-      Session_Lo: req.body.Session_Lo,
-      Session_ITU: req.body.Session_ITU,
-      Session_StudentMaterials: req.body.Session_StudentMaterials,
-      Session_SDownload: req.body.Session_SDownload,
-      Session_StudentTask: req.body.Session_StudentTask,
-      Session_URLs: req.body.Session_URLs,
+      Session_Session: req.body.Session,
+      Session_topic: req.body.Topic,
+      Session_LearningType: req.body.LearningTeachingType,
+      Session_LO: req.body.LO,
+      Session_ITU: req.body.ITU,
+      Session_StudentMaterials: req.body.StudentMaterials,
+      Session_SDownload: req.body.SDownload,
+      Session_StudentTask: req.body.StudentTasks,
+      Session_URLs: req.body.URLs,
     };
 
     // Kiểm tra tồn tại của curriculum
@@ -297,11 +667,11 @@ const updateSession = async (req, res) => {
     });
   }
 };
+
 //Assessment
 const getAllAssessment = async (req, res) => {
   try {
     const syllabus = await syllabusRepository.getById(req.params.id);
-    // console.log("Syllabus: ", syllabus);
     if (!syllabus) {
       return res.status(404).json({ message: "Syllabus not found." });
     }
@@ -328,7 +698,6 @@ const getAssessmentById = async (req, res) => {
     }
 
     const AssessmentId = req.params.assessmentId;
-    console.log("AssessmentId: ", AssessmentId);
     if (!AssessmentId) {
       return res.status(404).json({ message: "Session Id not found." });
     }
@@ -353,20 +722,19 @@ const updateAssessment = async (req, res) => {
     const syllabus = await syllabusRepository.getById(req.params.id);
     const assessmentId = req.params.assessmentId;
     // console.log("Assessment to update in controller:", req.body);
-    console.log("Assessment ID:", assessmentId);
     const updatedAssessmentData = {
-      Assessment_Category: req.body.Assessment_Category,
-      Assessment_Type: req.body.Assessment_Type,
-      Assessment_Part: req.body.Assessment_Part,
-      Assessment_Weight: req.body.Assessment_Weight,
-      Assessment_CompletionCriteria: req.body.Assessment_CompletionCriteria,
-      Assessment_Duration: req.body.Assessment_Duration,
-      Assessment_Clo: req.body.Assessment_CLO,
-      Assessment_QuestionType: req.body.Assessment_QuestionType,
-      Assessment_NoQuestion: req.body.Assessment_NoQuestion,
-      Assessment_KnowledgeAndSkill: req.body.Assessment_KnowledgeAndSkill,
-      Assessment_GradingGuide: req.body.Assessment_GradingGuide,
-      Assessment_Note: req.body.Assessment_Note,
+      Assessment_Category: req.body.Category,
+      Assessment_Type: req.body.Type,
+      Assessment_Part: req.body.Part,
+      Assessment_Weight: req.body.Weight,
+      Assessment_CompletionCriteria: req.body.CompletionCriteria,
+      Assessment_Duration: req.body.Duration,
+      Assessment_Clo: req.body.CLO,
+      Assessment_QuestionType: req.body.QuestionType,
+      Assessment_NoQuestion: req.body.NoQuestion,
+      Assessment_KnowledgeAndSkill: req.body.KnowledgeAndSkill,
+      Assessment_GradingGuide: req.body.GradingGuide,
+      Assessment_Note: req.body.Note,
     };
 
     if (!syllabus) {
@@ -404,18 +772,18 @@ const addAssessment = async (req, res) => {
   try {
     // lấy res
     const {
-      Assessment_Category,
-      Assessment_Type,
-      Assessment_Part,
-      Assessment_Weight,
-      Assessment_CompletionCriteria,
-      Assessment_Duration,
-      Assessment_CLO,
-      Assessment_QuestionType,
-      Assessment_NoQuestion,
-      Assessment_KnowledgeAndSkill,
-      Assessment_GradingGuide,
-      Assessment_Note,
+      Category,
+      Type,
+      Part,
+      Weight,
+      CompletionCriteria,
+      Duration,
+      CLO,
+      QuestionType,
+      NoQuestion,
+      KnowledgeAndSkill,
+      GradingGuide,
+      Note,
     } = req.body;
     const syllabus = await syllabusRepository.getById(req.params.id);
     const syllabusId = req.params.id;
@@ -427,18 +795,18 @@ const addAssessment = async (req, res) => {
     const createdAssessment = await syllabusRepository.addAssessment(
       syllabusId,
       {
-        Category: Assessment_Category,
-        Type: Assessment_Type,
-        Part: Assessment_Part,
-        Weight: Assessment_Weight,
-        CompletionCriteria: Assessment_CompletionCriteria,
-        Duration: Assessment_Duration,
-        CLO: Assessment_CLO,
-        QuestionType: Assessment_QuestionType,
-        NoQuestion: Assessment_NoQuestion,
-        KnowledgeAndSkill: Assessment_KnowledgeAndSkill,
-        GradingGuide: Assessment_GradingGuide,
-        Note: Assessment_Note,
+        Category: Category,
+        Type: Type,
+        Part: Part,
+        Weight: Weight,
+        CompletionCriteria: CompletionCriteria,
+        Duration: Duration,
+        CLO: CLO,
+        QuestionType: QuestionType,
+        NoQuestion: NoQuestion,
+        KnowledgeAndSkill: KnowledgeAndSkill,
+        GradingGuide: GradingGuide,
+        Note: Note,
       }
     );
 
@@ -453,18 +821,58 @@ const addAssessment = async (req, res) => {
   }
 };
 
+const deleteAssessment = async (req, res) => {
+  try {
+    const syllabusExist = await syllabusRepository.getById(req.params.id);
+    if (!syllabusExist) {
+      res.status(400).json({
+        message: "Syllabus unavailable.",
+      });
+    } else {
+      const assessment = await syllabusRepository.deleteAssessment(
+        syllabusExist,
+        req.params.assessmentId
+      );
+      res.status(201).json({
+        massage: "Delete successfully",
+        // data: syllabus,
+      });
+    }
+  } catch (error) {
+    res.status(500).json({
+      message: error.toString(),
+    });
+  }
+};
+
 export default {
   createSyllabus,
   getAllSyllabus,
+  getSyllabusTrue,
   getSyllabusById,
   updateSyllabus,
   deleteSyllabus,
+  setStatusSyllabusById,
+
   getAllSession,
   getSessionById,
   addSession,
   updateSession,
+
   getAllAssessment,
   getAssessmentById,
   updateAssessment,
   addAssessment,
+
+  addLO,
+  getAllLO,
+  getLOById,
+  updateLO,
+  deleteLOById,
+
+  addMaterial,
+  getAllMaterial,
+  getMaterialById,
+  updateMaterial,
+  deleteMaterialById,
 };

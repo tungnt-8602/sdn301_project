@@ -81,12 +81,12 @@ const ableAndDisable = async (userId) => {
     }
 }
 
-const searchUsers = async (query, page, size) => {
+const searchUsers = async (searchString, page, size) => {
     try {
         const users = await User.find({
             $or: [
-                { username: { $regex: new RegExp(query, 'i') } },
-                { email: { $regex: new RegExp(query, 'i') } },
+                { username: { $regex: new RegExp(searchString, 'i') } },
+                { email: { $regex: new RegExp(searchString, 'i') } },
             ],
         }).skip(size * (page - 1))
         .limit(size)
@@ -98,11 +98,11 @@ const searchUsers = async (query, page, size) => {
     }
 };
 
-const totalUsersSearch = async (query) => {
+const totalUsersSearch = async (searchString) => {
     const students = await User.countDocuments({
       $or: [
-        { username: { $regex: new RegExp(query, 'i') } },
-        { email: { $regex: new RegExp(query, 'i') } },
+        { username: { $regex: new RegExp(searchString, 'i') } },
+        { email: { $regex: new RegExp(searchString, 'i') } },
       ],
     });
     return students;

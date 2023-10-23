@@ -8,9 +8,12 @@ const syllabusRouter = express.Router();
 // });
 
 //Syllabus
-syllabusRouter.get("/", async (req, res) => {
-  syllabusController.getAllSyllabus(req, res);
+syllabusRouter.get("/view", async (req, res) => {
+  syllabusController.getSyllabusTrue(req, res);
 }),
+  syllabusRouter.get("/", async (req, res) => {
+    syllabusController.getAllSyllabus(req, res);
+  }),
   syllabusRouter.put("/:id", async (req, res) => {
     syllabusController.updateSyllabus(req, res);
   });
@@ -30,36 +33,60 @@ syllabusRouter.post("/", async (req, res) => {
   syllabusController.createSyllabus(req, res);
 });
 
-//Session
-syllabusRouter.post("/addSession/:id", syllabusController.addSession);
+syllabusRouter.put('/changeStatus/:id', async (req, res) => {
+  syllabusController.setStatusSyllabusById(req, res);
+});
 
-syllabusRouter.get("/getAllSession/:id", syllabusController.getAllSession);
+//LO
+syllabusRouter.post("/lo/:id", syllabusController.addLO);
+
+syllabusRouter.get("/lo/:id", syllabusController.getAllLO);
+
+syllabusRouter.get("/lo/:id/:loId",syllabusController.getLOById);
+
+syllabusRouter.put("/lo/:id/:loId",syllabusController.updateLO);
+
+syllabusRouter.delete('/lo/:id/:loId', syllabusController.deleteLOById);
+
+//Material
+syllabusRouter.post("/material/:id", syllabusController.addMaterial);
+
+syllabusRouter.get("/material/:id", syllabusController.getAllMaterial);
+
+syllabusRouter.get("/material/:id/:materialId",syllabusController.getMaterialById);
+
+syllabusRouter.put("/material/:id/:materialId",syllabusController.updateMaterial);
+
+syllabusRouter.delete('/material/:id/:materialId', syllabusController.deleteMaterialById);
+
+//Session
+syllabusRouter.post("/session/:id", syllabusController.addSession);
+
+syllabusRouter.get("/session/:id", syllabusController.getAllSession);
 
 syllabusRouter.get(
-  "/getSessionById/:id/:sessionId",
+  "/session/:id/:sessionId",
   syllabusController.getSessionById
 );
 
-syllabusRouter.put(
-  "/updateSession/:id/:sessionId",
-  syllabusController.updateSession
-);
+syllabusRouter.put("/session/:id/:sessionId", syllabusController.updateSession);
 
 //Assessment
-syllabusRouter.post("/addAssessment/:id", syllabusController.addAssessment);
-syllabusRouter.get(
-  "/getAllAssessment/:id",
-  syllabusController.getAllAssessment
-);
+syllabusRouter.post("/assessment/:id", syllabusController.addAssessment);
+syllabusRouter.get("/assessment/:id", syllabusController.getAllAssessment);
 
 syllabusRouter.get(
-  "/getAssessmentById/:id/:assessmentId",
+  "/assessment/:id/:assessmentId",
   syllabusController.getAssessmentById
 );
 
 syllabusRouter.put(
-  "/updateAssessment/:id/:assessmentId",
+  "/assessment/:id/:assessmentId",
   syllabusController.updateAssessment
 );
+
+syllabusRouter.delete("/assessment/:id/:assessmentId", async (req, res) => {
+  syllabusController.deleteAssessment(req, res);
+});
 
 export default syllabusRouter;
