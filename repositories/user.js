@@ -15,8 +15,7 @@ const createNewAccount = async ({
     username,
     email,
     password,
-    role,
-    status
+    role
 }) =>{
     try {
         const userExisting = await User.findOne({ email }).exec();
@@ -30,7 +29,7 @@ const createNewAccount = async ({
             email,
             password: hashPassword,
             role,
-            status
+            status: true
         });
 
         await newUser.save();
@@ -109,11 +108,16 @@ const totalUsersSearch = async (searchString) => {
     return students;
   };
 
+  const updateUsers = () => {
+
+  }
+
 export default {
     findByEmail,
     createNewAccount,
     getAllAccount,
     ableAndDisable,
     searchUsers,
-    totalUsersSearch
+    totalUsersSearch,
+    updateUsers
 }
