@@ -212,7 +212,6 @@ const addLO = async (req, res) => {
         if (checkLOName) {
             return res.status(400).json({ message: "LO name exsit." });
         }
-        console.log(checkLOName);
 
     const createdLO = await syllabusRepository.addLO(syllabusId, {
       CLO_Name: CLO_Name,

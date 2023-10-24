@@ -198,7 +198,6 @@ const getLOById = async (syllabusId, LOId) => {
     const lo = syllabus.LO.find(
       (item) => String(item._id) === LOId
     );
-    console.log(lo);
     if (!lo) {
       throw new Error("LO not found");
     }
@@ -307,7 +306,6 @@ const getMaterialById = async (syllabusId, MaterialId) => {
     const material = syllabus.Material.find(
       (item) => String(item._id) === MaterialId
     );
-    console.log(material);
     if (!material) {
       throw new Error("Material not found");
     }
