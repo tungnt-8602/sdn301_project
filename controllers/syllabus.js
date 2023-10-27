@@ -861,6 +861,7 @@ export default {
   getAssessmentById,
   updateAssessment,
   addAssessment,
+  deleteAssessment,
 
   addLO,
   getAllLO,
