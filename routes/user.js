@@ -11,8 +11,7 @@ userRouter.post('/', isAuthenticated, Authorization.isAdmin,
   body('username').isLength({ min: 4 }).withMessage('Length of username must be at least 4 characters'),
   body('email').isEmail().withMessage('Incorrect email format'),
   body('password').isLength({ min: 8 }).withMessage('Length of password must be at least 8 characters'),
-  body('role').notEmpty().withMessage('Role must be provided'),
-  body('status').notEmpty().withMessage('Status must be provided')
+  body('role').notEmpty().withMessage('Role must be provided')
 ], 
 userController.createNewAccount);
 
@@ -36,5 +35,7 @@ userRouter.get('/logout', (req, res) => {
 })
 
 userRouter.get('/', isAuthenticated, Authorization.isAdmin, userController.searchUsers);
+
+userRouter.put('/', isAuthenticated, Authorization.isAdmin, userController.updateUsers);
 
 export default userRouter

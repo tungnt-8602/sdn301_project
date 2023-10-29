@@ -105,12 +105,11 @@ const createNewAccount = async (req, res) => {
         username,
         email,
         password,
-        role,
-        status
+        role
     } = req.body;
 
     try {
-        const newUser = await userRepository.createNewAccount({ username, email, password, role, status });
+        const newUser = await userRepository.createNewAccount({ username, email, password, role });
 
         if (!newUser) {
             return res.status(500).json({ error: 'Failed to create user.' });
@@ -183,6 +182,10 @@ const searchUsers = async (req, res) => {
     }
 };
 
+const updateUsers = async (req, res) => {
+
+}
+
 export default {
     login,
     createNewAccount,
@@ -190,5 +193,6 @@ export default {
     ableAndDisable,
     getToken,
     logout,
-    searchUsers
+    searchUsers,
+    updateUsers
 }

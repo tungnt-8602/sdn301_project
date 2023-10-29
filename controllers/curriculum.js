@@ -205,7 +205,6 @@ const addPo = async (req, res) => {
         if (checkPoName) {
             return res.status(400).json({ message: "Po name exsit." });
         }
-        console.log(checkPoName);
 
         // ok chốt deal
         const createdPo = await curriculumRepository.addPo(curriculum, {
@@ -275,7 +274,6 @@ const getPoById = async (req, res) => {
 const deletePoById = async (req, res) => {
     try {
         const curriculum = await curriculumRepository.getById(req.params.id);
-        console.log(curriculum);
         if (!curriculum) {
             return res.status(404).json({ message: "Curriculum not found." });
         }
@@ -420,7 +418,6 @@ const addPlo = async (req, res) => {
         if (checkPloName) {
             return res.status(400).json({ message: "Plo name exsit." });
         }
-        console.log(checkPloName);
 
         // ok chốt deal
         const createdPlo = await curriculumRepository.addPlo(curriculum, {

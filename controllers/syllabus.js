@@ -76,7 +76,6 @@ const getSyllabusTrue = async (req, res) => {
     const size = req.query.size || 5;
     const page = req.query.page || 1;
     const searchString = req.query.searchString || "";
-    console.log("search string: ", searchString);
     const syllabuses = await syllabusRepository.getAllTrue(
       size,
       page,
@@ -213,7 +212,6 @@ const addLO = async (req, res) => {
         if (checkLOName) {
             return res.status(400).json({ message: "LO name exsit." });
         }
-        console.log(checkLOName);
 
     const createdLO = await syllabusRepository.addLO(syllabusId, {
       CLO_Name: CLO_Name,
@@ -863,6 +861,7 @@ export default {
   getAssessmentById,
   updateAssessment,
   addAssessment,
+  deleteAssessment,
 
   addLO,
   getAllLO,

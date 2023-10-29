@@ -35,8 +35,7 @@ const User = mongoose.model("User", new Schema({
     },
     "status":{
         type: Boolean,
-        require: true,
-        message: 'Status must be provided'
+        require: false,
     }
 }))
 

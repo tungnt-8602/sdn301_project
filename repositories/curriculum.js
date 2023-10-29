@@ -76,7 +76,7 @@ const searchCurriculums = async (searchString, page, size) => {
   return students;
 };
 
-const totalCurriculums = async (searchString, page, size) => {
+const totalCurriculums = async (searchString) => {
   const students = await Curriculum.countDocuments({
     $or: [
       { curriculum_code: { $regex: new RegExp(searchString, "i") } },

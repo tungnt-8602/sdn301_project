@@ -103,53 +103,53 @@ const AssessmentSchema = new Schema({
 });
 
 const LO = new Schema({
-    id: { type: ObjectId },
-    CLO_Name: {
-        type: String
-    },
-    CLO_Details: {
-        type: String
-    }
+  id: { type: ObjectId },
+  CLO_Name: {
+    type: String,
+  },
+  CLO_Details: {
+    type: String,
+  },
 });
 
 const Material = new Schema({
-    id: { type: ObjectId },
-    MaterialDescription: {
-        type: String
-    },
-    Author: {
-        type: String,
-        required: false
-    },
-    Publisher: {
-        type: String,
-        required: false
-    },
-    PublishedDate: {
-        type: String,
-        required: false
-    },
-    Edition: {
-        type: String,
-        required: false
-    },
-    ISBN: {
-        type: String,
-        required: false
-    },
-    IsMainMaterial: {
-        type: Boolean
-    },
-    IsHardCopy: {
-        type: Boolean
-    },
-    IsOnline: {
-        type: Boolean
-    },
-    Note: {
-        type: String,
-        required: false
-    }
+  id: { type: ObjectId },
+  MaterialDescription: {
+    type: String,
+  },
+  Author: {
+    type: String,
+    required: false,
+  },
+  Publisher: {
+    type: String,
+    required: false,
+  },
+  PublishedDate: {
+    type: String,
+    required: false,
+  },
+  Edition: {
+    type: String,
+    required: false,
+  },
+  ISBN: {
+    type: String,
+    required: false,
+  },
+  IsMainMaterial: {
+    type: Boolean,
+  },
+  IsHardCopy: {
+    type: Boolean,
+  },
+  IsOnline: {
+    type: Boolean,
+  },
+  Note: {
+    type: String,
+    required: false,
+  },
 });
 
 const Syllabus = mongoose.model(
@@ -241,13 +241,13 @@ const Syllabus = mongoose.model(
       require: true,
     },
     status: {
-      type: Boolean
+      type: Boolean,
     },
-    LO:{
-      type: [LO]
+    LO: {
+      type: [LO],
     },
     Material: {
-      type: [Material]
+      type: [Material],
     },
     Session: {
       type: [SessionSchema],
