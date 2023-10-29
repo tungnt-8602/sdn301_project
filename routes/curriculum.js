@@ -9,40 +9,40 @@ curriculumRouter.get('/view', curriculumController.getCurriculumsStatus);
 
 curriculumRouter.get('/:id', curriculumController.getCurriculumById);
 
-curriculumRouter.post('/', curriculumController.addCurriculum);
+curriculumRouter.post('/', isAuthenticated, Authorization.isMaterialDesigner, curriculumController.addCurriculum);
 
-curriculumRouter.delete('/:id', curriculumController.deleteCurriculumById);
+curriculumRouter.delete('/:id', isAuthenticated, Authorization.isMaterialDesigner, curriculumController.deleteCurriculumById);
 
 curriculumRouter.get('/', curriculumController.searchCurriculums);
 
-curriculumRouter.put('/:id', curriculumController.updateCurriculum);
+curriculumRouter.put('/:id', isAuthenticated, Authorization.isMaterialDesigner, curriculumController.updateCurriculum);
 
-curriculumRouter.put('/changeStatus/:id', curriculumController.ableAndDisable);
+curriculumRouter.put('/changeStatus/:id', isAuthenticated, Authorization.isMaterialDesigner, curriculumController.ableAndDisable);
 
 // po 
-curriculumRouter.post('/po/:id', curriculumController.addPo);
+curriculumRouter.post('/po/:id', isAuthenticated, Authorization.isMaterialDesigner, curriculumController.addPo);
 
 curriculumRouter.get('/po/:id', curriculumController.getAllPo);
 
 curriculumRouter.get('/po/:id/:poId', curriculumController.getPoById);
 
-curriculumRouter.delete('/po/:id/:poId', curriculumController.deletePoById);
+curriculumRouter.delete('/po/:id/:poId', isAuthenticated, Authorization.isMaterialDesigner, curriculumController.deletePoById);
 
-curriculumRouter.put('/po/:id/:poId', curriculumController.updatePo);
+curriculumRouter.put('/po/:id/:poId', isAuthenticated, Authorization.isMaterialDesigner, curriculumController.updatePo);
 
-curriculumRouter.put('/pos/:id/:poId/', curriculumController.setStatusPoById);
+curriculumRouter.put('/pos/:id/:poId/', isAuthenticated, Authorization.isMaterialDesigner, curriculumController.setStatusPoById);
 
 // plo 
-curriculumRouter.post('/plo/:id', curriculumController.addPlo);
+curriculumRouter.post('/plo/:id', isAuthenticated, Authorization.isMaterialDesigner, curriculumController.addPlo);
 
 curriculumRouter.get('/plo/:id', curriculumController.getAllPlo);
 
 curriculumRouter.get('/plo/:id/:ploId', curriculumController.getPloById);
 
-curriculumRouter.delete('/plo/:id/:ploId', curriculumController.deletePloById);
+curriculumRouter.delete('/plo/:id/:ploId', isAuthenticated, Authorization.isMaterialDesigner, curriculumController.deletePloById);
 
-curriculumRouter.put('/plo/:id/:ploId', curriculumController.updatePlo);
+curriculumRouter.put('/plo/:id/:ploId', isAuthenticated, Authorization.isMaterialDesigner, curriculumController.updatePlo);
 
-curriculumRouter.put('/plos/:id/:ploId/', curriculumController.setStatusPloById);
+curriculumRouter.put('/plos/:id/:ploId/', isAuthenticated, Authorization.isMaterialDesigner, curriculumController.setStatusPloById);
 
 export default curriculumRouter;
