@@ -1,9 +1,9 @@
 const ADMIN = "ADMIN";
 const STUDENT = "STUDENT";
-const MATERIAL_DESIGNER = "MATERIAL_DESIGNER";
+const EDITOR = "EDITOR";
 
 export default {
   ADMIN,
   STUDENT,
-  MATERIAL_DESIGNER
+  EDITOR
 };

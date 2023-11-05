@@ -9,7 +9,7 @@ const isAdmin = (req, res, next) => {
 };
 
 const isMaterialDesigner = (req, res, next) => {
-  if (req.user && req.user.role === roleConstants.MATERIAL_DESIGNER) {
+  if (req.user && req.user.role === roleConstants.EDITOR) {
     return next();
   } else {
     return res.status(403).json({ message: 'Forbidden: Only material designer users can access this.' });

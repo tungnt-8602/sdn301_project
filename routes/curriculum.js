@@ -13,7 +13,7 @@ curriculumRouter.post('/', isAuthenticated, Authorization.isMaterialDesigner, cu
 
 curriculumRouter.delete('/:id', isAuthenticated, Authorization.isMaterialDesigner, curriculumController.deleteCurriculumById);
 
-curriculumRouter.get('/', curriculumController.searchCurriculums);
+curriculumRouter.get('/', isAuthenticated, Authorization.isMaterialDesigner, curriculumController.searchCurriculums);
 
 curriculumRouter.put('/:id', isAuthenticated, Authorization.isMaterialDesigner, curriculumController.updateCurriculum);
 
