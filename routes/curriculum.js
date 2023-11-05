@@ -22,7 +22,7 @@ curriculumRouter.put('/:id', isAuthenticated, Authorization.isMaterialDesigner, 
 curriculumRouter.put('/changeStatus/:id', isAuthenticated, Authorization.isMaterialDesigner, curriculumController.ableAndDisable);
 
 // po 
-curriculumRouter.post('/po/:id',  curriculumController.addPo);
+curriculumRouter.post('/po/:id', isAuthenticated, Authorization.isMaterialDesigner, curriculumController.addPo);
 
 curriculumRouter.get('/po/:id', curriculumController.getAllPo);
 
