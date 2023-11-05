@@ -15,13 +15,14 @@ curriculumRouter.get('/', curriculumController.getCurriculumsStatus);
 
 curriculumRouter.delete('/:id', isAuthenticated, Authorization.isMaterialDesigner, curriculumController.deleteCurriculumById);
 
+curriculumRouter.get('/', isAuthenticated, Authorization.isMaterialDesigner, curriculumController.searchCurriculums);
 
 curriculumRouter.put('/:id', isAuthenticated, Authorization.isMaterialDesigner, curriculumController.updateCurriculum);
 
 curriculumRouter.put('/changeStatus/:id', isAuthenticated, Authorization.isMaterialDesigner, curriculumController.ableAndDisable);
 
 // po 
-curriculumRouter.post('/po/:id', isAuthenticated, Authorization.isMaterialDesigner, curriculumController.addPo);
+curriculumRouter.post('/po/:id',  curriculumController.addPo);
 
 curriculumRouter.get('/po/:id', curriculumController.getAllPo);
 

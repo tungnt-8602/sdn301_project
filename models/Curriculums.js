@@ -1,7 +1,7 @@
 import mongoose, { Schema, ObjectId } from "mongoose";
 
 const PoSchema = new Schema({
-    _id: { type: ObjectId },
+    id: { type: mongoose.Schema.Types.ObjectId },
     po_name: {
         type: String,
         required: true,
