@@ -114,7 +114,7 @@ const addPo = async (id, poData) => {
     const newPo = {
       po_name: poData.poname,
       po_description: poData.podescription,
-      po_status: poData.postatus,
+      po_status: true,
     };
 
     curriculum.po.push(newPo);
