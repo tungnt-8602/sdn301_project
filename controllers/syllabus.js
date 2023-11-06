@@ -11,6 +11,7 @@ const createSyllabus = async (req, res) => {
         message: "Syllabus's code is already existed.",
       });
     const syllabus = await syllabusRepository.create(req.body);
+    console.log(syllabus);
     res.status(201).json({
       message: "Add syllabus successfully.",
       data: syllabus,

@@ -155,7 +155,7 @@ const Material = new Schema({
 const Syllabus = mongoose.model(
   "Syllabus",
   new Schema({
-    syllabus_name: {
+    name: {
       type: String,
       require: true,
       validate: {
@@ -163,7 +163,7 @@ const Syllabus = mongoose.model(
         message: "Length of syllabus name > 10",
       },
     },
-    syllabus_Ename: {
+    e_name: {
       type: String,
       require: false,
     },
