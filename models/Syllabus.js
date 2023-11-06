@@ -240,9 +240,6 @@ const Syllabus = mongoose.model(
       type: String,
       require: true,
     },
-    status: {
-      type: Boolean,
-    },
     LO: {
       type: [LO],
     },

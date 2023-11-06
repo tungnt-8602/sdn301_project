@@ -25,7 +25,7 @@ const PoSchema = new Schema({
 });
 
 const PloSchema = new Schema({
-    _id: { type: mongoose.Schema.Types.ObjectId },
+    id: { type: mongoose.Schema.Types.ObjectId },
     plo_name: {
         type: String,
         required: true,
@@ -49,7 +49,7 @@ const PloSchema = new Schema({
 });
 
 const Curriculum = mongoose.model("Curriculum", new Schema({
-    _id: { type: mongoose.Schema.Types.ObjectId },
+    id: { type: mongoose.Schema.Types.ObjectId },
     curriculum_code: {
         type: String,
         required: true,

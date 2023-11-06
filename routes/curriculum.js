@@ -7,11 +7,11 @@ const curriculumRouter = express.Router();
 curriculumRouter.get('/view', curriculumController.getCurriculumsStatus);
 // curriculumRouter.get('/', studentController.getStudents);
 
-curriculumRouter.get('/view', curriculumController.getCurriculumsStatus);
-
 curriculumRouter.get('/:id', curriculumController.getCurriculumById);
 
-curriculumRouter.get('/', curriculumController.getCurriculumsStatus);
+curriculumRouter.get('/', curriculumController.searchCurriculums);
+
+curriculumRouter.post('/', isAuthenticated, Authorization.isMaterialDesigner, curriculumController.addCurriculum);
 
 curriculumRouter.delete('/:id', isAuthenticated, Authorization.isMaterialDesigner, curriculumController.deleteCurriculumById);
 
