@@ -516,6 +516,36 @@ const deleteMaterialById = async (req, res) => {
 };
 
 //Session
+const deleteSessionById = async (req, res) => {
+  try {
+      const syllabus = await syllabusRepository.getById(req.params.id);
+
+      if (!syllabus) {
+          return res.status(404).json({ message: "Syllabus not found." });
+      }
+
+      const materialId = req.params.sessionId; // Đã sửa thành materialId
+
+      if (!materialId) {
+          return res.status(400).json({ message: "session Id not provided." });
+      }
+
+      const deletedMaterial = await syllabusRepository.deleteSessionById(syllabus, materialId);
+
+      if (!deletedMaterial) {
+          return res.status(404).json({ message: "material not found." });
+      }
+
+      res.status(200).json({
+          message: 'session deleted successfully.',
+      });
+  } catch (error) {
+      res.status(500).json({
+          message: error.toString()
+      });
+  }
+};
+
 const addSession = async (req, res) => {
   try {
     // lấy res
@@ -857,6 +887,7 @@ export default {
   getSessionById,
   addSession,
   updateSession,
+  deleteSessionById,
 
   getAllAssessment,
   getAssessmentById,

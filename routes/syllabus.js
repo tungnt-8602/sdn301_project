@@ -134,6 +134,13 @@ syllabusRouter.delete(
 );
 
 //Session
+syllabusRouter.delete(
+  "/session/:id/:sessionId",
+  isAuthenticated,
+  Authorization.isMaterialDesigner,
+  syllabusController.deleteSessionById
+);
+
 syllabusRouter.post(
   "/session/:id",
   isAuthenticated,

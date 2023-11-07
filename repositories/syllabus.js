@@ -365,6 +365,28 @@ const deleteMaterialById = async (syllabusId, materialId) => {
 };
 
 //Session
+const deleteSessionById = async (syllabusId, materialId) => {
+  try {
+    const syllabus = await Syllabus.findById(syllabusId).exec();
+    if (!syllabus) {
+      throw new Error("Syllabus not found");
+    }
+
+    const materialIndex = syllabus.Session.findIndex((item) => String(item._id) === materialId);
+    if (materialIndex === -1) {
+      throw new Error("Session not found");
+    }
+    const deletedMaterial = syllabus.Session.splice(materialIndex, 1);
+    
+    // Lưu syllabus sau khi xóa lo (tuỳ thuộc vào cách lưu dữ liệu của bạn)
+    await syllabus.save();
+    return deletedMaterial;
+  } catch (error) {
+    console.error("Error deleting Material by ID:", error);
+    throw error;
+  }
+};
+
 const addSession = async (id, sessionData) => {
   try {
     const syllabus = await Syllabus.findById(id);
@@ -636,5 +658,6 @@ export default {
   getAllMaterial,
   getMaterialById,
   updateMaterial,
-  deleteMaterialById
+  deleteMaterialById,
+  deleteSessionById
 };
