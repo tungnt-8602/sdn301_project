@@ -24,7 +24,7 @@ syllabusRouter.get("/view", async (req, res) => {
 syllabusRouter.get(
   "/:id",
   isAuthenticated,
-  Authorization.isMaterialDesigner,
+  Authorization.isStudent,
   async (req, res) => {
     syllabusController.getSyllabusById(req, res);
   }
@@ -72,7 +72,7 @@ syllabusRouter.post(
 syllabusRouter.get(
   "/lo/:id",
   isAuthenticated,
-  Authorization.isMaterialDesigner,
+  Authorization.isStudent,
   syllabusController.getAllLO
 );
 
@@ -108,7 +108,7 @@ syllabusRouter.post(
 syllabusRouter.get(
   "/material/:id",
   isAuthenticated,
-  Authorization.isMaterialDesigner,
+  Authorization.isStudent,
   syllabusController.getAllMaterial
 );
 
@@ -151,6 +151,7 @@ syllabusRouter.post(
 syllabusRouter.get(
   "/session/:id",
   isAuthenticated,
+  Authorization.isStudent,
   syllabusController.getAllSession
 );
 
@@ -177,6 +178,7 @@ syllabusRouter.post(
 syllabusRouter.get(
   "/assessment/:id",
   isAuthenticated,
+  Authorization.isStudent,
   syllabusController.getAllAssessment
 );
 

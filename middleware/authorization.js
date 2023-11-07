@@ -16,7 +16,16 @@ const isMaterialDesigner = (req, res, next) => {
   }
 };
 
+const isStudent = (req, res, next) => {
+  if (req.user && req.user.role === roleConstants.EDITOR || req.user.role === roleConstants.ADMIN || req.user.role === roleConstants.STUDENT) {
+    return next();
+  } else {
+    return res.status(403).json({ message: 'Forbidden: You can not access this.' });
+  }
+};
+
 export default {
   isAdmin,
-  isMaterialDesigner
+  isMaterialDesigner,
+  isStudent
 }
