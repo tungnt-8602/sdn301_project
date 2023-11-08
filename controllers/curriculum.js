@@ -78,7 +78,7 @@ const addCurriculum = async (req, res) => {
     try {
         const curriculumExisted = await curriculumRepository.getCurriculumByCode(req.body.curriculum_code);
         if (curriculumExisted) res.status(400).json({
-            message: "Curriculum's email is already existed."
+            message: "Curriculum code is already existed."
         })
         const curriculum = await curriculumRepository.addCurriculum(req.body);
         res.status(201).json({

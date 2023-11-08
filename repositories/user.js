@@ -70,6 +70,8 @@ const ableAndDisable = async (userId) => {
         const user = await User.findById(userId).exec();
         if (!user) {
             throw new Error('User not found');
+        } else if (user.role === 'ADMIN'){
+            throw new Error("Can not change admin account's status");
         }
 
         user.status = !user.status;
